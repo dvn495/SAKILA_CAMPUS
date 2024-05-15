@@ -20055,3 +20055,11707 @@ join direccion d
 
 ```
 
+Obtener una lista de pagos realizados, incluyendo el cliente, el
+empleado que registró el pago y el alquiler correspondiente.
+
+```
+select p.id_pago, c.nombre, e.nombre, a.id_alquiler as alquiler
+from pago p
+join cliente c
+	on p.id_cliente = c.id_cliente
+join empleado e
+	on p.id_empleado = e.id_empleado
+join alquiler a
+	on a.id_alquiler = p.id_alquiler;
+|    6050 | PEARL       | Jon    |     8439 |
+|    6051 | PEARL       | Mike   |     8605 |
+|    6052 | PEARL       | Mike   |     9181 |
+|    6053 | PEARL       | Mike   |    11816 |
+|    6054 | PEARL       | Mike   |    12492 |
+|    6055 | PEARL       | Mike   |    12969 |
+|    6056 | PEARL       | Jon    |    13075 |
+|    6057 | PEARL       | Jon    |    14099 |
+|    6058 | PEARL       | Jon    |    14271 |
+|    6059 | PEARL       | Jon    |    14468 |
+|    6060 | PEARL       | Jon    |    14880 |
+|    6061 | PEARL       | Mike   |    15225 |
+|    6062 | PEARL       | Mike   |    15952 |
+|    6063 | ARLENE      | Mike   |      812 |
+|    6064 | ARLENE      | Mike   |      963 |
+|    6065 | ARLENE      | Jon    |     2226 |
+|    6066 | ARLENE      | Jon    |     3574 |
+|    6067 | ARLENE      | Mike   |     4345 |
+|    6068 | ARLENE      | Mike   |     4824 |
+|    6069 | ARLENE      | Jon    |     4955 |
+|    6070 | ARLENE      | Mike   |     5067 |
+|    6071 | ARLENE      | Mike   |     6159 |
+|    6072 | ARLENE      | Mike   |     6317 |
+|    6073 | ARLENE      | Jon    |     6350 |
+|    6074 | ARLENE      | Mike   |     6526 |
+|    6075 | ARLENE      | Jon    |     6532 |
+|    6076 | ARLENE      | Jon    |     7347 |
+|    6077 | ARLENE      | Mike   |     7524 |
+|    6078 | ARLENE      | Mike   |     8054 |
+|    6079 | ARLENE      | Jon    |     8110 |
+|    6080 | ARLENE      | Mike   |     9980 |
+|    6081 | ARLENE      | Jon    |     9993 |
+|    6082 | ARLENE      | Jon    |    10138 |
+|    6083 | ARLENE      | Mike   |    10793 |
+|    6084 | ARLENE      | Jon    |    11333 |
+|    6085 | ARLENE      | Jon    |    11384 |
+|    6086 | ARLENE      | Jon    |    11395 |
+|    6087 | ARLENE      | Jon    |    11437 |
+|    6088 | ARLENE      | Jon    |    14444 |
+|    6089 | MAUREEN     | Jon    |     3414 |
+|    6090 | MAUREEN     | Mike   |     3466 |
+|    6091 | MAUREEN     | Mike   |     3721 |
+|    6092 | MAUREEN     | Mike   |     4324 |
+|    6093 | MAUREEN     | Mike   |     5282 |
+|    6094 | MAUREEN     | Mike   |     5419 |
+|    6095 | MAUREEN     | Mike   |     6712 |
+|    6096 | MAUREEN     | Jon    |     7288 |
+|    6097 | MAUREEN     | Mike   |     7329 |
+|    6098 | MAUREEN     | Jon    |     8600 |
+|    6099 | MAUREEN     | Mike   |     8627 |
+|    6100 | MAUREEN     | Mike   |    12172 |
+|    6101 | MAUREEN     | Mike   |    14491 |
+|    6102 | MAUREEN     | Mike   |    14708 |
+|    6103 | MAUREEN     | Mike   |    14712 |
+|    6104 | MAUREEN     | Jon    |    14739 |
+|    6105 | MAUREEN     | Jon    |    14934 |
+|    6106 | MAUREEN     | Jon    |    15472 |
+|    6107 | MAUREEN     | Mike   |    15901 |
+|    6108 | MAUREEN     | Mike   |    15986 |
+|    6109 | MAUREEN     | Mike   |    16033 |
+|    6110 | COLLEEN     | Mike   |      111 |
+|    6111 | COLLEEN     | Mike   |     1023 |
+|    6112 | COLLEEN     | Mike   |     1679 |
+|    6113 | COLLEEN     | Jon    |     2155 |
+|    6114 | COLLEEN     | Mike   |     2164 |
+|    6115 | COLLEEN     | Jon    |     3065 |
+|    6116 | COLLEEN     | Mike   |     3576 |
+|    6117 | COLLEEN     | Jon    |     4340 |
+|    6118 | COLLEEN     | Jon    |     4459 |
+|    6119 | COLLEEN     | Mike   |     4680 |
+|    6120 | COLLEEN     | Mike   |     5046 |
+|    6121 | COLLEEN     | Mike   |     7132 |
+|    6122 | COLLEEN     | Mike   |     8219 |
+|    6123 | COLLEEN     | Mike   |     8234 |
+|    6124 | COLLEEN     | Mike   |     8384 |
+|    6125 | COLLEEN     | Jon    |     8417 |
+|    6126 | COLLEEN     | Mike   |     8936 |
+|    6127 | COLLEEN     | Jon    |     9521 |
+|    6128 | COLLEEN     | Jon    |    10999 |
+|    6129 | COLLEEN     | Jon    |    11892 |
+|    6130 | COLLEEN     | Jon    |    13379 |
+|    6131 | COLLEEN     | Jon    |    15406 |
+|    6132 | COLLEEN     | Jon    |    15976 |
+|    6133 | COLLEEN     | Jon    |    13374 |
+|    6134 | ALLISON     | Jon    |      492 |
+|    6135 | ALLISON     | Jon    |     1070 |
+|    6136 | ALLISON     | Jon    |     2284 |
+|    6137 | ALLISON     | Jon    |     2863 |
+|    6138 | ALLISON     | Jon    |     2934 |
+|    6139 | ALLISON     | Jon    |     3433 |
+|    6140 | ALLISON     | Jon    |     3538 |
+|    6141 | ALLISON     | Jon    |     3710 |
+|    6142 | ALLISON     | Mike   |     3715 |
+|    6143 | ALLISON     | Jon    |     3796 |
+|    6144 | ALLISON     | Mike   |     4217 |
+|    6145 | ALLISON     | Mike   |     4636 |
+|    6146 | ALLISON     | Mike   |     4909 |
+|    6147 | ALLISON     | Mike   |     5151 |
+|    6148 | ALLISON     | Mike   |     5320 |
+|    6149 | ALLISON     | Jon    |     5902 |
+|    6150 | ALLISON     | Jon    |     6141 |
+|    6151 | ALLISON     | Mike   |     6948 |
+|    6152 | ALLISON     | Jon    |     7509 |
+|    6153 | ALLISON     | Mike   |     7601 |
+|    6154 | ALLISON     | Mike   |     8147 |
+|    6155 | ALLISON     | Mike   |    10585 |
+|    6156 | ALLISON     | Mike   |    12304 |
+|    6157 | ALLISON     | Jon    |    12952 |
+|    6158 | ALLISON     | Jon    |    13458 |
+|    6159 | ALLISON     | Jon    |    12672 |
+|    6160 | ALLISON     | Mike   |    15234 |
+|    6161 | TAMARA      | Mike   |     2200 |
+|    6162 | TAMARA      | Mike   |     3208 |
+|    6163 | TAMARA      | Mike   |     3277 |
+|    6164 | TAMARA      | Jon    |     3280 |
+|    6165 | TAMARA      | Jon    |     3933 |
+|    6166 | TAMARA      | Jon    |     4458 |
+|    6167 | TAMARA      | Mike   |     4515 |
+|    6168 | TAMARA      | Jon    |     4694 |
+|    6169 | TAMARA      | Mike   |     5623 |
+|    6170 | TAMARA      | Jon    |     6155 |
+|    6171 | TAMARA      | Jon    |     6578 |
+|    6172 | TAMARA      | Mike   |     6880 |
+|    6173 | TAMARA      | Jon    |     7305 |
+|    6174 | TAMARA      | Jon    |     7308 |
+|    6175 | TAMARA      | Jon    |     7629 |
+|    6176 | TAMARA      | Jon    |     7640 |
+|    6177 | TAMARA      | Jon    |     9913 |
+|    6178 | TAMARA      | Mike   |    11521 |
+|    6179 | TAMARA      | Mike   |    12866 |
+|    6180 | TAMARA      | Jon    |    13306 |
+|    6181 | TAMARA      | Jon    |    13431 |
+|    6182 | TAMARA      | Mike   |    13679 |
+|    6183 | TAMARA      | Mike   |    15740 |
+|    6184 | TAMARA      | Jon    |    15912 |
+|    6185 | TAMARA      | Jon    |    13295 |
+|    6186 | JOY         | Mike   |       32 |
+|    6187 | JOY         | Mike   |     1078 |
+|    6188 | JOY         | Jon    |     1468 |
+|    6189 | JOY         | Mike   |     1744 |
+|    6190 | JOY         | Jon    |     1793 |
+|    6191 | JOY         | Jon    |     2450 |
+|    6192 | JOY         | Jon    |     2675 |
+|    6193 | JOY         | Mike   |     2777 |
+|    6194 | JOY         | Mike   |     4509 |
+|    6195 | JOY         | Mike   |     4935 |
+|    6196 | JOY         | Mike   |     5045 |
+|    6197 | JOY         | Mike   |     5061 |
+|    6198 | JOY         | Jon    |     5269 |
+|    6199 | JOY         | Jon    |     6126 |
+|    6200 | JOY         | Mike   |     6251 |
+|    6201 | JOY         | Jon    |     7333 |
+|    6202 | JOY         | Jon    |     7390 |
+|    6203 | JOY         | Jon    |     8032 |
+|    6204 | JOY         | Jon    |     8653 |
+|    6205 | JOY         | Mike   |     8815 |
+|    6206 | JOY         | Jon    |     9778 |
+|    6207 | JOY         | Jon    |    10050 |
+|    6208 | JOY         | Mike   |    10057 |
+|    6209 | JOY         | Jon    |    10874 |
+|    6210 | JOY         | Jon    |    11148 |
+|    6211 | JOY         | Mike   |    11552 |
+|    6212 | JOY         | Jon    |    11914 |
+|    6213 | JOY         | Mike   |    12079 |
+|    6214 | JOY         | Jon    |    12523 |
+|    6215 | JOY         | Jon    |    12542 |
+|    6216 | JOY         | Jon    |    14017 |
+|    6217 | JOY         | Mike   |    14073 |
+|    6218 | JOY         | Mike   |    14340 |
+|    6219 | GEORGIA     | Mike   |      329 |
+|    6220 | GEORGIA     | Mike   |      479 |
+|    6221 | GEORGIA     | Mike   |      512 |
+|    6222 | GEORGIA     | Jon    |     2423 |
+|    6223 | GEORGIA     | Jon    |     3561 |
+|    6224 | GEORGIA     | Mike   |     3839 |
+|    6225 | GEORGIA     | Jon    |     4289 |
+|    6226 | GEORGIA     | Jon    |     4969 |
+|    6227 | GEORGIA     | Mike   |     5096 |
+|    6228 | GEORGIA     | Mike   |     5560 |
+|    6229 | GEORGIA     | Mike   |     6862 |
+|    6230 | GEORGIA     | Mike   |     6877 |
+|    6231 | GEORGIA     | Mike   |     8556 |
+|    6232 | GEORGIA     | Jon    |     8949 |
+|    6233 | GEORGIA     | Jon    |     9711 |
+|    6234 | GEORGIA     | Jon    |    11113 |
+|    6235 | GEORGIA     | Mike   |    11202 |
+|    6236 | GEORGIA     | Mike   |    11581 |
+|    6237 | GEORGIA     | Mike   |    12214 |
+|    6238 | GEORGIA     | Jon    |    12230 |
+|    6239 | GEORGIA     | Mike   |    12231 |
+|    6240 | GEORGIA     | Jon    |    13983 |
+|    6241 | GEORGIA     | Mike   |    14026 |
+|    6242 | GEORGIA     | Mike   |    14478 |
+|    6243 | GEORGIA     | Jon    |    14806 |
+|    6244 | GEORGIA     | Mike   |    15389 |
+|    6245 | CONSTANCE   | Mike   |       28 |
+|    6246 | CONSTANCE   | Mike   |      805 |
+|    6247 | CONSTANCE   | Jon    |     1619 |
+|    6248 | CONSTANCE   | Mike   |     2833 |
+|    6249 | CONSTANCE   | Jon    |     6234 |
+|    6250 | CONSTANCE   | Mike   |     6309 |
+|    6251 | CONSTANCE   | Mike   |     7123 |
+|    6252 | CONSTANCE   | Jon    |     7653 |
+|    6253 | CONSTANCE   | Jon    |     7707 |
+|    6254 | CONSTANCE   | Mike   |     7749 |
+|    6255 | CONSTANCE   | Mike   |     7990 |
+|    6256 | CONSTANCE   | Mike   |     8306 |
+|    6257 | CONSTANCE   | Jon    |     8401 |
+|    6258 | CONSTANCE   | Jon    |     8655 |
+|    6259 | CONSTANCE   | Jon    |     9270 |
+|    6260 | CONSTANCE   | Jon    |     9330 |
+|    6261 | CONSTANCE   | Jon    |     9365 |
+|    6262 | CONSTANCE   | Jon    |    10157 |
+|    6263 | CONSTANCE   | Mike   |    10539 |
+|    6264 | CONSTANCE   | Jon    |    11861 |
+|    6265 | CONSTANCE   | Jon    |    12853 |
+|    6266 | CONSTANCE   | Jon    |    13707 |
+|    6267 | CONSTANCE   | Jon    |    14527 |
+|    6268 | CONSTANCE   | Jon    |    14857 |
+|    6269 | CONSTANCE   | Jon    |    15553 |
+|    6270 | LILLIE      | Jon    |     1992 |
+|    6271 | LILLIE      | Jon    |     2244 |
+|    6272 | LILLIE      | Mike   |     2424 |
+|    6273 | LILLIE      | Jon    |     2443 |
+|    6274 | LILLIE      | Mike   |     3832 |
+|    6275 | LILLIE      | Mike   |     4015 |
+|    6276 | LILLIE      | Mike   |     4885 |
+|    6277 | LILLIE      | Jon    |     5267 |
+|    6278 | LILLIE      | Mike   |     5846 |
+|    6279 | LILLIE      | Mike   |     6319 |
+|    6280 | LILLIE      | Mike   |     6794 |
+|    6281 | LILLIE      | Mike   |     7056 |
+|    6282 | LILLIE      | Jon    |     7387 |
+|    6283 | LILLIE      | Jon    |     8385 |
+|    6284 | LILLIE      | Jon    |     8530 |
+|    6285 | LILLIE      | Jon    |     8596 |
+|    6286 | LILLIE      | Mike   |     9574 |
+|    6287 | LILLIE      | Mike   |    10582 |
+|    6288 | LILLIE      | Mike   |    12443 |
+|    6289 | LILLIE      | Jon    |    14357 |
+|    6290 | LILLIE      | Jon    |    15285 |
+|    6291 | LILLIE      | Mike   |    15790 |
+|    6292 | LILLIE      | Jon    |    15821 |
+|    6293 | CLAUDIA     | Jon    |     1125 |
+|    6294 | CLAUDIA     | Jon    |     1245 |
+|    6295 | CLAUDIA     | Jon    |     1645 |
+|    6296 | CLAUDIA     | Mike   |     1674 |
+|    6297 | CLAUDIA     | Jon    |     1993 |
+|    6298 | CLAUDIA     | Mike   |     2005 |
+|    6299 | CLAUDIA     | Jon    |     2511 |
+|    6300 | CLAUDIA     | Jon    |     3185 |
+|    6301 | CLAUDIA     | Jon    |     3199 |
+|    6302 | CLAUDIA     | Jon    |     4686 |
+|    6303 | CLAUDIA     | Mike   |     4721 |
+|    6304 | CLAUDIA     | Jon    |    10133 |
+|    6305 | CLAUDIA     | Jon    |    10541 |
+|    6306 | CLAUDIA     | Jon    |    10580 |
+|    6307 | CLAUDIA     | Jon    |    10968 |
+|    6308 | CLAUDIA     | Mike   |    11050 |
+|    6309 | CLAUDIA     | Mike   |    11073 |
+|    6310 | CLAUDIA     | Mike   |    11481 |
+|    6311 | CLAUDIA     | Mike   |    11882 |
+|    6312 | CLAUDIA     | Mike   |    12226 |
+|    6313 | CLAUDIA     | Jon    |    12863 |
+|    6314 | CLAUDIA     | Mike   |    12921 |
+|    6315 | CLAUDIA     | Jon    |    13349 |
+|    6316 | CLAUDIA     | Jon    |    15037 |
+|    6317 | CLAUDIA     | Mike   |    15129 |
+|    6318 | CLAUDIA     | Mike   |    15778 |
+|    6319 | JACKIE      | Jon    |      807 |
+|    6320 | JACKIE      | Mike   |     1148 |
+|    6321 | JACKIE      | Mike   |     1493 |
+|    6322 | JACKIE      | Jon    |     1811 |
+|    6323 | JACKIE      | Jon    |     3581 |
+|    6324 | JACKIE      | Mike   |     3752 |
+|    6325 | JACKIE      | Mike   |     3968 |
+|    6326 | JACKIE      | Jon    |     4592 |
+|    6327 | JACKIE      | Mike   |     5790 |
+|    6328 | JACKIE      | Mike   |     6047 |
+|    6329 | JACKIE      | Jon    |     6352 |
+|    6330 | JACKIE      | Jon    |     6466 |
+|    6331 | JACKIE      | Mike   |     8120 |
+|    6332 | JACKIE      | Jon    |     8446 |
+|    6333 | JACKIE      | Jon    |     8781 |
+|    6334 | JACKIE      | Mike   |     9019 |
+|    6335 | JACKIE      | Jon    |     9519 |
+|    6336 | JACKIE      | Mike   |     9587 |
+|    6337 | JACKIE      | Jon    |    10155 |
+|    6338 | JACKIE      | Jon    |    12332 |
+|    6339 | JACKIE      | Mike   |    12502 |
+|    6340 | JACKIE      | Jon    |    13070 |
+|    6341 | JACKIE      | Mike   |    13469 |
+|    6342 | JACKIE      | Jon    |    14749 |
+|    6343 | JACKIE      | Mike   |    15034 |
+|    6344 | MARCIA      | Jon    |      262 |
+|    6345 | MARCIA      | Jon    |      344 |
+|    6346 | MARCIA      | Mike   |     1032 |
+|    6347 | MARCIA      | Mike   |     1262 |
+|    6348 | MARCIA      | Jon    |     1308 |
+|    6349 | MARCIA      | Jon    |     2139 |
+|    6350 | MARCIA      | Jon    |     2311 |
+|    6351 | MARCIA      | Mike   |     2630 |
+|    6352 | MARCIA      | Jon    |     2840 |
+|    6353 | MARCIA      | Mike   |     3353 |
+|    6354 | MARCIA      | Jon    |     3460 |
+|    6355 | MARCIA      | Mike   |     3645 |
+|    6356 | MARCIA      | Jon    |     3857 |
+|    6357 | MARCIA      | Jon    |     4749 |
+|    6358 | MARCIA      | Mike   |     4959 |
+|    6359 | MARCIA      | Mike   |     5404 |
+|    6360 | MARCIA      | Mike   |     5545 |
+|    6361 | MARCIA      | Jon    |     5938 |
+|    6362 | MARCIA      | Jon    |     6049 |
+|    6363 | MARCIA      | Jon    |     6281 |
+|    6364 | MARCIA      | Mike   |     6303 |
+|    6365 | MARCIA      | Jon    |     6996 |
+|    6366 | MARCIA      | Jon    |     7047 |
+|    6367 | MARCIA      | Jon    |     7253 |
+|    6368 | MARCIA      | Mike   |     7780 |
+|    6369 | MARCIA      | Mike   |     7792 |
+|    6370 | MARCIA      | Jon    |     7798 |
+|    6371 | MARCIA      | Mike   |     8657 |
+|    6372 | MARCIA      | Mike   |     9011 |
+|    6373 | MARCIA      | Mike   |     9934 |
+|    6374 | MARCIA      | Jon    |    10137 |
+|    6375 | MARCIA      | Jon    |    11139 |
+|    6376 | MARCIA      | Jon    |    11486 |
+|    6377 | MARCIA      | Jon    |    11507 |
+|    6378 | MARCIA      | Mike   |    11895 |
+|    6379 | MARCIA      | Mike   |    12975 |
+|    6380 | MARCIA      | Mike   |    13364 |
+|    6381 | MARCIA      | Mike   |    13443 |
+|    6382 | MARCIA      | Jon    |    14321 |
+|    6383 | MARCIA      | Mike   |    14364 |
+|    6384 | MARCIA      | Jon    |    14722 |
+|    6385 | MARCIA      | Mike   |    12988 |
+|    6386 | TANYA       | Jon    |      133 |
+|    6387 | TANYA       | Mike   |      182 |
+|    6388 | TANYA       | Mike   |     1500 |
+|    6389 | TANYA       | Jon    |     1518 |
+|    6390 | TANYA       | Mike   |     2156 |
+|    6391 | TANYA       | Mike   |     2492 |
+|    6392 | TANYA       | Jon    |     3069 |
+|    6393 | TANYA       | Mike   |     4844 |
+|    6394 | TANYA       | Jon    |     6053 |
+|    6395 | TANYA       | Mike   |     7193 |
+|    6396 | TANYA       | Jon    |     7330 |
+|    6397 | TANYA       | Mike   |     7812 |
+|    6398 | TANYA       | Jon    |     7951 |
+|    6399 | TANYA       | Jon    |     8102 |
+|    6400 | TANYA       | Jon    |     8748 |
+|    6401 | TANYA       | Jon    |     8799 |
+|    6402 | TANYA       | Mike   |     8835 |
+|    6403 | TANYA       | Mike   |     9276 |
+|    6404 | TANYA       | Mike   |     9661 |
+|    6405 | TANYA       | Jon    |     9715 |
+|    6406 | TANYA       | Jon    |    10056 |
+|    6407 | TANYA       | Jon    |    10058 |
+|    6408 | TANYA       | Jon    |    11125 |
+|    6409 | TANYA       | Jon    |    11479 |
+|    6410 | TANYA       | Jon    |    11772 |
+|    6411 | TANYA       | Mike   |    12469 |
+|    6412 | TANYA       | Jon    |    13914 |
+|    6413 | TANYA       | Jon    |    13922 |
+|    6414 | TANYA       | Jon    |    13969 |
+|    6415 | TANYA       | Jon    |    14453 |
+|    6416 | TANYA       | Jon    |    15139 |
+|    6417 | TANYA       | Mike   |    15337 |
+|    6418 | TANYA       | Jon    |    15931 |
+|    6419 | NELLIE      | Jon    |      315 |
+|    6420 | NELLIE      | Mike   |      842 |
+|    6421 | NELLIE      | Mike   |     1199 |
+|    6422 | NELLIE      | Mike   |     1660 |
+|    6423 | NELLIE      | Mike   |     3181 |
+|    6424 | NELLIE      | Mike   |     4143 |
+|    6425 | NELLIE      | Mike   |     5616 |
+|    6426 | NELLIE      | Jon    |     6403 |
+|    6427 | NELLIE      | Jon    |     7243 |
+|    6428 | NELLIE      | Mike   |     8310 |
+|    6429 | NELLIE      | Mike   |     8382 |
+|    6430 | NELLIE      | Mike   |     8465 |
+|    6431 | NELLIE      | Mike   |     9065 |
+|    6432 | NELLIE      | Jon    |     9841 |
+|    6433 | NELLIE      | Mike   |    10659 |
+|    6434 | NELLIE      | Jon    |    11543 |
+|    6435 | NELLIE      | Jon    |    11632 |
+|    6436 | NELLIE      | Mike   |    11897 |
+|    6437 | NELLIE      | Mike   |    14312 |
+|    6438 | NELLIE      | Mike   |    14343 |
+|    6439 | NELLIE      | Mike   |    15455 |
+|    6440 | MINNIE      | Jon    |        8 |
+|    6441 | MINNIE      | Mike   |      444 |
+|    6442 | MINNIE      | Mike   |      621 |
+|    6443 | MINNIE      | Mike   |      636 |
+|    6444 | MINNIE      | Mike   |     1022 |
+|    6445 | MINNIE      | Jon    |     1082 |
+|    6446 | MINNIE      | Mike   |     1160 |
+|    6447 | MINNIE      | Jon    |     1560 |
+|    6448 | MINNIE      | Jon    |     2215 |
+|    6449 | MINNIE      | Mike   |     2390 |
+|    6450 | MINNIE      | Mike   |     3383 |
+|    6451 | MINNIE      | Jon    |     3547 |
+|    6452 | MINNIE      | Mike   |     3552 |
+|    6453 | MINNIE      | Jon    |     4920 |
+|    6454 | MINNIE      | Jon    |     5651 |
+|    6455 | MINNIE      | Mike   |     5960 |
+|    6456 | MINNIE      | Mike   |     6573 |
+|    6457 | MINNIE      | Jon    |     7012 |
+|    6458 | MINNIE      | Mike   |     7426 |
+|    6459 | MINNIE      | Jon    |     7491 |
+|    6460 | MINNIE      | Mike   |     8457 |
+|    6461 | MINNIE      | Jon    |     9676 |
+|    6462 | MINNIE      | Mike   |     9863 |
+|    6463 | MINNIE      | Mike   |    10755 |
+|    6464 | MINNIE      | Jon    |    10923 |
+|    6465 | MINNIE      | Mike   |    11487 |
+|    6466 | MINNIE      | Jon    |    11900 |
+|    6467 | MINNIE      | Mike   |    11968 |
+|    6468 | MINNIE      | Mike   |    12340 |
+|    6469 | MINNIE      | Mike   |    12721 |
+|    6470 | MINNIE      | Mike   |    13175 |
+|    6471 | MINNIE      | Jon    |    13427 |
+|    6472 | MINNIE      | Jon    |    13999 |
+|    6473 | MINNIE      | Jon    |    14062 |
+|    6474 | MARLENE     | Mike   |      246 |
+|    6475 | MARLENE     | Mike   |      460 |
+|    6476 | MARLENE     | Mike   |      643 |
+|    6477 | MARLENE     | Jon    |     2196 |
+|    6478 | MARLENE     | Mike   |     2264 |
+|    6479 | MARLENE     | Jon    |     2872 |
+|    6480 | MARLENE     | Jon    |     4305 |
+|    6481 | MARLENE     | Jon    |     5262 |
+|    6482 | MARLENE     | Mike   |     5596 |
+|    6483 | MARLENE     | Mike   |     6272 |
+|    6484 | MARLENE     | Jon    |     6470 |
+|    6485 | MARLENE     | Mike   |     6956 |
+|    6486 | MARLENE     | Mike   |     7001 |
+|    6487 | MARLENE     | Mike   |     7467 |
+|    6488 | MARLENE     | Jon    |     7481 |
+|    6489 | MARLENE     | Mike   |     7870 |
+|    6490 | MARLENE     | Jon    |     8503 |
+|    6491 | MARLENE     | Jon    |     8905 |
+|    6492 | MARLENE     | Mike   |    10308 |
+|    6493 | MARLENE     | Mike   |    11745 |
+|    6494 | MARLENE     | Jon    |    12283 |
+|    6495 | MARLENE     | Jon    |    13030 |
+|    6496 | MARLENE     | Jon    |    13119 |
+|    6497 | MARLENE     | Mike   |    13663 |
+|    6498 | MARLENE     | Jon    |    14573 |
+|    6499 | MARLENE     | Jon    |    15641 |
+|    6500 | HEIDI       | Mike   |      627 |
+|    6501 | HEIDI       | Mike   |     1059 |
+|    6502 | HEIDI       | Jon    |     2428 |
+|    6503 | HEIDI       | Mike   |     2455 |
+|    6504 | HEIDI       | Jon    |     2478 |
+|    6505 | HEIDI       | Jon    |     2683 |
+|    6506 | HEIDI       | Jon    |     3258 |
+|    6507 | HEIDI       | Jon    |     3822 |
+|    6508 | HEIDI       | Mike   |     4731 |
+|    6509 | HEIDI       | Jon    |     5017 |
+|    6510 | HEIDI       | Mike   |     5211 |
+|    6511 | HEIDI       | Mike   |     5438 |
+|    6512 | HEIDI       | Jon    |     5525 |
+|    6513 | HEIDI       | Mike   |     5981 |
+|    6514 | HEIDI       | Jon    |     6090 |
+|    6515 | HEIDI       | Jon    |     6245 |
+|    6516 | HEIDI       | Mike   |     7320 |
+|    6517 | HEIDI       | Mike   |     7434 |
+|    6518 | HEIDI       | Mike   |     7860 |
+|    6519 | HEIDI       | Mike   |     9500 |
+|    6520 | HEIDI       | Mike   |     9528 |
+|    6521 | HEIDI       | Mike   |     9944 |
+|    6522 | HEIDI       | Jon    |    10447 |
+|    6523 | HEIDI       | Mike   |    10652 |
+|    6524 | HEIDI       | Mike   |    11423 |
+|    6525 | HEIDI       | Jon    |    12418 |
+|    6526 | HEIDI       | Mike   |    12956 |
+|    6527 | HEIDI       | Jon    |    13077 |
+|    6528 | HEIDI       | Jon    |    14269 |
+|    6529 | HEIDI       | Jon    |    14485 |
+|    6530 | HEIDI       | Mike   |    14936 |
+|    6531 | HEIDI       | Jon    |    15137 |
+|    6532 | HEIDI       | Mike   |    15429 |
+|    6533 | HEIDI       | Mike   |    15767 |
+|    6534 | GLENDA      | Mike   |      108 |
+|    6535 | GLENDA      | Jon    |      283 |
+|    6536 | GLENDA      | Jon    |      881 |
+|    6537 | GLENDA      | Jon    |     1304 |
+|    6538 | GLENDA      | Mike   |     1384 |
+|    6539 | GLENDA      | Mike   |     1483 |
+|    6540 | GLENDA      | Jon    |     1702 |
+|    6541 | GLENDA      | Mike   |     2691 |
+|    6542 | GLENDA      | Jon    |     2942 |
+|    6543 | GLENDA      | Mike   |     3471 |
+|    6544 | GLENDA      | Jon    |     3604 |
+|    6545 | GLENDA      | Mike   |     4426 |
+|    6546 | GLENDA      | Jon    |     4895 |
+|    6547 | GLENDA      | Jon    |     5666 |
+|    6548 | GLENDA      | Jon    |     7149 |
+|    6549 | GLENDA      | Mike   |     8491 |
+|    6550 | GLENDA      | Mike   |     9423 |
+|    6551 | GLENDA      | Mike   |     9730 |
+|    6552 | GLENDA      | Jon    |    10367 |
+|    6553 | GLENDA      | Jon    |    10382 |
+|    6554 | GLENDA      | Jon    |    10650 |
+|    6555 | GLENDA      | Jon    |    11020 |
+|    6556 | GLENDA      | Mike   |    11258 |
+|    6557 | GLENDA      | Jon    |    11607 |
+|    6558 | GLENDA      | Mike   |    11931 |
+|    6559 | GLENDA      | Jon    |    12724 |
+|    6560 | GLENDA      | Mike   |    12855 |
+|    6561 | GLENDA      | Mike   |    13271 |
+|    6562 | GLENDA      | Jon    |    13567 |
+|    6563 | GLENDA      | Jon    |    13646 |
+|    6564 | GLENDA      | Mike   |    14515 |
+|    6565 | GLENDA      | Mike   |    15002 |
+|    6566 | LYDIA       | Mike   |      188 |
+|    6567 | LYDIA       | Mike   |     1405 |
+|    6568 | LYDIA       | Mike   |     1452 |
+|    6569 | LYDIA       | Jon    |     2757 |
+|    6570 | LYDIA       | Jon    |     3854 |
+|    6571 | LYDIA       | Mike   |     3965 |
+|    6572 | LYDIA       | Mike   |     4831 |
+|    6573 | LYDIA       | Mike   |     5502 |
+|    6574 | LYDIA       | Jon    |     6038 |
+|    6575 | LYDIA       | Jon    |     6820 |
+|    6576 | LYDIA       | Jon    |     7022 |
+|    6577 | LYDIA       | Jon    |     7165 |
+|    6578 | LYDIA       | Mike   |     8834 |
+|    6579 | LYDIA       | Jon    |     9035 |
+|    6580 | LYDIA       | Jon    |     9514 |
+|    6581 | LYDIA       | Jon    |     9675 |
+|    6582 | LYDIA       | Jon    |     9988 |
+|    6583 | LYDIA       | Mike   |    12209 |
+|    6584 | LYDIA       | Mike   |    13291 |
+|    6585 | LYDIA       | Mike   |    14033 |
+|    6586 | LYDIA       | Mike   |    14108 |
+|    6587 | LYDIA       | Mike   |    14272 |
+|    6588 | LYDIA       | Jon    |    14581 |
+|    6589 | LYDIA       | Jon    |    14705 |
+|    6590 | VIOLA       | Jon    |      592 |
+|    6591 | VIOLA       | Mike   |      797 |
+|    6592 | VIOLA       | Jon    |     1189 |
+|    6593 | VIOLA       | Mike   |     1595 |
+|    6594 | VIOLA       | Jon    |     2955 |
+|    6595 | VIOLA       | Mike   |     4814 |
+|    6596 | VIOLA       | Jon    |     5387 |
+|    6597 | VIOLA       | Jon    |     5461 |
+|    6598 | VIOLA       | Jon    |     5692 |
+|    6599 | VIOLA       | Mike   |     5779 |
+|    6600 | VIOLA       | Mike   |     5803 |
+|    6601 | VIOLA       | Jon    |     6374 |
+|    6602 | VIOLA       | Jon    |     6608 |
+|    6603 | VIOLA       | Jon    |     6683 |
+|    6604 | VIOLA       | Jon    |     8454 |
+|    6605 | VIOLA       | Jon    |     8844 |
+|    6606 | VIOLA       | Mike   |    10001 |
+|    6607 | VIOLA       | Jon    |    10047 |
+|    6608 | VIOLA       | Mike   |    10152 |
+|    6609 | VIOLA       | Jon    |    10684 |
+|    6610 | VIOLA       | Jon    |    10969 |
+|    6611 | VIOLA       | Jon    |    11157 |
+|    6612 | VIOLA       | Mike   |    11267 |
+|    6613 | VIOLA       | Mike   |    11762 |
+|    6614 | VIOLA       | Mike   |    13630 |
+|    6615 | VIOLA       | Jon    |    13774 |
+|    6616 | VIOLA       | Mike   |    13928 |
+|    6617 | VIOLA       | Mike   |    14367 |
+|    6618 | VIOLA       | Jon    |    14657 |
+|    6619 | VIOLA       | Mike   |    14919 |
+|    6620 | VIOLA       | Mike   |    14975 |
+|    6621 | VIOLA       | Jon    |    12736 |
+|    6622 | COURTNEY    | Jon    |       79 |
+|    6623 | COURTNEY    | Mike   |      241 |
+|    6624 | COURTNEY    | Mike   |      519 |
+|    6625 | COURTNEY    | Mike   |      719 |
+|    6626 | COURTNEY    | Jon    |      725 |
+|    6627 | COURTNEY    | Jon    |      948 |
+|    6628 | COURTNEY    | Mike   |     1377 |
+|    6629 | COURTNEY    | Mike   |     2122 |
+|    6630 | COURTNEY    | Mike   |     3157 |
+|    6631 | COURTNEY    | Mike   |     3634 |
+|    6632 | COURTNEY    | Jon    |     5321 |
+|    6633 | COURTNEY    | Mike   |     5764 |
+|    6634 | COURTNEY    | Jon    |     6242 |
+|    6635 | COURTNEY    | Mike   |     6795 |
+|    6636 | COURTNEY    | Jon    |     6962 |
+|    6637 | COURTNEY    | Mike   |     7230 |
+|    6638 | COURTNEY    | Jon    |     7233 |
+|    6639 | COURTNEY    | Mike   |     7358 |
+|    6640 | COURTNEY    | Jon    |     7397 |
+|    6641 | COURTNEY    | Jon    |     8701 |
+|    6642 | COURTNEY    | Mike   |     8811 |
+|    6643 | COURTNEY    | Jon    |     9088 |
+|    6644 | COURTNEY    | Jon    |     9169 |
+|    6645 | COURTNEY    | Mike   |     9813 |
+|    6646 | COURTNEY    | Mike   |    10087 |
+|    6647 | COURTNEY    | Jon    |    11061 |
+|    6648 | COURTNEY    | Mike   |    11105 |
+|    6649 | COURTNEY    | Mike   |    11211 |
+|    6650 | COURTNEY    | Mike   |    12303 |
+|    6651 | COURTNEY    | Mike   |    13286 |
+|    6652 | COURTNEY    | Mike   |    15782 |
+|    6653 | COURTNEY    | Jon    |    12682 |
+|    6654 | MARIAN      | Mike   |      124 |
+|    6655 | MARIAN      | Jon    |      421 |
+|    6656 | MARIAN      | Jon    |      434 |
+|    6657 | MARIAN      | Mike   |      699 |
+|    6658 | MARIAN      | Mike   |     1051 |
+|    6659 | MARIAN      | Jon    |     1448 |
+|    6660 | MARIAN      | Mike   |     1968 |
+|    6661 | MARIAN      | Jon    |     2704 |
+|    6662 | MARIAN      | Mike   |     2725 |
+|    6663 | MARIAN      | Mike   |     3152 |
+|    6664 | MARIAN      | Mike   |     4092 |
+|    6665 | MARIAN      | Jon    |     4905 |
+|    6666 | MARIAN      | Jon    |     4994 |
+|    6667 | MARIAN      | Jon    |     5347 |
+|    6668 | MARIAN      | Mike   |     6688 |
+|    6669 | MARIAN      | Jon    |     9525 |
+|    6670 | MARIAN      | Jon    |    10208 |
+|    6671 | MARIAN      | Jon    |    10683 |
+|    6672 | MARIAN      | Jon    |    13418 |
+|    6673 | MARIAN      | Mike   |    13750 |
+|    6674 | MARIAN      | Mike   |    13987 |
+|    6675 | MARIAN      | Mike   |    14360 |
+|    6676 | MARIAN      | Mike   |    15746 |
+|    6677 | STELLA      | Mike   |      189 |
+|    6678 | STELLA      | Jon    |      448 |
+|    6679 | STELLA      | Mike   |      450 |
+|    6680 | STELLA      | Mike   |     2288 |
+|    6681 | STELLA      | Jon    |     3955 |
+|    6682 | STELLA      | Jon    |     4198 |
+|    6683 | STELLA      | Mike   |     4492 |
+|    6684 | STELLA      | Jon    |     4995 |
+|    6685 | STELLA      | Mike   |     5328 |
+|    6686 | STELLA      | Mike   |     5842 |
+|    6687 | STELLA      | Mike   |     7963 |
+|    6688 | STELLA      | Mike   |    10279 |
+|    6689 | STELLA      | Mike   |    10410 |
+|    6690 | STELLA      | Jon    |    11204 |
+|    6691 | STELLA      | Jon    |    11306 |
+|    6692 | STELLA      | Mike   |    11495 |
+|    6693 | STELLA      | Jon    |    12265 |
+|    6694 | STELLA      | Mike   |    12482 |
+|    6695 | STELLA      | Mike   |    12491 |
+|    6696 | STELLA      | Mike   |    12824 |
+|    6697 | STELLA      | Mike   |    14041 |
+|    6698 | STELLA      | Mike   |    15783 |
+|    6699 | CAROLINE    | Jon    |      330 |
+|    6700 | CAROLINE    | Mike   |      618 |
+|    6701 | CAROLINE    | Mike   |     2066 |
+|    6702 | CAROLINE    | Jon    |     2371 |
+|    6703 | CAROLINE    | Mike   |     3910 |
+|    6704 | CAROLINE    | Jon    |     4541 |
+|    6705 | CAROLINE    | Mike   |     4841 |
+|    6706 | CAROLINE    | Mike   |     5370 |
+|    6707 | CAROLINE    | Jon    |     6617 |
+|    6708 | CAROLINE    | Jon    |     7778 |
+|    6709 | CAROLINE    | Jon    |    10418 |
+|    6710 | CAROLINE    | Mike   |    12241 |
+|    6711 | CAROLINE    | Mike   |    13918 |
+|    6712 | CAROLINE    | Jon    |    14704 |
+|    6713 | CAROLINE    | Jon    |    14885 |
+|    6714 | DORA        | Jon    |      316 |
+|    6715 | DORA        | Jon    |      400 |
+|    6716 | DORA        | Mike   |      438 |
+|    6717 | DORA        | Mike   |      597 |
+|    6718 | DORA        | Mike   |     1204 |
+|    6719 | DORA        | Mike   |     1473 |
+|    6720 | DORA        | Jon    |     1753 |
+|    6721 | DORA        | Jon    |     2129 |
+|    6722 | DORA        | Jon    |     3175 |
+|    6723 | DORA        | Mike   |     4352 |
+|    6724 | DORA        | Mike   |     5011 |
+|    6725 | DORA        | Mike   |     5275 |
+|    6726 | DORA        | Jon    |     5639 |
+|    6727 | DORA        | Jon    |     6670 |
+|    6728 | DORA        | Mike   |     7544 |
+|    6729 | DORA        | Mike   |     7804 |
+|    6730 | DORA        | Jon    |     7881 |
+|    6731 | DORA        | Mike   |    11124 |
+|    6732 | DORA        | Mike   |    11159 |
+|    6733 | DORA        | Jon    |    11668 |
+|    6734 | DORA        | Jon    |    13981 |
+|    6735 | DORA        | Jon    |    14285 |
+|    6736 | DORA        | Mike   |    15160 |
+|    6737 | JO          | Mike   |       61 |
+|    6738 | JO          | Mike   |      176 |
+|    6739 | JO          | Mike   |      637 |
+|    6740 | JO          | Jon    |      687 |
+|    6741 | JO          | Mike   |     1146 |
+|    6742 | JO          | Mike   |     2432 |
+|    6743 | JO          | Mike   |     3635 |
+|    6744 | JO          | Mike   |     3951 |
+|    6745 | JO          | Mike   |     5479 |
+|    6746 | JO          | Mike   |     5540 |
+|    6747 | JO          | Mike   |     5998 |
+|    6748 | JO          | Mike   |     8579 |
+|    6749 | JO          | Jon    |     9099 |
+|    6750 | JO          | Jon    |    10604 |
+|    6751 | JO          | Mike   |    12361 |
+|    6752 | JO          | Mike   |    12810 |
+|    6753 | JO          | Jon    |    14565 |
+|    6754 | JO          | Mike   |    14587 |
+|    6755 | JO          | Jon    |    14814 |
+|    6756 | JO          | Jon    |    15247 |
+|    6757 | VICKIE      | Mike   |      264 |
+|    6758 | VICKIE      | Mike   |      309 |
+|    6759 | VICKIE      | Jon    |      393 |
+|    6760 | VICKIE      | Jon    |     1069 |
+|    6761 | VICKIE      | Mike   |     1091 |
+|    6762 | VICKIE      | Jon    |     1155 |
+|    6763 | VICKIE      | Mike   |     2238 |
+|    6764 | VICKIE      | Jon    |     3422 |
+|    6765 | VICKIE      | Mike   |     3464 |
+|    6766 | VICKIE      | Mike   |     3799 |
+|    6767 | VICKIE      | Jon    |     4026 |
+|    6768 | VICKIE      | Jon    |     4848 |
+|    6769 | VICKIE      | Jon    |     5012 |
+|    6770 | VICKIE      | Jon    |     5979 |
+|    6771 | VICKIE      | Jon    |     6413 |
+|    6772 | VICKIE      | Jon    |     7338 |
+|    6773 | VICKIE      | Jon    |     8443 |
+|    6774 | VICKIE      | Jon    |     8982 |
+|    6775 | VICKIE      | Mike   |     9196 |
+|    6776 | VICKIE      | Mike   |     9892 |
+|    6777 | VICKIE      | Mike   |    10575 |
+|    6778 | VICKIE      | Mike   |    11733 |
+|    6779 | VICKIE      | Jon    |    12047 |
+|    6780 | VICKIE      | Jon    |    12666 |
+|    6781 | VICKIE      | Jon    |    13121 |
+|    6782 | VICKIE      | Mike   |    13243 |
+|    6783 | VICKIE      | Jon    |    13260 |
+|    6784 | VICKIE      | Mike   |    14292 |
+|    6785 | VICKIE      | Jon    |    15647 |
+|    6786 | VICKIE      | Jon    |    15870 |
+|    6787 | VICKIE      | Mike   |    14107 |
+|    6788 | MATTIE      | Mike   |      707 |
+|    6789 | MATTIE      | Mike   |     1095 |
+|    6790 | MATTIE      | Mike   |     1395 |
+|    6791 | MATTIE      | Jon    |     2716 |
+|    6792 | MATTIE      | Mike   |     2968 |
+|    6793 | MATTIE      | Jon    |     4372 |
+|    6794 | MATTIE      | Jon    |     5554 |
+|    6795 | MATTIE      | Mike   |     6357 |
+|    6796 | MATTIE      | Jon    |     6369 |
+|    6797 | MATTIE      | Mike   |     7024 |
+|    6798 | MATTIE      | Jon    |     7121 |
+|    6799 | MATTIE      | Jon    |     7168 |
+|    6800 | MATTIE      | Mike   |     7670 |
+|    6801 | MATTIE      | Mike   |     8636 |
+|    6802 | MATTIE      | Mike   |     8899 |
+|    6803 | MATTIE      | Jon    |    10314 |
+|    6804 | MATTIE      | Jon    |    10834 |
+|    6805 | MATTIE      | Jon    |    11764 |
+|    6806 | MATTIE      | Mike   |    13385 |
+|    6807 | MATTIE      | Jon    |    13989 |
+|    6808 | MATTIE      | Mike   |    14774 |
+|    6809 | MATTIE      | Jon    |    13756 |
+|    6810 | TERRY       | Mike   |      566 |
+|    6811 | TERRY       | Mike   |      648 |
+|    6812 | TERRY       | Mike   |      986 |
+|    6813 | TERRY       | Jon    |     1378 |
+|    6814 | TERRY       | Jon    |     1606 |
+|    6815 | TERRY       | Jon    |     2081 |
+|    6816 | TERRY       | Mike   |     2142 |
+|    6817 | TERRY       | Mike   |     2454 |
+|    6818 | TERRY       | Jon    |     2636 |
+|    6819 | TERRY       | Mike   |     3658 |
+|    6820 | TERRY       | Mike   |     5505 |
+|    6821 | TERRY       | Mike   |     5602 |
+|    6822 | TERRY       | Jon    |     7689 |
+|    6823 | TERRY       | Jon    |     7851 |
+|    6824 | TERRY       | Jon    |     7887 |
+|    6825 | TERRY       | Jon    |     8752 |
+|    6826 | TERRY       | Jon    |     9606 |
+|    6827 | TERRY       | Jon    |     9618 |
+|    6828 | TERRY       | Jon    |    10404 |
+|    6829 | TERRY       | Mike   |    10660 |
+|    6830 | TERRY       | Jon    |    10881 |
+|    6831 | TERRY       | Mike   |    12572 |
+|    6832 | TERRY       | Jon    |    12827 |
+|    6833 | TERRY       | Mike   |    13126 |
+|    6834 | TERRY       | Jon    |    14086 |
+|    6835 | TERRY       | Jon    |    14283 |
+|    6836 | TERRY       | Mike   |    14640 |
+|    6837 | TERRY       | Jon    |    14655 |
+|    6838 | TERRY       | Jon    |    15221 |
+|    6839 | MAXINE      | Mike   |      183 |
+|    6840 | MAXINE      | Mike   |     1108 |
+|    6841 | MAXINE      | Mike   |     1285 |
+|    6842 | MAXINE      | Jon    |     1390 |
+|    6843 | MAXINE      | Mike   |     2082 |
+|    6844 | MAXINE      | Mike   |     2138 |
+|    6845 | MAXINE      | Jon    |     2687 |
+|    6846 | MAXINE      | Mike   |     3882 |
+|    6847 | MAXINE      | Jon    |     5042 |
+|    6848 | MAXINE      | Mike   |     5072 |
+|    6849 | MAXINE      | Jon    |     5080 |
+|    6850 | MAXINE      | Mike   |     5537 |
+|    6851 | MAXINE      | Mike   |     5550 |
+|    6852 | MAXINE      | Mike   |     5826 |
+|    6853 | MAXINE      | Jon    |     5930 |
+|    6854 | MAXINE      | Jon    |     7011 |
+|    6855 | MAXINE      | Mike   |     7413 |
+|    6856 | MAXINE      | Jon    |     8216 |
+|    6857 | MAXINE      | Jon    |     8581 |
+|    6858 | MAXINE      | Jon    |     9494 |
+|    6859 | MAXINE      | Mike   |    10522 |
+|    6860 | MAXINE      | Mike   |    11190 |
+|    6861 | MAXINE      | Mike   |    11665 |
+|    6862 | MAXINE      | Jon    |    12148 |
+|    6863 | MAXINE      | Mike   |    12206 |
+|    6864 | MAXINE      | Mike   |    12247 |
+|    6865 | MAXINE      | Mike   |    12874 |
+|    6866 | MAXINE      | Jon    |    13001 |
+|    6867 | MAXINE      | Mike   |    13045 |
+|    6868 | MAXINE      | Jon    |    13130 |
+|    6869 | MAXINE      | Jon    |    14497 |
+|    6870 | MAXINE      | Mike   |    15774 |
+|    6871 | IRMA        | Mike   |     1235 |
+|    6872 | IRMA        | Mike   |     1420 |
+|    6873 | IRMA        | Jon    |     1681 |
+|    6874 | IRMA        | Jon    |     3442 |
+|    6875 | IRMA        | Mike   |     4547 |
+|    6876 | IRMA        | Mike   |     5706 |
+|    6877 | IRMA        | Mike   |     5943 |
+|    6878 | IRMA        | Jon    |     7475 |
+|    6879 | IRMA        | Mike   |     7646 |
+|    6880 | IRMA        | Mike   |     8562 |
+|    6881 | IRMA        | Mike   |     9061 |
+|    6882 | IRMA        | Jon    |    11979 |
+|    6883 | IRMA        | Jon    |    12176 |
+|    6884 | IRMA        | Jon    |    13154 |
+|    6885 | IRMA        | Mike   |    13268 |
+|    6886 | IRMA        | Jon    |    13683 |
+|    6887 | IRMA        | Mike   |    13758 |
+|    6888 | IRMA        | Jon    |    14600 |
+|    6889 | MABEL       | Mike   |       51 |
+|    6890 | MABEL       | Mike   |      232 |
+|    6891 | MABEL       | Jon    |      738 |
+|    6892 | MABEL       | Mike   |      935 |
+|    6893 | MABEL       | Mike   |     1116 |
+|    6894 | MABEL       | Mike   |     1555 |
+|    6895 | MABEL       | Jon    |     1965 |
+|    6896 | MABEL       | Jon    |     1973 |
+|    6897 | MABEL       | Jon    |     2230 |
+|    6898 | MABEL       | Mike   |     2380 |
+|    6899 | MABEL       | Jon    |     2561 |
+|    6900 | MABEL       | Mike   |     2839 |
+|    6901 | MABEL       | Mike   |     4130 |
+|    6902 | MABEL       | Jon    |     4182 |
+|    6903 | MABEL       | Mike   |     5179 |
+|    6904 | MABEL       | Mike   |     6298 |
+|    6905 | MABEL       | Mike   |     7661 |
+|    6906 | MABEL       | Jon    |     9424 |
+|    6907 | MABEL       | Jon    |    10759 |
+|    6908 | MABEL       | Jon    |    11011 |
+|    6909 | MABEL       | Jon    |    11628 |
+|    6910 | MABEL       | Jon    |    13457 |
+|    6911 | MABEL       | Mike   |    13651 |
+|    6912 | MABEL       | Mike   |    14003 |
+|    6913 | MABEL       | Jon    |    14036 |
+|    6914 | MABEL       | Jon    |    14445 |
+|    6915 | MABEL       | Jon    |    14458 |
+|    6916 | MABEL       | Jon    |    15609 |
+|    6917 | MABEL       | Jon    |    15861 |
+|    6918 | MABEL       | Mike   |    15864 |
+|    6919 | MARSHA      | Jon    |      139 |
+|    6920 | MARSHA      | Jon    |      244 |
+|    6921 | MARSHA      | Jon    |      705 |
+|    6922 | MARSHA      | Mike   |     2557 |
+|    6923 | MARSHA      | Jon    |     3083 |
+|    6924 | MARSHA      | Jon    |     4462 |
+|    6925 | MARSHA      | Jon    |     4574 |
+|    6926 | MARSHA      | Mike   |     5495 |
+|    6927 | MARSHA      | Mike   |     5858 |
+|    6928 | MARSHA      | Mike   |     6422 |
+|    6929 | MARSHA      | Jon    |     6711 |
+|    6930 | MARSHA      | Jon    |     7007 |
+|    6931 | MARSHA      | Mike   |     7176 |
+|    6932 | MARSHA      | Mike   |     7496 |
+|    6933 | MARSHA      | Jon    |     7510 |
+|    6934 | MARSHA      | Jon    |     7518 |
+|    6935 | MARSHA      | Jon    |     8156 |
+|    6936 | MARSHA      | Jon    |     8252 |
+|    6937 | MARSHA      | Mike   |     8344 |
+|    6938 | MARSHA      | Mike   |     8640 |
+|    6939 | MARSHA      | Jon    |     8946 |
+|    6940 | MARSHA      | Mike   |     9800 |
+|    6941 | MARSHA      | Jon    |    10142 |
+|    6942 | MARSHA      | Mike   |    11230 |
+|    6943 | MARSHA      | Mike   |    11394 |
+|    6944 | MARSHA      | Jon    |    11545 |
+|    6945 | MARSHA      | Jon    |    11860 |
+|    6946 | MARSHA      | Jon    |    12841 |
+|    6947 | MARSHA      | Mike   |    12904 |
+|    6948 | MARSHA      | Jon    |    13203 |
+|    6949 | MARSHA      | Jon    |    13218 |
+|    6950 | MARSHA      | Mike   |    13389 |
+|    6951 | MARSHA      | Jon    |    13846 |
+|    6952 | MARSHA      | Jon    |    14115 |
+|    6953 | MARSHA      | Mike   |    15025 |
+|    6954 | MARSHA      | Mike   |    15967 |
+|    6955 | MARSHA      | Jon    |    15968 |
+|    6956 | MYRTLE      | Mike   |     1743 |
+|    6957 | MYRTLE      | Jon    |     2678 |
+|    6958 | MYRTLE      | Jon    |     2931 |
+|    6959 | MYRTLE      | Jon    |     4408 |
+|    6960 | MYRTLE      | Mike   |     4677 |
+|    6961 | MYRTLE      | Jon    |     4897 |
+|    6962 | MYRTLE      | Jon    |     5312 |
+|    6963 | MYRTLE      | Mike   |     5674 |
+|    6964 | MYRTLE      | Mike   |     5935 |
+|    6965 | MYRTLE      | Jon    |     6012 |
+|    6966 | MYRTLE      | Mike   |     7814 |
+|    6967 | MYRTLE      | Mike   |     8675 |
+|    6968 | MYRTLE      | Jon    |     9069 |
+|    6969 | MYRTLE      | Jon    |    10293 |
+|    6970 | MYRTLE      | Jon    |    10315 |
+|    6971 | MYRTLE      | Mike   |    10325 |
+|    6972 | MYRTLE      | Jon    |    10332 |
+|    6973 | MYRTLE      | Mike   |    10393 |
+|    6974 | MYRTLE      | Mike   |    12246 |
+|    6975 | MYRTLE      | Jon    |    12296 |
+|    6976 | MYRTLE      | Mike   |    13491 |
+|    6977 | MYRTLE      | Mike   |    13695 |
+|    6978 | MYRTLE      | Jon    |    13897 |
+|    6979 | MYRTLE      | Jon    |    14901 |
+|    6980 | LENA        | Jon    |      722 |
+|    6981 | LENA        | Jon    |      901 |
+|    6982 | LENA        | Mike   |     1147 |
+|    6983 | LENA        | Mike   |     1641 |
+|    6984 | LENA        | Jon    |     1723 |
+|    6985 | LENA        | Jon    |     1813 |
+|    6986 | LENA        | Jon    |     2375 |
+|    6987 | LENA        | Jon    |     4199 |
+|    6988 | LENA        | Jon    |     4489 |
+|    6989 | LENA        | Mike   |     6074 |
+|    6990 | LENA        | Jon    |     6539 |
+|    6991 | LENA        | Jon    |     7188 |
+|    6992 | LENA        | Jon    |     7774 |
+|    6993 | LENA        | Mike   |     7817 |
+|    6994 | LENA        | Jon    |     9205 |
+|    6995 | LENA        | Mike   |     9282 |
+|    6996 | LENA        | Mike   |     9444 |
+|    6997 | LENA        | Mike   |    10510 |
+|    6998 | LENA        | Mike   |    10781 |
+|    6999 | LENA        | Mike   |    11184 |
+|    7000 | LENA        | Jon    |    12680 |
+|    7001 | LENA        | Mike   |    13109 |
+|    7002 | LENA        | Jon    |    13112 |
+|    7003 | LENA        | Jon    |    13366 |
+|    7004 | LENA        | Mike   |    13598 |
+|    7005 | LENA        | Jon    |    13649 |
+|    7006 | LENA        | Jon    |    14067 |
+|    7007 | LENA        | Jon    |    14170 |
+|    7008 | LENA        | Jon    |    14966 |
+|    7009 | LENA        | Mike   |    15425 |
+|    7010 | LENA        | Mike   |    15473 |
+|    7012 | LENA        | Mike   |    15689 |
+|    7013 | CHRISTY     | Mike   |     1101 |
+|    7014 | CHRISTY     | Mike   |     1626 |
+|    7015 | CHRISTY     | Jon    |     2001 |
+|    7016 | CHRISTY     | Jon    |     2040 |
+|    7017 | CHRISTY     | Mike   |     2091 |
+|    7018 | CHRISTY     | Mike   |     2178 |
+|    7019 | CHRISTY     | Mike   |     2823 |
+|    7020 | CHRISTY     | Jon    |     2958 |
+|    7021 | CHRISTY     | Mike   |     3193 |
+|    7022 | CHRISTY     | Jon    |     4054 |
+|    7023 | CHRISTY     | Jon    |     4741 |
+|    7024 | CHRISTY     | Mike   |     4870 |
+|    7025 | CHRISTY     | Jon    |     6328 |
+|    7026 | CHRISTY     | Jon    |     7072 |
+|    7027 | CHRISTY     | Mike   |     7268 |
+|    7028 | CHRISTY     | Mike   |     7885 |
+|    7029 | CHRISTY     | Mike   |     8475 |
+|    7030 | CHRISTY     | Mike   |     8484 |
+|    7031 | CHRISTY     | Mike   |     8717 |
+|    7032 | CHRISTY     | Mike   |     8933 |
+|    7033 | CHRISTY     | Jon    |     9176 |
+|    7034 | CHRISTY     | Jon    |    10970 |
+|    7035 | CHRISTY     | Mike   |    12852 |
+|    7036 | CHRISTY     | Jon    |    13440 |
+|    7037 | CHRISTY     | Mike   |    13685 |
+|    7038 | CHRISTY     | Mike   |    13966 |
+|    7039 | CHRISTY     | Jon    |    13978 |
+|    7040 | CHRISTY     | Jon    |    14035 |
+|    7041 | CHRISTY     | Jon    |    14441 |
+|    7042 | CHRISTY     | Mike   |    14579 |
+|    7043 | CHRISTY     | Mike   |    14610 |
+|    7044 | DEANNA      | Mike   |       12 |
+|    7045 | DEANNA      | Jon    |      465 |
+|    7046 | DEANNA      | Jon    |      542 |
+|    7047 | DEANNA      | Mike   |      792 |
+|    7048 | DEANNA      | Mike   |     1760 |
+|    7049 | DEANNA      | Mike   |     1877 |
+|    7050 | DEANNA      | Jon    |     1988 |
+|    7051 | DEANNA      | Jon    |     2072 |
+|    7052 | DEANNA      | Jon    |     2392 |
+|    7053 | DEANNA      | Mike   |     3363 |
+|    7054 | DEANNA      | Mike   |     5122 |
+|    7055 | DEANNA      | Mike   |     5449 |
+|    7056 | DEANNA      | Jon    |     6515 |
+|    7057 | DEANNA      | Mike   |     6743 |
+|    7058 | DEANNA      | Jon    |     9552 |
+|    7059 | DEANNA      | Mike   |     9842 |
+|    7060 | DEANNA      | Mike   |     9869 |
+|    7061 | DEANNA      | Jon    |    10246 |
+|    7062 | DEANNA      | Mike   |    11834 |
+|    7063 | DEANNA      | Jon    |    11928 |
+|    7064 | DEANNA      | Mike   |    12327 |
+|    7065 | DEANNA      | Jon    |    13245 |
+|    7066 | DEANNA      | Jon    |    13506 |
+|    7067 | DEANNA      | Mike   |    13669 |
+|    7068 | DEANNA      | Mike   |    13849 |
+|    7069 | DEANNA      | Jon    |    15397 |
+|    7070 | PATSY       | Jon    |      984 |
+|    7071 | PATSY       | Mike   |     1563 |
+|    7072 | PATSY       | Mike   |     2771 |
+|    7073 | PATSY       | Jon    |     2850 |
+|    7074 | PATSY       | Mike   |     2915 |
+|    7075 | PATSY       | Mike   |     3521 |
+|    7076 | PATSY       | Mike   |     3699 |
+|    7077 | PATSY       | Mike   |     4501 |
+|    7078 | PATSY       | Jon    |     5503 |
+|    7079 | PATSY       | Mike   |     6291 |
+|    7080 | PATSY       | Jon    |     6547 |
+|    7081 | PATSY       | Mike   |     6724 |
+|    7082 | PATSY       | Jon    |     6762 |
+|    7083 | PATSY       | Mike   |     6805 |
+|    7084 | PATSY       | Mike   |     6986 |
+|    7085 | PATSY       | Mike   |     9105 |
+|    7086 | PATSY       | Jon    |    10421 |
+|    7087 | PATSY       | Jon    |    10770 |
+|    7088 | PATSY       | Jon    |    13466 |
+|    7089 | PATSY       | Mike   |    13808 |
+|    7090 | PATSY       | Mike   |    14180 |
+|    7091 | PATSY       | Jon    |    14465 |
+|    7092 | PATSY       | Jon    |    14834 |
+|    7093 | PATSY       | Jon    |    15270 |
+|    7094 | PATSY       | Mike   |    15456 |
+|    7095 | PATSY       | Mike   |    15640 |
+|    7096 | PATSY       | Jon    |    15771 |
+|    7097 | PATSY       | Mike   |    15918 |
+|    7098 | HILDA       | Mike   |       97 |
+|    7099 | HILDA       | Mike   |      266 |
+|    7100 | HILDA       | Jon    |     2126 |
+|    7101 | HILDA       | Jon    |     3257 |
+|    7102 | HILDA       | Mike   |     3578 |
+|    7103 | HILDA       | Jon    |     3773 |
+|    7104 | HILDA       | Jon    |     4637 |
+|    7105 | HILDA       | Jon    |     4682 |
+|    7106 | HILDA       | Jon    |     5125 |
+|    7107 | HILDA       | Jon    |     5254 |
+|    7108 | HILDA       | Jon    |     6376 |
+|    7109 | HILDA       | Mike   |     6483 |
+|    7110 | HILDA       | Mike   |     6808 |
+|    7111 | HILDA       | Jon    |     7291 |
+|    7112 | HILDA       | Mike   |     7425 |
+|    7113 | HILDA       | Mike   |     7706 |
+|    7114 | HILDA       | Jon    |     7833 |
+|    7115 | HILDA       | Mike   |    10476 |
+|    7116 | HILDA       | Mike   |    10775 |
+|    7117 | HILDA       | Mike   |    11339 |
+|    7118 | HILDA       | Mike   |    11822 |
+|    7119 | HILDA       | Jon    |    12057 |
+|    7120 | HILDA       | Jon    |    12432 |
+|    7121 | HILDA       | Jon    |    12919 |
+|    7122 | HILDA       | Mike   |    14335 |
+|    7123 | HILDA       | Jon    |    14448 |
+|    7124 | HILDA       | Mike   |    15322 |
+|    7125 | HILDA       | Jon    |    15922 |
+|    7126 | HILDA       | Mike   |    15293 |
+|    7127 | GWENDOLYN   | Jon    |     1165 |
+|    7128 | GWENDOLYN   | Mike   |     1206 |
+|    7129 | GWENDOLYN   | Mike   |     3028 |
+|    7130 | GWENDOLYN   | Mike   |     3403 |
+|    7131 | GWENDOLYN   | Mike   |     3618 |
+|    7132 | GWENDOLYN   | Mike   |     4328 |
+|    7133 | GWENDOLYN   | Mike   |     4539 |
+|    7134 | GWENDOLYN   | Mike   |     6340 |
+|    7135 | GWENDOLYN   | Jon    |     6391 |
+|    7136 | GWENDOLYN   | Mike   |     6395 |
+|    7137 | GWENDOLYN   | Mike   |     6543 |
+|    7138 | GWENDOLYN   | Mike   |     7006 |
+|    7139 | GWENDOLYN   | Jon    |     9380 |
+|    7140 | GWENDOLYN   | Jon    |     9515 |
+|    7141 | GWENDOLYN   | Mike   |     9861 |
+|    7142 | GWENDOLYN   | Mike   |     9932 |
+|    7143 | GWENDOLYN   | Jon    |    10792 |
+|    7144 | GWENDOLYN   | Mike   |    11527 |
+|    7145 | GWENDOLYN   | Jon    |    11533 |
+|    7146 | GWENDOLYN   | Mike   |    11539 |
+|    7147 | GWENDOLYN   | Mike   |    12518 |
+|    7148 | GWENDOLYN   | Jon    |    13590 |
+|    7149 | GWENDOLYN   | Mike   |    13664 |
+|    7150 | GWENDOLYN   | Mike   |    15595 |
+|    7151 | GWENDOLYN   | Jon    |    14243 |
+|    7152 | JENNIE      | Jon    |       74 |
+|    7153 | JENNIE      | Jon    |     2027 |
+|    7154 | JENNIE      | Jon    |     2562 |
+|    7155 | JENNIE      | Mike   |     2598 |
+|    7156 | JENNIE      | Mike   |     3823 |
+|    7157 | JENNIE      | Mike   |     4610 |
+|    7158 | JENNIE      | Mike   |     4797 |
+|    7159 | JENNIE      | Jon    |     5029 |
+|    7160 | JENNIE      | Mike   |     5417 |
+|    7161 | JENNIE      | Mike   |     5710 |
+|    7162 | JENNIE      | Mike   |     6068 |
+|    7163 | JENNIE      | Jon    |     6371 |
+|    7164 | JENNIE      | Jon    |     6553 |
+|    7165 | JENNIE      | Jon    |     6921 |
+|    7166 | JENNIE      | Jon    |     7414 |
+|    7167 | JENNIE      | Mike   |     7704 |
+|    7168 | JENNIE      | Mike   |     8278 |
+|    7169 | JENNIE      | Jon    |     8489 |
+|    7170 | JENNIE      | Jon    |     8665 |
+|    7171 | JENNIE      | Mike   |     9416 |
+|    7172 | JENNIE      | Jon    |    10592 |
+|    7173 | JENNIE      | Jon    |    11000 |
+|    7174 | JENNIE      | Mike   |    12207 |
+|    7175 | JENNIE      | Jon    |    12346 |
+|    7176 | JENNIE      | Jon    |    13700 |
+|    7177 | JENNIE      | Jon    |    14125 |
+|    7178 | JENNIE      | Mike   |    14547 |
+|    7179 | JENNIE      | Jon    |    14556 |
+|    7180 | JENNIE      | Mike   |    14943 |
+|    7181 | NORA        | Mike   |       86 |
+|    7182 | NORA        | Jon    |      651 |
+|    7183 | NORA        | Jon    |     1280 |
+|    7184 | NORA        | Jon    |     2065 |
+|    7185 | NORA        | Jon    |     3002 |
+|    7186 | NORA        | Mike   |     3059 |
+|    7187 | NORA        | Jon    |     3585 |
+|    7188 | NORA        | Jon    |     5362 |
+|    7189 | NORA        | Mike   |     5577 |
+|    7190 | NORA        | Mike   |     8492 |
+|    7191 | NORA        | Jon    |     9109 |
+|    7192 | NORA        | Jon    |    10747 |
+|    7193 | NORA        | Jon    |    10910 |
+|    7194 | NORA        | Jon    |    11233 |
+|    7195 | NORA        | Mike   |    11321 |
+|    7196 | NORA        | Jon    |    11626 |
+|    7197 | NORA        | Mike   |    11726 |
+|    7198 | NORA        | Mike   |    12255 |
+|    7199 | NORA        | Jon    |    12378 |
+|    7200 | NORA        | Mike   |    12405 |
+|    7201 | NORA        | Mike   |    12715 |
+|    7202 | NORA        | Mike   |    13468 |
+|    7203 | NORA        | Mike   |    13556 |
+|    7204 | NORA        | Mike   |    14080 |
+|    7205 | NORA        | Mike   |    14492 |
+|    7206 | NORA        | Mike   |    14877 |
+|    7207 | NORA        | Mike   |    15181 |
+|    7208 | NORA        | Mike   |    15346 |
+|    7209 | MARGIE      | Jon    |       91 |
+|    7210 | MARGIE      | Mike   |      436 |
+|    7211 | MARGIE      | Jon    |     1030 |
+|    7212 | MARGIE      | Jon    |     1257 |
+|    7213 | MARGIE      | Jon    |     1349 |
+|    7214 | MARGIE      | Jon    |     2265 |
+|    7215 | MARGIE      | Jon    |     2578 |
+|    7216 | MARGIE      | Mike   |     2582 |
+|    7217 | MARGIE      | Jon    |     2699 |
+|    7218 | MARGIE      | Jon    |     2754 |
+|    7219 | MARGIE      | Mike   |     2877 |
+|    7220 | MARGIE      | Jon    |     3090 |
+|    7221 | MARGIE      | Mike   |     3817 |
+|    7222 | MARGIE      | Mike   |     5340 |
+|    7223 | MARGIE      | Mike   |     6070 |
+|    7224 | MARGIE      | Mike   |     6706 |
+|    7225 | MARGIE      | Mike   |     8190 |
+|    7226 | MARGIE      | Mike   |     8572 |
+|    7227 | MARGIE      | Jon    |     9059 |
+|    7228 | MARGIE      | Mike   |     9308 |
+|    7229 | MARGIE      | Jon    |     9403 |
+|    7230 | MARGIE      | Jon    |     9807 |
+|    7231 | MARGIE      | Jon    |    10048 |
+|    7232 | MARGIE      | Mike   |    10343 |
+|    7233 | MARGIE      | Jon    |    11373 |
+|    7234 | MARGIE      | Mike   |    11690 |
+|    7235 | MARGIE      | Mike   |    12320 |
+|    7236 | MARGIE      | Mike   |    12979 |
+|    7237 | MARGIE      | Jon    |    13236 |
+|    7238 | MARGIE      | Mike   |    14131 |
+|    7239 | MARGIE      | Jon    |    15020 |
+|    7240 | MARGIE      | Mike   |    15208 |
+|    7241 | MARGIE      | Mike   |    15768 |
+|    7242 | MARGIE      | Mike   |    15903 |
+|    7243 | MARGIE      | Jon    |    12066 |
+|    7244 | MARGIE      | Jon    |    13713 |
+|    7245 | NINA        | Mike   |     1394 |
+|    7246 | NINA        | Jon    |     1450 |
+|    7247 | NINA        | Jon    |     1551 |
+|    7248 | NINA        | Mike   |     2133 |
+|    7249 | NINA        | Jon    |     2324 |
+|    7250 | NINA        | Jon    |     2858 |
+|    7251 | NINA        | Mike   |     3066 |
+|    7252 | NINA        | Mike   |     3361 |
+|    7253 | NINA        | Jon    |     3670 |
+|    7254 | NINA        | Jon    |     4626 |
+|    7255 | NINA        | Mike   |     5039 |
+|    7256 | NINA        | Jon    |     5671 |
+|    7257 | NINA        | Jon    |     5793 |
+|    7258 | NINA        | Jon    |     5888 |
+|    7259 | NINA        | Mike   |     6120 |
+|    7260 | NINA        | Jon    |     6489 |
+|    7261 | NINA        | Mike   |     8931 |
+|    7262 | NINA        | Jon    |     9436 |
+|    7263 | NINA        | Jon    |     9531 |
+|    7264 | NINA        | Mike   |    10040 |
+|    7265 | NINA        | Jon    |    11462 |
+|    7266 | NINA        | Jon    |    11828 |
+|    7267 | NINA        | Jon    |    12007 |
+|    7268 | NINA        | Jon    |    12694 |
+|    7269 | NINA        | Jon    |    13880 |
+|    7270 | NINA        | Jon    |    14249 |
+|    7271 | NINA        | Jon    |    14373 |
+|    7272 | NINA        | Mike   |    14874 |
+|    7273 | NINA        | Jon    |    15183 |
+|    7274 | CASSANDRA   | Jon    |        7 |
+|    7275 | CASSANDRA   | Mike   |       98 |
+|    7276 | CASSANDRA   | Jon    |      678 |
+|    7277 | CASSANDRA   | Jon    |      703 |
+|    7278 | CASSANDRA   | Mike   |      750 |
+|    7279 | CASSANDRA   | Jon    |     1099 |
+|    7280 | CASSANDRA   | Mike   |     1334 |
+|    7281 | CASSANDRA   | Jon    |     1909 |
+|    7282 | CASSANDRA   | Jon    |     2493 |
+|    7283 | CASSANDRA   | Mike   |     4125 |
+|    7284 | CASSANDRA   | Jon    |     4804 |
+|    7285 | CASSANDRA   | Jon    |     4880 |
+|    7286 | CASSANDRA   | Mike   |     6440 |
+|    7287 | CASSANDRA   | Mike   |     6626 |
+|    7288 | CASSANDRA   | Jon    |     6804 |
+|    7289 | CASSANDRA   | Mike   |     7032 |
+|    7290 | CASSANDRA   | Mike   |     7537 |
+|    7291 | CASSANDRA   | Mike   |     7972 |
+|    7292 | CASSANDRA   | Jon    |    10566 |
+|    7293 | CASSANDRA   | Mike   |    10908 |
+|    7294 | CASSANDRA   | Mike   |    11014 |
+|    7295 | CASSANDRA   | Mike   |    11915 |
+|    7296 | CASSANDRA   | Mike   |    12344 |
+|    7297 | CASSANDRA   | Jon    |    13142 |
+|    7298 | CASSANDRA   | Jon    |    13759 |
+|    7299 | CASSANDRA   | Mike   |    14266 |
+|    7300 | CASSANDRA   | Jon    |    14693 |
+|    7301 | CASSANDRA   | Jon    |    15788 |
+|    7302 | CASSANDRA   | Mike   |    13025 |
+|    7303 | CASSANDRA   | Jon    |    12610 |
+|    7304 | LEAH        | Mike   |      193 |
+|    7305 | LEAH        | Mike   |     1040 |
+|    7306 | LEAH        | Mike   |     1345 |
+|    7307 | LEAH        | Mike   |     1896 |
+|    7308 | LEAH        | Mike   |     2115 |
+|    7309 | LEAH        | Jon    |     3164 |
+|    7310 | LEAH        | Mike   |     3501 |
+|    7311 | LEAH        | Mike   |     3987 |
+|    7312 | LEAH        | Jon    |     5533 |
+|    7313 | LEAH        | Jon    |     6520 |
+|    7314 | LEAH        | Mike   |     8355 |
+|    7315 | LEAH        | Jon    |     8618 |
+|    7316 | LEAH        | Mike   |    10069 |
+|    7317 | LEAH        | Mike   |    10461 |
+|    7318 | LEAH        | Jon    |    10579 |
+|    7319 | LEAH        | Jon    |    10648 |
+|    7320 | LEAH        | Mike   |    11389 |
+|    7321 | LEAH        | Mike   |    11810 |
+|    7322 | LEAH        | Jon    |    11841 |
+|    7323 | LEAH        | Mike   |    11917 |
+|    7324 | LEAH        | Mike   |    12192 |
+|    7325 | LEAH        | Mike   |    12442 |
+|    7326 | LEAH        | Jon    |    13945 |
+|    7327 | LEAH        | Mike   |    14618 |
+|    7328 | LEAH        | Jon    |    15620 |
+|    7329 | PENNY       | Mike   |     1096 |
+|    7330 | PENNY       | Jon    |     1852 |
+|    7331 | PENNY       | Mike   |     3640 |
+|    7332 | PENNY       | Jon    |     4545 |
+|    7333 | PENNY       | Jon    |     5878 |
+|    7334 | PENNY       | Mike   |     5922 |
+|    7335 | PENNY       | Mike   |     6024 |
+|    7336 | PENNY       | Mike   |     7618 |
+|    7337 | PENNY       | Mike   |     8592 |
+|    7338 | PENNY       | Mike   |     9821 |
+|    7339 | PENNY       | Jon    |    10143 |
+|    7340 | PENNY       | Jon    |    10310 |
+|    7341 | PENNY       | Mike   |    10599 |
+|    7342 | PENNY       | Mike   |    11431 |
+|    7343 | PENNY       | Mike   |    12219 |
+|    7344 | PENNY       | Jon    |    14234 |
+|    7345 | PENNY       | Jon    |    14355 |
+|    7346 | PENNY       | Mike   |    15244 |
+|    7347 | KAY         | Mike   |       33 |
+|    7348 | KAY         | Mike   |      405 |
+|    7349 | KAY         | Mike   |     1041 |
+|    7350 | KAY         | Mike   |     1072 |
+|    7351 | KAY         | Jon    |     1604 |
+|    7352 | KAY         | Jon    |     2546 |
+|    7353 | KAY         | Mike   |     3323 |
+|    7354 | KAY         | Jon    |     5047 |
+|    7355 | KAY         | Jon    |     5158 |
+|    7356 | KAY         | Jon    |     7300 |
+|    7357 | KAY         | Jon    |     7658 |
+|    7358 | KAY         | Mike   |     8248 |
+|    7359 | KAY         | Jon    |     9787 |
+|    7360 | KAY         | Mike   |    10736 |
+|    7361 | KAY         | Jon    |    11003 |
+|    7362 | KAY         | Jon    |    11597 |
+|    7363 | KAY         | Mike   |    11881 |
+|    7364 | KAY         | Jon    |    12006 |
+|    7365 | KAY         | Jon    |    13274 |
+|    7366 | KAY         | Mike   |    13903 |
+|    7367 | PRISCILLA   | Jon    |      122 |
+|    7368 | PRISCILLA   | Jon    |      980 |
+|    7369 | PRISCILLA   | Jon    |     1391 |
+|    7370 | PRISCILLA   | Jon    |     1747 |
+|    7371 | PRISCILLA   | Jon    |     1765 |
+|    7372 | PRISCILLA   | Mike   |     2301 |
+|    7373 | PRISCILLA   | Mike   |     3202 |
+|    7374 | PRISCILLA   | Jon    |     3556 |
+|    7375 | PRISCILLA   | Mike   |     4937 |
+|    7376 | PRISCILLA   | Mike   |     5256 |
+|    7377 | PRISCILLA   | Jon    |     5435 |
+|    7378 | PRISCILLA   | Mike   |     5605 |
+|    7379 | PRISCILLA   | Mike   |     6592 |
+|    7380 | PRISCILLA   | Mike   |     6635 |
+|    7381 | PRISCILLA   | Jon    |     6696 |
+|    7382 | PRISCILLA   | Mike   |     6717 |
+|    7383 | PRISCILLA   | Mike   |     8449 |
+|    7384 | PRISCILLA   | Mike   |     9186 |
+|    7385 | PRISCILLA   | Jon    |     9285 |
+|    7386 | PRISCILLA   | Jon    |     9391 |
+|    7387 | PRISCILLA   | Jon    |     9693 |
+|    7388 | PRISCILLA   | Jon    |     9729 |
+|    7389 | PRISCILLA   | Mike   |    10272 |
+|    7390 | PRISCILLA   | Mike   |    10753 |
+|    7391 | PRISCILLA   | Mike   |    10768 |
+|    7392 | PRISCILLA   | Mike   |    11282 |
+|    7393 | PRISCILLA   | Jon    |    11509 |
+|    7394 | PRISCILLA   | Mike   |    12692 |
+|    7395 | PRISCILLA   | Jon    |    13738 |
+|    7396 | PRISCILLA   | Mike   |    13955 |
+|    7397 | PRISCILLA   | Jon    |    14092 |
+|    7398 | PRISCILLA   | Jon    |    14558 |
+|    7399 | PRISCILLA   | Jon    |    14911 |
+|    7400 | PRISCILLA   | Jon    |    15372 |
+|    7401 | PRISCILLA   | Mike   |    15760 |
+|    7402 | NAOMI       | Mike   |      147 |
+|    7403 | NAOMI       | Mike   |      208 |
+|    7404 | NAOMI       | Jon    |      301 |
+|    7405 | NAOMI       | Mike   |      394 |
+|    7406 | NAOMI       | Jon    |      474 |
+|    7407 | NAOMI       | Mike   |      892 |
+|    7408 | NAOMI       | Mike   |     2098 |
+|    7409 | NAOMI       | Jon    |     3291 |
+|    7410 | NAOMI       | Jon    |     3532 |
+|    7411 | NAOMI       | Mike   |     4147 |
+|    7412 | NAOMI       | Jon    |     4582 |
+|    7413 | NAOMI       | Jon    |     6389 |
+|    7414 | NAOMI       | Jon    |     8259 |
+|    7415 | NAOMI       | Jon    |     8406 |
+|    7416 | NAOMI       | Jon    |     8517 |
+|    7417 | NAOMI       | Mike   |     9331 |
+|    7418 | NAOMI       | Mike   |     9677 |
+|    7419 | NAOMI       | Jon    |    10059 |
+|    7420 | NAOMI       | Mike   |    10790 |
+|    7421 | NAOMI       | Jon    |    10855 |
+|    7422 | NAOMI       | Mike   |    11058 |
+|    7423 | NAOMI       | Jon    |    11363 |
+|    7424 | NAOMI       | Mike   |    12321 |
+|    7425 | NAOMI       | Mike   |    13103 |
+|    7426 | NAOMI       | Jon    |    13129 |
+|    7427 | NAOMI       | Mike   |    13549 |
+|    7428 | NAOMI       | Mike   |    14012 |
+|    7429 | NAOMI       | Mike   |    14066 |
+|    7430 | NAOMI       | Jon    |    14164 |
+|    7431 | NAOMI       | Mike   |    14388 |
+|    7432 | NAOMI       | Jon    |    15143 |
+|    7433 | NAOMI       | Mike   |    15260 |
+|    7434 | NAOMI       | Jon    |    15328 |
+|    7435 | NAOMI       | Jon    |    15819 |
+|    7436 | NAOMI       | Mike   |    13486 |
+|    7437 | CAROLE      | Jon    |      336 |
+|    7438 | CAROLE      | Jon    |     1797 |
+|    7439 | CAROLE      | Jon    |     2414 |
+|    7440 | CAROLE      | Mike   |     2646 |
+|    7441 | CAROLE      | Mike   |     3355 |
+|    7442 | CAROLE      | Jon    |     4396 |
+|    7443 | CAROLE      | Mike   |     4634 |
+|    7444 | CAROLE      | Jon    |     4912 |
+|    7445 | CAROLE      | Jon    |     6301 |
+|    7446 | CAROLE      | Jon    |     6856 |
+|    7447 | CAROLE      | Mike   |     7553 |
+|    7448 | CAROLE      | Jon    |     7596 |
+|    7449 | CAROLE      | Mike   |     8746 |
+|    7450 | CAROLE      | Jon    |     9258 |
+|    7451 | CAROLE      | Mike   |    10479 |
+|    7452 | CAROLE      | Jon    |    11309 |
+|    7453 | CAROLE      | Mike   |    11610 |
+|    7454 | CAROLE      | Jon    |    12589 |
+|    7455 | CAROLE      | Mike   |    12606 |
+|    7456 | CAROLE      | Mike   |    13037 |
+|    7457 | CAROLE      | Jon    |    13860 |
+|    7458 | CAROLE      | Jon    |    13865 |
+|    7459 | CAROLE      | Jon    |    13902 |
+|    7460 | CAROLE      | Jon    |    14063 |
+|    7461 | CAROLE      | Mike   |    14187 |
+|    7462 | CAROLE      | Mike   |    14296 |
+|    7463 | CAROLE      | Jon    |    14483 |
+|    7464 | CAROLE      | Jon    |    14727 |
+|    7465 | CAROLE      | Jon    |    15269 |
+|    7466 | CAROLE      | Jon    |    15496 |
+|    7467 | BRANDY      | Mike   |      736 |
+|    7468 | BRANDY      | Mike   |      860 |
+|    7469 | BRANDY      | Mike   |     1352 |
+|    7470 | BRANDY      | Jon    |     2763 |
+|    7471 | BRANDY      | Jon    |     3064 |
+|    7472 | BRANDY      | Jon    |     3714 |
+|    7473 | BRANDY      | Mike   |     4715 |
+|    7474 | BRANDY      | Jon    |     5186 |
+|    7475 | BRANDY      | Jon    |     5246 |
+|    7476 | BRANDY      | Jon    |     7282 |
+|    7477 | BRANDY      | Jon    |     7842 |
+|    7478 | BRANDY      | Mike   |     9070 |
+|    7479 | BRANDY      | Mike   |     9080 |
+|    7480 | BRANDY      | Mike   |     9102 |
+|    7481 | BRANDY      | Mike   |     9229 |
+|    7482 | BRANDY      | Jon    |    10149 |
+|    7483 | BRANDY      | Jon    |    10691 |
+|    7484 | BRANDY      | Mike   |    10763 |
+|    7485 | BRANDY      | Jon    |    11085 |
+|    7486 | BRANDY      | Mike   |    11636 |
+|    7487 | BRANDY      | Jon    |    11961 |
+|    7488 | BRANDY      | Jon    |    12178 |
+|    7489 | BRANDY      | Jon    |    12251 |
+|    7490 | BRANDY      | Mike   |    12650 |
+|    7491 | BRANDY      | Mike   |    14000 |
+|    7492 | BRANDY      | Jon    |    15718 |
+|    7493 | BRANDY      | Mike   |    15769 |
+|    7494 | BRANDY      | Jon    |    15923 |
+|    7495 | OLGA        | Jon    |      308 |
+|    7496 | OLGA        | Mike   |     1331 |
+|    7497 | OLGA        | Jon    |     1717 |
+|    7498 | OLGA        | Jon    |     2162 |
+|    7499 | OLGA        | Jon    |     2723 |
+|    7500 | OLGA        | Mike   |     3247 |
+|    7501 | OLGA        | Jon    |     3274 |
+|    7502 | OLGA        | Mike   |     3344 |
+|    7503 | OLGA        | Jon    |     3740 |
+|    7504 | OLGA        | Jon    |     3897 |
+|    7505 | OLGA        | Mike   |     4290 |
+|    7506 | OLGA        | Jon    |     4987 |
+|    7507 | OLGA        | Mike   |     5861 |
+|    7508 | OLGA        | Mike   |     5913 |
+|    7509 | OLGA        | Jon    |     6455 |
+|    7510 | OLGA        | Mike   |     6487 |
+|    7511 | OLGA        | Jon    |     7423 |
+|    7512 | OLGA        | Jon    |     8410 |
+|    7513 | OLGA        | Jon    |     9669 |
+|    7514 | OLGA        | Mike   |     9901 |
+|    7515 | OLGA        | Jon    |    11074 |
+|    7516 | OLGA        | Jon    |    11162 |
+|    7517 | OLGA        | Jon    |    11574 |
+|    7518 | OLGA        | Jon    |    12149 |
+|    7519 | OLGA        | Mike   |    12458 |
+|    7520 | OLGA        | Mike   |    13122 |
+|    7521 | OLGA        | Jon    |    13526 |
+|    7522 | OLGA        | Mike   |    13714 |
+|    7523 | OLGA        | Jon    |    14227 |
+|    7524 | OLGA        | Jon    |    14745 |
+|    7525 | OLGA        | Mike   |    15008 |
+|    7526 | OLGA        | Mike   |    15345 |
+|    7527 | BILLIE      | Mike   |     1092 |
+|    7528 | BILLIE      | Jon    |     1387 |
+|    7529 | BILLIE      | Mike   |     1978 |
+|    7530 | BILLIE      | Jon    |     2078 |
+|    7531 | BILLIE      | Mike   |     3453 |
+|    7532 | BILLIE      | Mike   |     3776 |
+|    7533 | BILLIE      | Mike   |     4430 |
+|    7534 | BILLIE      | Jon    |     4866 |
+|    7535 | BILLIE      | Jon    |     6869 |
+|    7536 | BILLIE      | Mike   |     7239 |
+|    7537 | BILLIE      | Jon    |     7834 |
+|    7538 | BILLIE      | Jon    |     8222 |
+|    7539 | BILLIE      | Mike   |     8953 |
+|    7540 | BILLIE      | Jon    |     9448 |
+|    7541 | BILLIE      | Mike   |    10649 |
+|    7542 | BILLIE      | Mike   |    10731 |
+|    7543 | BILLIE      | Jon    |    10849 |
+|    7544 | BILLIE      | Mike   |    11095 |
+|    7545 | BILLIE      | Jon    |    11531 |
+|    7546 | BILLIE      | Mike   |    12787 |
+|    7547 | BILLIE      | Mike   |    13896 |
+|    7548 | BILLIE      | Jon    |    13976 |
+|    7549 | BILLIE      | Mike   |    14268 |
+|    7550 | BILLIE      | Jon    |    14803 |
+|    7551 | BILLIE      | Mike   |    14986 |
+|    7552 | BILLIE      | Mike   |    16019 |
+|    7553 | DIANNE      | Mike   |      979 |
+|    7554 | DIANNE      | Jon    |     1019 |
+|    7555 | DIANNE      | Mike   |     1178 |
+|    7556 | DIANNE      | Mike   |     2147 |
+|    7557 | DIANNE      | Mike   |     3215 |
+|    7558 | DIANNE      | Mike   |     3374 |
+|    7559 | DIANNE      | Mike   |     3375 |
+|    7560 | DIANNE      | Mike   |     4476 |
+|    7561 | DIANNE      | Mike   |     4978 |
+|    7562 | DIANNE      | Jon    |     5248 |
+|    7563 | DIANNE      | Mike   |     5361 |
+|    7564 | DIANNE      | Mike   |     6176 |
+|    7565 | DIANNE      | Mike   |     7947 |
+|    7566 | DIANNE      | Jon    |     8559 |
+|    7567 | DIANNE      | Jon    |     9820 |
+|    7568 | DIANNE      | Jon    |    10177 |
+|    7569 | DIANNE      | Jon    |    11250 |
+|    7570 | DIANNE      | Mike   |    11515 |
+|    7571 | DIANNE      | Mike   |    11703 |
+|    7572 | DIANNE      | Jon    |    12935 |
+|    7573 | DIANNE      | Mike   |    12949 |
+|    7574 | DIANNE      | Mike   |    13105 |
+|    7575 | DIANNE      | Mike   |    13233 |
+|    7576 | DIANNE      | Jon    |    13588 |
+|    7577 | DIANNE      | Jon    |    14206 |
+|    7578 | DIANNE      | Mike   |    14714 |
+|    7579 | DIANNE      | Mike   |    14779 |
+|    7580 | DIANNE      | Mike   |    14789 |
+|    7581 | DIANNE      | Jon    |    15580 |
+|    7582 | DIANNE      | Mike   |    15606 |
+|    7583 | DIANNE      | Jon    |    13538 |
+|    7584 | TRACEY      | Mike   |     1014 |
+|    7585 | TRACEY      | Mike   |     2656 |
+|    7586 | TRACEY      | Jon    |     3009 |
+|    7587 | TRACEY      | Jon    |     3097 |
+|    7588 | TRACEY      | Mike   |     4616 |
+|    7589 | TRACEY      | Jon    |     6851 |
+|    7590 | TRACEY      | Mike   |     7070 |
+|    7591 | TRACEY      | Jon    |     7901 |
+|    7592 | TRACEY      | Jon    |     8319 |
+|    7593 | TRACEY      | Mike   |     8365 |
+|    7594 | TRACEY      | Mike   |     8565 |
+|    7595 | TRACEY      | Jon    |     8695 |
+|    7596 | TRACEY      | Jon    |     8744 |
+|    7597 | TRACEY      | Mike   |     8912 |
+|    7598 | TRACEY      | Jon    |     9103 |
+|    7599 | TRACEY      | Mike   |    10847 |
+|    7600 | TRACEY      | Mike   |    11366 |
+|    7601 | TRACEY      | Mike   |    11517 |
+|    7602 | TRACEY      | Mike   |    12053 |
+|    7603 | TRACEY      | Mike   |    12849 |
+|    7604 | TRACEY      | Jon    |    13231 |
+|    7605 | TRACEY      | Mike   |    13321 |
+|    7606 | TRACEY      | Mike   |    13667 |
+|    7607 | TRACEY      | Jon    |    15036 |
+|    7608 | TRACEY      | Mike   |    15312 |
+|    7609 | TRACEY      | Jon    |    15554 |
+|    7610 | TRACEY      | Jon    |    15950 |
+|    7611 | LEONA       | Jon    |      650 |
+|    7612 | LEONA       | Jon    |      754 |
+|    7613 | LEONA       | Jon    |     1485 |
+|    7614 | LEONA       | Mike   |     2254 |
+|    7615 | LEONA       | Mike   |     4607 |
+|    7616 | LEONA       | Jon    |     4864 |
+|    7617 | LEONA       | Jon    |     5410 |
+|    7618 | LEONA       | Jon    |     6825 |
+|    7619 | LEONA       | Jon    |     7034 |
+|    7620 | LEONA       | Mike   |     7525 |
+|    7621 | LEONA       | Jon    |     8131 |
+|    7622 | LEONA       | Jon    |     8180 |
+|    7623 | LEONA       | Mike   |    13641 |
+|    7624 | LEONA       | Mike   |    14196 |
+|    7625 | JENNY       | Jon    |       48 |
+|    7626 | JENNY       | Jon    |      282 |
+|    7627 | JENNY       | Jon    |      564 |
+|    7628 | JENNY       | Mike   |     2016 |
+|    7629 | JENNY       | Jon    |     2176 |
+|    7630 | JENNY       | Jon    |     3408 |
+|    7631 | JENNY       | Mike   |     3417 |
+|    7632 | JENNY       | Jon    |     3675 |
+|    7633 | JENNY       | Mike   |     3885 |
+|    7634 | JENNY       | Mike   |     4359 |
+|    7635 | JENNY       | Jon    |     4412 |
+|    7636 | JENNY       | Mike   |     5113 |
+|    7637 | JENNY       | Jon    |     5319 |
+|    7638 | JENNY       | Mike   |     5926 |
+|    7639 | JENNY       | Mike   |     7433 |
+|    7640 | JENNY       | Jon    |     7534 |
+|    7641 | JENNY       | Mike   |     8223 |
+|    7642 | JENNY       | Jon    |     8270 |
+|    7643 | JENNY       | Jon    |     8468 |
+|    7644 | JENNY       | Jon    |     8743 |
+|    7645 | JENNY       | Jon    |     8973 |
+|    7646 | JENNY       | Jon    |     9658 |
+|    7647 | JENNY       | Jon    |    11226 |
+|    7648 | JENNY       | Mike   |    13278 |
+|    7649 | JENNY       | Jon    |    13749 |
+|    7650 | JENNY       | Jon    |    15543 |
+|    7651 | JENNY       | Jon    |    15430 |
+|    7652 | FELICIA     | Mike   |     1749 |
+|    7653 | FELICIA     | Jon    |     1796 |
+|    7654 | FELICIA     | Jon    |     2333 |
+|    7655 | FELICIA     | Mike   |     2685 |
+|    7656 | FELICIA     | Jon    |     2849 |
+|    7657 | FELICIA     | Mike   |     3534 |
+|    7658 | FELICIA     | Mike   |     3568 |
+|    7659 | FELICIA     | Jon    |     3590 |
+|    7660 | FELICIA     | Jon    |     3672 |
+|    7661 | FELICIA     | Jon    |     4683 |
+|    7662 | FELICIA     | Jon    |     4876 |
+|    7663 | FELICIA     | Jon    |     5989 |
+|    7664 | FELICIA     | Mike   |     6075 |
+|    7665 | FELICIA     | Mike   |     6300 |
+|    7666 | FELICIA     | Jon    |     6313 |
+|    7667 | FELICIA     | Mike   |     6827 |
+|    7668 | FELICIA     | Mike   |     7504 |
+|    7669 | FELICIA     | Mike   |     7816 |
+|    7670 | FELICIA     | Jon    |     9353 |
+|    7671 | FELICIA     | Jon    |     9478 |
+|    7672 | FELICIA     | Jon    |     9572 |
+|    7673 | FELICIA     | Jon    |     9918 |
+|    7674 | FELICIA     | Mike   |    11637 |
+|    7675 | FELICIA     | Jon    |    11846 |
+|    7676 | FELICIA     | Jon    |    11966 |
+|    7677 | FELICIA     | Mike   |    12290 |
+|    7678 | FELICIA     | Mike   |    13229 |
+|    7679 | FELICIA     | Mike   |    15837 |
+|    7680 | SONIA       | Jon    |      423 |
+|    7681 | SONIA       | Jon    |      791 |
+|    7682 | SONIA       | Mike   |     1145 |
+|    7683 | SONIA       | Mike   |     1171 |
+|    7684 | SONIA       | Jon    |     2813 |
+|    7685 | SONIA       | Jon    |     3296 |
+|    7686 | SONIA       | Mike   |     3572 |
+|    7687 | SONIA       | Jon    |     4081 |
+|    7688 | SONIA       | Mike   |     4759 |
+|    7689 | SONIA       | Jon    |     4931 |
+|    7690 | SONIA       | Mike   |     5161 |
+|    7691 | SONIA       | Mike   |     6276 |
+|    7692 | SONIA       | Jon    |     6982 |
+|    7693 | SONIA       | Mike   |     7164 |
+|    7694 | SONIA       | Mike   |     7463 |
+|    7695 | SONIA       | Jon    |     7716 |
+|    7696 | SONIA       | Mike   |     8888 |
+|    7697 | SONIA       | Mike   |     9790 |
+|    7698 | SONIA       | Mike   |    10396 |
+|    7699 | SONIA       | Mike   |    10535 |
+|    7700 | SONIA       | Jon    |    12162 |
+|    7701 | SONIA       | Mike   |    14007 |
+|    7702 | SONIA       | Mike   |    14648 |
+|    7703 | SONIA       | Jon    |    14746 |
+|    7704 | SONIA       | Mike   |    14921 |
+|    7705 | SONIA       | Jon    |    15135 |
+|    7706 | SONIA       | Mike   |    12064 |
+|    7707 | SONIA       | Jon    |    12959 |
+|    7708 | MIRIAM      | Jon    |     1161 |
+|    7709 | MIRIAM      | Jon    |     1302 |
+|    7710 | MIRIAM      | Mike   |     2249 |
+|    7711 | MIRIAM      | Jon    |     4007 |
+|    7712 | MIRIAM      | Jon    |     5112 |
+|    7713 | MIRIAM      | Mike   |     5683 |
+|    7714 | MIRIAM      | Mike   |     6010 |
+|    7715 | MIRIAM      | Jon    |     6083 |
+|    7716 | MIRIAM      | Mike   |     6094 |
+|    7717 | MIRIAM      | Jon    |     6333 |
+|    7718 | MIRIAM      | Jon    |     6644 |
+|    7719 | MIRIAM      | Mike   |     7211 |
+|    7720 | MIRIAM      | Mike   |     7452 |
+|    7721 | MIRIAM      | Mike   |     7745 |
+|    7722 | MIRIAM      | Mike   |     8154 |
+|    7723 | MIRIAM      | Jon    |     8466 |
+|    7724 | MIRIAM      | Mike   |    10493 |
+|    7725 | MIRIAM      | Jon    |    10628 |
+|    7726 | MIRIAM      | Mike   |    10641 |
+|    7727 | MIRIAM      | Mike   |    12027 |
+|    7728 | MIRIAM      | Mike   |    12444 |
+|    7729 | MIRIAM      | Mike   |    12449 |
+|    7730 | MIRIAM      | Jon    |    12687 |
+|    7731 | MIRIAM      | Jon    |    13102 |
+|    7732 | MIRIAM      | Jon    |    15251 |
+|    7733 | MIRIAM      | Mike   |    15489 |
+|    7734 | VELMA       | Jon    |       81 |
+|    7735 | VELMA       | Mike   |     1690 |
+|    7736 | VELMA       | Mike   |     2195 |
+|    7737 | VELMA       | Jon    |     3592 |
+|    7738 | VELMA       | Jon    |     3692 |
+|    7739 | VELMA       | Jon    |     4242 |
+|    7740 | VELMA       | Jon    |     4461 |
+|    7741 | VELMA       | Mike   |     4707 |
+|    7742 | VELMA       | Mike   |     4894 |
+|    7743 | VELMA       | Mike   |     5796 |
+|    7744 | VELMA       | Jon    |     6611 |
+|    7745 | VELMA       | Mike   |     7254 |
+|    7746 | VELMA       | Mike   |     7299 |
+|    7747 | VELMA       | Mike   |     7368 |
+|    7748 | VELMA       | Mike   |     7422 |
+|    7749 | VELMA       | Mike   |     7719 |
+|    7750 | VELMA       | Jon    |     8399 |
+|    7751 | VELMA       | Jon    |     9280 |
+|    7752 | VELMA       | Mike   |     9809 |
+|    7753 | VELMA       | Jon    |    10105 |
+|    7754 | VELMA       | Jon    |    11670 |
+|    7755 | VELMA       | Jon    |    12595 |
+|    7756 | VELMA       | Mike   |    12656 |
+|    7757 | VELMA       | Jon    |    13635 |
+|    7758 | VELMA       | Mike   |    13975 |
+|    7759 | VELMA       | Mike   |    14905 |
+|    7760 | VELMA       | Jon    |    15629 |
+|    7761 | BECKY       | Jon    |      498 |
+|    7762 | BECKY       | Mike   |      655 |
+|    7763 | BECKY       | Jon    |      964 |
+|    7764 | BECKY       | Mike   |     1247 |
+|    7765 | BECKY       | Jon    |     1642 |
+|    7766 | BECKY       | Jon    |     2286 |
+|    7767 | BECKY       | Jon    |     2612 |
+|    7768 | BECKY       | Jon    |     4877 |
+|    7769 | BECKY       | Jon    |     5346 |
+|    7770 | BECKY       | Mike   |     5593 |
+|    7771 | BECKY       | Jon    |     5761 |
+|    7772 | BECKY       | Jon    |     6379 |
+|    7773 | BECKY       | Mike   |     6397 |
+|    7774 | BECKY       | Jon    |     7402 |
+|    7775 | BECKY       | Jon    |     7777 |
+|    7776 | BECKY       | Jon    |     8994 |
+|    7777 | BECKY       | Jon    |     9716 |
+|    7778 | BECKY       | Mike   |    10027 |
+|    7779 | BECKY       | Jon    |    10574 |
+|    7780 | BECKY       | Jon    |    10807 |
+|    7781 | BECKY       | Jon    |    11106 |
+|    7782 | BECKY       | Mike   |    11716 |
+|    7783 | BECKY       | Jon    |    12861 |
+|    7784 | BECKY       | Jon    |    14715 |
+|    7785 | BECKY       | Jon    |    15076 |
+|    7786 | BECKY       | Mike   |    15084 |
+|    7787 | BECKY       | Jon    |    15127 |
+|    7788 | BECKY       | Mike   |    15614 |
+|    7789 | BECKY       | Jon    |    14204 |
+|    7790 | BOBBIE      | Jon    |       93 |
+|    7791 | BOBBIE      | Jon    |      427 |
+|    7792 | BOBBIE      | Mike   |      503 |
+|    7793 | BOBBIE      | Jon    |      565 |
+|    7794 | BOBBIE      | Mike   |     1466 |
+|    7795 | BOBBIE      | Mike   |     3958 |
+|    7796 | BOBBIE      | Mike   |     4692 |
+|    7797 | BOBBIE      | Jon    |     4758 |
+|    7798 | BOBBIE      | Mike   |     6399 |
+|    7799 | BOBBIE      | Jon    |     6518 |
+|    7800 | BOBBIE      | Jon    |     7744 |
+|    7801 | BOBBIE      | Jon    |     7855 |
+|    7802 | BOBBIE      | Jon    |     9429 |
+|    7803 | BOBBIE      | Mike   |     9732 |
+|    7804 | BOBBIE      | Mike   |    10927 |
+|    7805 | BOBBIE      | Jon    |    11952 |
+|    7806 | BOBBIE      | Mike   |    12134 |
+|    7807 | BOBBIE      | Mike   |    13219 |
+|    7808 | BOBBIE      | Mike   |    13227 |
+|    7809 | BOBBIE      | Jon    |    13363 |
+|    7810 | BOBBIE      | Jon    |    14113 |
+|    7811 | BOBBIE      | Jon    |    14756 |
+|    7812 | BOBBIE      | Jon    |    15058 |
+|    7813 | BOBBIE      | Mike   |    15119 |
+|    7814 | VIOLET      | Jon    |     1880 |
+|    7815 | VIOLET      | Jon    |     2316 |
+|    7816 | VIOLET      | Mike   |     2387 |
+|    7817 | VIOLET      | Mike   |     2784 |
+|    7818 | VIOLET      | Jon    |     2948 |
+|    7819 | VIOLET      | Jon    |     3123 |
+|    7820 | VIOLET      | Mike   |     3588 |
+|    7821 | VIOLET      | Jon    |     4622 |
+|    7822 | VIOLET      | Mike   |     5089 |
+|    7823 | VIOLET      | Jon    |     5342 |
+|    7824 | VIOLET      | Jon    |     5584 |
+|    7825 | VIOLET      | Jon    |     5724 |
+|    7826 | VIOLET      | Jon    |     6007 |
+|    7827 | VIOLET      | Jon    |     6536 |
+|    7828 | VIOLET      | Mike   |     7151 |
+|    7829 | VIOLET      | Mike   |     7162 |
+|    7830 | VIOLET      | Jon    |     7325 |
+|    7831 | VIOLET      | Mike   |     9498 |
+|    7832 | VIOLET      | Jon    |    10297 |
+|    7833 | VIOLET      | Mike   |    12158 |
+|    7834 | VIOLET      | Mike   |    12170 |
+|    7835 | VIOLET      | Jon    |    12558 |
+|    7836 | VIOLET      | Jon    |    13165 |
+|    7837 | VIOLET      | Jon    |    13211 |
+|    7838 | VIOLET      | Jon    |    13256 |
+|    7839 | VIOLET      | Jon    |    13336 |
+|    7840 | VIOLET      | Jon    |    13891 |
+|    7841 | VIOLET      | Mike   |    14087 |
+|    7842 | VIOLET      | Jon    |    14729 |
+|    7843 | VIOLET      | Jon    |    14917 |
+|    7844 | KRISTINA    | Mike   |      160 |
+|    7845 | KRISTINA    | Mike   |     1220 |
+|    7846 | KRISTINA    | Jon    |     1336 |
+|    7847 | KRISTINA    | Jon    |     1496 |
+|    7848 | KRISTINA    | Jon    |     1532 |
+|    7849 | KRISTINA    | Mike   |     3013 |
+|    7850 | KRISTINA    | Jon    |     4039 |
+|    7851 | KRISTINA    | Mike   |     4073 |
+|    7852 | KRISTINA    | Jon    |     4416 |
+|    7853 | KRISTINA    | Mike   |     5105 |
+|    7854 | KRISTINA    | Jon    |     5214 |
+|    7855 | KRISTINA    | Jon    |     5827 |
+|    7856 | KRISTINA    | Jon    |     6816 |
+|    7857 | KRISTINA    | Mike   |     6952 |
+|    7858 | KRISTINA    | Jon    |     7265 |
+|    7859 | KRISTINA    | Mike   |     7650 |
+|    7860 | KRISTINA    | Mike   |     8639 |
+|    7861 | KRISTINA    | Mike   |     9000 |
+|    7862 | KRISTINA    | Mike   |     9413 |
+|    7863 | KRISTINA    | Jon    |    10096 |
+|    7864 | KRISTINA    | Mike   |    10194 |
+|    7865 | KRISTINA    | Mike   |    10901 |
+|    7866 | KRISTINA    | Mike   |    11596 |
+|    7867 | KRISTINA    | Jon    |    12193 |
+|    7868 | KRISTINA    | Jon    |    12778 |
+|    7869 | KRISTINA    | Jon    |    13190 |
+|    7870 | KRISTINA    | Mike   |    13367 |
+|    7871 | KRISTINA    | Jon    |    13687 |
+|    7872 | TONI        | Mike   |       54 |
+|    7873 | TONI        | Jon    |      747 |
+|    7874 | TONI        | Mike   |     1012 |
+|    7875 | TONI        | Mike   |     1191 |
+|    7876 | TONI        | Mike   |     2300 |
+|    7877 | TONI        | Jon    |     3042 |
+|    7878 | TONI        | Jon    |     3512 |
+|    7879 | TONI        | Jon    |     4862 |
+|    7880 | TONI        | Jon    |     5754 |
+|    7881 | TONI        | Jon    |     6516 |
+|    7882 | TONI        | Mike   |     6796 |
+|    7883 | TONI        | Mike   |     7561 |
+|    7884 | TONI        | Jon    |     7564 |
+|    7885 | TONI        | Mike   |     8690 |
+|    7886 | TONI        | Jon    |     8697 |
+|    7887 | TONI        | Mike   |     9165 |
+|    7888 | TONI        | Jon    |     9201 |
+|    7889 | TONI        | Jon    |     9919 |
+|    7890 | TONI        | Mike   |    10463 |
+|    7891 | TONI        | Jon    |    11145 |
+|    7892 | TONI        | Mike   |    13665 |
+|    7893 | TONI        | Jon    |    14241 |
+|    7894 | TONI        | Jon    |    15663 |
+|    7895 | MISTY       | Mike   |      324 |
+|    7896 | MISTY       | Mike   |     1901 |
+|    7897 | MISTY       | Jon    |     2258 |
+|    7898 | MISTY       | Mike   |     2838 |
+|    7899 | MISTY       | Jon    |     3328 |
+|    7900 | MISTY       | Jon    |     3557 |
+|    7901 | MISTY       | Mike   |     4200 |
+|    7902 | MISTY       | Jon    |     5095 |
+|    7903 | MISTY       | Jon    |     5257 |
+|    7904 | MISTY       | Mike   |     5940 |
+|    7905 | MISTY       | Mike   |     6270 |
+|    7906 | MISTY       | Mike   |     6900 |
+|    7907 | MISTY       | Jon    |     7199 |
+|    7908 | MISTY       | Mike   |     7216 |
+|    7909 | MISTY       | Mike   |     7545 |
+|    7910 | MISTY       | Mike   |     7766 |
+|    7911 | MISTY       | Mike   |     8047 |
+|    7912 | MISTY       | Jon    |     8842 |
+|    7913 | MISTY       | Mike   |     8990 |
+|    7914 | MISTY       | Mike   |     9792 |
+|    7915 | MISTY       | Jon    |     9819 |
+|    7916 | MISTY       | Mike   |    11193 |
+|    7917 | MISTY       | Mike   |    12739 |
+|    7918 | MISTY       | Mike   |    13715 |
+|    7919 | MISTY       | Mike   |    14499 |
+|    7920 | MISTY       | Jon    |    14845 |
+|    7921 | MISTY       | Mike   |    15117 |
+|    7922 | MAE         | Jon    |      445 |
+|    7923 | MAE         | Mike   |      924 |
+|    7924 | MAE         | Jon    |     1034 |
+|    7925 | MAE         | Mike   |     1589 |
+|    7926 | MAE         | Mike   |     1829 |
+|    7927 | MAE         | Jon    |     1860 |
+|    7928 | MAE         | Mike   |     2386 |
+|    7929 | MAE         | Jon    |     3025 |
+|    7930 | MAE         | Mike   |     3290 |
+|    7931 | MAE         | Jon    |     3452 |
+|    7932 | MAE         | Mike   |     3906 |
+|    7933 | MAE         | Jon    |     4343 |
+|    7934 | MAE         | Jon    |     4542 |
+|    7935 | MAE         | Jon    |     4944 |
+|    7936 | MAE         | Jon    |     5765 |
+|    7937 | MAE         | Mike   |     6432 |
+|    7938 | MAE         | Jon    |     7607 |
+|    7939 | MAE         | Mike   |     8589 |
+|    7940 | MAE         | Mike   |     8745 |
+|    7941 | MAE         | Jon    |     9123 |
+|    7942 | MAE         | Jon    |    11131 |
+|    7943 | MAE         | Mike   |    11576 |
+|    7944 | MAE         | Jon    |    13013 |
+|    7945 | MAE         | Mike   |    13029 |
+|    7946 | MAE         | Jon    |    13504 |
+|    7947 | MAE         | Mike   |    13817 |
+|    7948 | MAE         | Mike   |    14248 |
+|    7949 | MAE         | Mike   |    15258 |
+|    7950 | MAE         | Mike   |    15402 |
+|    7951 | MAE         | Mike   |    15508 |
+|    7952 | MAE         | Jon    |    15675 |
+|    7953 | SHELLY      | Mike   |      595 |
+|    7954 | SHELLY      | Mike   |     2900 |
+|    7955 | SHELLY      | Jon    |     3330 |
+|    7956 | SHELLY      | Mike   |     3681 |
+|    7957 | SHELLY      | Jon    |     4019 |
+|    7958 | SHELLY      | Mike   |     4786 |
+|    7959 | SHELLY      | Jon    |     6185 |
+|    7960 | SHELLY      | Jon    |     7415 |
+|    7961 | SHELLY      | Mike   |     7765 |
+|    7962 | SHELLY      | Jon    |     8843 |
+|    7963 | SHELLY      | Jon    |     9194 |
+|    7964 | SHELLY      | Mike   |     9522 |
+|    7965 | SHELLY      | Jon    |     9607 |
+|    7966 | SHELLY      | Jon    |    10186 |
+|    7967 | SHELLY      | Jon    |    10220 |
+|    7968 | SHELLY      | Mike   |    10551 |
+|    7969 | SHELLY      | Jon    |    10600 |
+|    7970 | SHELLY      | Jon    |    10642 |
+|    7971 | SHELLY      | Jon    |    11071 |
+|    7972 | SHELLY      | Mike   |    11390 |
+|    7973 | SHELLY      | Jon    |    11875 |
+|    7974 | SHELLY      | Jon    |    11981 |
+|    7975 | SHELLY      | Mike   |    12278 |
+|    7976 | SHELLY      | Mike   |    14474 |
+|    7977 | SHELLY      | Jon    |    14630 |
+|    7978 | SHELLY      | Mike   |    15839 |
+|    7979 | DAISY       | Jon    |      371 |
+|    7980 | DAISY       | Mike   |     1184 |
+|    7981 | DAISY       | Mike   |     1328 |
+|    7982 | DAISY       | Jon    |     1935 |
+|    7983 | DAISY       | Mike   |     2054 |
+|    7984 | DAISY       | Mike   |     2431 |
+|    7985 | DAISY       | Mike   |     2638 |
+|    7986 | DAISY       | Mike   |     2999 |
+|    7987 | DAISY       | Mike   |     3198 |
+|    7988 | DAISY       | Jon    |     3394 |
+|    7989 | DAISY       | Jon    |     3496 |
+|    7990 | DAISY       | Mike   |     3876 |
+|    7991 | DAISY       | Mike   |     4164 |
+|    7992 | DAISY       | Mike   |     4432 |
+|    7993 | DAISY       | Mike   |     5019 |
+|    7994 | DAISY       | Jon    |     5053 |
+|    7995 | DAISY       | Jon    |     5283 |
+|    7996 | DAISY       | Jon    |     5994 |
+|    7997 | DAISY       | Mike   |     6252 |
+|    7998 | DAISY       | Jon    |     6331 |
+|    7999 | DAISY       | Jon    |     8087 |
+|    8000 | DAISY       | Mike   |     8108 |
+|    8001 | DAISY       | Mike   |     8840 |
+|    8002 | DAISY       | Jon    |     8932 |
+|    8003 | DAISY       | Mike   |     9425 |
+|    8004 | DAISY       | Jon    |     9692 |
+|    8005 | DAISY       | Jon    |     9793 |
+|    8006 | DAISY       | Jon    |    10160 |
+|    8007 | DAISY       | Jon    |    10222 |
+|    8008 | DAISY       | Mike   |    10349 |
+|    8009 | DAISY       | Jon    |    11083 |
+|    8010 | DAISY       | Jon    |    11913 |
+|    8011 | DAISY       | Jon    |    12041 |
+|    8012 | DAISY       | Mike   |    12383 |
+|    8013 | DAISY       | Mike   |    14264 |
+|    8014 | DAISY       | Mike   |    14387 |
+|    8015 | DAISY       | Mike   |    14514 |
+|    8016 | DAISY       | Jon    |    15735 |
+|    8017 | RAMONA      | Jon    |      162 |
+|    8018 | RAMONA      | Mike   |      511 |
+|    8019 | RAMONA      | Mike   |      869 |
+|    8020 | RAMONA      | Jon    |      956 |
+|    8021 | RAMONA      | Jon    |     1659 |
+|    8022 | RAMONA      | Mike   |     3034 |
+|    8023 | RAMONA      | Jon    |     3119 |
+|    8024 | RAMONA      | Jon    |     3486 |
+|    8025 | RAMONA      | Mike   |     3810 |
+|    8026 | RAMONA      | Mike   |     4480 |
+|    8027 | RAMONA      | Jon    |     5090 |
+|    8028 | RAMONA      | Mike   |     5589 |
+|    8029 | RAMONA      | Jon    |     6016 |
+|    8030 | RAMONA      | Mike   |     6398 |
+|    8031 | RAMONA      | Mike   |     6967 |
+|    8032 | RAMONA      | Jon    |     7568 |
+|    8033 | RAMONA      | Jon    |     8171 |
+|    8034 | RAMONA      | Mike   |     9249 |
+|    8035 | RAMONA      | Mike   |     9304 |
+|    8036 | RAMONA      | Jon    |    11571 |
+|    8037 | RAMONA      | Jon    |    11825 |
+|    8038 | RAMONA      | Jon    |    12689 |
+|    8039 | RAMONA      | Jon    |    13471 |
+|    8040 | RAMONA      | Mike   |    13702 |
+|    8041 | RAMONA      | Mike   |    13819 |
+|    8042 | RAMONA      | Mike   |    13991 |
+|    8043 | RAMONA      | Jon    |    14571 |
+|    8044 | RAMONA      | Jon    |    15023 |
+|    8045 | RAMONA      | Jon    |    15866 |
+|    8046 | RAMONA      | Mike   |    12009 |
+|    8047 | SHERRI      | Jon    |      143 |
+|    8048 | SHERRI      | Mike   |      954 |
+|    8049 | SHERRI      | Mike   |     1409 |
+|    8050 | SHERRI      | Mike   |     2067 |
+|    8051 | SHERRI      | Mike   |     2202 |
+|    8052 | SHERRI      | Mike   |     2260 |
+|    8053 | SHERRI      | Jon    |     2339 |
+|    8054 | SHERRI      | Mike   |     3582 |
+|    8055 | SHERRI      | Jon    |     4621 |
+|    8056 | SHERRI      | Mike   |     4929 |
+|    8057 | SHERRI      | Mike   |     5743 |
+|    8058 | SHERRI      | Jon    |     6036 |
+|    8059 | SHERRI      | Mike   |     6064 |
+|    8060 | SHERRI      | Mike   |     6156 |
+|    8061 | SHERRI      | Mike   |     6984 |
+|    8062 | SHERRI      | Jon    |     7867 |
+|    8063 | SHERRI      | Mike   |     7933 |
+|    8064 | SHERRI      | Jon    |     9014 |
+|    8065 | SHERRI      | Jon    |     9674 |
+|    8066 | SHERRI      | Mike   |    10153 |
+|    8067 | SHERRI      | Jon    |    10264 |
+|    8068 | SHERRI      | Jon    |    11269 |
+|    8069 | SHERRI      | Jon    |    11413 |
+|    8070 | SHERRI      | Jon    |    11585 |
+|    8071 | SHERRI      | Mike   |    11780 |
+|    8072 | SHERRI      | Mike   |    11784 |
+|    8073 | SHERRI      | Mike   |    12472 |
+|    8074 | SHERRI      | Mike   |    13330 |
+|    8075 | SHERRI      | Jon    |    13721 |
+|    8076 | SHERRI      | Mike   |    13888 |
+|    8077 | SHERRI      | Mike   |    14403 |
+|    8078 | SHERRI      | Jon    |    15582 |
+|    8079 | SHERRI      | Mike   |    15711 |
+|    8080 | ERIKA       | Mike   |      383 |
+|    8081 | ERIKA       | Jon    |     1454 |
+|    8082 | ERIKA       | Jon    |     2385 |
+|    8083 | ERIKA       | Jon    |     3095 |
+|    8084 | ERIKA       | Jon    |     3400 |
+|    8085 | ERIKA       | Jon    |     3479 |
+|    8086 | ERIKA       | Mike   |     3728 |
+|    8087 | ERIKA       | Jon    |     4291 |
+|    8088 | ERIKA       | Mike   |     4936 |
+|    8089 | ERIKA       | Jon    |     5166 |
+|    8090 | ERIKA       | Mike   |     5247 |
+|    8091 | ERIKA       | Jon    |     6802 |
+|    8092 | ERIKA       | Jon    |     7802 |
+|    8093 | ERIKA       | Mike   |     7869 |
+|    8094 | ERIKA       | Jon    |     8737 |
+|    8095 | ERIKA       | Jon    |    10248 |
+|    8096 | ERIKA       | Mike   |    11070 |
+|    8097 | ERIKA       | Jon    |    11288 |
+|    8098 | ERIKA       | Jon    |    12076 |
+|    8099 | ERIKA       | Mike   |    12765 |
+|    8100 | ERIKA       | Mike   |    13172 |
+|    8101 | ERIKA       | Mike   |    13244 |
+|    8102 | ERIKA       | Jon    |    14473 |
+|    8103 | ERIKA       | Mike   |    15245 |
+|    8104 | ERIKA       | Jon    |    15262 |
+|    8105 | ERIKA       | Mike   |    15643 |
+|    8106 | JAMES       | Mike   |      332 |
+|    8107 | JAMES       | Jon    |      606 |
+|    8108 | JAMES       | Mike   |     1650 |
+|    8109 | JAMES       | Jon    |     2664 |
+|    8110 | JAMES       | Mike   |     2774 |
+|    8111 | JAMES       | Jon    |     2791 |
+|    8112 | JAMES       | Mike   |     3074 |
+|    8113 | JAMES       | Jon    |     3223 |
+|    8114 | JAMES       | Mike   |     3288 |
+|    8115 | JAMES       | Jon    |     3497 |
+|    8116 | JAMES       | Jon    |     4153 |
+|    8117 | JAMES       | Mike   |     4350 |
+|    8118 | JAMES       | Jon    |     5033 |
+|    8119 | JAMES       | Mike   |     5642 |
+|    8120 | JAMES       | Jon    |     6732 |
+|    8121 | JAMES       | Mike   |     6853 |
+|    8122 | JAMES       | Mike   |     7264 |
+|    8123 | JAMES       | Mike   |     7746 |
+|    8124 | JAMES       | Jon    |     7862 |
+|    8125 | JAMES       | Mike   |     9520 |
+|    8126 | JAMES       | Mike   |    10201 |
+|    8127 | JAMES       | Jon    |    10440 |
+|    8128 | JAMES       | Mike   |    11629 |
+|    8129 | JAMES       | Mike   |    11746 |
+|    8130 | JAMES       | Mike   |    11998 |
+|    8131 | JAMES       | Mike   |    13069 |
+|    8132 | JAMES       | Jon    |    14208 |
+|    8133 | JAMES       | Mike   |    14548 |
+|    8134 | JAMES       | Jon    |    14889 |
+|    8135 | JAMES       | Jon    |    14898 |
+|    8136 | JOHN        | Jon    |      457 |
+|    8137 | JOHN        | Mike   |      780 |
+|    8138 | JOHN        | Mike   |     1111 |
+|    8139 | JOHN        | Jon    |     1381 |
+|    8140 | JOHN        | Mike   |     3177 |
+|    8141 | JOHN        | Mike   |     3775 |
+|    8142 | JOHN        | Mike   |     4030 |
+|    8143 | JOHN        | Jon    |     5562 |
+|    8144 | JOHN        | Mike   |     5705 |
+|    8145 | JOHN        | Jon    |     6111 |
+|    8146 | JOHN        | Mike   |     6822 |
+|    8147 | JOHN        | Mike   |     6998 |
+|    8148 | JOHN        | Mike   |     7815 |
+|    8149 | JOHN        | Mike   |     8117 |
+|    8150 | JOHN        | Mike   |     8210 |
+|    8151 | JOHN        | Mike   |     8283 |
+|    8152 | JOHN        | Mike   |     9078 |
+|    8153 | JOHN        | Jon    |     9127 |
+|    8154 | JOHN        | Jon    |     9791 |
+|    8155 | JOHN        | Mike   |    10977 |
+|    8156 | JOHN        | Jon    |    12484 |
+|    8157 | JOHN        | Jon    |    12644 |
+|    8158 | JOHN        | Jon    |    13257 |
+|    8159 | JOHN        | Mike   |    13296 |
+|    8160 | JOHN        | Jon    |    13499 |
+|    8161 | JOHN        | Mike   |    13717 |
+|    8162 | JOHN        | Mike   |    14674 |
+|    8163 | JOHN        | Mike   |    14709 |
+|    8164 | JOHN        | Jon    |    15051 |
+|    8165 | JOHN        | Jon    |    15811 |
+|    8166 | JOHN        | Mike   |    15695 |
+|    8167 | ROBERT      | Jon    |       27 |
+|    8168 | ROBERT      | Jon    |      227 |
+|    8169 | ROBERT      | Mike   |      955 |
+|    8170 | ROBERT      | Mike   |     1853 |
+|    8171 | ROBERT      | Mike   |     2611 |
+|    8172 | ROBERT      | Jon    |     2925 |
+|    8173 | ROBERT      | Jon    |     4316 |
+|    8174 | ROBERT      | Jon    |     4834 |
+|    8175 | ROBERT      | Mike   |     5119 |
+|    8176 | ROBERT      | Jon    |     5511 |
+|    8177 | ROBERT      | Jon    |     5730 |
+|    8178 | ROBERT      | Jon    |     5807 |
+|    8179 | ROBERT      | Jon    |     6833 |
+|    8180 | ROBERT      | Jon    |     7318 |
+|    8181 | ROBERT      | Jon    |     7818 |
+|    8182 | ROBERT      | Jon    |     9435 |
+|    8183 | ROBERT      | Mike   |    10883 |
+|    8184 | ROBERT      | Jon    |    13183 |
+|    8185 | ROBERT      | Jon    |    13633 |
+|    8186 | ROBERT      | Mike   |    15201 |
+|    8187 | ROBERT      | Mike   |    15268 |
+|    8188 | MICHAEL     | Jon    |       38 |
+|    8189 | MICHAEL     | Jon    |       92 |
+|    8190 | MICHAEL     | Mike   |     1231 |
+|    8191 | MICHAEL     | Jon    |     4676 |
+|    8192 | MICHAEL     | Jon    |     5498 |
+|    8193 | MICHAEL     | Jon    |     5682 |
+|    8194 | MICHAEL     | Jon    |     5709 |
+|    8195 | MICHAEL     | Jon    |     5821 |
+|    8196 | MICHAEL     | Jon    |     6623 |
+|    8197 | MICHAEL     | Mike   |     7183 |
+|    8198 | MICHAEL     | Mike   |     7411 |
+|    8199 | MICHAEL     | Mike   |     8363 |
+|    8200 | MICHAEL     | Jon    |     8646 |
+|    8201 | MICHAEL     | Mike   |     8795 |
+|    8202 | MICHAEL     | Mike   |     9146 |
+|    8203 | MICHAEL     | Jon    |     9358 |
+|    8204 | MICHAEL     | Mike   |     9374 |
+|    8205 | MICHAEL     | Jon    |     9581 |
+|    8206 | MICHAEL     | Jon    |    10329 |
+|    8207 | MICHAEL     | Mike   |    12126 |
+|    8208 | MICHAEL     | Jon    |    12516 |
+|    8209 | MICHAEL     | Mike   |    12903 |
+|    8210 | MICHAEL     | Mike   |    13916 |
+|    8211 | MICHAEL     | Mike   |    14120 |
+|    8212 | MICHAEL     | Jon    |    14247 |
+|    8213 | MICHAEL     | Jon    |    15578 |
+|    8214 | MICHAEL     | Mike   |    15622 |
+|    8215 | MICHAEL     | Jon    |    15734 |
+|    8216 | MICHAEL     | Jon    |    15987 |
+|    8217 | WILLIAM     | Mike   |      265 |
+|    8218 | WILLIAM     | Mike   |      871 |
+|    8219 | WILLIAM     | Jon    |     1050 |
+|    8220 | WILLIAM     | Jon    |     1970 |
+|    8221 | WILLIAM     | Mike   |     2223 |
+|    8222 | WILLIAM     | Mike   |     3077 |
+|    8223 | WILLIAM     | Mike   |     3107 |
+|    8224 | WILLIAM     | Mike   |     5140 |
+|    8225 | WILLIAM     | Mike   |     6205 |
+|    8226 | WILLIAM     | Jon    |     6219 |
+|    8227 | WILLIAM     | Mike   |     6464 |
+|    8228 | WILLIAM     | Mike   |     7023 |
+|    8229 | WILLIAM     | Jon    |     7502 |
+|    8230 | WILLIAM     | Mike   |     8409 |
+|    8231 | WILLIAM     | Jon    |     8734 |
+|    8232 | WILLIAM     | Jon    |     8764 |
+|    8233 | WILLIAM     | Jon    |    10209 |
+|    8234 | WILLIAM     | Mike   |    11253 |
+|    8235 | WILLIAM     | Jon    |    11673 |
+|    8236 | WILLIAM     | Jon    |    11993 |
+|    8237 | WILLIAM     | Jon    |    12117 |
+|    8238 | WILLIAM     | Mike   |    12365 |
+|    8239 | WILLIAM     | Jon    |    12473 |
+|    8240 | WILLIAM     | Mike   |    14750 |
+|    8241 | WILLIAM     | Jon    |    14795 |
+|    8242 | WILLIAM     | Mike   |    15511 |
+|    8243 | DAVID       | Mike   |      135 |
+|    8244 | DAVID       | Mike   |      415 |
+|    8245 | DAVID       | Jon    |      937 |
+|    8246 | DAVID       | Mike   |     1414 |
+|    8247 | DAVID       | Jon    |     1525 |
+|    8248 | DAVID       | Mike   |     2039 |
+|    8249 | DAVID       | Jon    |     2902 |
+|    8250 | DAVID       | Mike   |     4466 |
+|    8251 | DAVID       | Jon    |     4812 |
+|    8252 | DAVID       | Mike   |     5411 |
+|    8253 | DAVID       | Mike   |     5712 |
+|    8254 | DAVID       | Jon    |     5749 |
+|    8255 | DAVID       | Jon    |     5795 |
+|    8256 | DAVID       | Jon    |     6107 |
+|    8257 | DAVID       | Mike   |     6737 |
+|    8258 | DAVID       | Jon    |     7551 |
+|    8259 | DAVID       | Jon    |     8055 |
+|    8260 | DAVID       | Mike   |     9930 |
+|    8261 | DAVID       | Mike   |     9992 |
+|    8262 | DAVID       | Mike   |    10631 |
+|    8263 | DAVID       | Jon    |    11983 |
+|    8264 | DAVID       | Mike   |    12540 |
+|    8265 | DAVID       | Jon    |    13911 |
+|    8266 | DAVID       | Mike   |    14023 |
+|    8267 | DAVID       | Mike   |    14899 |
+|    8268 | DAVID       | Mike   |    14945 |
+|    8269 | RICHARD     | Jon    |       69 |
+|    8270 | RICHARD     | Mike   |     1574 |
+|    8271 | RICHARD     | Jon    |     1884 |
+|    8272 | RICHARD     | Mike   |     2166 |
+|    8273 | RICHARD     | Mike   |     3387 |
+|    8274 | RICHARD     | Jon    |     4260 |
+|    8275 | RICHARD     | Mike   |     4638 |
+|    8276 | RICHARD     | Jon    |     5041 |
+|    8277 | RICHARD     | Mike   |     5052 |
+|    8278 | RICHARD     | Jon    |     5582 |
+|    8279 | RICHARD     | Mike   |     5745 |
+|    8280 | RICHARD     | Mike   |     6134 |
+|    8281 | RICHARD     | Jon    |     6619 |
+|    8282 | RICHARD     | Jon    |     8865 |
+|    8283 | RICHARD     | Jon    |     9119 |
+|    8284 | RICHARD     | Jon    |    10426 |
+|    8285 | RICHARD     | Jon    |    10929 |
+|    8286 | RICHARD     | Mike   |    10981 |
+|    8287 | RICHARD     | Jon    |    11035 |
+|    8288 | RICHARD     | Jon    |    11809 |
+|    8289 | RICHARD     | Jon    |    12592 |
+|    8290 | RICHARD     | Jon    |    12846 |
+|    8291 | RICHARD     | Mike   |    13782 |
+|    8292 | RICHARD     | Jon    |    15417 |
+|    8293 | RICHARD     | Mike   |    15612 |
+|    8294 | CHARLES     | Jon    |      375 |
+|    8295 | CHARLES     | Jon    |      672 |
+|    8296 | CHARLES     | Jon    |     1172 |
+|    8297 | CHARLES     | Jon    |     2836 |
+|    8298 | CHARLES     | Mike   |     3814 |
+|    8299 | CHARLES     | Jon    |     4484 |
+|    8300 | CHARLES     | Jon    |     4596 |
+|    8301 | CHARLES     | Jon    |     5581 |
+|    8302 | CHARLES     | Jon    |     6868 |
+|    8303 | CHARLES     | Mike   |     6953 |
+|    8304 | CHARLES     | Mike   |     7225 |
+|    8305 | CHARLES     | Mike   |     7232 |
+|    8306 | CHARLES     | Jon    |     7701 |
+|    8307 | CHARLES     | Jon    |     8620 |
+|    8308 | CHARLES     | Mike   |     8702 |
+|    8309 | CHARLES     | Jon    |     9242 |
+|    8310 | CHARLES     | Jon    |     9395 |
+|    8311 | CHARLES     | Mike   |     9774 |
+|    8312 | CHARLES     | Mike   |    10202 |
+|    8313 | CHARLES     | Jon    |    10893 |
+|    8314 | CHARLES     | Jon    |    11142 |
+|    8315 | CHARLES     | Mike   |    11440 |
+|    8316 | CHARLES     | Jon    |    11674 |
+|    8317 | CHARLES     | Jon    |    11776 |
+|    8318 | CHARLES     | Mike   |    12225 |
+|    8319 | CHARLES     | Mike   |    12989 |
+|    8320 | CHARLES     | Mike   |    13686 |
+|    8321 | CHARLES     | Jon    |    13725 |
+|    8322 | CHARLES     | Mike   |    13873 |
+|    8323 | CHARLES     | Mike   |    13996 |
+|    8324 | CHARLES     | Mike   |    15457 |
+|    8325 | CHARLES     | Jon    |    15868 |
+|    8326 | JOSEPH      | Jon    |      413 |
+|    8327 | JOSEPH      | Mike   |      535 |
+|    8328 | JOSEPH      | Mike   |      614 |
+|    8329 | JOSEPH      | Mike   |      970 |
+|    8330 | JOSEPH      | Jon    |     2152 |
+|    8331 | JOSEPH      | Mike   |     2167 |
+|    8332 | JOSEPH      | Mike   |     2787 |
+|    8333 | JOSEPH      | Mike   |     2881 |
+|    8334 | JOSEPH      | Jon    |     3057 |
+|    8335 | JOSEPH      | Mike   |     3209 |
+|    8336 | JOSEPH      | Mike   |     3962 |
+|    8337 | JOSEPH      | Mike   |     3985 |
+|    8338 | JOSEPH      | Mike   |     4522 |
+|    8339 | JOSEPH      | Mike   |     4868 |
+|    8340 | JOSEPH      | Mike   |     5871 |
+|    8341 | JOSEPH      | Jon    |     6125 |
+|    8342 | JOSEPH      | Mike   |     6256 |
+|    8343 | JOSEPH      | Mike   |     6991 |
+|    8344 | JOSEPH      | Mike   |     7536 |
+|    8345 | JOSEPH      | Mike   |     7760 |
+|    8346 | JOSEPH      | Mike   |     7929 |
+|    8347 | JOSEPH      | Mike   |     8647 |
+|    8348 | JOSEPH      | Mike   |    10135 |
+|    8349 | JOSEPH      | Mike   |    10374 |
+|    8350 | JOSEPH      | Mike   |    10745 |
+|    8351 | JOSEPH      | Mike   |    11491 |
+|    8352 | JOSEPH      | Jon    |    12391 |
+|    8353 | JOSEPH      | Jon    |    13365 |
+|    8354 | JOSEPH      | Mike   |    14231 |
+|    8355 | JOSEPH      | Jon    |    15515 |
+|    8356 | THOMAS      | Jon    |      589 |
+|    8357 | THOMAS      | Mike   |     2037 |
+|    8358 | THOMAS      | Mike   |     2094 |
+|    8359 | THOMAS      | Jon    |     2168 |
+|    8360 | THOMAS      | Mike   |     2346 |
+|    8361 | THOMAS      | Jon    |     2448 |
+|    8362 | THOMAS      | Mike   |     4002 |
+|    8363 | THOMAS      | Mike   |     4285 |
+|    8364 | THOMAS      | Mike   |     5946 |
+|    8365 | THOMAS      | Jon    |     8869 |
+|    8366 | THOMAS      | Mike   |     9479 |
+|    8367 | THOMAS      | Mike   |     9746 |
+|    8368 | THOMAS      | Mike   |    10571 |
+|    8369 | THOMAS      | Jon    |    10797 |
+|    8370 | THOMAS      | Mike   |    10819 |
+|    8371 | THOMAS      | Mike   |    11765 |
+|    8372 | THOMAS      | Mike   |    11972 |
+|    8373 | THOMAS      | Jon    |    12567 |
+|    8374 | THOMAS      | Mike   |    12590 |
+|    8375 | THOMAS      | Jon    |    12838 |
+|    8376 | THOMAS      | Mike   |    13843 |
+|    8377 | THOMAS      | Jon    |    14946 |
+|    8378 | THOMAS      | Mike   |    15243 |
+|    8379 | THOMAS      | Jon    |    15493 |
+|    8380 | THOMAS      | Jon    |    15820 |
+|    8381 | CHRISTOPHER | Jon    |      218 |
+|    8382 | CHRISTOPHER | Jon    |      723 |
+|    8383 | CHRISTOPHER | Mike   |     1837 |
+|    8384 | CHRISTOPHER | Jon    |     2560 |
+|    8385 | CHRISTOPHER | Jon    |     2644 |
+|    8386 | CHRISTOPHER | Jon    |     2688 |
+|    8387 | CHRISTOPHER | Jon    |     3837 |
+|    8388 | CHRISTOPHER | Jon    |     3896 |
+|    8389 | CHRISTOPHER | Jon    |     4172 |
+|    8390 | CHRISTOPHER | Mike   |     4540 |
+|    8391 | CHRISTOPHER | Jon    |     5305 |
+|    8392 | CHRISTOPHER | Mike   |     5980 |
+|    8393 | CHRISTOPHER | Jon    |     6480 |
+|    8394 | CHRISTOPHER | Jon    |     7214 |
+|    8395 | CHRISTOPHER | Jon    |     7722 |
+|    8396 | CHRISTOPHER | Mike   |     7846 |
+|    8397 | CHRISTOPHER | Mike   |     8341 |
+|    8398 | CHRISTOPHER | Mike   |     8501 |
+|    8399 | CHRISTOPHER | Mike   |     8681 |
+|    8400 | CHRISTOPHER | Mike   |     8917 |
+|    8401 | CHRISTOPHER | Jon    |     9945 |
+|    8402 | CHRISTOPHER | Mike   |     9949 |
+|    8403 | CHRISTOPHER | Mike   |    10458 |
+|    8404 | CHRISTOPHER | Mike   |    10728 |
+|    8405 | CHRISTOPHER | Mike   |    10818 |
+|    8406 | CHRISTOPHER | Jon    |    11964 |
+|    8407 | CHRISTOPHER | Jon    |    13021 |
+|    8408 | CHRISTOPHER | Jon    |    13502 |
+|    8409 | CHRISTOPHER | Jon    |    13909 |
+|    8410 | CHRISTOPHER | Jon    |    14846 |
+|    8411 | CHRISTOPHER | Jon    |    15422 |
+|    8412 | DANIEL      | Jon    |      104 |
+|    8413 | DANIEL      | Jon    |     1162 |
+|    8414 | DANIEL      | Jon    |     1333 |
+|    8415 | DANIEL      | Jon    |     1918 |
+|    8416 | DANIEL      | Jon    |     2088 |
+|    8417 | DANIEL      | Mike   |     2480 |
+|    8418 | DANIEL      | Mike   |     2618 |
+|    8419 | DANIEL      | Jon    |     3830 |
+|    8420 | DANIEL      | Mike   |     4072 |
+|    8421 | DANIEL      | Mike   |     5621 |
+|    8422 | DANIEL      | Jon    |     5836 |
+|    8423 | DANIEL      | Mike   |     7648 |
+|    8424 | DANIEL      | Jon    |     8637 |
+|    8425 | DANIEL      | Mike   |     8981 |
+|    8426 | DANIEL      | Mike   |     9536 |
+|    8427 | DANIEL      | Jon    |    11137 |
+|    8428 | DANIEL      | Jon    |    12500 |
+|    8429 | DANIEL      | Jon    |    12710 |
+|    8430 | DANIEL      | Mike   |    12929 |
+|    8431 | DANIEL      | Mike   |    14972 |
+|    8432 | PAUL        | Jon    |      274 |
+|    8433 | PAUL        | Jon    |      544 |
+|    8434 | PAUL        | Mike   |      952 |
+|    8435 | PAUL        | Jon    |      990 |
+|    8436 | PAUL        | Jon    |     1128 |
+|    8437 | PAUL        | Mike   |     1622 |
+|    8438 | PAUL        | Jon    |     1955 |
+|    8439 | PAUL        | Jon    |     2967 |
+|    8440 | PAUL        | Jon    |     4836 |
+|    8441 | PAUL        | Jon    |     5224 |
+|    8442 | PAUL        | Jon    |     6419 |
+|    8443 | PAUL        | Jon    |     8167 |
+|    8444 | PAUL        | Mike   |     8473 |
+|    8445 | PAUL        | Mike   |     9503 |
+|    8446 | PAUL        | Jon    |     9882 |
+|    8447 | PAUL        | Mike   |    10134 |
+|    8448 | PAUL        | Jon    |    10448 |
+|    8449 | PAUL        | Mike   |    12997 |
+|    8450 | PAUL        | Jon    |    13310 |
+|    8451 | PAUL        | Jon    |    13423 |
+|    8452 | PAUL        | Jon    |    14517 |
+|    8453 | PAUL        | Jon    |    15826 |
+|    8454 | PAUL        | Mike   |    16020 |
+|    8455 | MARK        | Jon    |      229 |
+|    8456 | MARK        | Mike   |      530 |
+|    8457 | MARK        | Jon    |     1049 |
+|    8458 | MARK        | Jon    |     1079 |
+|    8459 | MARK        | Jon    |     1419 |
+|    8460 | MARK        | Jon    |     3457 |
+|    8461 | MARK        | Mike   |     3766 |
+|    8462 | MARK        | Mike   |     3792 |
+|    8463 | MARK        | Mike   |     4647 |
+|    8464 | MARK        | Mike   |     5031 |
+|    8465 | MARK        | Jon    |     6751 |
+|    8466 | MARK        | Mike   |     6866 |
+|    8467 | MARK        | Mike   |     8137 |
+|    8468 | MARK        | Mike   |     8412 |
+|    8469 | MARK        | Mike   |     8721 |
+|    8470 | MARK        | Mike   |     9016 |
+|    8471 | MARK        | Mike   |     9154 |
+|    8472 | MARK        | Jon    |    10858 |
+|    8473 | MARK        | Jon    |    11248 |
+|    8474 | MARK        | Jon    |    11879 |
+|    8475 | MARK        | Mike   |    12186 |
+|    8476 | MARK        | Mike   |    12945 |
+|    8477 | MARK        | Jon    |    14362 |
+|    8478 | MARK        | Mike   |    14504 |
+|    8479 | MARK        | Mike   |    15100 |
+|    8480 | MARK        | Mike   |    15882 |
+|    8481 | DONALD      | Jon    |      669 |
+|    8482 | DONALD      | Jon    |      712 |
+|    8483 | DONALD      | Jon    |      781 |
+|    8484 | DONALD      | Jon    |      843 |
+|    8485 | DONALD      | Jon    |     1312 |
+|    8486 | DONALD      | Mike   |     2617 |
+|    8487 | DONALD      | Jon    |     2711 |
+|    8488 | DONALD      | Jon    |     4552 |
+|    8489 | DONALD      | Mike   |     5255 |
+|    8490 | DONALD      | Mike   |     6384 |
+|    8491 | DONALD      | Jon    |     7294 |
+|    8492 | DONALD      | Jon    |     8381 |
+|    8493 | DONALD      | Mike   |     8970 |
+|    8494 | DONALD      | Jon    |     9836 |
+|    8495 | DONALD      | Jon    |    10237 |
+|    8496 | DONALD      | Jon    |    10933 |
+|    8497 | DONALD      | Jon    |    11854 |
+|    8498 | DONALD      | Jon    |    12011 |
+|    8499 | DONALD      | Jon    |    14250 |
+|    8500 | DONALD      | Mike   |    14325 |
+|    8501 | DONALD      | Jon    |    15081 |
+|    8502 | DONALD      | Mike   |    15340 |
+|    8503 | DONALD      | Jon    |    15569 |
+|    8504 | GEORGE      | Mike   |       80 |
+|    8505 | GEORGE      | Mike   |      440 |
+|    8506 | GEORGE      | Mike   |     1598 |
+|    8507 | GEORGE      | Mike   |     1624 |
+|    8508 | GEORGE      | Mike   |     3517 |
+|    8509 | GEORGE      | Mike   |     3656 |
+|    8510 | GEORGE      | Mike   |     3808 |
+|    8511 | GEORGE      | Jon    |     4386 |
+|    8512 | GEORGE      | Jon    |     5241 |
+|    8513 | GEORGE      | Jon    |     5856 |
+|    8514 | GEORGE      | Mike   |     6192 |
+|    8515 | GEORGE      | Mike   |     6666 |
+|    8516 | GEORGE      | Mike   |     6763 |
+|    8517 | GEORGE      | Jon    |     7004 |
+|    8518 | GEORGE      | Mike   |     7276 |
+|    8519 | GEORGE      | Jon    |     8022 |
+|    8520 | GEORGE      | Mike   |     8073 |
+|    8521 | GEORGE      | Jon    |     8105 |
+|    8522 | GEORGE      | Jon    |     8328 |
+|    8523 | GEORGE      | Jon    |     8644 |
+|    8524 | GEORGE      | Jon    |     9191 |
+|    8525 | GEORGE      | Jon    |     9318 |
+|    8526 | GEORGE      | Jon    |    11908 |
+|    8527 | GEORGE      | Mike   |    12434 |
+|    8528 | GEORGE      | Jon    |    13120 |
+|    8529 | GEORGE      | Mike   |    13265 |
+|    8530 | GEORGE      | Jon    |    13553 |
+|    8531 | GEORGE      | Jon    |    14145 |
+|    8532 | GEORGE      | Mike   |    14409 |
+|    8533 | GEORGE      | Jon    |    14682 |
+|    8534 | GEORGE      | Jon    |    14815 |
+|    8535 | GEORGE      | Jon    |    14873 |
+|    8536 | GEORGE      | Jon    |    16021 |
+|    8537 | KENNETH     | Mike   |      537 |
+|    8538 | KENNETH     | Mike   |      551 |
+|    8539 | KENNETH     | Mike   |     1701 |
+|    8540 | KENNETH     | Mike   |     4021 |
+|    8541 | KENNETH     | Mike   |     4992 |
+|    8542 | KENNETH     | Jon    |     5126 |
+|    8543 | KENNETH     | Mike   |     6661 |
+|    8544 | KENNETH     | Mike   |     6894 |
+|    8545 | KENNETH     | Mike   |     8416 |
+|    8546 | KENNETH     | Jon    |     8677 |
+|    8547 | KENNETH     | Jon    |     9735 |
+|    8548 | KENNETH     | Jon    |    11254 |
+|    8549 | KENNETH     | Jon    |    12155 |
+|    8550 | KENNETH     | Mike   |    14106 |
+|    8551 | KENNETH     | Jon    |    14162 |
+|    8552 | KENNETH     | Mike   |    15504 |
+|    8553 | KENNETH     | Jon    |    14426 |
+|    8554 | STEVEN      | Mike   |       16 |
+|    8555 | STEVEN      | Mike   |      644 |
+|    8556 | STEVEN      | Mike   |     1065 |
+|    8557 | STEVEN      | Mike   |     1317 |
+|    8558 | STEVEN      | Jon    |     1350 |
+|    8559 | STEVEN      | Mike   |     2032 |
+|    8560 | STEVEN      | Jon    |     2338 |
+|    8561 | STEVEN      | Jon    |     2491 |
+|    8562 | STEVEN      | Mike   |     2820 |
+|    8563 | STEVEN      | Jon    |     3373 |
+|    8564 | STEVEN      | Mike   |     4379 |
+|    8565 | STEVEN      | Jon    |     5102 |
+|    8566 | STEVEN      | Jon    |     5544 |
+|    8567 | STEVEN      | Mike   |     5618 |
+|    8568 | STEVEN      | Jon    |     6988 |
+|    8569 | STEVEN      | Jon    |     7339 |
+|    8570 | STEVEN      | Jon    |     7586 |
+|    8571 | STEVEN      | Mike   |     7592 |
+|    8572 | STEVEN      | Mike   |     7945 |
+|    8573 | STEVEN      | Mike   |     8564 |
+|    8574 | STEVEN      | Mike   |     9508 |
+|    8575 | STEVEN      | Jon    |     9903 |
+|    8576 | STEVEN      | Mike   |    10438 |
+|    8577 | STEVEN      | Mike   |    12028 |
+|    8578 | STEVEN      | Jon    |    12191 |
+|    8579 | STEVEN      | Jon    |    12823 |
+|    8580 | STEVEN      | Jon    |    13277 |
+|    8581 | STEVEN      | Mike   |    14226 |
+|    8582 | STEVEN      | Jon    |    15840 |
+|    8583 | EDWARD      | Mike   |      107 |
+|    8584 | EDWARD      | Jon    |     2287 |
+|    8585 | EDWARD      | Jon    |     3029 |
+|    8586 | EDWARD      | Mike   |     3251 |
+|    8587 | EDWARD      | Mike   |     4138 |
+|    8588 | EDWARD      | Mike   |     4177 |
+|    8589 | EDWARD      | Jon    |     4700 |
+|    8590 | EDWARD      | Mike   |     5548 |
+|    8591 | EDWARD      | Jon    |     5942 |
+|    8592 | EDWARD      | Mike   |     7309 |
+|    8593 | EDWARD      | Jon    |     8062 |
+|    8594 | EDWARD      | Mike   |     8327 |
+|    8595 | EDWARD      | Mike   |     8458 |
+|    8596 | EDWARD      | Mike   |     9110 |
+|    8597 | EDWARD      | Jon    |     9513 |
+|    8598 | EDWARD      | Mike   |     9770 |
+|    8599 | EDWARD      | Mike   |    10364 |
+|    8600 | EDWARD      | Jon    |    12111 |
+|    8601 | EDWARD      | Jon    |    12138 |
+|    8602 | EDWARD      | Jon    |    12301 |
+|    8603 | EDWARD      | Mike   |    13388 |
+|    8604 | EDWARD      | Mike   |    14032 |
+|    8605 | EDWARD      | Jon    |    14385 |
+|    8606 | EDWARD      | Jon    |    14669 |
+|    8607 | EDWARD      | Mike   |    14791 |
+|    8608 | EDWARD      | Mike   |    15204 |
+|    8609 | EDWARD      | Mike   |    15280 |
+|    8610 | EDWARD      | Mike   |    12574 |
+|    8611 | BRIAN       | Mike   |      224 |
+|    8612 | BRIAN       | Mike   |     2634 |
+|    8613 | BRIAN       | Mike   |     2643 |
+|    8614 | BRIAN       | Jon    |     3337 |
+|    8615 | BRIAN       | Jon    |     3376 |
+|    8616 | BRIAN       | Mike   |     3732 |
+|    8617 | BRIAN       | Jon    |     3974 |
+|    8618 | BRIAN       | Mike   |     4356 |
+|    8619 | BRIAN       | Mike   |     7649 |
+|    8620 | BRIAN       | Jon    |     7853 |
+|    8621 | BRIAN       | Jon    |    10023 |
+|    8622 | BRIAN       | Mike   |    14276 |
+|    8623 | RONALD      | Mike   |       15 |
+|    8624 | RONALD      | Mike   |      149 |
+|    8625 | RONALD      | Mike   |      439 |
+|    8626 | RONALD      | Mike   |     1632 |
+|    8627 | RONALD      | Mike   |     1892 |
+|    8628 | RONALD      | Jon    |     2021 |
+|    8629 | RONALD      | Jon    |     2703 |
+|    8630 | RONALD      | Jon    |     2884 |
+|    8631 | RONALD      | Jon    |     3256 |
+|    8632 | RONALD      | Jon    |     4119 |
+|    8633 | RONALD      | Jon    |     4295 |
+|    8634 | RONALD      | Mike   |     4630 |
+|    8635 | RONALD      | Mike   |     5791 |
+|    8636 | RONALD      | Mike   |     5882 |
+|    8637 | RONALD      | Jon    |     6132 |
+|    8638 | RONALD      | Mike   |     6195 |
+|    8639 | RONALD      | Mike   |     6255 |
+|    8640 | RONALD      | Mike   |     6485 |
+|    8641 | RONALD      | Jon    |     7953 |
+|    8642 | RONALD      | Jon    |     9017 |
+|    8643 | RONALD      | Jon    |     9044 |
+|    8644 | RONALD      | Mike   |    11575 |
+|    8645 | RONALD      | Jon    |    11598 |
+|    8646 | RONALD      | Mike   |    11955 |
+|    8647 | RONALD      | Jon    |    11994 |
+|    8648 | RONALD      | Mike   |    12018 |
+|    8649 | RONALD      | Jon    |    12424 |
+|    8650 | RONALD      | Mike   |    13548 |
+|    8651 | RONALD      | Jon    |    14828 |
+|    8652 | RONALD      | Jon    |    15396 |
+|    8653 | ANTHONY     | Jon    |     1258 |
+|    8654 | ANTHONY     | Jon    |     1484 |
+|    8655 | ANTHONY     | Jon    |     1567 |
+|    8656 | ANTHONY     | Mike   |     2216 |
+|    8657 | ANTHONY     | Jon    |     2883 |
+|    8658 | ANTHONY     | Jon    |     3519 |
+|    8659 | ANTHONY     | Jon    |     3756 |
+|    8660 | ANTHONY     | Jon    |     4173 |
+|    8661 | ANTHONY     | Jon    |     7057 |
+|    8662 | ANTHONY     | Jon    |     7064 |
+|    8663 | ANTHONY     | Jon    |     7930 |
+|    8664 | ANTHONY     | Jon    |     8144 |
+|    8665 | ANTHONY     | Jon    |     8235 |
+|    8666 | ANTHONY     | Mike   |     8238 |
+|    8667 | ANTHONY     | Jon    |     8794 |
+|    8668 | ANTHONY     | Mike   |     9509 |
+|    8669 | ANTHONY     | Mike   |    11208 |
+|    8670 | ANTHONY     | Jon    |    11560 |
+|    8671 | ANTHONY     | Jon    |    14171 |
+|    8672 | ANTHONY     | Mike   |    15302 |
+|    8673 | KEVIN       | Jon    |      200 |
+|    8674 | KEVIN       | Mike   |      620 |
+|    8675 | KEVIN       | Jon    |      818 |
+|    8676 | KEVIN       | Jon    |     1750 |
+|    8677 | KEVIN       | Mike   |     3410 |
+|    8678 | KEVIN       | Jon    |     3901 |
+|    8679 | KEVIN       | Mike   |     3920 |
+|    8680 | KEVIN       | Jon    |     4281 |
+|    8681 | KEVIN       | Mike   |     4318 |
+|    8682 | KEVIN       | Jon    |     5202 |
+|    8683 | KEVIN       | Jon    |     5867 |
+|    8684 | KEVIN       | Jon    |     6190 |
+|    8685 | KEVIN       | Mike   |     6859 |
+|    8686 | KEVIN       | Jon    |     8685 |
+|    8687 | KEVIN       | Mike   |     9981 |
+|    8688 | KEVIN       | Mike   |    11722 |
+|    8689 | KEVIN       | Mike   |    12033 |
+|    8690 | KEVIN       | Jon    |    12034 |
+|    8691 | KEVIN       | Mike   |    12398 |
+|    8692 | KEVIN       | Jon    |    13623 |
+|    8693 | KEVIN       | Mike   |    15673 |
+|    8694 | KEVIN       | Jon    |    15888 |
+|    8695 | JASON       | Jon    |      166 |
+|    8696 | JASON       | Mike   |      269 |
+|    8697 | JASON       | Mike   |     1386 |
+|    8698 | JASON       | Mike   |     1588 |
+|    8699 | JASON       | Jon    |     2481 |
+|    8700 | JASON       | Mike   |     2554 |
+|    8701 | JASON       | Mike   |     2983 |
+|    8702 | JASON       | Jon    |     3054 |
+|    8703 | JASON       | Jon    |     3413 |
+|    8704 | JASON       | Mike   |     3478 |
+|    8705 | JASON       | Jon    |     3627 |
+|    8706 | JASON       | Mike   |     3646 |
+|    8707 | JASON       | Jon    |     6033 |
+|    8708 | JASON       | Mike   |     6511 |
+|    8709 | JASON       | Jon    |     6673 |
+|    8710 | JASON       | Jon    |     6709 |
+|    8711 | JASON       | Mike   |     7091 |
+|    8712 | JASON       | Jon    |     8142 |
+|    8713 | JASON       | Mike   |     9104 |
+|    8714 | JASON       | Mike   |     9115 |
+|    8715 | JASON       | Mike   |     9252 |
+|    8716 | JASON       | Jon    |    11120 |
+|    8717 | JASON       | Jon    |    11456 |
+|    8718 | JASON       | Jon    |    13180 |
+|    8719 | JASON       | Mike   |    13650 |
+|    8720 | JASON       | Jon    |    14042 |
+|    8721 | JASON       | Mike   |    15450 |
+|    8722 | JASON       | Jon    |    15703 |
+|    8723 | MATTHEW     | Mike   |       58 |
+|    8724 | MATTHEW     | Jon    |      729 |
+|    8725 | MATTHEW     | Mike   |      878 |
+|    8726 | MATTHEW     | Jon    |     1167 |
+|    8727 | MATTHEW     | Jon    |     1786 |
+|    8728 | MATTHEW     | Mike   |     2933 |
+|    8729 | MATTHEW     | Jon    |     3704 |
+|    8730 | MATTHEW     | Jon    |     4572 |
+|    8731 | MATTHEW     | Jon    |     5669 |
+|    8732 | MATTHEW     | Jon    |     5906 |
+|    8733 | MATTHEW     | Mike   |     6840 |
+|    8734 | MATTHEW     | Jon    |     7146 |
+|    8735 | MATTHEW     | Jon    |     7275 |
+|    8736 | MATTHEW     | Jon    |     7695 |
+|    8737 | MATTHEW     | Mike   |     7847 |
+|    8738 | MATTHEW     | Jon    |     7937 |
+|    8739 | MATTHEW     | Jon    |     8474 |
+|    8740 | MATTHEW     | Mike   |     8790 |
+|    8741 | MATTHEW     | Mike   |     9363 |
+|    8742 | MATTHEW     | Jon    |    10002 |
+|    8743 | MATTHEW     | Mike   |    10028 |
+|    8744 | MATTHEW     | Mike   |    10298 |
+|    8745 | MATTHEW     | Mike   |    10994 |
+|    8746 | MATTHEW     | Jon    |    11548 |
+|    8747 | MATTHEW     | Mike   |    12120 |
+|    8748 | MATTHEW     | Mike   |    12169 |
+|    8749 | MATTHEW     | Mike   |    13140 |
+|    8750 | MATTHEW     | Mike   |    14224 |
+|    8751 | MATTHEW     | Mike   |    14957 |
+|    8752 | MATTHEW     | Mike   |    15387 |
+|    8753 | MATTHEW     | Mike   |    15728 |
+|    8754 | GARY        | Jon    |      563 |
+|    8755 | GARY        | Mike   |     1740 |
+|    8756 | GARY        | Jon    |     2590 |
+|    8757 | GARY        | Mike   |     3947 |
+|    8758 | GARY        | Mike   |     4197 |
+|    8759 | GARY        | Jon    |     4368 |
+|    8760 | GARY        | Jon    |     5702 |
+|    8761 | GARY        | Mike   |     5778 |
+|    8762 | GARY        | Mike   |     6034 |
+|    8763 | GARY        | Jon    |     6299 |
+|    8764 | GARY        | Jon    |     7240 |
+|    8765 | GARY        | Mike   |     7263 |
+|    8766 | GARY        | Jon    |     7960 |
+|    8767 | GARY        | Mike   |     8698 |
+|    8768 | GARY        | Mike   |     9651 |
+|    8769 | GARY        | Jon    |    10212 |
+|    8770 | GARY        | Mike   |    11617 |
+|    8771 | GARY        | Mike   |    11771 |
+|    8772 | GARY        | Jon    |    12543 |
+|    8773 | GARY        | Jon    |    13356 |
+|    8774 | GARY        | Mike   |    13386 |
+|    8775 | GARY        | Mike   |    14262 |
+|    8776 | GARY        | Jon    |    14479 |
+|    8777 | GARY        | Mike   |    15263 |
+|    8778 | GARY        | Jon    |    13965 |
+|    8779 | TIMOTHY     | Mike   |      131 |
+|    8780 | TIMOTHY     | Jon    |     2502 |
+|    8781 | TIMOTHY     | Jon    |     2507 |
+|    8782 | TIMOTHY     | Jon    |     2808 |
+|    8783 | TIMOTHY     | Mike   |     5470 |
+|    8784 | TIMOTHY     | Jon    |     5740 |
+|    8785 | TIMOTHY     | Mike   |     5775 |
+|    8786 | TIMOTHY     | Jon    |     6135 |
+|    8787 | TIMOTHY     | Jon    |     6622 |
+|    8788 | TIMOTHY     | Jon    |     7223 |
+|    8789 | TIMOTHY     | Jon    |     7687 |
+|    8790 | TIMOTHY     | Jon    |     8539 |
+|    8791 | TIMOTHY     | Jon    |    10030 |
+|    8792 | TIMOTHY     | Mike   |    10070 |
+|    8793 | TIMOTHY     | Jon    |    10326 |
+|    8794 | TIMOTHY     | Mike   |    10412 |
+|    8795 | TIMOTHY     | Jon    |    12097 |
+|    8796 | TIMOTHY     | Mike   |    12779 |
+|    8797 | TIMOTHY     | Jon    |    13054 |
+|    8798 | TIMOTHY     | Jon    |    14452 |
+|    8799 | TIMOTHY     | Mike   |    14672 |
+|    8800 | TIMOTHY     | Jon    |    15009 |
+|    8801 | JOSE        | Mike   |      875 |
+|    8802 | JOSE        | Jon    |      981 |
+|    8803 | JOSE        | Jon    |     1149 |
+|    8804 | JOSE        | Mike   |     1311 |
+|    8805 | JOSE        | Jon    |     2086 |
+|    8806 | JOSE        | Jon    |     2317 |
+|    8807 | JOSE        | Mike   |     3441 |
+|    8808 | JOSE        | Jon    |     3886 |
+|    8809 | JOSE        | Mike   |     4160 |
+|    8810 | JOSE        | Mike   |     5147 |
+|    8811 | JOSE        | Mike   |     7117 |
+|    8812 | JOSE        | Jon    |     7725 |
+|    8813 | JOSE        | Jon    |     7931 |
+|    8814 | JOSE        | Mike   |     8467 |
+|    8815 | JOSE        | Mike   |     8604 |
+|    8816 | JOSE        | Jon    |     8739 |
+|    8817 | JOSE        | Jon    |     9855 |
+|    8818 | JOSE        | Mike   |    10108 |
+|    8819 | JOSE        | Jon    |    10173 |
+|    8820 | JOSE        | Jon    |    10720 |
+|    8821 | JOSE        | Jon    |    10976 |
+|    8822 | JOSE        | Jon    |    11010 |
+|    8823 | JOSE        | Jon    |    11428 |
+|    8824 | JOSE        | Jon    |    11485 |
+|    8825 | JOSE        | Jon    |    12829 |
+|    8826 | LARRY       | Mike   |      653 |
+|    8827 | LARRY       | Mike   |     1294 |
+|    8828 | LARRY       | Jon    |     1577 |
+|    8829 | LARRY       | Jon    |     1929 |
+|    8830 | LARRY       | Mike   |     2273 |
+|    8831 | LARRY       | Jon    |     2304 |
+|    8832 | LARRY       | Jon    |     2637 |
+|    8833 | LARRY       | Mike   |     4445 |
+|    8834 | LARRY       | Mike   |     4521 |
+|    8835 | LARRY       | Mike   |     6618 |
+|    8836 | LARRY       | Jon    |     7458 |
+|    8837 | LARRY       | Jon    |     7808 |
+|    8838 | LARRY       | Mike   |    10371 |
+|    8839 | LARRY       | Mike   |    11372 |
+|    8840 | LARRY       | Jon    |    11929 |
+|    8841 | LARRY       | Mike   |    12016 |
+|    8842 | LARRY       | Jon    |    13158 |
+|    8843 | LARRY       | Mike   |    13360 |
+|    8844 | LARRY       | Mike   |    13448 |
+|    8845 | LARRY       | Mike   |    14847 |
+|    8846 | LARRY       | Jon    |    15365 |
+|    8847 | LARRY       | Mike   |    15386 |
+|    8848 | LARRY       | Mike   |    15828 |
+|    8849 | LARRY       | Mike   |    15916 |
+|    8850 | LARRY       | Jon    |    15969 |
+|    8851 | LARRY       | Mike   |    15297 |
+|    8852 | JEFFREY     | Jon    |      862 |
+|    8853 | JEFFREY     | Jon    |     1670 |
+|    8854 | JEFFREY     | Jon    |     1980 |
+|    8855 | JEFFREY     | Jon    |     2243 |
+|    8856 | JEFFREY     | Mike   |     3024 |
+|    8857 | JEFFREY     | Mike   |     3239 |
+|    8858 | JEFFREY     | Mike   |     5450 |
+|    8859 | JEFFREY     | Mike   |     8017 |
+|    8860 | JEFFREY     | Mike   |     8577 |
+|    8861 | JEFFREY     | Jon    |     8780 |
+|    8862 | JEFFREY     | Jon    |     9557 |
+|    8863 | JEFFREY     | Mike   |     9835 |
+|    8864 | JEFFREY     | Mike   |    11174 |
+|    8865 | JEFFREY     | Mike   |    12175 |
+|    8866 | JEFFREY     | Jon    |    12825 |
+|    8867 | JEFFREY     | Mike   |    13609 |
+|    8868 | JEFFREY     | Jon    |    13681 |
+|    8869 | JEFFREY     | Mike   |    13907 |
+|    8870 | JEFFREY     | Jon    |    14307 |
+|    8871 | JEFFREY     | Mike   |    14755 |
+|    8872 | JEFFREY     | Jon    |    14939 |
+|    8873 | JEFFREY     | Mike   |    15179 |
+|    8874 | JEFFREY     | Mike   |    15863 |
+|    8875 | FRANK       | Mike   |     1183 |
+|    8876 | FRANK       | Mike   |     2010 |
+|    8877 | FRANK       | Jon    |     2024 |
+|    8878 | FRANK       | Mike   |     2151 |
+|    8879 | FRANK       | Mike   |     2303 |
+|    8880 | FRANK       | Jon    |     2702 |
+|    8881 | FRANK       | Mike   |     3052 |
+|    8882 | FRANK       | Jon    |     3053 |
+|    8883 | FRANK       | Jon    |     3268 |
+|    8884 | FRANK       | Jon    |     3976 |
+|    8885 | FRANK       | Jon    |     4076 |
+|    8886 | FRANK       | Mike   |     4415 |
+|    8887 | FRANK       | Mike   |     4465 |
+|    8888 | FRANK       | Jon    |     4674 |
+|    8889 | FRANK       | Mike   |     7980 |
+|    8890 | FRANK       | Jon    |     8172 |
+|    8891 | FRANK       | Mike   |     8460 |
+|    8892 | FRANK       | Jon    |     8941 |
+|    8893 | FRANK       | Jon    |     9024 |
+|    8894 | FRANK       | Jon    |     9219 |
+|    8895 | FRANK       | Mike   |     9381 |
+|    8896 | FRANK       | Mike   |     9827 |
+|    8897 | FRANK       | Mike   |    10473 |
+|    8898 | FRANK       | Jon    |    10490 |
+|    8899 | FRANK       | Mike   |    11130 |
+|    8900 | FRANK       | Jon    |    11169 |
+|    8901 | FRANK       | Jon    |    11697 |
+|    8902 | FRANK       | Mike   |    12659 |
+|    8903 | FRANK       | Mike   |    13627 |
+|    8904 | FRANK       | Mike   |    14900 |
+|    8905 | FRANK       | Jon    |    15011 |
+|    8906 | FRANK       | Mike   |    15308 |
+|    8907 | SCOTT       | Mike   |      704 |
+|    8908 | SCOTT       | Jon    |      967 |
+|    8909 | SCOTT       | Mike   |     1219 |
+|    8910 | SCOTT       | Jon    |     1511 |
+|    8911 | SCOTT       | Jon    |     2885 |
+|    8912 | SCOTT       | Mike   |     2936 |
+|    8913 | SCOTT       | Jon    |     3061 |
+|    8914 | SCOTT       | Jon    |     3603 |
+|    8915 | SCOTT       | Jon    |     3659 |
+|    8916 | SCOTT       | Jon    |     3760 |
+|    8917 | SCOTT       | Mike   |     4124 |
+|    8918 | SCOTT       | Jon    |     5149 |
+|    8919 | SCOTT       | Mike   |     5750 |
+|    8920 | SCOTT       | Mike   |     6656 |
+|    8921 | SCOTT       | Jon    |     6678 |
+|    8922 | SCOTT       | Mike   |     6719 |
+|    8923 | SCOTT       | Jon    |     7894 |
+|    8924 | SCOTT       | Mike   |     8680 |
+|    8925 | SCOTT       | Jon    |    10100 |
+|    8926 | SCOTT       | Jon    |    11259 |
+|    8927 | SCOTT       | Mike   |    12062 |
+|    8928 | SCOTT       | Mike   |    12394 |
+|    8929 | SCOTT       | Mike   |    12740 |
+|    8930 | SCOTT       | Mike   |    12867 |
+|    8931 | SCOTT       | Jon    |    11709 |
+|    8932 | ERIC        | Jon    |       87 |
+|    8933 | ERIC        | Mike   |      996 |
+|    8934 | ERIC        | Mike   |     1415 |
+|    8935 | ERIC        | Jon    |     2528 |
+|    8936 | ERIC        | Mike   |     2587 |
+|    8937 | ERIC        | Mike   |     3505 |
+|    8938 | ERIC        | Mike   |     3613 |
+|    8939 | ERIC        | Jon    |     3871 |
+|    8940 | ERIC        | Mike   |     4051 |
+|    8941 | ERIC        | Jon    |     4063 |
+|    8942 | ERIC        | Mike   |     4326 |
+|    8943 | ERIC        | Mike   |     5152 |
+|    8944 | ERIC        | Mike   |     5885 |
+|    8945 | ERIC        | Mike   |     5947 |
+|    8946 | ERIC        | Mike   |     8231 |
+|    8947 | ERIC        | Jon    |     8995 |
+|    8948 | ERIC        | Mike   |     9401 |
+|    8949 | ERIC        | Jon    |    10188 |
+|    8950 | ERIC        | Mike   |    11052 |
+|    8951 | ERIC        | Mike   |    11362 |
+|    8952 | ERIC        | Jon    |    12533 |
+|    8953 | ERIC        | Mike   |    13795 |
+|    8954 | ERIC        | Mike   |    14256 |
+|    8955 | ERIC        | Mike   |    14628 |
+|    8956 | ERIC        | Mike   |    15339 |
+|    8957 | ERIC        | Jon    |    15447 |
+|    8958 | ERIC        | Mike   |    15521 |
+|    8959 | STEPHEN     | Jon    |      600 |
+|    8960 | STEPHEN     | Mike   |     1000 |
+|    8961 | STEPHEN     | Mike   |     4100 |
+|    8962 | STEPHEN     | Mike   |     4302 |
+|    8963 | STEPHEN     | Jon    |     5116 |
+|    8964 | STEPHEN     | Mike   |     5277 |
+|    8965 | STEPHEN     | Jon    |     5381 |
+|    8966 | STEPHEN     | Jon    |     5388 |
+|    8967 | STEPHEN     | Mike   |     5440 |
+|    8968 | STEPHEN     | Jon    |     7049 |
+|    8969 | STEPHEN     | Jon    |     7418 |
+|    8970 | STEPHEN     | Jon    |     7577 |
+|    8971 | STEPHEN     | Jon    |     7578 |
+|    8972 | STEPHEN     | Jon    |     7934 |
+|    8973 | STEPHEN     | Jon    |     8173 |
+|    8974 | STEPHEN     | Mike   |     9324 |
+|    8975 | STEPHEN     | Mike   |     9388 |
+|    8976 | STEPHEN     | Mike   |     9921 |
+|    8977 | STEPHEN     | Mike   |    10026 |
+|    8978 | STEPHEN     | Mike   |    10307 |
+|    8979 | STEPHEN     | Jon    |    10439 |
+|    8980 | STEPHEN     | Mike   |    11229 |
+|    8981 | STEPHEN     | Jon    |    11564 |
+|    8982 | STEPHEN     | Jon    |    12318 |
+|    8983 | STEPHEN     | Jon    |    13673 |
+|    8984 | STEPHEN     | Jon    |    14783 |
+|    8985 | STEPHEN     | Jon    |    15194 |
+|    8986 | STEPHEN     | Mike   |    15210 |
+|    8987 | ANDREW      | Mike   |        4 |
+|    8988 | ANDREW      | Mike   |     1667 |
+|    8989 | ANDREW      | Mike   |     2149 |
+|    8990 | ANDREW      | Mike   |     2929 |
+|    8991 | ANDREW      | Mike   |     3110 |
+|    8992 | ANDREW      | Jon    |     5032 |
+|    8993 | ANDREW      | Mike   |     5645 |
+|    8994 | ANDREW      | Jon    |     5892 |
+|    8995 | ANDREW      | Jon    |     6275 |
+|    8996 | ANDREW      | Jon    |     6931 |
+|    8997 | ANDREW      | Jon    |     6958 |
+|    8998 | ANDREW      | Jon    |     7076 |
+|    8999 | ANDREW      | Jon    |     7246 |
+|    9000 | ANDREW      | Mike   |     8719 |
+|    9001 | ANDREW      | Jon    |     9148 |
+|    9002 | ANDREW      | Jon    |     9338 |
+|    9003 | ANDREW      | Jon    |    10035 |
+|    9004 | ANDREW      | Mike   |    10062 |
+|    9005 | ANDREW      | Jon    |    10844 |
+|    9006 | ANDREW      | Mike   |    12427 |
+|    9007 | ANDREW      | Jon    |    12661 |
+|    9008 | ANDREW      | Mike   |    13579 |
+|    9009 | ANDREW      | Jon    |    13710 |
+|    9010 | ANDREW      | Mike   |    14057 |
+|    9011 | ANDREW      | Mike   |    14740 |
+|    9012 | ANDREW      | Jon    |    15253 |
+|    9013 | ANDREW      | Mike   |    15313 |
+|    9014 | RAYMOND     | Mike   |       13 |
+|    9015 | RAYMOND     | Mike   |      431 |
+|    9016 | RAYMOND     | Jon    |     1187 |
+|    9017 | RAYMOND     | Mike   |     1298 |
+|    9018 | RAYMOND     | Jon    |     2476 |
+|    9019 | RAYMOND     | Mike   |     3662 |
+|    9020 | RAYMOND     | Mike   |     4603 |
+|    9021 | RAYMOND     | Jon    |     5014 |
+|    9022 | RAYMOND     | Jon    |     5434 |
+|    9023 | RAYMOND     | Jon    |     5818 |
+|    9024 | RAYMOND     | Mike   |     5845 |
+|    9025 | RAYMOND     | Jon    |     6641 |
+|    9026 | RAYMOND     | Jon    |     6749 |
+|    9027 | RAYMOND     | Mike   |     6987 |
+|    9028 | RAYMOND     | Mike   |     8977 |
+|    9029 | RAYMOND     | Mike   |     9633 |
+|    9030 | RAYMOND     | Mike   |    10207 |
+|    9031 | RAYMOND     | Mike   |    10408 |
+|    9032 | RAYMOND     | Mike   |    10492 |
+|    9033 | RAYMOND     | Mike   |    10879 |
+|    9034 | RAYMOND     | Jon    |    10997 |
+|    9035 | RAYMOND     | Jon    |    12677 |
+|    9036 | RAYMOND     | Jon    |    13325 |
+|    9037 | RAYMOND     | Mike   |    13876 |
+|    9038 | RAYMOND     | Mike   |    14645 |
+|    9039 | RAYMOND     | Mike   |    14984 |
+|    9040 | RAYMOND     | Jon    |    15548 |
+|    9041 | RAYMOND     | Jon    |    15656 |
+|    9042 | RAYMOND     | Mike   |    15669 |
+|    9043 | RAYMOND     | Mike   |    14219 |
+|    9044 | GREGORY     | Mike   |     3329 |
+|    9045 | GREGORY     | Mike   |     3607 |
+|    9046 | GREGORY     | Jon    |     4016 |
+|    9047 | GREGORY     | Jon    |     4032 |
+|    9048 | GREGORY     | Mike   |     4279 |
+|    9049 | GREGORY     | Mike   |     4387 |
+|    9050 | GREGORY     | Mike   |     5024 |
+|    9051 | GREGORY     | Mike   |     5252 |
+|    9052 | GREGORY     | Jon    |     5728 |
+|    9053 | GREGORY     | Mike   |     6624 |
+|    9054 | GREGORY     | Mike   |     6906 |
+|    9055 | GREGORY     | Jon    |     8634 |
+|    9056 | GREGORY     | Mike   |     8855 |
+|    9057 | GREGORY     | Mike   |     9125 |
+|    9058 | GREGORY     | Jon    |     9361 |
+|    9059 | GREGORY     | Mike   |     9428 |
+|    9060 | GREGORY     | Jon    |    10606 |
+|    9061 | GREGORY     | Jon    |    13267 |
+|    9062 | GREGORY     | Mike   |    13622 |
+|    9063 | GREGORY     | Mike   |    14014 |
+|    9064 | GREGORY     | Jon    |    15005 |
+|    9065 | GREGORY     | Jon    |    15101 |
+|    9066 | GREGORY     | Jon    |    11541 |
+|    9067 | JOSHUA      | Mike   |     1478 |
+|    9068 | JOSHUA      | Jon    |     2212 |
+|    9069 | JOSHUA      | Jon    |     2475 |
+|    9070 | JOSHUA      | Mike   |     2575 |
+|    9071 | JOSHUA      | Jon    |     2719 |
+|    9072 | JOSHUA      | Mike   |     2954 |
+|    9073 | JOSHUA      | Jon    |     3204 |
+|    9074 | JOSHUA      | Jon    |     3349 |
+|    9075 | JOSHUA      | Jon    |     4323 |
+|    9076 | JOSHUA      | Mike   |     4595 |
+|    9077 | JOSHUA      | Jon    |     5649 |
+|    9078 | JOSHUA      | Jon    |     5667 |
+|    9079 | JOSHUA      | Jon    |     6263 |
+|    9080 | JOSHUA      | Jon    |     6382 |
+|    9081 | JOSHUA      | Jon    |     8275 |
+|    9082 | JOSHUA      | Mike   |     8407 |
+|    9083 | JOSHUA      | Jon    |     8607 |
+|    9084 | JOSHUA      | Jon    |     8951 |
+|    9085 | JOSHUA      | Jon    |     9306 |
+|    9086 | JOSHUA      | Mike   |    10055 |
+|    9087 | JOSHUA      | Jon    |    11743 |
+|    9088 | JOSHUA      | Mike   |    12323 |
+|    9089 | JOSHUA      | Jon    |    12794 |
+|    9090 | JOSHUA      | Jon    |    12926 |
+|    9091 | JOSHUA      | Jon    |    13066 |
+|    9092 | JOSHUA      | Jon    |    13689 |
+|    9093 | JOSHUA      | Mike   |    14295 |
+|    9094 | JOSHUA      | Mike   |    15073 |
+|    9095 | JOSHUA      | Jon    |    15848 |
+|    9096 | JOSHUA      | Mike   |    13022 |
+|    9097 | JERRY       | Mike   |      374 |
+|    9098 | JERRY       | Mike   |      572 |
+|    9099 | JERRY       | Mike   |      839 |
+|    9100 | JERRY       | Jon    |     1969 |
+|    9101 | JERRY       | Mike   |     2014 |
+|    9102 | JERRY       | Mike   |     3626 |
+|    9103 | JERRY       | Mike   |     4091 |
+|    9104 | JERRY       | Jon    |     4093 |
+|    9105 | JERRY       | Jon    |     4855 |
+|    9106 | JERRY       | Mike   |     5050 |
+|    9107 | JERRY       | Mike   |     6212 |
+|    9108 | JERRY       | Jon    |     6305 |
+|    9109 | JERRY       | Mike   |     6620 |
+|    9110 | JERRY       | Mike   |     7410 |
+|    9111 | JERRY       | Mike   |     8516 |
+|    9112 | JERRY       | Jon    |     8919 |
+|    9113 | JERRY       | Jon    |     9051 |
+|    9114 | JERRY       | Mike   |    10664 |
+|    9115 | JERRY       | Jon    |    10765 |
+|    9116 | JERRY       | Jon    |    11252 |
+|    9117 | JERRY       | Mike   |    11734 |
+|    9118 | JERRY       | Mike   |    12369 |
+|    9119 | JERRY       | Jon    |    13305 |
+|    9120 | JERRY       | Mike   |    13678 |
+|    9121 | JERRY       | Jon    |    13892 |
+|    9122 | JERRY       | Jon    |    14118 |
+|    9123 | JERRY       | Jon    |    15241 |
+|    9124 | JERRY       | Mike   |    15292 |
+|    9125 | JERRY       | Jon    |    11847 |
+|    9126 | DENNIS      | Mike   |      675 |
+|    9127 | DENNIS      | Jon    |     1510 |
+|    9128 | DENNIS      | Mike   |     1807 |
+|    9129 | DENNIS      | Jon    |     1952 |
+|    9130 | DENNIS      | Mike   |     2148 |
+|    9131 | DENNIS      | Mike   |     2179 |
+|    9132 | DENNIS      | Mike   |     2495 |
+|    9133 | DENNIS      | Mike   |     3458 |
+|    9134 | DENNIS      | Mike   |     3516 |
+|    9135 | DENNIS      | Jon    |     3772 |
+|    9136 | DENNIS      | Jon    |     4104 |
+|    9137 | DENNIS      | Jon    |     4779 |
+|    9138 | DENNIS      | Mike   |     5309 |
+|    9139 | DENNIS      | Mike   |     6236 |
+|    9140 | DENNIS      | Mike   |     6360 |
+|    9141 | DENNIS      | Jon    |     7584 |
+|    9142 | DENNIS      | Mike   |     8766 |
+|    9143 | DENNIS      | Mike   |     9485 |
+|    9144 | DENNIS      | Jon    |    10791 |
+|    9145 | DENNIS      | Mike   |    10897 |
+|    9146 | DENNIS      | Jon    |    11064 |
+|    9147 | DENNIS      | Jon    |    11671 |
+|    9148 | DENNIS      | Jon    |    11719 |
+|    9149 | DENNIS      | Mike   |    12167 |
+|    9150 | DENNIS      | Mike   |    13284 |
+|    9151 | DENNIS      | Mike   |    14619 |
+|    9152 | DENNIS      | Jon    |    15105 |
+|    9153 | DENNIS      | Jon    |    15173 |
+|    9154 | WALTER      | Mike   |      876 |
+|    9155 | WALTER      | Jon    |     1432 |
+|    9156 | WALTER      | Mike   |     1536 |
+|    9157 | WALTER      | Jon    |     1629 |
+|    9158 | WALTER      | Mike   |     3146 |
+|    9159 | WALTER      | Mike   |     3335 |
+|    9160 | WALTER      | Jon    |     3536 |
+|    9161 | WALTER      | Mike   |     4243 |
+|    9162 | WALTER      | Mike   |     4467 |
+|    9163 | WALTER      | Jon    |     4967 |
+|    9164 | WALTER      | Mike   |     5720 |
+|    9165 | WALTER      | Mike   |     6072 |
+|    9166 | WALTER      | Mike   |     6425 |
+|    9167 | WALTER      | Jon    |     6682 |
+|    9168 | WALTER      | Jon    |     7244 |
+|    9169 | WALTER      | Jon    |     7973 |
+|    9170 | WALTER      | Mike   |     8968 |
+|    9171 | WALTER      | Jon    |     9208 |
+|    9172 | WALTER      | Mike   |     9663 |
+|    9173 | WALTER      | Jon    |    10338 |
+|    9174 | WALTER      | Jon    |    11171 |
+|    9175 | WALTER      | Mike   |    11550 |
+|    9176 | WALTER      | Jon    |    11582 |
+|    9177 | WALTER      | Jon    |    11699 |
+|    9178 | WALTER      | Mike   |    12631 |
+|    9179 | WALTER      | Mike   |    13199 |
+|    9180 | WALTER      | Mike   |    13575 |
+|    9181 | WALTER      | Mike   |    13985 |
+|    9182 | WALTER      | Mike   |    14636 |
+|    9183 | WALTER      | Jon    |    14758 |
+|    9184 | PATRICK     | Jon    |     1205 |
+|    9185 | PATRICK     | Mike   |     1697 |
+|    9186 | PATRICK     | Mike   |     2177 |
+|    9187 | PATRICK     | Jon    |     2183 |
+|    9188 | PATRICK     | Jon    |     2607 |
+|    9189 | PATRICK     | Mike   |     2653 |
+|    9190 | PATRICK     | Mike   |     3264 |
+|    9191 | PATRICK     | Mike   |     3455 |
+|    9192 | PATRICK     | Jon    |     4475 |
+|    9193 | PATRICK     | Mike   |     4742 |
+|    9194 | PATRICK     | Jon    |     6381 |
+|    9195 | PATRICK     | Jon    |     7617 |
+|    9196 | PATRICK     | Jon    |     8274 |
+|    9197 | PATRICK     | Mike   |     8541 |
+|    9198 | PATRICK     | Jon    |     8551 |
+|    9199 | PATRICK     | Mike   |     8606 |
+|    9200 | PATRICK     | Mike   |     9834 |
+|    9201 | PATRICK     | Mike   |    10292 |
+|    9202 | PATRICK     | Mike   |    10667 |
+|    9203 | PATRICK     | Jon    |    10674 |
+|    9204 | PATRICK     | Mike   |    10809 |
+|    9205 | PATRICK     | Mike   |    10995 |
+|    9206 | PATRICK     | Jon    |    12598 |
+|    9207 | PATRICK     | Jon    |    12908 |
+|    9208 | PATRICK     | Jon    |    12940 |
+|    9209 | PATRICK     | Mike   |    13425 |
+|    9210 | PATRICK     | Mike   |    14457 |
+|    9211 | PATRICK     | Jon    |    14718 |
+|    9212 | PATRICK     | Mike   |    14895 |
+|    9213 | PATRICK     | Jon    |    15306 |
+|    9214 | PATRICK     | Mike   |    15378 |
+|    9215 | PETER       | Mike   |     1318 |
+|    9216 | PETER       | Jon    |     1520 |
+|    9217 | PETER       | Mike   |     1778 |
+|    9218 | PETER       | Mike   |     1849 |
+|    9219 | PETER       | Jon    |     2829 |
+|    9220 | PETER       | Jon    |     3130 |
+|    9221 | PETER       | Mike   |     3382 |
+|    9222 | PETER       | Jon    |     3938 |
+|    9223 | PETER       | Mike   |     4624 |
+|    9224 | PETER       | Jon    |     5487 |
+|    9225 | PETER       | Jon    |     5931 |
+|    9226 | PETER       | Jon    |     7473 |
+|    9227 | PETER       | Mike   |     8661 |
+|    9228 | PETER       | Mike   |     8728 |
+|    9229 | PETER       | Jon    |    10605 |
+|    9230 | PETER       | Mike   |    11305 |
+|    9231 | PETER       | Mike   |    11723 |
+|    9232 | PETER       | Jon    |    13059 |
+|    9233 | PETER       | Jon    |    13074 |
+|    9234 | PETER       | Jon    |    13806 |
+|    9235 | PETER       | Jon    |    14344 |
+|    9236 | PETER       | Jon    |    15030 |
+|    9237 | PETER       | Jon    |    15938 |
+|    9238 | HAROLD      | Jon    |     2190 |
+|    9239 | HAROLD      | Mike   |     2914 |
+|    9240 | HAROLD      | Mike   |     3081 |
+|    9241 | HAROLD      | Mike   |     5617 |
+|    9242 | HAROLD      | Jon    |     6060 |
+|    9243 | HAROLD      | Jon    |     6429 |
+|    9244 | HAROLD      | Mike   |     6736 |
+|    9245 | HAROLD      | Jon    |     6787 |
+|    9246 | HAROLD      | Jon    |     6997 |
+|    9247 | HAROLD      | Jon    |     7280 |
+|    9248 | HAROLD      | Mike   |     9164 |
+|    9249 | HAROLD      | Mike   |     9526 |
+|    9250 | HAROLD      | Jon    |     9948 |
+|    9251 | HAROLD      | Mike   |     9955 |
+|    9252 | HAROLD      | Jon    |     9956 |
+|    9253 | HAROLD      | Mike   |    10242 |
+|    9254 | HAROLD      | Jon    |    11178 |
+|    9255 | HAROLD      | Jon    |    11446 |
+|    9256 | HAROLD      | Mike   |    11568 |
+|    9257 | HAROLD      | Mike   |    12139 |
+|    9258 | HAROLD      | Mike   |    12404 |
+|    9259 | HAROLD      | Mike   |    12522 |
+|    9260 | HAROLD      | Jon    |    12816 |
+|    9261 | HAROLD      | Jon    |    13368 |
+|    9262 | HAROLD      | Jon    |    13637 |
+|    9263 | HAROLD      | Mike   |    13755 |
+|    9264 | HAROLD      | Jon    |    13827 |
+|    9265 | HAROLD      | Jon    |    14096 |
+|    9266 | HAROLD      | Jon    |    14299 |
+|    9267 | HAROLD      | Jon    |    14683 |
+|    9268 | HAROLD      | Mike   |    15484 |
+|    9269 | HAROLD      | Mike   |    15895 |
+|    9270 | DOUGLAS     | Jon    |      102 |
+|    9271 | DOUGLAS     | Mike   |      455 |
+|    9272 | DOUGLAS     | Jon    |     1547 |
+|    9273 | DOUGLAS     | Mike   |     1564 |
+|    9274 | DOUGLAS     | Jon    |     1879 |
+|    9275 | DOUGLAS     | Jon    |     1922 |
+|    9276 | DOUGLAS     | Jon    |     2461 |
+|    9277 | DOUGLAS     | Mike   |     2980 |
+|    9278 | DOUGLAS     | Mike   |     3407 |
+|    9279 | DOUGLAS     | Mike   |     3978 |
+|    9280 | DOUGLAS     | Mike   |     4472 |
+|    9281 | DOUGLAS     | Jon    |     5097 |
+|    9282 | DOUGLAS     | Mike   |     5337 |
+|    9283 | DOUGLAS     | Mike   |     7069 |
+|    9284 | DOUGLAS     | Jon    |     8012 |
+|    9285 | DOUGLAS     | Jon    |     8088 |
+|    9286 | DOUGLAS     | Jon    |     9458 |
+|    9287 | DOUGLAS     | Jon    |     9739 |
+|    9288 | DOUGLAS     | Mike   |    10822 |
+|    9289 | DOUGLAS     | Mike   |    11212 |
+|    9290 | DOUGLAS     | Jon    |    11570 |
+|    9291 | DOUGLAS     | Jon    |    13279 |
+|    9292 | DOUGLAS     | Jon    |    13522 |
+|    9293 | DOUGLAS     | Jon    |    13866 |
+|    9294 | DOUGLAS     | Jon    |    15973 |
+|    9295 | HENRY       | Jon    |      157 |
+|    9296 | HENRY       | Jon    |      813 |
+|    9297 | HENRY       | Mike   |     1341 |
+|    9298 | HENRY       | Jon    |     1475 |
+|    9299 | HENRY       | Mike   |     1731 |
+|    9300 | HENRY       | Jon    |     4028 |
+|    9301 | HENRY       | Jon    |     4347 |
+|    9302 | HENRY       | Jon    |     6363 |
+|    9303 | HENRY       | Jon    |     7480 |
+|    9304 | HENRY       | Jon    |     8561 |
+|    9305 | HENRY       | Jon    |     9788 |
+|    9306 | HENRY       | Jon    |    11116 |
+|    9307 | HENRY       | Jon    |    12183 |
+|    9308 | HENRY       | Jon    |    13014 |
+|    9309 | HENRY       | Mike   |    13033 |
+|    9310 | HENRY       | Mike   |    14621 |
+|    9311 | HENRY       | Jon    |    14624 |
+|    9312 | HENRY       | Mike   |    15215 |
+|    9313 | CARL        | Mike   |      206 |
+|    9314 | CARL        | Mike   |      363 |
+|    9315 | CARL        | Jon    |     1210 |
+|    9316 | CARL        | Mike   |     1457 |
+|    9317 | CARL        | Jon    |     1550 |
+|    9318 | CARL        | Jon    |     2766 |
+|    9319 | CARL        | Jon    |     4422 |
+|    9320 | CARL        | Mike   |     4425 |
+|    9321 | CARL        | Jon    |     4450 |
+|    9322 | CARL        | Jon    |     5508 |
+|    9323 | CARL        | Mike   |     6307 |
+|    9324 | CARL        | Mike   |     7092 |
+|    9325 | CARL        | Jon    |     8129 |
+|    9326 | CARL        | Jon    |     8694 |
+|    9327 | CARL        | Mike   |     9163 |
+|    9328 | CARL        | Jon    |     9207 |
+|    9329 | CARL        | Jon    |    10215 |
+|    9330 | CARL        | Jon    |    10982 |
+|    9331 | CARL        | Mike   |    11865 |
+|    9332 | CARL        | Mike   |    12485 |
+|    9333 | CARL        | Jon    |    12805 |
+|    9334 | CARL        | Mike   |    14702 |
+|    9335 | CARL        | Mike   |    15551 |
+|    9336 | ARTHUR      | Mike   |       65 |
+|    9337 | ARTHUR      | Mike   |      810 |
+|    9338 | ARTHUR      | Mike   |     1994 |
+|    9339 | ARTHUR      | Jon    |     3372 |
+|    9340 | ARTHUR      | Mike   |     3421 |
+|    9341 | ARTHUR      | Jon    |     4420 |
+|    9342 | ARTHUR      | Mike   |     4958 |
+|    9343 | ARTHUR      | Mike   |     5428 |
+|    9344 | ARTHUR      | Jon    |     5557 |
+|    9345 | ARTHUR      | Jon    |     6136 |
+|    9346 | ARTHUR      | Jon    |     6323 |
+|    9347 | ARTHUR      | Jon    |     6881 |
+|    9348 | ARTHUR      | Jon    |     7943 |
+|    9349 | ARTHUR      | Jon    |     8272 |
+|    9350 | ARTHUR      | Mike   |     8505 |
+|    9351 | ARTHUR      | Jon    |     8543 |
+|    9352 | ARTHUR      | Jon    |     8732 |
+|    9353 | ARTHUR      | Jon    |     9566 |
+|    9354 | ARTHUR      | Mike   |     9848 |
+|    9355 | ARTHUR      | Mike   |     9927 |
+|    9356 | ARTHUR      | Mike   |    10304 |
+|    9357 | ARTHUR      | Jon    |    10389 |
+|    9358 | ARTHUR      | Jon    |    10521 |
+|    9359 | ARTHUR      | Jon    |    11062 |
+|    9360 | ARTHUR      | Mike   |    11375 |
+|    9361 | ARTHUR      | Jon    |    11470 |
+|    9362 | ARTHUR      | Mike   |    14890 |
+|    9363 | ARTHUR      | Jon    |    15459 |
+|    9364 | ARTHUR      | Mike   |    15535 |
+|    9365 | ARTHUR      | Mike   |    15661 |
+|    9366 | ARTHUR      | Jon    |    15825 |
+|    9367 | ARTHUR      | Mike   |    15827 |
+|    9368 | RYAN        | Jon    |     1711 |
+|    9369 | RYAN        | Jon    |     2274 |
+|    9370 | RYAN        | Mike   |     3026 |
+|    9371 | RYAN        | Mike   |     3092 |
+|    9372 | RYAN        | Mike   |     3326 |
+|    9373 | RYAN        | Jon    |     3605 |
+|    9374 | RYAN        | Jon    |     3666 |
+|    9375 | RYAN        | Mike   |     4232 |
+|    9376 | RYAN        | Mike   |     4523 |
+|    9377 | RYAN        | Jon    |     5471 |
+|    9378 | RYAN        | Mike   |     5819 |
+|    9379 | RYAN        | Jon    |     6121 |
+|    9380 | RYAN        | Mike   |     7811 |
+|    9381 | RYAN        | Jon    |     8148 |
+|    9382 | RYAN        | Jon    |     8153 |
+|    9383 | RYAN        | Jon    |     8176 |
+|    9384 | RYAN        | Jon    |     8378 |
+|    9385 | RYAN        | Jon    |     8771 |
+|    9386 | RYAN        | Mike   |     9013 |
+|    9387 | RYAN        | Mike   |     9582 |
+|    9388 | RYAN        | Mike   |     9856 |
+|    9389 | RYAN        | Mike   |     9876 |
+|    9390 | RYAN        | Jon    |    11738 |
+|    9391 | RYAN        | Mike   |    12195 |
+|    9392 | RYAN        | Jon    |    12399 |
+|    9393 | RYAN        | Jon    |    13314 |
+|    9394 | RYAN        | Jon    |    14894 |
+|    9395 | RYAN        | Jon    |    14958 |
+|    9396 | RYAN        | Jon    |    15426 |
+|    9397 | RYAN        | Jon    |    15555 |
+|    9398 | ROGER       | Jon    |      153 |
+|    9399 | ROGER       | Jon    |      821 |
+|    9400 | ROGER       | Mike   |     1654 |
+|    9401 | ROGER       | Mike   |     2041 |
+|    9402 | ROGER       | Jon    |     2499 |
+|    9403 | ROGER       | Jon    |     3494 |
+|    9404 | ROGER       | Jon    |     3610 |
+|    9405 | ROGER       | Jon    |     4556 |
+|    9406 | ROGER       | Jon    |     4633 |
+|    9407 | ROGER       | Mike   |     4699 |
+|    9408 | ROGER       | Mike   |     4807 |
+|    9409 | ROGER       | Mike   |     5345 |
+|    9410 | ROGER       | Jon    |     5965 |
+|    9411 | ROGER       | Jon    |     6776 |
+|    9412 | ROGER       | Jon    |     7380 |
+|    9413 | ROGER       | Mike   |     7482 |
+|    9414 | ROGER       | Jon    |     7825 |
+|    9415 | ROGER       | Mike   |     8500 |
+|    9416 | ROGER       | Mike   |     8569 |
+|    9417 | ROGER       | Jon    |     8682 |
+|    9418 | ROGER       | Jon    |     9482 |
+|    9419 | ROGER       | Mike   |    10769 |
+|    9420 | ROGER       | Jon    |    10972 |
+|    9421 | ROGER       | Mike   |    11262 |
+|    9422 | ROGER       | Mike   |    11429 |
+|    9423 | ROGER       | Jon    |    12564 |
+|    9424 | ROGER       | Jon    |    12884 |
+|    9425 | ROGER       | Jon    |    12937 |
+|    9426 | ROGER       | Jon    |    13238 |
+|    9427 | ROGER       | Jon    |    13602 |
+|    9428 | ROGER       | Jon    |    13684 |
+|    9429 | ROGER       | Mike   |    13962 |
+|    9430 | ROGER       | Jon    |    14079 |
+|    9431 | ROGER       | Jon    |    14937 |
+|    9432 | ROGER       | Jon    |    15817 |
+|    9433 | ROGER       | Mike   |    15944 |
+|    9434 | JOE         | Mike   |      890 |
+|    9435 | JOE         | Mike   |     1197 |
+|    9436 | JOE         | Mike   |     1523 |
+|    9437 | JOE         | Jon    |     2987 |
+|    9438 | JOE         | Mike   |     3067 |
+|    9439 | JOE         | Jon    |     3488 |
+|    9440 | JOE         | Mike   |     4190 |
+|    9441 | JOE         | Jon    |     4494 |
+|    9442 | JOE         | Mike   |     4881 |
+|    9443 | JOE         | Mike   |     5433 |
+|    9444 | JOE         | Mike   |     7002 |
+|    9445 | JOE         | Mike   |     7046 |
+|    9446 | JOE         | Jon    |     7702 |
+|    9447 | JOE         | Jon    |     8297 |
+|    9448 | JOE         | Mike   |     9262 |
+|    9449 | JOE         | Mike   |     9670 |
+|    9450 | JOE         | Mike   |     9731 |
+|    9451 | JOE         | Mike   |    10987 |
+|    9452 | JOE         | Jon    |    11192 |
+|    9453 | JOE         | Jon    |    11492 |
+|    9454 | JOE         | Mike   |    11905 |
+|    9455 | JOE         | Mike   |    13258 |
+|    9456 | JOE         | Jon    |    13636 |
+|    9457 | JOE         | Jon    |    14200 |
+|    9458 | JOE         | Jon    |    14721 |
+|    9459 | JOE         | Jon    |    14908 |
+|    9460 | JOE         | Mike   |    15833 |
+|    9461 | JOE         | Mike   |    15955 |
+|    9462 | JOE         | Mike   |    14915 |
+|    9463 | JUAN        | Mike   |       24 |
+|    9464 | JUAN        | Mike   |      802 |
+|    9465 | JUAN        | Jon    |     2011 |
+|    9466 | JUAN        | Mike   |     2619 |
+|    9467 | JUAN        | Mike   |     3079 |
+|    9468 | JUAN        | Jon    |     3206 |
+|    9469 | JUAN        | Mike   |     3529 |
+|    9470 | JUAN        | Mike   |     3893 |
+|    9471 | JUAN        | Mike   |     4767 |
+|    9472 | JUAN        | Mike   |     5240 |
+|    9473 | JUAN        | Mike   |     5303 |
+|    9474 | JUAN        | Mike   |     5786 |
+|    9475 | JUAN        | Jon    |     6408 |
+|    9476 | JUAN        | Jon    |     7416 |
+|    9477 | JUAN        | Jon    |    11504 |
+|    9478 | JUAN        | Jon    |    11595 |
+|    9479 | JUAN        | Jon    |    11692 |
+|    9480 | JUAN        | Mike   |    11800 |
+|    9481 | JUAN        | Jon    |    12252 |
+|    9482 | JUAN        | Jon    |    12445 |
+|    9483 | JUAN        | Jon    |    13086 |
+|    9484 | JUAN        | Jon    |    15789 |
+|    9485 | JUAN        | Mike   |    15807 |
+|    9486 | JACK        | Mike   |     1137 |
+|    9487 | JACK        | Jon    |     1792 |
+|    9488 | JACK        | Mike   |     1869 |
+|    9489 | JACK        | Mike   |     2759 |
+|    9490 | JACK        | Mike   |     3836 |
+|    9491 | JACK        | Mike   |     4544 |
+|    9492 | JACK        | Mike   |     4756 |
+|    9493 | JACK        | Jon    |     4761 |
+|    9494 | JACK        | Mike   |     5280 |
+|    9495 | JACK        | Mike   |     5912 |
+|    9496 | JACK        | Jon    |     6180 |
+|    9497 | JACK        | Mike   |     6664 |
+|    9498 | JACK        | Jon    |     6777 |
+|    9499 | JACK        | Jon    |     7630 |
+|    9500 | JACK        | Jon    |     8512 |
+|    9501 | JACK        | Mike   |     9707 |
+|    9502 | JACK        | Jon    |    10119 |
+|    9503 | JACK        | Jon    |    10501 |
+|    9504 | JACK        | Jon    |    11127 |
+|    9505 | JACK        | Mike   |    14368 |
+|    9506 | JACK        | Jon    |    15142 |
+|    9507 | JACK        | Mike   |    15664 |
+|    9508 | JACK        | Jon    |    15712 |
+|    9509 | JACK        | Mike   |    15762 |
+|    9510 | ALBERT      | Mike   |      784 |
+|    9511 | ALBERT      | Mike   |     1498 |
+|    9512 | ALBERT      | Mike   |     1649 |
+|    9513 | ALBERT      | Mike   |     1678 |
+|    9514 | ALBERT      | Mike   |     1780 |
+|    9515 | ALBERT      | Jon    |     3331 |
+|    9516 | ALBERT      | Jon    |     4116 |
+|    9517 | ALBERT      | Jon    |     6329 |
+|    9518 | ALBERT      | Mike   |     7033 |
+|    9519 | ALBERT      | Mike   |     7419 |
+|    9520 | ALBERT      | Jon    |     7512 |
+|    9521 | ALBERT      | Mike   |     7579 |
+|    9522 | ALBERT      | Mike   |     7845 |
+|    9523 | ALBERT      | Mike   |     7886 |
+|    9524 | ALBERT      | Mike   |     9463 |
+|    9525 | ALBERT      | Mike   |    11793 |
+|    9526 | ALBERT      | Mike   |    11823 |
+|    9527 | ALBERT      | Jon    |    11986 |
+|    9528 | ALBERT      | Jon    |    12234 |
+|    9529 | ALBERT      | Mike   |    12751 |
+|    9530 | ALBERT      | Mike   |    14130 |
+|    9531 | ALBERT      | Jon    |    14852 |
+|    9532 | ALBERT      | Jon    |    13578 |
+|    9533 | JONATHAN    | Jon    |     1103 |
+|    9534 | JONATHAN    | Jon    |     1359 |
+|    9535 | JONATHAN    | Jon    |     1928 |
+|    9536 | JONATHAN    | Jon    |     3233 |
+|    9537 | JONATHAN    | Jon    |     4380 |
+|    9538 | JONATHAN    | Jon    |     6559 |
+|    9539 | JONATHAN    | Mike   |     6610 |
+|    9540 | JONATHAN    | Jon    |     7993 |
+|    9541 | JONATHAN    | Jon    |    10071 |
+|    9542 | JONATHAN    | Mike   |    11186 |
+|    9543 | JONATHAN    | Jon    |    11414 |
+|    9544 | JONATHAN    | Jon    |    11698 |
+|    9545 | JONATHAN    | Mike   |    12928 |
+|    9546 | JONATHAN    | Jon    |    13604 |
+|    9547 | JONATHAN    | Mike   |    14396 |
+|    9548 | JONATHAN    | Mike   |    15564 |
+|    9549 | JONATHAN    | Jon    |    15650 |
+|    9550 | JONATHAN    | Jon    |    15676 |
+|    9551 | JUSTIN      | Mike   |      140 |
+|    9552 | JUSTIN      | Jon    |      158 |
+|    9553 | JUSTIN      | Jon    |      402 |
+|    9554 | JUSTIN      | Mike   |     1491 |
+|    9555 | JUSTIN      | Mike   |     2275 |
+|    9556 | JUSTIN      | Mike   |     2769 |
+|    9557 | JUSTIN      | Mike   |     3139 |
+|    9558 | JUSTIN      | Jon    |     3821 |
+|    9559 | JUSTIN      | Jon    |     4034 |
+|    9560 | JUSTIN      | Mike   |     4449 |
+|    9561 | JUSTIN      | Jon    |     4745 |
+|    9562 | JUSTIN      | Mike   |     5354 |
+|    9563 | JUSTIN      | Jon    |     5556 |
+|    9564 | JUSTIN      | Mike   |     5873 |
+|    9565 | JUSTIN      | Mike   |     6054 |
+|    9566 | JUSTIN      | Mike   |     6838 |
+|    9567 | JUSTIN      | Mike   |     6926 |
+|    9568 | JUSTIN      | Mike   |     6939 |
+|    9569 | JUSTIN      | Jon    |     7148 |
+|    9570 | JUSTIN      | Jon    |     7235 |
+|    9571 | JUSTIN      | Jon    |     7241 |
+|    9572 | JUSTIN      | Jon    |     8321 |
+|    9573 | JUSTIN      | Jon    |     8477 |
+|    9574 | JUSTIN      | Mike   |     8609 |
+|    9575 | JUSTIN      | Jon    |     8921 |
+|    9576 | JUSTIN      | Mike   |     9130 |
+|    9577 | JUSTIN      | Mike   |    10420 |
+|    9578 | JUSTIN      | Jon    |    12243 |
+|    9579 | JUSTIN      | Mike   |    12544 |
+|    9580 | JUSTIN      | Mike   |    12998 |
+|    9581 | JUSTIN      | Jon    |    14212 |
+|    9582 | JUSTIN      | Jon    |    14245 |
+|    9583 | JUSTIN      | Mike   |    14840 |
+|    9584 | JUSTIN      | Jon    |    15956 |
+|    9585 | JUSTIN      | Mike   |    12759 |
+|    9586 | JUSTIN      | Mike   |    11782 |
+|    9587 | TERRY       | Mike   |     1110 |
+|    9588 | TERRY       | Jon    |     1488 |
+|    9589 | TERRY       | Mike   |     1612 |
+|    9590 | TERRY       | Mike   |     3567 |
+|    9591 | TERRY       | Mike   |     3730 |
+|    9592 | TERRY       | Mike   |     5210 |
+|    9593 | TERRY       | Mike   |     5564 |
+|    9594 | TERRY       | Mike   |     6127 |
+|    9595 | TERRY       | Jon    |     6262 |
+|    9596 | TERRY       | Mike   |     6437 |
+|    9597 | TERRY       | Jon    |     6669 |
+|    9598 | TERRY       | Jon    |     7108 |
+|    9599 | TERRY       | Jon    |     7477 |
+|    9600 | TERRY       | Jon    |     8418 |
+|    9601 | TERRY       | Mike   |    10498 |
+|    9602 | TERRY       | Jon    |    11471 |
+|    9603 | TERRY       | Jon    |    13821 |
+|    9604 | TERRY       | Mike   |    15367 |
+|    9605 | TERRY       | Jon    |    15531 |
+|    9606 | TERRY       | Mike   |    14760 |
+|    9607 | GERALD      | Jon    |     1088 |
+|    9608 | GERALD      | Mike   |     1410 |
+|    9609 | GERALD      | Mike   |     2405 |
+|    9610 | GERALD      | Mike   |     2433 |
+|    9611 | GERALD      | Jon    |     3829 |
+|    9612 | GERALD      | Jon    |     4599 |
+|    9613 | GERALD      | Mike   |     5513 |
+|    9614 | GERALD      | Mike   |     6593 |
+|    9615 | GERALD      | Mike   |     6648 |
+|    9616 | GERALD      | Mike   |     7079 |
+|    9617 | GERALD      | Mike   |     7758 |
+|    9618 | GERALD      | Mike   |     7902 |
+|    9619 | GERALD      | Mike   |     8198 |
+|    9620 | GERALD      | Mike   |     8975 |
+|    9621 | GERALD      | Jon    |     9037 |
+|    9622 | GERALD      | Jon    |     9523 |
+|    9623 | GERALD      | Jon    |     9883 |
+|    9624 | GERALD      | Mike   |    10427 |
+|    9625 | GERALD      | Mike   |    10854 |
+|    9626 | GERALD      | Mike   |    11535 |
+|    9627 | GERALD      | Jon    |    11579 |
+|    9628 | GERALD      | Jon    |    12037 |
+|    9629 | GERALD      | Jon    |    12876 |
+|    9630 | GERALD      | Mike   |    12913 |
+|    9631 | GERALD      | Jon    |    13107 |
+|    9632 | GERALD      | Jon    |    13442 |
+|    9633 | GERALD      | Jon    |    13703 |
+|    9634 | GERALD      | Mike   |    15705 |
+|    9635 | GERALD      | Jon    |    15754 |
+|    9636 | GERALD      | Mike   |    15757 |
+|    9637 | KEITH       | Mike   |      144 |
+|    9638 | KEITH       | Mike   |      824 |
+|    9639 | KEITH       | Jon    |      945 |
+|    9640 | KEITH       | Jon    |     1246 |
+|    9641 | KEITH       | Mike   |     1788 |
+|    9642 | KEITH       | Jon    |     1971 |
+|    9643 | KEITH       | Jon    |     2153 |
+|    9644 | KEITH       | Mike   |     3865 |
+|    9645 | KEITH       | Mike   |     4478 |
+|    9646 | KEITH       | Mike   |     5896 |
+|    9647 | KEITH       | Mike   |     6288 |
+|    9648 | KEITH       | Jon    |     6367 |
+|    9649 | KEITH       | Jon    |     6405 |
+|    9650 | KEITH       | Mike   |     6839 |
+|    9651 | KEITH       | Mike   |     7353 |
+|    9652 | KEITH       | Mike   |     7366 |
+|    9653 | KEITH       | Jon    |     8041 |
+|    9654 | KEITH       | Mike   |     8124 |
+|    9655 | KEITH       | Jon    |     9233 |
+|    9656 | KEITH       | Jon    |    10391 |
+|    9657 | KEITH       | Mike   |    10502 |
+|    9658 | KEITH       | Mike   |    10503 |
+|    9659 | KEITH       | Jon    |    10764 |
+|    9660 | KEITH       | Jon    |    11065 |
+|    9661 | KEITH       | Mike   |    14926 |
+|    9662 | KEITH       | Jon    |    15869 |
+|    9663 | SAMUEL      | Jon    |      858 |
+|    9664 | SAMUEL      | Mike   |     1455 |
+|    9665 | SAMUEL      | Jon    |     1908 |
+|    9666 | SAMUEL      | Mike   |     2114 |
+|    9667 | SAMUEL      | Mike   |     2721 |
+|    9668 | SAMUEL      | Mike   |     2749 |
+|    9669 | SAMUEL      | Mike   |     3245 |
+|    9670 | SAMUEL      | Mike   |     3753 |
+|    9671 | SAMUEL      | Mike   |     3809 |
+|    9672 | SAMUEL      | Jon    |     5023 |
+|    9673 | SAMUEL      | Mike   |     6362 |
+|    9674 | SAMUEL      | Mike   |     8621 |
+|    9675 | SAMUEL      | Jon    |     9062 |
+|    9676 | SAMUEL      | Mike   |     9568 |
+|    9677 | SAMUEL      | Mike   |    10193 |
+|    9678 | SAMUEL      | Mike   |    10482 |
+|    9679 | SAMUEL      | Jon    |    11149 |
+|    9680 | SAMUEL      | Jon    |    11653 |
+|    9681 | SAMUEL      | Mike   |    12452 |
+|    9682 | SAMUEL      | Mike   |    13197 |
+|    9683 | SAMUEL      | Mike   |    14004 |
+|    9684 | WILLIE      | Mike   |      284 |
+|    9685 | WILLIE      | Jon    |      392 |
+|    9686 | WILLIE      | Mike   |      528 |
+|    9687 | WILLIE      | Jon    |     1329 |
+|    9688 | WILLIE      | Jon    |     1770 |
+|    9689 | WILLIE      | Mike   |     2401 |
+|    9690 | WILLIE      | Mike   |     2736 |
+|    9691 | WILLIE      | Jon    |     4830 |
+|    9692 | WILLIE      | Jon    |     6424 |
+|    9693 | WILLIE      | Mike   |     6542 |
+|    9694 | WILLIE      | Jon    |     6741 |
+|    9695 | WILLIE      | Jon    |     7098 |
+|    9696 | WILLIE      | Mike   |     7115 |
+|    9697 | WILLIE      | Mike   |     8174 |
+|    9698 | WILLIE      | Mike   |     9898 |
+|    9699 | WILLIE      | Jon    |    10174 |
+|    9700 | WILLIE      | Mike   |    11032 |
+|    9701 | WILLIE      | Mike   |    12611 |
+|    9702 | WILLIE      | Jon    |    13297 |
+|    9703 | WILLIE      | Mike   |    14258 |
+|    9704 | WILLIE      | Jon    |    14598 |
+|    9705 | WILLIE      | Mike   |    15104 |
+|    9706 | WILLIE      | Mike   |    15148 |
+|    9707 | WILLIE      | Mike   |    15453 |
+|    9708 | WILLIE      | Jon    |    15655 |
+|    9709 | RALPH       | Mike   |      633 |
+|    9710 | RALPH       | Jon    |      777 |
+|    9711 | RALPH       | Jon    |     1492 |
+|    9712 | RALPH       | Jon    |     2402 |
+|    9713 | RALPH       | Jon    |     2541 |
+|    9714 | RALPH       | Jon    |     2780 |
+|    9715 | RALPH       | Mike   |     4056 |
+|    9716 | RALPH       | Mike   |     4487 |
+|    9717 | RALPH       | Jon    |     5456 |
+|    9718 | RALPH       | Mike   |     5834 |
+|    9719 | RALPH       | Mike   |     5995 |
+|    9720 | RALPH       | Mike   |     6442 |
+|    9721 | RALPH       | Jon    |     6770 |
+|    9722 | RALPH       | Mike   |     7251 |
+|    9723 | RALPH       | Jon    |     7588 |
+|    9724 | RALPH       | Mike   |     7654 |
+|    9725 | RALPH       | Jon    |     7908 |
+|    9726 | RALPH       | Mike   |     8220 |
+|    9727 | RALPH       | Jon    |     8361 |
+|    9728 | RALPH       | Mike   |     9283 |
+|    9729 | RALPH       | Jon    |     9352 |
+|    9730 | RALPH       | Mike   |     9623 |
+|    9731 | RALPH       | Jon    |     9659 |
+|    9732 | RALPH       | Jon    |    10857 |
+|    9733 | RALPH       | Jon    |    11264 |
+|    9734 | RALPH       | Jon    |    11553 |
+|    9735 | RALPH       | Jon    |    12088 |
+|    9736 | RALPH       | Mike   |    12773 |
+|    9737 | RALPH       | Jon    |    12795 |
+|    9738 | RALPH       | Mike   |    12839 |
+|    9739 | RALPH       | Mike   |    12990 |
+|    9740 | RALPH       | Jon    |    13894 |
+|    9741 | RALPH       | Mike   |    14700 |
+|    9742 | RALPH       | Mike   |    15310 |
+|    9743 | LAWRENCE    | Mike   |      368 |
+|    9744 | LAWRENCE    | Jon    |     1120 |
+|    9745 | LAWRENCE    | Jon    |     2353 |
+|    9746 | LAWRENCE    | Jon    |     2558 |
+|    9747 | LAWRENCE    | Mike   |     2851 |
+|    9748 | LAWRENCE    | Jon    |     3303 |
+|    9749 | LAWRENCE    | Jon    |     5154 |
+|    9750 | LAWRENCE    | Mike   |     6152 |
+|    9751 | LAWRENCE    | Jon    |     6829 |
+|    9752 | LAWRENCE    | Jon    |     6911 |
+|    9753 | LAWRENCE    | Mike   |     6914 |
+|    9754 | LAWRENCE    | Mike   |     7538 |
+|    9755 | LAWRENCE    | Jon    |     7712 |
+|    9756 | LAWRENCE    | Jon    |     8189 |
+|    9757 | LAWRENCE    | Mike   |    10145 |
+|    9758 | LAWRENCE    | Mike   |    10151 |
+|    9759 | LAWRENCE    | Mike   |    10414 |
+|    9760 | LAWRENCE    | Jon    |    10975 |
+|    9761 | LAWRENCE    | Jon    |    11031 |
+|    9762 | LAWRENCE    | Jon    |    11243 |
+|    9763 | LAWRENCE    | Mike   |    11327 |
+|    9764 | LAWRENCE    | Mike   |    11991 |
+|    9765 | LAWRENCE    | Jon    |    12626 |
+|    9766 | LAWRENCE    | Jon    |    12690 |
+|    9767 | LAWRENCE    | Mike   |    13135 |
+|    9768 | LAWRENCE    | Jon    |    14031 |
+|    9769 | LAWRENCE    | Mike   |    14422 |
+|    9770 | LAWRENCE    | Mike   |    15759 |
+|    9771 | LAWRENCE    | Jon    |    15935 |
+|    9772 | LAWRENCE    | Mike   |    13298 |
+|    9773 | LAWRENCE    | Mike   |    14769 |
+|    9774 | NICHOLAS    | Jon    |     1035 |
+|    9775 | NICHOLAS    | Mike   |     1429 |
+|    9776 | NICHOLAS    | Mike   |     1529 |
+|    9777 | NICHOLAS    | Mike   |     1615 |
+|    9778 | NICHOLAS    | Jon    |     3197 |
+|    9779 | NICHOLAS    | Jon    |     3393 |
+|    9780 | NICHOLAS    | Jon    |     4646 |
+|    9781 | NICHOLAS    | Mike   |     5227 |
+|    9782 | NICHOLAS    | Jon    |     5563 |
+|    9783 | NICHOLAS    | Jon    |     5690 |
+|    9784 | NICHOLAS    | Mike   |     6204 |
+|    9785 | NICHOLAS    | Jon    |     6576 |
+|    9786 | NICHOLAS    | Mike   |     6981 |
+|    9787 | NICHOLAS    | Mike   |     7172 |
+|    9788 | NICHOLAS    | Mike   |     7485 |
+|    9789 | NICHOLAS    | Mike   |     8081 |
+|    9790 | NICHOLAS    | Jon    |     8325 |
+|    9791 | NICHOLAS    | Jon    |     8364 |
+|    9792 | NICHOLAS    | Mike   |     8662 |
+|    9793 | NICHOLAS    | Mike   |     8714 |
+|    9794 | NICHOLAS    | Mike   |     9784 |
+|    9795 | NICHOLAS    | Jon    |    10546 |
+|    9796 | NICHOLAS    | Jon    |    12244 |
+|    9797 | NICHOLAS    | Mike   |    12854 |
+|    9798 | NICHOLAS    | Mike   |    13603 |
+|    9799 | NICHOLAS    | Jon    |    14051 |
+|    9800 | NICHOLAS    | Jon    |    14129 |
+|    9801 | NICHOLAS    | Jon    |    14336 |
+|    9802 | NICHOLAS    | Mike   |    14752 |
+|    9803 | NICHOLAS    | Mike   |    14759 |
+|    9804 | NICHOLAS    | Mike   |    14808 |
+|    9805 | NICHOLAS    | Mike   |    14950 |
+|    9806 | ROY         | Mike   |      733 |
+|    9807 | ROY         | Jon    |     1426 |
+|    9808 | ROY         | Jon    |     1569 |
+|    9809 | ROY         | Mike   |     1847 |
+|    9810 | ROY         | Mike   |     2540 |
+|    9811 | ROY         | Jon    |     3281 |
+|    9812 | ROY         | Mike   |     3726 |
+|    9813 | ROY         | Jon    |     5687 |
+|    9814 | ROY         | Mike   |     5758 |
+|    9815 | ROY         | Jon    |     6140 |
+|    9816 | ROY         | Jon    |     6705 |
+|    9817 | ROY         | Jon    |     6821 |
+|    9818 | ROY         | Jon    |     6878 |
+|    9819 | ROY         | Mike   |     7256 |
+|    9820 | ROY         | Jon    |     7708 |
+|    9821 | ROY         | Jon    |     8121 |
+|    9822 | ROY         | Jon    |     8522 |
+|    9823 | ROY         | Jon    |     8804 |
+|    9824 | ROY         | Jon    |     8841 |
+|    9825 | ROY         | Mike   |     9968 |
+|    9826 | ROY         | Mike   |     9977 |
+|    9827 | ROY         | Mike   |    10339 |
+|    9828 | ROY         | Jon    |    12189 |
+|    9829 | ROY         | Jon    |    12760 |
+|    9830 | ROY         | Mike   |    13706 |
+|    9831 | ROY         | Mike   |    14694 |
+|    9832 | ROY         | Mike   |    14983 |
+|    9833 | ROY         | Jon    |    15279 |
+|    9834 | ROY         | Mike   |    15335 |
+|    9835 | BENJAMIN    | Mike   |      462 |
+|    9836 | BENJAMIN    | Mike   |     1722 |
+|    9837 | BENJAMIN    | Jon    |     2442 |
+|    9838 | BENJAMIN    | Jon    |     2606 |
+|    9839 | BENJAMIN    | Jon    |     2857 |
+|    9840 | BENJAMIN    | Jon    |     2962 |
+|    9841 | BENJAMIN    | Mike   |     3678 |
+|    9842 | BENJAMIN    | Jon    |     3961 |
+|    9843 | BENJAMIN    | Mike   |     4047 |
+|    9844 | BENJAMIN    | Jon    |     4689 |
+|    9845 | BENJAMIN    | Mike   |     5872 |
+|    9846 | BENJAMIN    | Mike   |     7272 |
+|    9847 | BENJAMIN    | Jon    |     9266 |
+|    9848 | BENJAMIN    | Mike   |    10092 |
+|    9849 | BENJAMIN    | Jon    |    10290 |
+|    9850 | BENJAMIN    | Jon    |    11932 |
+|    9851 | BENJAMIN    | Mike   |    12557 |
+|    9852 | BENJAMIN    | Mike   |    12761 |
+|    9853 | BENJAMIN    | Jon    |    12912 |
+|    9854 | BENJAMIN    | Mike   |    13698 |
+|    9855 | BENJAMIN    | Jon    |    13936 |
+|    9856 | BENJAMIN    | Jon    |    14293 |
+|    9857 | BENJAMIN    | Mike   |    15242 |
+|    9858 | BRUCE       | Jon    |      120 |
+|    9859 | BRUCE       | Mike   |      231 |
+|    9860 | BRUCE       | Mike   |     1303 |
+|    9861 | BRUCE       | Mike   |     1578 |
+|    9862 | BRUCE       | Mike   |     1983 |
+|    9863 | BRUCE       | Mike   |     2525 |
+|    9864 | BRUCE       | Jon    |     3156 |
+|    9865 | BRUCE       | Mike   |     4583 |
+|    9866 | BRUCE       | Mike   |     6604 |
+|    9867 | BRUCE       | Mike   |     7488 |
+|    9868 | BRUCE       | Jon    |     7634 |
+|    9869 | BRUCE       | Mike   |     8168 |
+|    9870 | BRUCE       | Jon    |     8782 |
+|    9871 | BRUCE       | Mike   |     8856 |
+|    9872 | BRUCE       | Mike   |     9122 |
+|    9873 | BRUCE       | Jon    |     9184 |
+|    9874 | BRUCE       | Jon    |     9540 |
+|    9875 | BRUCE       | Jon    |    10717 |
+|    9876 | BRUCE       | Jon    |    12322 |
+|    9877 | BRUCE       | Jon    |    12375 |
+|    9878 | BRUCE       | Mike   |    12804 |
+|    9879 | BRUCE       | Mike   |    13619 |
+|    9880 | BRUCE       | Jon    |    14463 |
+|    9881 | BRANDON     | Jon    |      911 |
+|    9882 | BRANDON     | Jon    |     1401 |
+|    9883 | BRANDON     | Jon    |     2214 |
+|    9884 | BRANDON     | Jon    |     3632 |
+|    9885 | BRANDON     | Mike   |     3834 |
+|    9886 | BRANDON     | Jon    |     4276 |
+|    9887 | BRANDON     | Mike   |     4569 |
+|    9888 | BRANDON     | Jon    |     5364 |
+|    9889 | BRANDON     | Mike   |     6112 |
+|    9890 | BRANDON     | Mike   |     6366 |
+|    9891 | BRANDON     | Jon    |     6533 |
+|    9892 | BRANDON     | Jon    |     6738 |
+|    9893 | BRANDON     | Mike   |     6842 |
+|    9894 | BRANDON     | Jon    |     6971 |
+|    9895 | BRANDON     | Mike   |     7344 |
+|    9896 | BRANDON     | Mike   |     7562 |
+|    9897 | BRANDON     | Jon    |     7602 |
+|    9898 | BRANDON     | Mike   |     7805 |
+|    9899 | BRANDON     | Jon    |     8169 |
+|    9900 | BRANDON     | Jon    |     8260 |
+|    9901 | BRANDON     | Jon    |     8928 |
+|    9902 | BRANDON     | Mike   |     9316 |
+|    9903 | BRANDON     | Mike   |    10198 |
+|    9904 | BRANDON     | Mike   |    10384 |
+|    9905 | BRANDON     | Jon    |    11337 |
+|    9906 | BRANDON     | Jon    |    11340 |
+|    9907 | BRANDON     | Jon    |    12413 |
+|    9908 | BRANDON     | Mike   |    12608 |
+|    9909 | BRANDON     | Jon    |    13563 |
+|    9910 | BRANDON     | Mike   |    13857 |
+|    9911 | BRANDON     | Mike   |    14147 |
+|    9912 | BRANDON     | Mike   |    14290 |
+|    9913 | BRANDON     | Mike   |    14390 |
+|    9914 | BRANDON     | Mike   |    14717 |
+|    9915 | BRANDON     | Mike   |    14906 |
+|    9916 | BRANDON     | Mike   |    15514 |
+|    9917 | BRANDON     | Mike   |    13421 |
+|    9918 | ADAM        | Mike   |      939 |
+|    9919 | ADAM        | Mike   |     1089 |
+|    9920 | ADAM        | Mike   |     3078 |
+|    9921 | ADAM        | Mike   |     4251 |
+|    9922 | ADAM        | Jon    |     5490 |
+|    9923 | ADAM        | Jon    |     5538 |
+|    9924 | ADAM        | Jon    |     5839 |
+|    9925 | ADAM        | Jon    |     6228 |
+|    9926 | ADAM        | Mike   |     6716 |
+|    9927 | ADAM        | Jon    |     6835 |
+|    9928 | ADAM        | Jon    |     8490 |
+|    9929 | ADAM        | Mike   |     9030 |
+|    9930 | ADAM        | Mike   |     9430 |
+|    9931 | ADAM        | Mike   |     9912 |
+|    9932 | ADAM        | Jon    |    10344 |
+|    9933 | ADAM        | Mike   |    12152 |
+|    9934 | ADAM        | Jon    |    12362 |
+|    9935 | ADAM        | Jon    |    12373 |
+|    9936 | ADAM        | Jon    |    12911 |
+|    9937 | ADAM        | Jon    |    13235 |
+|    9938 | ADAM        | Mike   |    14413 |
+|    9939 | ADAM        | Mike   |    14481 |
+|    9940 | HARRY       | Mike   |       64 |
+|    9941 | HARRY       | Mike   |      125 |
+|    9942 | HARRY       | Mike   |      836 |
+|    9943 | HARRY       | Mike   |      949 |
+|    9944 | HARRY       | Mike   |     1186 |
+|    9945 | HARRY       | Mike   |     1513 |
+|    9946 | HARRY       | Mike   |     2531 |
+|    9947 | HARRY       | Mike   |     2694 |
+|    9948 | HARRY       | Mike   |     2744 |
+|    9949 | HARRY       | Jon    |     3275 |
+|    9950 | HARRY       | Jon    |     3608 |
+|    9951 | HARRY       | Jon    |     4066 |
+|    9952 | HARRY       | Mike   |     4584 |
+|    9953 | HARRY       | Jon    |     4913 |
+|    9954 | HARRY       | Mike   |     6124 |
+|    9955 | HARRY       | Mike   |     6154 |
+|    9956 | HARRY       | Mike   |     6681 |
+|    9957 | HARRY       | Jon    |     7571 |
+|    9958 | HARRY       | Mike   |     8045 |
+|    9959 | HARRY       | Jon    |     8226 |
+|    9960 | HARRY       | Mike   |     9400 |
+|    9961 | HARRY       | Mike   |     9833 |
+|    9962 | HARRY       | Jon    |    10730 |
+|    9963 | HARRY       | Jon    |    10848 |
+|    9964 | HARRY       | Mike   |    11844 |
+|    9965 | HARRY       | Jon    |    12319 |
+|    9966 | HARRY       | Mike   |    12796 |
+|    9967 | HARRY       | Jon    |    13189 |
+|    9968 | HARRY       | Jon    |    13280 |
+|    9969 | HARRY       | Jon    |    13378 |
+|    9970 | HARRY       | Jon    |    13781 |
+|    9971 | HARRY       | Jon    |    13963 |
+|    9972 | HARRY       | Mike   |    14393 |
+|    9973 | HARRY       | Mike   |    15353 |
+|    9974 | HARRY       | Mike   |    15437 |
+|    9975 | FRED        | Mike   |       31 |
+|    9976 | FRED        | Mike   |      294 |
+|    9977 | FRED        | Jon    |      854 |
+|    9978 | FRED        | Jon    |      913 |
+|    9979 | FRED        | Mike   |     1224 |
+|    9980 | FRED        | Mike   |     3490 |
+|    9981 | FRED        | Jon    |     3903 |
+|    9982 | FRED        | Jon    |     4859 |
+|    9983 | FRED        | Mike   |     5043 |
+|    9984 | FRED        | Jon    |     5496 |
+|    9985 | FRED        | Jon    |     5561 |
+|    9986 | FRED        | Mike   |     8236 |
+|    9987 | FRED        | Jon    |     8826 |
+|    9988 | FRED        | Jon    |     9032 |
+|    9989 | FRED        | Mike   |     9089 |
+|    9990 | FRED        | Jon    |     9543 |
+|    9991 | FRED        | Mike   |     9973 |
+|    9992 | FRED        | Mike   |    10299 |
+|    9993 | FRED        | Jon    |    10359 |
+|    9994 | FRED        | Jon    |    10713 |
+|    9995 | FRED        | Mike   |    11084 |
+|    9996 | FRED        | Jon    |    11388 |
+|    9997 | FRED        | Mike   |    12521 |
+|    9998 | FRED        | Jon    |    14684 |
+|    9999 | FRED        | Mike   |    13898 |
+|   10000 | WAYNE       | Jon    |     1190 |
+|   10001 | WAYNE       | Jon    |     4400 |
+|   10002 | WAYNE       | Jon    |     6714 |
+|   10003 | WAYNE       | Mike   |     6968 |
+|   10004 | WAYNE       | Jon    |     7152 |
+|   10005 | WAYNE       | Mike   |     7226 |
+|   10006 | WAYNE       | Jon    |     7797 |
+|   10007 | WAYNE       | Jon    |     8258 |
+|   10008 | WAYNE       | Jon    |    10095 |
+|   10009 | WAYNE       | Mike   |    10336 |
+|   10010 | WAYNE       | Mike   |    11540 |
+|   10011 | WAYNE       | Jon    |    11925 |
+|   10012 | WAYNE       | Mike   |    12339 |
+|   10013 | WAYNE       | Mike   |    13039 |
+|   10014 | WAYNE       | Mike   |    14602 |
+|   10015 | WAYNE       | Jon    |    14786 |
+|   10016 | WAYNE       | Jon    |    15368 |
+|   10017 | WAYNE       | Mike   |    15626 |
+|   10018 | WAYNE       | Mike   |    15982 |
+|   10019 | BILLY       | Mike   |       26 |
+|   10020 | BILLY       | Jon    |      286 |
+|   10021 | BILLY       | Jon    |      381 |
+|   10022 | BILLY       | Mike   |      384 |
+|   10023 | BILLY       | Mike   |      825 |
+|   10024 | BILLY       | Mike   |      829 |
+|   10025 | BILLY       | Jon    |     1212 |
+|   10026 | BILLY       | Mike   |     1218 |
+|   10027 | BILLY       | Mike   |     1573 |
+|   10028 | BILLY       | Jon    |     1675 |
+|   10029 | BILLY       | Jon    |     2837 |
+|   10030 | BILLY       | Mike   |     3176 |
+|   10031 | BILLY       | Jon    |     3396 |
+|   10032 | BILLY       | Jon    |     4115 |
+|   10033 | BILLY       | Mike   |     4612 |
+|   10034 | BILLY       | Mike   |     5171 |
+|   10035 | BILLY       | Jon    |     5614 |
+|   10036 | BILLY       | Mike   |     6000 |
+|   10037 | BILLY       | Mike   |     6460 |
+|   10038 | BILLY       | Mike   |     6922 |
+|   10039 | BILLY       | Mike   |     7408 |
+|   10040 | BILLY       | Mike   |     8138 |
+|   10041 | BILLY       | Mike   |     9008 |
+|   10042 | BILLY       | Mike   |     9117 |
+|   10043 | BILLY       | Mike   |     9635 |
+|   10044 | BILLY       | Mike   |    11086 |
+|   10045 | BILLY       | Jon    |    12397 |
+|   10046 | BILLY       | Jon    |    12584 |
+|   10047 | BILLY       | Mike   |    13028 |
+|   10048 | BILLY       | Jon    |    13143 |
+|   10049 | BILLY       | Mike   |    13191 |
+|   10050 | BILLY       | Jon    |    13953 |
+|   10051 | BILLY       | Mike   |    14384 |
+|   10052 | BILLY       | Mike   |    15786 |
+|   10053 | BILLY       | Mike   |    15824 |
+|   10054 | STEVE       | Mike   |      617 |
+|   10055 | STEVE       | Mike   |      638 |
+|   10056 | STEVE       | Mike   |     2315 |
+|   10057 | STEVE       | Mike   |     2959 |
+|   10058 | STEVE       | Mike   |     3283 |
+|   10059 | STEVE       | Mike   |     5229 |
+|   10060 | STEVE       | Mike   |     5314 |
+|   10061 | STEVE       | Mike   |     5352 |
+|   10062 | STEVE       | Mike   |     5501 |
+|   10063 | STEVE       | Jon    |     5914 |
+|   10064 | STEVE       | Jon    |     6692 |
+|   10065 | STEVE       | Mike   |     7190 |
+|   10066 | STEVE       | Jon    |     7234 |
+|   10067 | STEVE       | Jon    |     7735 |
+|   10068 | STEVE       | Jon    |     8009 |
+|   10069 | STEVE       | Mike   |     8059 |
+|   10070 | STEVE       | Mike   |     8358 |
+|   10071 | STEVE       | Mike   |     8724 |
+|   10072 | STEVE       | Mike   |     8755 |
+|   10073 | STEVE       | Jon    |     8837 |
+|   10074 | STEVE       | Mike   |     9128 |
+|   10075 | STEVE       | Jon    |    11134 |
+|   10076 | STEVE       | Jon    |    11438 |
+|   10077 | STEVE       | Jon    |    11555 |
+|   10078 | STEVE       | Mike   |    12224 |
+|   10079 | STEVE       | Mike   |    12714 |
+|   10080 | STEVE       | Jon    |    13402 |
+|   10081 | STEVE       | Jon    |    13871 |
+|   10082 | STEVE       | Jon    |    14037 |
+|   10083 | STEVE       | Mike   |    14211 |
+|   10084 | STEVE       | Mike   |    14331 |
+|   10085 | STEVE       | Mike   |    14770 |
+|   10086 | STEVE       | Jon    |    15041 |
+|   10087 | STEVE       | Mike   |    15563 |
+|   10088 | LOUIS       | Jon    |      257 |
+|   10089 | LOUIS       | Mike   |     1472 |
+|   10090 | LOUIS       | Mike   |     3161 |
+|   10091 | LOUIS       | Jon    |     3609 |
+|   10092 | LOUIS       | Jon    |     3667 |
+|   10093 | LOUIS       | Mike   |     4325 |
+|   10094 | LOUIS       | Mike   |     5120 |
+|   10095 | LOUIS       | Mike   |     6202 |
+|   10096 | LOUIS       | Jon    |     6311 |
+|   10097 | LOUIS       | Mike   |     6944 |
+|   10098 | LOUIS       | Mike   |     7094 |
+|   10099 | LOUIS       | Jon    |     7206 |
+|   10100 | LOUIS       | Mike   |     7615 |
+|   10101 | LOUIS       | Mike   |     8611 |
+|   10102 | LOUIS       | Jon    |     9327 |
+|   10103 | LOUIS       | Mike   |     9397 |
+|   10104 | LOUIS       | Jon    |     9480 |
+|   10105 | LOUIS       | Mike   |     9966 |
+|   10106 | LOUIS       | Mike   |    10010 |
+|   10107 | LOUIS       | Mike   |    10221 |
+|   10108 | LOUIS       | Mike   |    10758 |
+|   10109 | LOUIS       | Jon    |    11066 |
+|   10110 | LOUIS       | Jon    |    11512 |
+|   10111 | LOUIS       | Jon    |    11663 |
+|   10112 | LOUIS       | Jon    |    11976 |
+|   10113 | LOUIS       | Mike   |    12142 |
+|   10114 | LOUIS       | Jon    |    12536 |
+|   10115 | LOUIS       | Mike   |    12748 |
+|   10116 | LOUIS       | Jon    |    12780 |
+|   10117 | LOUIS       | Jon    |    13299 |
+|   10118 | LOUIS       | Mike   |    13329 |
+|   10119 | LOUIS       | Jon    |    13467 |
+|   10120 | LOUIS       | Jon    |    15014 |
+|   10121 | LOUIS       | Mike   |    15068 |
+|   10122 | LOUIS       | Mike   |    11739 |
+|   10123 | JEREMY      | Mike   |      521 |
+|   10124 | JEREMY      | Jon    |      910 |
+|   10125 | JEREMY      | Jon    |      919 |
+|   10126 | JEREMY      | Mike   |     1548 |
+|   10127 | JEREMY      | Jon    |     2046 |
+|   10128 | JEREMY      | Jon    |     2487 |
+|   10129 | JEREMY      | Jon    |     2641 |
+|   10130 | JEREMY      | Mike   |     3797 |
+|   10131 | JEREMY      | Mike   |     5463 |
+|   10132 | JEREMY      | Mike   |     5570 |
+|   10133 | JEREMY      | Jon    |     5591 |
+|   10134 | JEREMY      | Jon    |     5945 |
+|   10135 | JEREMY      | Jon    |     6315 |
+|   10136 | JEREMY      | Jon    |     7837 |
+|   10137 | JEREMY      | Jon    |     8586 |
+|   10138 | JEREMY      | Jon    |     9113 |
+|   10139 | JEREMY      | Mike   |     9866 |
+|   10140 | JEREMY      | Mike   |    10695 |
+|   10141 | JEREMY      | Mike   |    11619 |
+|   10142 | JEREMY      | Jon    |    12696 |
+|   10143 | JEREMY      | Mike   |    13337 |
+|   10144 | JEREMY      | Jon    |    13734 |
+|   10145 | JEREMY      | Jon    |    14524 |
+|   10146 | JEREMY      | Jon    |    15053 |
+|   10147 | JEREMY      | Mike   |    15200 |
+|   10148 | JEREMY      | Jon    |    15202 |
+|   10149 | JEREMY      | Jon    |    15366 |
+|   10150 | JEREMY      | Jon    |    15966 |
+|   10151 | AARON       | Jon    |      307 |
+|   10152 | AARON       | Mike   |      412 |
+|   10153 | AARON       | Jon    |      749 |
+|   10154 | AARON       | Mike   |      873 |
+|   10155 | AARON       | Jon    |     1404 |
+|   10156 | AARON       | Mike   |     1499 |
+|   10157 | AARON       | Mike   |     2236 |
+|   10158 | AARON       | Mike   |     3981 |
+|   10159 | AARON       | Jon    |     4335 |
+|   10160 | AARON       | Jon    |     5474 |
+|   10161 | AARON       | Mike   |     7856 |
+|   10162 | AARON       | Jon    |     8900 |
+|   10163 | AARON       | Mike   |    10274 |
+|   10164 | AARON       | Jon    |    10589 |
+|   10165 | AARON       | Mike   |    10640 |
+|   10166 | AARON       | Mike   |    10672 |
+|   10167 | AARON       | Mike   |    10859 |
+|   10168 | AARON       | Mike   |    10961 |
+|   10169 | AARON       | Jon    |    11008 |
+|   10170 | AARON       | Jon    |    12122 |
+|   10171 | AARON       | Jon    |    12663 |
+|   10172 | AARON       | Mike   |    13836 |
+|   10173 | AARON       | Mike   |    15004 |
+|   10174 | AARON       | Mike   |    15505 |
+|   10175 | RANDY       | Mike   |      554 |
+|   10176 | RANDY       | Jon    |     1208 |
+|   10177 | RANDY       | Mike   |     2779 |
+|   10178 | RANDY       | Jon    |     3719 |
+|   10179 | RANDY       | Mike   |     4163 |
+|   10180 | RANDY       | Jon    |     4166 |
+|   10181 | RANDY       | Mike   |     4320 |
+|   10182 | RANDY       | Mike   |     4554 |
+|   10183 | RANDY       | Mike   |     4869 |
+|   10184 | RANDY       | Mike   |     5675 |
+|   10185 | RANDY       | Mike   |     6524 |
+|   10186 | RANDY       | Mike   |     6545 |
+|   10187 | RANDY       | Jon    |     6807 |
+|   10188 | RANDY       | Mike   |     8269 |
+|   10189 | RANDY       | Mike   |     8420 |
+|   10190 | RANDY       | Mike   |     9773 |
+|   10191 | RANDY       | Mike   |     9828 |
+|   10192 | RANDY       | Mike   |     9872 |
+|   10193 | RANDY       | Jon    |    10413 |
+|   10194 | RANDY       | Mike   |    10810 |
+|   10195 | RANDY       | Mike   |    11144 |
+|   10196 | RANDY       | Jon    |    11792 |
+|   10197 | RANDY       | Mike   |    11851 |
+|   10198 | RANDY       | Mike   |    13009 |
+|   10199 | RANDY       | Mike   |    13141 |
+|   10200 | RANDY       | Jon    |    13761 |
+|   10201 | RANDY       | Mike   |    15107 |
+|   10202 | RANDY       | Mike   |    15382 |
+|   10203 | HOWARD      | Jon    |     2556 |
+|   10204 | HOWARD      | Mike   |     3080 |
+|   10205 | HOWARD      | Jon    |     3086 |
+|   10206 | HOWARD      | Jon    |     3136 |
+|   10207 | HOWARD      | Jon    |     3443 |
+|   10208 | HOWARD      | Mike   |     3858 |
+|   10209 | HOWARD      | Jon    |     4053 |
+|   10210 | HOWARD      | Mike   |     4077 |
+|   10211 | HOWARD      | Mike   |     4225 |
+|   10212 | HOWARD      | Jon    |     6893 |
+|   10213 | HOWARD      | Mike   |     7697 |
+|   10214 | HOWARD      | Jon    |     8018 |
+|   10215 | HOWARD      | Jon    |     8916 |
+|   10216 | HOWARD      | Jon    |     9461 |
+|   10217 | HOWARD      | Mike   |     9564 |
+|   10218 | HOWARD      | Mike   |    10013 |
+|   10219 | HOWARD      | Mike   |    10183 |
+|   10220 | HOWARD      | Mike   |    10738 |
+|   10221 | HOWARD      | Mike   |    10943 |
+|   10222 | HOWARD      | Mike   |    12390 |
+|   10223 | HOWARD      | Mike   |    12549 |
+|   10224 | HOWARD      | Mike   |    13249 |
+|   10225 | HOWARD      | Mike   |    13275 |
+|   10226 | HOWARD      | Jon    |    15088 |
+|   10227 | HOWARD      | Mike   |    15995 |
+|   10228 | HOWARD      | Mike   |    15999 |
+|   10229 | EUGENE      | Mike   |      347 |
+|   10230 | EUGENE      | Jon    |     1623 |
+|   10231 | EUGENE      | Mike   |     1662 |
+|   10232 | EUGENE      | Jon    |     2134 |
+|   10233 | EUGENE      | Jon    |     2713 |
+|   10234 | EUGENE      | Mike   |     3759 |
+|   10235 | EUGENE      | Jon    |     4755 |
+|   10236 | EUGENE      | Mike   |     5578 |
+|   10237 | EUGENE      | Jon    |     6233 |
+|   10238 | EUGENE      | Mike   |     7888 |
+|   10239 | EUGENE      | Jon    |     8740 |
+|   10240 | EUGENE      | Jon    |     9668 |
+|   10241 | EUGENE      | Mike   |     9868 |
+|   10242 | EUGENE      | Mike   |    10917 |
+|   10243 | EUGENE      | Mike   |    11111 |
+|   10244 | EUGENE      | Mike   |    12596 |
+|   10245 | EUGENE      | Mike   |    12828 |
+|   10246 | EUGENE      | Jon    |    14502 |
+|   10247 | EUGENE      | Mike   |    14971 |
+|   10248 | CARLOS      | Jon    |      209 |
+|   10249 | CARLOS      | Mike   |      863 |
+|   10250 | CARLOS      | Mike   |     1383 |
+|   10251 | CARLOS      | Mike   |     2313 |
+|   10252 | CARLOS      | Mike   |     2926 |
+|   10253 | CARLOS      | Mike   |     3788 |
+|   10254 | CARLOS      | Jon    |     4740 |
+|   10255 | CARLOS      | Mike   |     5402 |
+|   10256 | CARLOS      | Mike   |     6235 |
+|   10257 | CARLOS      | Jon    |     7041 |
+|   10258 | CARLOS      | Mike   |    10041 |
+|   10259 | CARLOS      | Jon    |    11457 |
+|   10260 | CARLOS      | Mike   |    12503 |
+|   10261 | CARLOS      | Mike   |    13334 |
+|   10262 | CARLOS      | Jon    |    13397 |
+|   10263 | CARLOS      | Mike   |    13485 |
+|   10264 | CARLOS      | Mike   |    14011 |
+|   10265 | CARLOS      | Jon    |    14152 |
+|   10266 | CARLOS      | Mike   |    14470 |
+|   10267 | CARLOS      | Mike   |    14886 |
+|   10268 | CARLOS      | Jon    |    15399 |
+|   10269 | CARLOS      | Mike   |    15446 |
+|   10270 | CARLOS      | Jon    |    15930 |
+|   10271 | RUSSELL     | Mike   |      847 |
+|   10272 | RUSSELL     | Mike   |     1868 |
+|   10273 | RUSSELL     | Mike   |     1984 |
+|   10274 | RUSSELL     | Mike   |     2018 |
+|   10275 | RUSSELL     | Mike   |     2440 |
+|   10276 | RUSSELL     | Mike   |     2464 |
+|   10277 | RUSSELL     | Jon    |     2998 |
+|   10278 | RUSSELL     | Jon    |     3099 |
+|   10279 | RUSSELL     | Mike   |     3260 |
+|   10280 | RUSSELL     | Mike   |     3637 |
+|   10281 | RUSSELL     | Mike   |     3688 |
+|   10282 | RUSSELL     | Mike   |     4675 |
+|   10283 | RUSSELL     | Jon    |     4706 |
+|   10284 | RUSSELL     | Jon    |     5339 |
+|   10285 | RUSSELL     | Jon    |     7021 |
+|   10286 | RUSSELL     | Jon    |     7167 |
+|   10287 | RUSSELL     | Jon    |     7435 |
+|   10288 | RUSSELL     | Jon    |     7443 |
+|   10289 | RUSSELL     | Mike   |     7773 |
+|   10290 | RUSSELL     | Mike   |     7974 |
+|   10291 | RUSSELL     | Mike   |     9056 |
+|   10292 | RUSSELL     | Mike   |     9261 |
+|   10293 | RUSSELL     | Mike   |     9710 |
+|   10294 | RUSSELL     | Jon    |    10450 |
+|   10295 | RUSSELL     | Mike   |    10983 |
+|   10296 | RUSSELL     | Mike   |    11936 |
+|   10297 | RUSSELL     | Jon    |    11945 |
+|   10298 | RUSSELL     | Mike   |    12636 |
+|   10299 | RUSSELL     | Mike   |    12996 |
+|   10300 | RUSSELL     | Mike   |    14529 |
+|   10301 | RUSSELL     | Mike   |    14935 |
+|   10302 | RUSSELL     | Jon    |    15175 |
+|   10303 | RUSSELL     | Mike   |    15361 |
+|   10304 | RUSSELL     | Jon    |    15636 |
+|   10305 | RUSSELL     | Mike   |    15697 |
+|   10306 | RUSSELL     | Jon    |    15748 |
+|   10307 | BOBBY       | Jon    |      169 |
+|   10308 | BOBBY       | Jon    |      406 |
+|   10309 | BOBBY       | Mike   |      835 |
+|   10310 | BOBBY       | Mike   |     1402 |
+|   10311 | BOBBY       | Mike   |     1878 |
+|   10312 | BOBBY       | Jon    |     2410 |
+|   10313 | BOBBY       | Mike   |     2418 |
+|   10314 | BOBBY       | Jon    |     3425 |
+|   10315 | BOBBY       | Jon    |     3812 |
+|   10316 | BOBBY       | Jon    |     3970 |
+|   10317 | BOBBY       | Mike   |     4735 |
+|   10318 | BOBBY       | Jon    |     5689 |
+|   10319 | BOBBY       | Jon    |     6116 |
+|   10320 | BOBBY       | Jon    |     6451 |
+|   10321 | BOBBY       | Jon    |     6778 |
+|   10322 | BOBBY       | Mike   |     7375 |
+|   10323 | BOBBY       | Mike   |     7645 |
+|   10324 | BOBBY       | Jon    |     8688 |
+|   10325 | BOBBY       | Jon    |     9144 |
+|   10326 | BOBBY       | Jon    |     9173 |
+|   10327 | BOBBY       | Mike   |     9822 |
+|   10328 | BOBBY       | Jon    |    10033 |
+|   10329 | BOBBY       | Mike   |    10608 |
+|   10330 | BOBBY       | Jon    |    10705 |
+|   10331 | BOBBY       | Mike   |    11519 |
+|   10332 | BOBBY       | Jon    |    12135 |
+|   10333 | BOBBY       | Jon    |    12237 |
+|   10334 | BOBBY       | Jon    |    12632 |
+|   10335 | BOBBY       | Jon    |    13202 |
+|   10336 | BOBBY       | Jon    |    13430 |
+|   10337 | BOBBY       | Mike   |    13614 |
+|   10338 | BOBBY       | Jon    |    13995 |
+|   10339 | BOBBY       | Mike   |    14198 |
+|   10340 | BOBBY       | Jon    |    15299 |
+|   10341 | BOBBY       | Mike   |    15747 |
+|   10342 | VICTOR      | Jon    |      356 |
+|   10343 | VICTOR      | Mike   |      522 |
+|   10344 | VICTOR      | Mike   |     2389 |
+|   10345 | VICTOR      | Mike   |     2468 |
+|   10346 | VICTOR      | Mike   |     2489 |
+|   10347 | VICTOR      | Mike   |     2514 |
+|   10348 | VICTOR      | Jon    |     3125 |
+|   10349 | VICTOR      | Jon    |     3480 |
+|   10350 | VICTOR      | Jon    |     4351 |
+|   10351 | VICTOR      | Mike   |     5004 |
+|   10352 | VICTOR      | Mike   |     5816 |
+|   10353 | VICTOR      | Jon    |     7625 |
+|   10354 | VICTOR      | Jon    |     8777 |
+|   10355 | VICTOR      | Mike   |     8871 |
+|   10356 | VICTOR      | Mike   |     8993 |
+|   10357 | VICTOR      | Mike   |     9067 |
+|   10358 | VICTOR      | Jon    |     9555 |
+|   10359 | VICTOR      | Jon    |    10327 |
+|   10360 | VICTOR      | Jon    |    12229 |
+|   10361 | VICTOR      | Jon    |    12529 |
+|   10362 | VICTOR      | Mike   |    14009 |
+|   10363 | VICTOR      | Jon    |    14300 |
+|   10364 | VICTOR      | Jon    |    14354 |
+|   10365 | VICTOR      | Jon    |    15939 |
+|   10366 | MARTIN      | Jon    |       63 |
+|   10367 | MARTIN      | Mike   |      766 |
+|   10368 | MARTIN      | Mike   |     1831 |
+|   10369 | MARTIN      | Jon    |     2228 |
+|   10370 | MARTIN      | Mike   |     2252 |
+|   10371 | MARTIN      | Jon    |     2318 |
+|   10372 | MARTIN      | Mike   |     2609 |
+|   10373 | MARTIN      | Mike   |     3091 |
+|   10374 | MARTIN      | Jon    |     4747 |
+|   10375 | MARTIN      | Jon    |     6091 |
+|   10376 | MARTIN      | Jon    |     6244 |
+|   10377 | MARTIN      | Mike   |     6775 |
+|   10378 | MARTIN      | Mike   |     7367 |
+|   10379 | MARTIN      | Jon    |     8367 |
+|   10380 | MARTIN      | Mike   |     8635 |
+|   10381 | MARTIN      | Mike   |     9653 |
+|   10382 | MARTIN      | Mike   |     9678 |
+|   10383 | MARTIN      | Jon    |    10515 |
+|   10384 | MARTIN      | Mike   |    10971 |
+|   10385 | MARTIN      | Jon    |    10993 |
+|   10386 | MARTIN      | Jon    |    11122 |
+|   10387 | MARTIN      | Mike   |    11592 |
+|   10388 | MARTIN      | Mike   |    12735 |
+|   10389 | MARTIN      | Jon    |    14039 |
+|   10390 | MARTIN      | Jon    |    14678 |
+|   10391 | MARTIN      | Mike   |    15416 |
+|   10392 | MARTIN      | Mike   |    15881 |
+|   10393 | ERNEST      | Jon    |      103 |
+|   10394 | ERNEST      | Jon    |      279 |
+|   10395 | ERNEST      | Mike   |      898 |
+|   10396 | ERNEST      | Jon    |     1013 |
+|   10397 | ERNEST      | Mike   |     1961 |
+|   10398 | ERNEST      | Jon    |     2020 |
+|   10399 | ERNEST      | Mike   |     2378 |
+|   10400 | ERNEST      | Jon    |     2510 |
+|   10401 | ERNEST      | Jon    |     2935 |
+|   10402 | ERNEST      | Mike   |     3088 |
+|   10403 | ERNEST      | Jon    |     3101 |
+|   10404 | ERNEST      | Jon    |     4424 |
+|   10405 | ERNEST      | Jon    |     5250 |
+|   10406 | ERNEST      | Mike   |     5608 |
+|   10407 | ERNEST      | Jon    |     5797 |
+|   10408 | ERNEST      | Jon    |     5966 |
+|   10409 | ERNEST      | Jon    |     6387 |
+|   10410 | ERNEST      | Jon    |     7799 |
+|   10411 | ERNEST      | Mike   |     8445 |
+|   10412 | ERNEST      | Jon    |    11773 |
+|   10413 | ERNEST      | Jon    |    13521 |
+|   10414 | ERNEST      | Jon    |    14416 |
+|   10415 | ERNEST      | Mike   |    14841 |
+|   10416 | ERNEST      | Mike   |    14963 |
+|   10417 | ERNEST      | Jon    |    15321 |
+|   10418 | PHILLIP     | Mike   |      917 |
+|   10419 | PHILLIP     | Jon    |     1038 |
+|   10420 | PHILLIP     | Mike   |     1746 |
+|   10421 | PHILLIP     | Mike   |     1937 |
+|   10422 | PHILLIP     | Mike   |     3105 |
+|   10423 | PHILLIP     | Jon    |     3878 |
+|   10424 | PHILLIP     | Jon    |     3953 |
+|   10425 | PHILLIP     | Mike   |     4714 |
+|   10426 | PHILLIP     | Mike   |     5783 |
+|   10427 | PHILLIP     | Mike   |     6445 |
+|   10428 | PHILLIP     | Jon    |     6933 |
+|   10429 | PHILLIP     | Jon    |     7776 |
+|   10430 | PHILLIP     | Mike   |     8346 |
+|   10431 | PHILLIP     | Mike   |     8518 |
+|   10432 | PHILLIP     | Mike   |     9570 |
+|   10433 | PHILLIP     | Mike   |     9704 |
+|   10434 | PHILLIP     | Mike   |    10557 |
+|   10435 | PHILLIP     | Mike   |    10636 |
+|   10436 | PHILLIP     | Mike   |    10655 |
+|   10437 | PHILLIP     | Mike   |    11021 |
+|   10438 | PHILLIP     | Mike   |    11559 |
+|   10439 | PHILLIP     | Jon    |    12310 |
+|   10440 | PHILLIP     | Jon    |    12686 |
+|   10441 | PHILLIP     | Jon    |    13062 |
+|   10442 | PHILLIP     | Mike   |    13117 |
+|   10443 | PHILLIP     | Mike   |    15488 |
+|   10444 | TODD        | Mike   |      583 |
+|   10445 | TODD        | Jon    |     1585 |
+|   10446 | TODD        | Mike   |     1608 |
+|   10447 | TODD        | Jon    |     1819 |
+|   10448 | TODD        | Mike   |     2732 |
+|   10449 | TODD        | Mike   |     3351 |
+|   10450 | TODD        | Jon    |     3783 |
+|   10451 | TODD        | Mike   |     4189 |
+|   10452 | TODD        | Mike   |     5524 |
+|   10453 | TODD        | Mike   |     5953 |
+|   10454 | TODD        | Mike   |     6037 |
+|   10455 | TODD        | Mike   |     6222 |
+|   10456 | TODD        | Jon    |     6261 |
+|   10457 | TODD        | Mike   |     6324 |
+|   10458 | TODD        | Jon    |     6715 |
+|   10459 | TODD        | Jon    |     8340 |
+|   10460 | TODD        | Mike   |     8751 |
+|   10461 | TODD        | Jon    |     9602 |
+|   10462 | TODD        | Mike   |     9686 |
+|   10463 | TODD        | Mike   |    10572 |
+|   10464 | TODD        | Jon    |    10618 |
+|   10465 | TODD        | Mike   |    10715 |
+|   10466 | TODD        | Jon    |    11128 |
+|   10467 | TODD        | Jon    |    11695 |
+|   10468 | TODD        | Jon    |    12961 |
+|   10469 | TODD        | Mike   |    13716 |
+|   10470 | TODD        | Mike   |    13764 |
+|   10471 | TODD        | Jon    |    13869 |
+|   10472 | TODD        | Mike   |    15949 |
+|   10473 | JESSE       | Jon    |      302 |
+|   10474 | JESSE       | Mike   |      697 |
+|   10475 | JESSE       | Mike   |      841 |
+|   10476 | JESSE       | Mike   |     1127 |
+|   10477 | JESSE       | Mike   |     1464 |
+|   10478 | JESSE       | Jon    |     1465 |
+|   10479 | JESSE       | Mike   |     2068 |
+|   10480 | JESSE       | Jon    |     2100 |
+|   10481 | JESSE       | Jon    |     2981 |
+|   10482 | JESSE       | Jon    |     3378 |
+|   10483 | JESSE       | Jon    |     6216 |
+|   10484 | JESSE       | Jon    |     6456 |
+|   10485 | JESSE       | Mike   |     6517 |
+|   10486 | JESSE       | Mike   |     7497 |
+|   10487 | JESSE       | Mike   |     8090 |
+|   10488 | JESSE       | Mike   |    10564 |
+|   10489 | JESSE       | Mike   |    10838 |
+|   10490 | JESSE       | Jon    |    11682 |
+|   10491 | JESSE       | Jon    |    12153 |
+|   10492 | JESSE       | Mike   |    12936 |
+|   10493 | JESSE       | Jon    |    13034 |
+|   10494 | JESSE       | Mike   |    13082 |
+|   10495 | JESSE       | Jon    |    13645 |
+|   10496 | JESSE       | Jon    |    13772 |
+|   10497 | JESSE       | Jon    |    14279 |
+|   10498 | JESSE       | Jon    |    14979 |
+|   10499 | CRAIG       | Jon    |       21 |
+|   10500 | CRAIG       | Jon    |      411 |
+|   10501 | CRAIG       | Jon    |     1276 |
+|   10502 | CRAIG       | Mike   |     2145 |
+|   10503 | CRAIG       | Mike   |     2537 |
+|   10504 | CRAIG       | Mike   |     2692 |
+|   10505 | CRAIG       | Jon    |     3159 |
+|   10506 | CRAIG       | Jon    |     4947 |
+|   10507 | CRAIG       | Jon    |     5899 |
+|   10508 | CRAIG       | Jon    |     6321 |
+|   10509 | CRAIG       | Mike   |     6452 |
+|   10510 | CRAIG       | Jon    |     7985 |
+|   10511 | CRAIG       | Jon    |     8456 |
+|   10512 | CRAIG       | Jon    |     9213 |
+|   10513 | CRAIG       | Jon    |     9368 |
+|   10514 | CRAIG       | Jon    |     9840 |
+|   10515 | CRAIG       | Jon    |     9940 |
+|   10516 | CRAIG       | Jon    |    10044 |
+|   10517 | CRAIG       | Jon    |    11604 |
+|   10518 | CRAIG       | Jon    |    12044 |
+|   10519 | CRAIG       | Mike   |    12068 |
+|   10520 | CRAIG       | Jon    |    12267 |
+|   10521 | CRAIG       | Jon    |    12497 |
+|   10522 | CRAIG       | Jon    |    12646 |
+|   10523 | CRAIG       | Mike   |    12749 |
+|   10524 | CRAIG       | Mike   |    12977 |
+|   10525 | CRAIG       | Mike   |    14273 |
+|   10526 | CRAIG       | Jon    |    14853 |
+|   10527 | CRAIG       | Jon    |    15660 |
+|   10528 | CRAIG       | Mike   |    12891 |
+|   10529 | ALAN        | Mike   |      998 |
+|   10530 | ALAN        | Mike   |     1763 |
+|   10531 | ALAN        | Mike   |     1946 |
+|   10532 | ALAN        | Mike   |     2552 |
+|   10533 | ALAN        | Jon    |     3527 |
+|   10534 | ALAN        | Mike   |     4443 |
+|   10535 | ALAN        | Mike   |     5249 |
+|   10536 | ALAN        | Jon    |     5626 |
+|   10537 | ALAN        | Jon    |     6104 |
+|   10538 | ALAN        | Mike   |     6600 |
+|   10539 | ALAN        | Mike   |     7029 |
+|   10540 | ALAN        | Mike   |     7896 |
+|   10541 | ALAN        | Jon    |     7977 |
+|   10542 | ALAN        | Mike   |     8338 |
+|   10543 | ALAN        | Mike   |     8887 |
+|   10544 | ALAN        | Mike   |    10217 |
+|   10545 | ALAN        | Mike   |    10949 |
+|   10546 | ALAN        | Jon    |    11348 |
+|   10547 | ALAN        | Jon    |    11441 |
+|   10548 | ALAN        | Jon    |    11944 |
+|   10549 | ALAN        | Jon    |    12069 |
+|   10550 | ALAN        | Jon    |    14493 |
+|   10551 | ALAN        | Mike   |    14578 |
+|   10552 | ALAN        | Mike   |    14777 |
+|   10553 | ALAN        | Mike   |    15462 |
+|   10554 | ALAN        | Jon    |    16011 |
+|   10555 | SHAWN       | Mike   |      254 |
+|   10556 | SHAWN       | Jon    |      912 |
+|   10557 | SHAWN       | Jon    |     1539 |
+|   10558 | SHAWN       | Jon    |     1730 |
+|   10559 | SHAWN       | Jon    |     1893 |
+|   10560 | SHAWN       | Mike   |     2330 |
+|   10561 | SHAWN       | Mike   |     3147 |
+|   10562 | SHAWN       | Mike   |     3999 |
+|   10563 | SHAWN       | Mike   |     4022 |
+|   10564 | SHAWN       | Jon    |     4191 |
+|   10565 | SHAWN       | Jon    |     4310 |
+|   10566 | SHAWN       | Mike   |     4968 |
+|   10567 | SHAWN       | Mike   |     6215 |
+|   10568 | SHAWN       | Mike   |     6430 |
+|   10569 | SHAWN       | Jon    |     7515 |
+|   10570 | SHAWN       | Mike   |     7595 |
+|   10571 | SHAWN       | Mike   |     8493 |
+|   10572 | SHAWN       | Mike   |     9251 |
+|   10573 | SHAWN       | Jon    |     9314 |
+|   10574 | SHAWN       | Mike   |     9825 |
+|   10575 | SHAWN       | Mike   |    10061 |
+|   10576 | SHAWN       | Mike   |    12105 |
+|   10577 | SHAWN       | Jon    |    12803 |
+|   10578 | SHAWN       | Mike   |    13413 |
+|   10579 | SHAWN       | Mike   |    13473 |
+|   10580 | SHAWN       | Mike   |    13501 |
+|   10581 | SHAWN       | Jon    |    13546 |
+|   10582 | SHAWN       | Jon    |    13591 |
+|   10583 | SHAWN       | Jon    |    13618 |
+|   10584 | SHAWN       | Jon    |    13893 |
+|   10585 | SHAWN       | Jon    |    15222 |
+|   10586 | SHAWN       | Jon    |    15303 |
+|   10587 | SHAWN       | Jon    |    15376 |
+|   10588 | CLARENCE    | Jon    |       73 |
+|   10589 | CLARENCE    | Mike   |      210 |
+|   10590 | CLARENCE    | Mike   |      317 |
+|   10591 | CLARENCE    | Jon    |      870 |
+|   10592 | CLARENCE    | Mike   |      891 |
+|   10593 | CLARENCE    | Jon    |     1232 |
+|   10594 | CLARENCE    | Jon    |     1931 |
+|   10595 | CLARENCE    | Mike   |     2045 |
+|   10596 | CLARENCE    | Mike   |     2690 |
+|   10597 | CLARENCE    | Jon    |     3163 |
+|   10598 | CLARENCE    | Mike   |     4188 |
+|   10599 | CLARENCE    | Mike   |     4716 |
+|   10600 | CLARENCE    | Jon    |     4753 |
+|   10601 | CLARENCE    | Jon    |     5583 |
+|   10602 | CLARENCE    | Mike   |     5599 |
+|   10603 | CLARENCE    | Mike   |     6302 |
+|   10604 | CLARENCE    | Mike   |     6463 |
+|   10605 | CLARENCE    | Jon    |     8016 |
+|   10606 | CLARENCE    | Mike   |     8908 |
+|   10607 | CLARENCE    | Jon    |     8913 |
+|   10608 | CLARENCE    | Mike   |     9225 |
+|   10609 | CLARENCE    | Mike   |    10210 |
+|   10610 | CLARENCE    | Jon    |    10406 |
+|   10611 | CLARENCE    | Mike   |    11151 |
+|   10612 | CLARENCE    | Jon    |    11434 |
+|   10613 | CLARENCE    | Mike   |    11602 |
+|   10614 | CLARENCE    | Mike   |    12090 |
+|   10615 | CLARENCE    | Mike   |    12100 |
+|   10616 | CLARENCE    | Mike   |    13980 |
+|   10617 | CLARENCE    | Mike   |    14381 |
+|   10618 | SEAN        | Jon    |     1530 |
+|   10619 | SEAN        | Jon    |     1764 |
+|   10620 | SEAN        | Jon    |     2289 |
+|   10621 | SEAN        | Jon    |     2890 |
+|   10622 | SEAN        | Mike   |     3566 |
+|   10623 | SEAN        | Jon    |     6061 |
+|   10624 | SEAN        | Jon    |     6406 |
+|   10625 | SEAN        | Mike   |     7692 |
+|   10626 | SEAN        | Mike   |     7981 |
+|   10627 | SEAN        | Mike   |     8254 |
+|   10628 | SEAN        | Jon    |     8612 |
+|   10629 | SEAN        | Jon    |    10085 |
+|   10630 | SEAN        | Mike   |    10435 |
+|   10631 | SEAN        | Mike   |    11459 |
+|   10632 | SEAN        | Mike   |    11686 |
+|   10633 | SEAN        | Jon    |    12102 |
+|   10634 | SEAN        | Mike   |    12368 |
+|   10635 | SEAN        | Jon    |    12561 |
+|   10636 | SEAN        | Mike   |    13629 |
+|   10637 | SEAN        | Jon    |    14081 |
+|   10638 | SEAN        | Mike   |    14223 |
+|   10639 | SEAN        | Jon    |    14369 |
+|   10640 | SEAN        | Jon    |    14438 |
+|   10641 | PHILIP      | Mike   |      599 |
+|   10642 | PHILIP      | Jon    |      886 |
+|   10643 | PHILIP      | Mike   |     1611 |
+|   10644 | PHILIP      | Jon    |     1915 |
+|   10645 | PHILIP      | Jon    |     2219 |
+|   10646 | PHILIP      | Mike   |     2319 |
+|   10647 | PHILIP      | Jon    |     3001 |
+|   10648 | PHILIP      | Jon    |     4275 |
+|   10649 | PHILIP      | Jon    |     4546 |
+|   10650 | PHILIP      | Jon    |     4632 |
+|   10651 | PHILIP      | Jon    |     4791 |
+|   10652 | PHILIP      | Mike   |     5099 |
+|   10653 | PHILIP      | Mike   |     6221 |
+|   10654 | PHILIP      | Jon    |     6513 |
+|   10655 | PHILIP      | Mike   |     6930 |
+|   10656 | PHILIP      | Jon    |     7486 |
+|   10657 | PHILIP      | Jon    |     8004 |
+|   10658 | PHILIP      | Jon    |     8448 |
+|   10659 | PHILIP      | Jon    |     9763 |
+|   10660 | PHILIP      | Mike   |    10158 |
+|   10661 | PHILIP      | Jon    |    12059 |
+|   10662 | PHILIP      | Mike   |    12113 |
+|   10663 | PHILIP      | Mike   |    12563 |
+|   10664 | PHILIP      | Mike   |    12676 |
+|   10665 | PHILIP      | Mike   |    13184 |
+|   10666 | PHILIP      | Jon    |    13357 |
+|   10667 | PHILIP      | Jon    |    13788 |
+|   10668 | PHILIP      | Mike   |    15132 |
+|   10669 | PHILIP      | Jon    |    15284 |
+|   10670 | PHILIP      | Jon    |    15527 |
+|   10671 | PHILIP      | Jon    |    16049 |
+|   10672 | CHRIS       | Mike   |      213 |
+|   10673 | CHRIS       | Mike   |      977 |
+|   10674 | CHRIS       | Jon    |     1324 |
+|   10675 | CHRIS       | Jon    |     3543 |
+|   10676 | CHRIS       | Mike   |     3873 |
+|   10677 | CHRIS       | Jon    |     4009 |
+|   10678 | CHRIS       | Mike   |     4307 |
+|   10679 | CHRIS       | Jon    |     5183 |
+|   10680 | CHRIS       | Mike   |     5535 |
+|   10681 | CHRIS       | Jon    |     6059 |
+|   10682 | CHRIS       | Jon    |     7445 |
+|   10683 | CHRIS       | Mike   |     9147 |
+|   10684 | CHRIS       | Jon    |     9864 |
+|   10685 | CHRIS       | Mike   |    10319 |
+|   10686 | CHRIS       | Mike   |    10603 |
+|   10687 | CHRIS       | Mike   |    10718 |
+|   10688 | CHRIS       | Mike   |    12080 |
+|   10689 | CHRIS       | Mike   |    12389 |
+|   10690 | CHRIS       | Jon    |    12510 |
+|   10691 | CHRIS       | Jon    |    13047 |
+|   10692 | CHRIS       | Mike   |    14605 |
+|   10693 | CHRIS       | Jon    |    13178 |
+|   10694 | JOHNNY      | Mike   |     1270 |
+|   10695 | JOHNNY      | Mike   |     1562 |
+|   10696 | JOHNNY      | Jon    |     1603 |
+|   10697 | JOHNNY      | Mike   |     3030 |
+|   10698 | JOHNNY      | Mike   |     3310 |
+|   10699 | JOHNNY      | Mike   |     3389 |
+|   10700 | JOHNNY      | Jon    |     3684 |
+|   10701 | JOHNNY      | Mike   |     4185 |
+|   10702 | JOHNNY      | Mike   |     4393 |
+|   10703 | JOHNNY      | Mike   |     5087 |
+|   10704 | JOHNNY      | Jon    |     5136 |
+|   10705 | JOHNNY      | Mike   |     7740 |
+|   10706 | JOHNNY      | Jon    |     7986 |
+|   10707 | JOHNNY      | Mike   |    11889 |
+|   10708 | JOHNNY      | Mike   |    14471 |
+|   10709 | JOHNNY      | Jon    |    14720 |
+|   10710 | JOHNNY      | Mike   |    15698 |
+|   10711 | JOHNNY      | Mike   |    15856 |
+|   10712 | JOHNNY      | Mike   |    15970 |
+|   10713 | EARL        | Jon    |      641 |
+|   10714 | EARL        | Jon    |     1370 |
+|   10715 | EARL        | Jon    |     1385 |
+|   10716 | EARL        | Jon    |     1408 |
+|   10717 | EARL        | Jon    |     3909 |
+|   10718 | EARL        | Mike   |     5059 |
+|   10719 | EARL        | Jon    |     6335 |
+|   10720 | EARL        | Jon    |     6764 |
+|   10721 | EARL        | Jon    |     6771 |
+|   10722 | EARL        | Jon    |     7142 |
+|   10723 | EARL        | Jon    |     7313 |
+|   10724 | EARL        | Jon    |     8371 |
+|   10725 | EARL        | Jon    |     8807 |
+|   10726 | EARL        | Mike   |     9344 |
+|   10727 | EARL        | Jon    |    10120 |
+|   10728 | EARL        | Jon    |    10124 |
+|   10729 | EARL        | Jon    |    10195 |
+|   10730 | EARL        | Jon    |    10610 |
+|   10731 | EARL        | Jon    |    12393 |
+|   10732 | EARL        | Mike   |    12895 |
+|   10733 | EARL        | Jon    |    13355 |
+|   10734 | EARL        | Mike   |    14078 |
+|   10735 | EARL        | Mike   |    14169 |
+|   10736 | EARL        | Mike   |    14508 |
+|   10737 | EARL        | Jon    |    14778 |
+|   10738 | EARL        | Mike   |    14792 |
+|   10739 | EARL        | Jon    |    15198 |
+|   10740 | JIMMY       | Jon    |     1002 |
+|   10741 | JIMMY       | Mike   |     1769 |
+|   10742 | JIMMY       | Jon    |     3027 |
+|   10743 | JIMMY       | Mike   |     3489 |
+|   10744 | JIMMY       | Mike   |     4036 |
+|   10745 | JIMMY       | Jon    |     5103 |
+|   10746 | JIMMY       | Jon    |     5598 |
+|   10747 | JIMMY       | Jon    |     5763 |
+|   10748 | JIMMY       | Jon    |     6014 |
+|   10749 | JIMMY       | Jon    |     6266 |
+|   10750 | JIMMY       | Mike   |     6471 |
+|   10751 | JIMMY       | Jon    |     7356 |
+|   10752 | JIMMY       | Jon    |     7892 |
+|   10753 | JIMMY       | Mike   |     8103 |
+|   10754 | JIMMY       | Mike   |     9495 |
+|   10755 | JIMMY       | Jon    |     9608 |
+|   10756 | JIMMY       | Mike   |    10534 |
+|   10757 | JIMMY       | Jon    |    10598 |
+|   10758 | JIMMY       | Mike   |    10785 |
+|   10759 | JIMMY       | Jon    |    11511 |
+|   10760 | JIMMY       | Jon    |    12223 |
+|   10761 | JIMMY       | Mike   |    12276 |
+|   10762 | JIMMY       | Jon    |    12329 |
+|   10763 | JIMMY       | Jon    |    12700 |
+|   10764 | JIMMY       | Jon    |    12726 |
+|   10765 | JIMMY       | Mike   |    12772 |
+|   10766 | JIMMY       | Jon    |    14100 |
+|   10767 | JIMMY       | Mike   |    14790 |
+|   10768 | JIMMY       | Mike   |    15083 |
+|   10769 | ANTONIO     | Mike   |      486 |
+|   10770 | ANTONIO     | Jon    |     1228 |
+|   10771 | ANTONIO     | Mike   |     2087 |
+|   10772 | ANTONIO     | Jon    |     3141 |
+|   10773 | ANTONIO     | Jon    |     5234 |
+|   10774 | ANTONIO     | Jon    |     8119 |
+|   10775 | ANTONIO     | Jon    |     8204 |
+|   10776 | ANTONIO     | Mike   |     8428 |
+|   10777 | ANTONIO     | Mike   |     9042 |
+|   10778 | ANTONIO     | Jon    |     9281 |
+|   10779 | ANTONIO     | Mike   |     9771 |
+|   10780 | ANTONIO     | Mike   |    10230 |
+|   10781 | ANTONIO     | Jon    |    11132 |
+|   10782 | ANTONIO     | Jon    |    12528 |
+|   10783 | ANTONIO     | Jon    |    13643 |
+|   10784 | ANTONIO     | Mike   |    15189 |
+|   10785 | DANNY       | Jon    |       10 |
+|   10786 | DANNY       | Jon    |      694 |
+|   10787 | DANNY       | Jon    |      883 |
+|   10788 | DANNY       | Jon    |     2961 |
+|   10789 | DANNY       | Mike   |     3036 |
+|   10790 | DANNY       | Jon    |     4957 |
+|   10791 | DANNY       | Jon    |     4981 |
+|   10792 | DANNY       | Mike   |     5507 |
+|   10793 | DANNY       | Jon    |     6006 |
+|   10794 | DANNY       | Jon    |     6229 |
+|   10795 | DANNY       | Jon    |     6674 |
+|   10796 | DANNY       | Jon    |     8461 |
+|   10797 | DANNY       | Jon    |     9728 |
+|   10798 | DANNY       | Jon    |    10654 |
+|   10799 | DANNY       | Jon    |    10960 |
+|   10800 | DANNY       | Mike   |    11329 |
+|   10801 | DANNY       | Mike   |    11953 |
+|   10802 | DANNY       | Mike   |    13253 |
+|   10803 | DANNY       | Jon    |    13293 |
+|   10804 | DANNY       | Mike   |    15300 |
+|   10805 | DANNY       | Mike   |    15468 |
+|   10806 | BRYAN       | Mike   |       95 |
+|   10807 | BRYAN       | Jon    |      171 |
+|   10808 | BRYAN       | Jon    |      516 |
+|   10809 | BRYAN       | Jon    |      894 |
+|   10810 | BRYAN       | Jon    |     1364 |
+|   10811 | BRYAN       | Mike   |     1917 |
+|   10812 | BRYAN       | Jon    |     1923 |
+|   10813 | BRYAN       | Mike   |     4573 |
+|   10814 | BRYAN       | Mike   |     4645 |
+|   10815 | BRYAN       | Jon    |     5212 |
+|   10816 | BRYAN       | Jon    |     5222 |
+|   10817 | BRYAN       | Jon    |     6790 |
+|   10818 | BRYAN       | Jon    |     6994 |
+|   10819 | BRYAN       | Jon    |     7296 |
+|   10820 | BRYAN       | Mike   |     7682 |
+|   10821 | BRYAN       | Jon    |     9177 |
+|   10822 | BRYAN       | Jon    |     9756 |
+|   10823 | BRYAN       | Mike   |    10187 |
+|   10824 | BRYAN       | Jon    |    10484 |
+|   10825 | BRYAN       | Mike   |    10711 |
+|   10826 | BRYAN       | Jon    |    11510 |
+|   10827 | BRYAN       | Jon    |    11530 |
+|   10828 | BRYAN       | Mike   |    11600 |
+|   10829 | BRYAN       | Mike   |    12514 |
+|   10830 | BRYAN       | Jon    |    13449 |
+|   10831 | BRYAN       | Mike   |    14775 |
+|   10832 | BRYAN       | Jon    |    15533 |
+|   10833 | BRYAN       | Jon    |    15988 |
+|   10834 | TONY        | Jon    |      167 |
+|   10835 | TONY        | Jon    |      446 |
+|   10836 | TONY        | Jon    |      811 |
+|   10837 | TONY        | Mike   |     4059 |
+|   10838 | TONY        | Jon    |     4292 |
+|   10839 | TONY        | Jon    |     5923 |
+|   10841 | TONY        | Jon    |     7651 |
+|   10842 | TONY        | Mike   |     8450 |
+|   10843 | TONY        | Jon    |     8669 |
+|   10844 | TONY        | Mike   |     8722 |
+|   10845 | TONY        | Jon    |     9701 |
+|   10846 | TONY        | Jon    |    10171 |
+|   10847 | TONY        | Mike   |    11820 |
+|   10848 | TONY        | Mike   |    12475 |
+|   10849 | TONY        | Jon    |    12479 |
+|   10850 | TONY        | Mike   |    12906 |
+|   10851 | TONY        | Mike   |    13024 |
+|   10852 | TONY        | Mike   |    14359 |
+|   10853 | TONY        | Jon    |    14433 |
+|   10854 | TONY        | Mike   |    15831 |
+|   10855 | TONY        | Mike   |    15927 |
+|   10856 | LUIS        | Jon    |      801 |
+|   10857 | LUIS        | Jon    |     1194 |
+|   10858 | LUIS        | Jon    |     2490 |
+|   10859 | LUIS        | Jon    |     2913 |
+|   10860 | LUIS        | Jon    |     3564 |
+|   10861 | LUIS        | Jon    |     3612 |
+|   10862 | LUIS        | Jon    |     3755 |
+|   10863 | LUIS        | Mike   |     4399 |
+|   10864 | LUIS        | Jon    |     4604 |
+|   10865 | LUIS        | Jon    |     5329 |
+|   10866 | LUIS        | Jon    |     6183 |
+|   10867 | LUIS        | Mike   |     6283 |
+|   10868 | LUIS        | Mike   |     7633 |
+|   10869 | LUIS        | Jon    |     8521 |
+|   10870 | LUIS        | Mike   |     9657 |
+|   10871 | LUIS        | Jon    |     9779 |
+|   10872 | LUIS        | Jon    |    11045 |
+|   10873 | LUIS        | Jon    |    11549 |
+|   10874 | LUIS        | Jon    |    11920 |
+|   10875 | LUIS        | Mike   |    15428 |
+|   10876 | MIKE        | Mike   |      442 |
+|   10877 | MIKE        | Mike   |      517 |
+|   10878 | MIKE        | Jon    |     1221 |
+|   10879 | MIKE        | Mike   |     1249 |
+|   10880 | MIKE        | Jon    |     2488 |
+|   10881 | MIKE        | Mike   |     2927 |
+|   10882 | MIKE        | Jon    |     3049 |
+|   10883 | MIKE        | Mike   |     3356 |
+|   10884 | MIKE        | Mike   |     3644 |
+|   10885 | MIKE        | Jon    |     3737 |
+|   10886 | MIKE        | Jon    |     4096 |
+|   10887 | MIKE        | Mike   |     5982 |
+|   10888 | MIKE        | Jon    |     6322 |
+|   10889 | MIKE        | Mike   |     6342 |
+|   10890 | MIKE        | Mike   |     7103 |
+|   10891 | MIKE        | Jon    |     8013 |
+|   10892 | MIKE        | Mike   |     9058 |
+|   10893 | MIKE        | Jon    |     9486 |
+|   10894 | MIKE        | Jon    |     9794 |
+|   10895 | MIKE        | Jon    |    10109 |
+|   10896 | MIKE        | Mike   |    10443 |
+|   10897 | MIKE        | Mike   |    10547 |
+|   10898 | MIKE        | Jon    |    10789 |
+|   10899 | MIKE        | Mike   |    11038 |
+|   10900 | MIKE        | Jon    |    11391 |
+|   10901 | MIKE        | Jon    |    11427 |
+|   10902 | MIKE        | Jon    |    11460 |
+|   10903 | MIKE        | Jon    |    11558 |
+|   10904 | MIKE        | Jon    |    12005 |
+|   10905 | MIKE        | Mike   |    12132 |
+|   10906 | MIKE        | Mike   |    12793 |
+|   10907 | MIKE        | Mike   |    14519 |
+|   10908 | MIKE        | Mike   |    14662 |
+|   10909 | MIKE        | Jon    |    14725 |
+|   10910 | MIKE        | Mike   |    15410 |
+|   10911 | STANLEY     | Jon    |     1081 |
+|   10912 | STANLEY     | Jon    |     1506 |
+|   10913 | STANLEY     | Jon    |     1840 |
+|   10914 | STANLEY     | Mike   |     2715 |
+|   10915 | STANLEY     | Mike   |     2951 |
+|   10916 | STANLEY     | Mike   |     3927 |
+|   10917 | STANLEY     | Mike   |     4495 |
+|   10918 | STANLEY     | Jon    |     4615 |
+|   10919 | STANLEY     | Mike   |     4653 |
+|   10920 | STANLEY     | Mike   |     4963 |
+|   10921 | STANLEY     | Mike   |     5632 |
+|   10922 | STANLEY     | Mike   |     6114 |
+|   10923 | STANLEY     | Jon    |     6779 |
+|   10924 | STANLEY     | Mike   |     6964 |
+|   10925 | STANLEY     | Mike   |     8058 |
+|   10926 | STANLEY     | Mike   |     8455 |
+|   10927 | STANLEY     | Mike   |     9206 |
+|   10928 | STANLEY     | Mike   |     9472 |
+|   10929 | STANLEY     | Jon    |     9824 |
+|   10930 | STANLEY     | Mike   |    10651 |
+|   10931 | STANLEY     | Mike   |    12325 |
+|   10932 | STANLEY     | Mike   |    12554 |
+|   10933 | STANLEY     | Jon    |    13412 |
+|   10934 | STANLEY     | Mike   |    13422 |
+|   10935 | STANLEY     | Mike   |    14691 |
+|   10936 | STANLEY     | Jon    |    14835 |
+|   10937 | STANLEY     | Jon    |    14838 |
+|   10938 | STANLEY     | Jon    |    14912 |
+|   10939 | STANLEY     | Jon    |    15087 |
+|   10940 | STANLEY     | Jon    |    15290 |
+|   10941 | LEONARD     | Mike   |      121 |
+|   10942 | LEONARD     | Jon    |      770 |
+|   10943 | LEONARD     | Jon    |     1315 |
+|   10944 | LEONARD     | Mike   |     1888 |
+|   10945 | LEONARD     | Jon    |     1953 |
+|   10946 | LEONARD     | Jon    |     2654 |
+|   10947 | LEONARD     | Mike   |     3240 |
+|   10948 | LEONARD     | Mike   |     3253 |
+|   10949 | LEONARD     | Jon    |     4223 |
+|   10950 | LEONARD     | Jon    |     4401 |
+|   10951 | LEONARD     | Jon    |     5040 |
+|   10952 | LEONARD     | Mike   |     5231 |
+|   10953 | LEONARD     | Jon    |     5512 |
+|   10954 | LEONARD     | Mike   |     6110 |
+|   10955 | LEONARD     | Mike   |     7455 |
+|   10956 | LEONARD     | Mike   |     7759 |
+|   10957 | LEONARD     | Jon    |     8482 |
+|   10958 | LEONARD     | Mike   |     8955 |
+|   10959 | LEONARD     | Mike   |     9569 |
+|   10960 | LEONARD     | Mike   |    10472 |
+|   10961 | LEONARD     | Jon    |    10823 |
+|   10962 | LEONARD     | Mike   |    11345 |
+|   10963 | LEONARD     | Mike   |    12050 |
+|   10964 | LEONARD     | Jon    |    12425 |
+|   10965 | LEONARD     | Mike   |    13304 |
+|   10966 | LEONARD     | Mike   |    13398 |
+|   10967 | LEONARD     | Mike   |    14274 |
+|   10968 | LEONARD     | Jon    |    14537 |
+|   10969 | LEONARD     | Mike   |    15072 |
+|   10970 | LEONARD     | Jon    |    15383 |
+|   10971 | LEONARD     | Mike   |    15932 |
+|   10972 | LEONARD     | Mike   |    12792 |
+|   10973 | NATHAN      | Mike   |      855 |
+|   10974 | NATHAN      | Mike   |     2113 |
+|   10975 | NATHAN      | Jon    |     2150 |
+|   10976 | NATHAN      | Mike   |     2241 |
+|   10977 | NATHAN      | Jon    |     2325 |
+|   10978 | NATHAN      | Jon    |     2585 |
+|   10979 | NATHAN      | Mike   |     3186 |
+|   10980 | NATHAN      | Mike   |     3306 |
+|   10981 | NATHAN      | Jon    |     4264 |
+|   10982 | NATHAN      | Jon    |     5098 |
+|   10983 | NATHAN      | Jon    |     5263 |
+|   10984 | NATHAN      | Mike   |     5766 |
+|   10985 | NATHAN      | Jon    |     6439 |
+|   10986 | NATHAN      | Jon    |     7109 |
+|   10987 | NATHAN      | Mike   |     7171 |
+|   10988 | NATHAN      | Mike   |     7259 |
+|   10989 | NATHAN      | Jon    |     7604 |
+|   10990 | NATHAN      | Jon    |     8080 |
+|   10991 | NATHAN      | Jon    |     8295 |
+|   10992 | NATHAN      | Jon    |     8630 |
+|   10993 | NATHAN      | Mike   |     8903 |
+|   10994 | NATHAN      | Jon    |     8962 |
+|   10995 | NATHAN      | Jon    |     9224 |
+|   10996 | NATHAN      | Mike   |     9291 |
+|   10997 | NATHAN      | Jon    |     9487 |
+|   10998 | NATHAN      | Mike   |     9660 |
+|   10999 | NATHAN      | Mike   |    10632 |
+|   11000 | NATHAN      | Mike   |    11603 |
+|   11001 | NATHAN      | Jon    |    12505 |
+|   11002 | NATHAN      | Jon    |    14205 |
+|   11003 | NATHAN      | Jon    |    14421 |
+|   11004 | NATHAN      | Jon    |    14601 |
+|   11005 | DALE        | Mike   |      619 |
+|   11006 | DALE        | Mike   |     1698 |
+|   11007 | DALE        | Jon    |     2597 |
+|   11008 | DALE        | Mike   |     4296 |
+|   11009 | DALE        | Mike   |     5070 |
+|   11010 | DALE        | Jon    |     5590 |
+|   11011 | DALE        | Mike   |     6727 |
+|   11012 | DALE        | Mike   |     7363 |
+|   11013 | DALE        | Jon    |     7643 |
+|   11014 | DALE        | Mike   |     8078 |
+|   11015 | DALE        | Mike   |     8109 |
+|   11016 | DALE        | Mike   |     8197 |
+|   11017 | DALE        | Jon    |     8571 |
+|   11018 | DALE        | Mike   |     8802 |
+|   11019 | DALE        | Jon    |    10774 |
+|   11020 | DALE        | Mike   |    11214 |
+|   11021 | DALE        | Mike   |    11222 |
+|   11022 | DALE        | Jon    |    11382 |
+|   11023 | DALE        | Jon    |    11518 |
+|   11024 | DALE        | Mike   |    11677 |
+|   11025 | DALE        | Jon    |    12566 |
+|   11026 | DALE        | Jon    |    12931 |
+|   11027 | DALE        | Mike   |    13800 |
+|   11028 | DALE        | Jon    |    13856 |
+|   11029 | DALE        | Jon    |    14401 |
+|   11030 | DALE        | Jon    |    15320 |
+|   11031 | DALE        | Jon    |    15334 |
+|   11032 | MANUEL      | Jon    |        3 |
+|   11033 | MANUEL      | Jon    |       59 |
+|   11034 | MANUEL      | Mike   |      526 |
+|   11035 | MANUEL      | Jon    |     2479 |
+|   11036 | MANUEL      | Mike   |     2564 |
+|   11037 | MANUEL      | Jon    |     2728 |
+|   11038 | MANUEL      | Jon    |     4330 |
+|   11039 | MANUEL      | Jon    |     5073 |
+|   11040 | MANUEL      | Mike   |     6062 |
+|   11041 | MANUEL      | Jon    |     6203 |
+|   11042 | MANUEL      | Jon    |     6826 |
+|   11043 | MANUEL      | Mike   |     7053 |
+|   11044 | MANUEL      | Jon    |     7996 |
+|   11045 | MANUEL      | Jon    |     8251 |
+|   11046 | MANUEL      | Jon    |     8469 |
+|   11047 | MANUEL      | Jon    |     8902 |
+|   11048 | MANUEL      | Mike   |     9052 |
+|   11049 | MANUEL      | Jon    |     9757 |
+|   11050 | MANUEL      | Jon    |    11115 |
+|   11051 | MANUEL      | Mike   |    12140 |
+|   11052 | MANUEL      | Mike   |    12338 |
+|   11053 | MANUEL      | Mike   |    12498 |
+|   11054 | MANUEL      | Jon    |    12900 |
+|   11055 | MANUEL      | Mike   |    13508 |
+|   11056 | MANUEL      | Jon    |    13744 |
+|   11057 | MANUEL      | Mike   |    13944 |
+|   11058 | MANUEL      | Jon    |    14733 |
+|   11059 | MANUEL      | Mike   |    15628 |
+|   11060 | MANUEL      | Jon    |    15716 |
+|   11061 | MANUEL      | Mike   |    15765 |
+|   11062 | RODNEY      | Mike   |      310 |
+|   11063 | RODNEY      | Jon    |     1226 |
+|   11064 | RODNEY      | Jon    |     2310 |
+|   11065 | RODNEY      | Mike   |     3866 |
+|   11066 | RODNEY      | Jon    |     4550 |
+|   11067 | RODNEY      | Mike   |     5175 |
+|   11068 | RODNEY      | Jon    |     5306 |
+|   11069 | RODNEY      | Mike   |     5422 |
+|   11070 | RODNEY      | Mike   |     5848 |
+|   11071 | RODNEY      | Mike   |     5955 |
+|   11072 | RODNEY      | Jon    |     6026 |
+|   11073 | RODNEY      | Mike   |     6596 |
+|   11074 | RODNEY      | Jon    |     7673 |
+|   11075 | RODNEY      | Jon    |     7940 |
+|   11076 | RODNEY      | Mike   |     8037 |
+|   11077 | RODNEY      | Jon    |     8265 |
+|   11078 | RODNEY      | Mike   |     8726 |
+|   11079 | RODNEY      | Jon    |     9267 |
+|   11080 | RODNEY      | Jon    |    12830 |
+|   11081 | RODNEY      | Mike   |    13392 |
+|   11082 | RODNEY      | Jon    |    13632 |
+|   11083 | RODNEY      | Mike   |    14103 |
+|   11084 | RODNEY      | Mike   |    14697 |
+|   11085 | CURTIS      | Mike   |     1514 |
+|   11086 | CURTIS      | Mike   |     2073 |
+|   11087 | CURTIS      | Mike   |     2255 |
+|   11088 | CURTIS      | Jon    |     2400 |
+|   11089 | CURTIS      | Jon    |     2971 |
+|   11090 | CURTIS      | Mike   |     3249 |
+|   11091 | CURTIS      | Jon    |     4062 |
+|   11092 | CURTIS      | Mike   |     4267 |
+|   11093 | CURTIS      | Mike   |     5150 |
+|   11094 | CURTIS      | Mike   |     5192 |
+|   11095 | CURTIS      | Jon    |     5330 |
+|   11096 | CURTIS      | Mike   |     5336 |
+|   11097 | CURTIS      | Mike   |     6148 |
+|   11098 | CURTIS      | Jon    |     6218 |
+|   11099 | CURTIS      | Jon    |     7350 |
+|   11100 | CURTIS      | Jon    |     7407 |
+|   11101 | CURTIS      | Mike   |     7523 |
+|   11102 | CURTIS      | Jon    |     8625 |
+|   11103 | CURTIS      | Mike   |     8882 |
+|   11104 | CURTIS      | Mike   |     9263 |
+|   11105 | CURTIS      | Mike   |    10402 |
+|   11106 | CURTIS      | Mike   |    10837 |
+|   11107 | CURTIS      | Mike   |    11107 |
+|   11108 | CURTIS      | Mike   |    11187 |
+|   11109 | CURTIS      | Mike   |    11472 |
+|   11110 | CURTIS      | Mike   |    11694 |
+|   11111 | CURTIS      | Jon    |    12955 |
+|   11112 | CURTIS      | Mike   |    13460 |
+|   11113 | CURTIS      | Jon    |    13748 |
+|   11114 | CURTIS      | Jon    |    13948 |
+|   11115 | CURTIS      | Mike   |    14237 |
+|   11116 | CURTIS      | Jon    |    14298 |
+|   11117 | CURTIS      | Mike   |    14319 |
+|   11118 | CURTIS      | Jon    |    14819 |
+|   11119 | CURTIS      | Mike   |    15211 |
+|   11120 | CURTIS      | Jon    |    15392 |
+|   11121 | CURTIS      | Mike   |    15518 |
+|   11122 | CURTIS      | Mike   |    12665 |
+|   11123 | NORMAN      | Jon    |      686 |
+|   11124 | NORMAN      | Jon    |      972 |
+|   11125 | NORMAN      | Mike   |     1985 |
+|   11126 | NORMAN      | Jon    |     1997 |
+|   11127 | NORMAN      | Jon    |     2712 |
+|   11128 | NORMAN      | Mike   |     3928 |
+|   11129 | NORMAN      | Jon    |     4146 |
+|   11130 | NORMAN      | Mike   |     4246 |
+|   11131 | NORMAN      | Jon    |     5357 |
+|   11132 | NORMAN      | Mike   |     5800 |
+|   11133 | NORMAN      | Mike   |     7102 |
+|   11134 | NORMAN      | Jon    |     7395 |
+|   11135 | NORMAN      | Mike   |     7513 |
+|   11136 | NORMAN      | Mike   |     7813 |
+|   11137 | NORMAN      | Mike   |     8023 |
+|   11138 | NORMAN      | Jon    |     8613 |
+|   11139 | NORMAN      | Jon    |     9622 |
+|   11140 | NORMAN      | Jon    |    11294 |
+|   11141 | NORMAN      | Mike   |    11997 |
+|   11142 | NORMAN      | Jon    |    13634 |
+|   11143 | NORMAN      | Jon    |    13656 |
+|   11144 | NORMAN      | Jon    |    14480 |
+|   11145 | NORMAN      | Mike   |    14772 |
+|   11146 | NORMAN      | Jon    |    14996 |
+|   11147 | NORMAN      | Mike   |    15936 |
+|   11148 | NORMAN      | Jon    |    13246 |
+|   11149 | ALLEN       | Jon    |      191 |
+|   11150 | ALLEN       | Mike   |      333 |
+|   11151 | ALLEN       | Mike   |      717 |
+|   11152 | ALLEN       | Jon    |     1043 |
+|   11153 | ALLEN       | Mike   |     3292 |
+|   11154 | ALLEN       | Jon    |     3888 |
+|   11155 | ALLEN       | Jon    |     4074 |
+|   11156 | ALLEN       | Mike   |     8036 |
+|   11157 | ALLEN       | Jon    |     8330 |
+|   11158 | ALLEN       | Mike   |     8411 |
+|   11159 | ALLEN       | Mike   |     8674 |
+|   11160 | ALLEN       | Mike   |     9881 |
+|   11161 | ALLEN       | Jon    |    10381 |
+|   11162 | ALLEN       | Mike   |    10467 |
+|   11163 | ALLEN       | Jon    |    11027 |
+|   11164 | ALLEN       | Mike   |    14068 |
+|   11165 | ALLEN       | Mike   |    14535 |
+|   11166 | ALLEN       | Jon    |    15354 |
+|   11167 | ALLEN       | Jon    |    15732 |
+|   11168 | ALLEN       | Mike   |    15781 |
+|   11169 | ALLEN       | Mike   |    15314 |
+|   11170 | MARVIN      | Mike   |       40 |
+|   11171 | MARVIN      | Mike   |      999 |
+|   11172 | MARVIN      | Jon    |     2130 |
+|   11173 | MARVIN      | Jon    |     2545 |
+|   11174 | MARVIN      | Mike   |     3762 |
+|   11175 | MARVIN      | Jon    |     4491 |
+|   11176 | MARVIN      | Mike   |     5897 |
+|   11177 | MARVIN      | Jon    |     7100 |
+|   11178 | MARVIN      | Mike   |     7635 |
+|   11179 | MARVIN      | Jon    |     7731 |
+|   11180 | MARVIN      | Mike   |    10909 |
+|   11181 | MARVIN      | Jon    |    11304 |
+|   11182 | MARVIN      | Mike   |    11468 |
+|   11183 | MARVIN      | Mike   |    11532 |
+|   11184 | MARVIN      | Jon    |    12552 |
+|   11185 | MARVIN      | Mike   |    13010 |
+|   11186 | MARVIN      | Mike   |    13318 |
+|   11187 | MARVIN      | Jon    |    13824 |
+|   11188 | MARVIN      | Jon    |    13887 |
+|   11189 | MARVIN      | Mike   |    14773 |
+|   11190 | MARVIN      | Mike   |    15678 |
+|   11191 | VINCENT     | Mike   |       85 |
+|   11192 | VINCENT     | Mike   |      261 |
+|   11193 | VINCENT     | Mike   |     2246 |
+|   11194 | VINCENT     | Mike   |     2559 |
+|   11195 | VINCENT     | Mike   |     3318 |
+|   11196 | VINCENT     | Mike   |     3957 |
+|   11197 | VINCENT     | Mike   |     4437 |
+|   11198 | VINCENT     | Jon    |     6462 |
+|   11199 | VINCENT     | Jon    |     6728 |
+|   11200 | VINCENT     | Jon    |     6845 |
+|   11201 | VINCENT     | Mike   |     7009 |
+|   11202 | VINCENT     | Mike   |     7779 |
+|   11203 | VINCENT     | Mike   |     9650 |
+|   11204 | VINCENT     | Jon    |     9991 |
+|   11205 | VINCENT     | Jon    |    10107 |
+|   11206 | VINCENT     | Mike   |    11706 |
+|   11207 | VINCENT     | Jon    |    12930 |
+|   11208 | VINCENT     | Mike   |    13042 |
+|   11209 | VINCENT     | Mike   |    13242 |
+|   11210 | VINCENT     | Mike   |    13308 |
+|   11211 | VINCENT     | Mike   |    13404 |
+|   11212 | VINCENT     | Jon    |    13494 |
+|   11213 | VINCENT     | Jon    |    13657 |
+|   11214 | VINCENT     | Mike   |    15140 |
+|   11215 | VINCENT     | Jon    |    15481 |
+|   11216 | GLENN       | Jon    |      665 |
+|   11217 | GLENN       | Jon    |     1867 |
+|   11218 | GLENN       | Mike   |     3211 |
+|   11219 | GLENN       | Jon    |     4926 |
+|   11220 | GLENN       | Jon    |     5665 |
+|   11221 | GLENN       | Jon    |     5733 |
+|   11222 | GLENN       | Jon    |     6491 |
+|   11223 | GLENN       | Mike   |     6505 |
+|   11224 | GLENN       | Mike   |     7379 |
+|   11225 | GLENN       | Jon    |     7624 |
+|   11226 | GLENN       | Mike   |     7748 |
+|   11227 | GLENN       | Jon    |     8317 |
+|   11228 | GLENN       | Jon    |     9586 |
+|   11229 | GLENN       | Mike   |     9852 |
+|   11230 | GLENN       | Mike   |    10263 |
+|   11231 | GLENN       | Mike   |    10553 |
+|   11232 | GLENN       | Jon    |    11310 |
+|   11233 | GLENN       | Jon    |    12128 |
+|   11234 | GLENN       | Jon    |    12588 |
+|   11235 | GLENN       | Jon    |    13729 |
+|   11236 | GLENN       | Mike   |    14992 |
+|   11237 | GLENN       | Jon    |    15121 |
+|   11238 | GLENN       | Mike   |    15959 |
+|   11239 | JEFFERY     | Jon    |      253 |
+|   11240 | JEFFERY     | Jon    |      724 |
+|   11241 | JEFFERY     | Jon    |     1031 |
+|   11242 | JEFFERY     | Jon    |     1158 |
+|   11243 | JEFFERY     | Mike   |     1343 |
+|   11244 | JEFFERY     | Jon    |     1553 |
+|   11245 | JEFFERY     | Jon    |     1596 |
+|   11246 | JEFFERY     | Jon    |     1771 |
+|   11247 | JEFFERY     | Mike   |     3833 |
+|   11248 | JEFFERY     | Mike   |     3868 |
+|   11249 | JEFFERY     | Mike   |     6097 |
+|   11250 | JEFFERY     | Mike   |     6879 |
+|   11251 | JEFFERY     | Mike   |     7889 |
+|   11252 | JEFFERY     | Mike   |     7917 |
+|   11253 | JEFFERY     | Jon    |     8349 |
+|   11254 | JEFFERY     | Jon    |     8588 |
+|   11255 | JEFFERY     | Jon    |     8648 |
+|   11256 | JEFFERY     | Jon    |     9383 |
+|   11257 | JEFFERY     | Mike   |    10254 |
+|   11258 | JEFFERY     | Mike   |    10354 |
+|   11259 | JEFFERY     | Mike   |    10742 |
+|   11260 | JEFFERY     | Mike   |    10937 |
+|   11261 | JEFFERY     | Jon    |    11047 |
+|   11262 | JEFFERY     | Mike   |    11557 |
+|   11263 | JEFFERY     | Mike   |    12722 |
+|   11264 | JEFFERY     | Mike   |    12932 |
+|   11265 | JEFFERY     | Mike   |    14239 |
+|   11266 | JEFFERY     | Mike   |    15235 |
+|   11267 | JEFFERY     | Jon    |    15470 |
+|   11268 | JEFFERY     | Mike   |    15727 |
+|   11269 | JEFFERY     | Jon    |    15761 |
+|   11270 | TRAVIS      | Mike   |      267 |
+|   11271 | TRAVIS      | Jon    |      630 |
+|   11272 | TRAVIS      | Jon    |      833 |
+|   11273 | TRAVIS      | Mike   |     1921 |
+|   11274 | TRAVIS      | Mike   |     3952 |
+|   11275 | TRAVIS      | Mike   |     4418 |
+|   11276 | TRAVIS      | Mike   |     4421 |
+|   11277 | TRAVIS      | Jon    |     6258 |
+|   11278 | TRAVIS      | Mike   |     6312 |
+|   11279 | TRAVIS      | Mike   |     8877 |
+|   11280 | TRAVIS      | Jon    |     9049 |
+|   11281 | TRAVIS      | Mike   |    10478 |
+|   11282 | TRAVIS      | Mike   |    11217 |
+|   11283 | TRAVIS      | Mike   |    11291 |
+|   11284 | TRAVIS      | Jon    |    11303 |
+|   11285 | TRAVIS      | Jon    |    12074 |
+|   11286 | TRAVIS      | Jon    |    12281 |
+|   11287 | TRAVIS      | Mike   |    13545 |
+|   11288 | TRAVIS      | Mike   |    13927 |
+|   11289 | TRAVIS      | Jon    |    14121 |
+|   11290 | TRAVIS      | Mike   |    14304 |
+|   11291 | TRAVIS      | Mike   |    14607 |
+|   11292 | TRAVIS      | Jon    |    14882 |
+|   11293 | TRAVIS      | Mike   |    15795 |
+|   11294 | TRAVIS      | Jon    |    13261 |
+|   11295 | JEFF        | Mike   |     2825 |
+|   11296 | JEFF        | Jon    |     2943 |
+|   11297 | JEFF        | Jon    |     2969 |
+|   11298 | JEFF        | Mike   |     3805 |
+|   11299 | JEFF        | Jon    |     4852 |
+|   11300 | JEFF        | Mike   |     4865 |
+|   11301 | JEFF        | Mike   |     4938 |
+|   11302 | JEFF        | Mike   |     6150 |
+|   11303 | JEFF        | Mike   |     6970 |
+|   11304 | JEFF        | Jon    |     8546 |
+|   11305 | JEFF        | Jon    |     8591 |
+|   11306 | JEFF        | Jon    |     8886 |
+|   11307 | JEFF        | Mike   |     9558 |
+|   11308 | JEFF        | Jon    |    10537 |
+|   11309 | JEFF        | Mike   |    10709 |
+|   11310 | JEFF        | Jon    |    10915 |
+|   11311 | JEFF        | Mike   |    11270 |
+|   11312 | JEFF        | Jon    |    11322 |
+|   11313 | JEFF        | Jon    |    11409 |
+|   11314 | JEFF        | Mike   |    11650 |
+|   11315 | JEFF        | Mike   |    11769 |
+|   11316 | JEFF        | Mike   |    11910 |
+|   11317 | JEFF        | Jon    |    13312 |
+|   11318 | JEFF        | Mike   |    13537 |
+|   11319 | JEFF        | Mike   |    13970 |
+|   11320 | JEFF        | Mike   |    14484 |
+|   11321 | JEFF        | Mike   |    14836 |
+|   11322 | JEFF        | Jon    |    14860 |
+|   11323 | JEFF        | Mike   |    15466 |
+|   11324 | JEFF        | Jon    |    15957 |
+|   11325 | CHAD        | Mike   |       62 |
+|   11326 | CHAD        | Jon    |     2793 |
+|   11327 | CHAD        | Mike   |     3596 |
+|   11328 | CHAD        | Mike   |     3694 |
+|   11329 | CHAD        | Mike   |     4224 |
+|   11330 | CHAD        | Jon    |     5333 |
+|   11331 | CHAD        | Jon    |     5863 |
+|   11332 | CHAD        | Mike   |     5900 |
+|   11333 | CHAD        | Jon    |     5933 |
+|   11334 | CHAD        | Jon    |     6173 |
+|   11335 | CHAD        | Jon    |     6587 |
+|   11336 | CHAD        | Mike   |     7362 |
+|   11337 | CHAD        | Mike   |     7619 |
+|   11338 | CHAD        | Mike   |     7796 |
+|   11339 | CHAD        | Mike   |    10150 |
+|   11340 | CHAD        | Mike   |    10372 |
+|   11341 | CHAD        | Jon    |    11025 |
+|   11342 | CHAD        | Mike   |    11313 |
+|   11343 | CHAD        | Jon    |    11323 |
+|   11344 | CHAD        | Mike   |    11425 |
+|   11345 | CHAD        | Jon    |    11689 |
+|   11346 | CHAD        | Mike   |    12460 |
+|   11347 | CHAD        | Mike   |    12720 |
+|   11348 | CHAD        | Jon    |    14308 |
+|   11349 | CHAD        | Jon    |    15779 |
+|   11350 | JACOB       | Jon    |      744 |
+|   11351 | JACOB       | Jon    |     2672 |
+|   11352 | JACOB       | Mike   |     2698 |
+|   11353 | JACOB       | Mike   |     2726 |
+|   11354 | JACOB       | Mike   |     4176 |
+|   11355 | JACOB       | Jon    |     5081 |
+|   11356 | JACOB       | Mike   |     5168 |
+|   11357 | JACOB       | Jon    |     5911 |
+|   11358 | JACOB       | Jon    |     6086 |
+|   11359 | JACOB       | Jon    |     6096 |
+|   11360 | JACOB       | Jon    |     6582 |
+|   11361 | JACOB       | Mike   |     6588 |
+|   11362 | JACOB       | Jon    |     7081 |
+|   11363 | JACOB       | Jon    |     8485 |
+|   11364 | JACOB       | Mike   |     9362 |
+|   11365 | JACOB       | Jon    |    10291 |
+|   11366 | JACOB       | Jon    |    10601 |
+|   11367 | JACOB       | Mike   |    10766 |
+|   11368 | JACOB       | Jon    |    11236 |
+|   11369 | JACOB       | Jon    |    14525 |
+|   11370 | JACOB       | Jon    |    15597 |
+|   11371 | LEE         | Mike   |      507 |
+|   11372 | LEE         | Mike   |      931 |
+|   11373 | LEE         | Mike   |     1693 |
+|   11374 | LEE         | Jon    |     2407 |
+|   11375 | LEE         | Mike   |     3170 |
+|   11376 | LEE         | Mike   |     3491 |
+|   11377 | LEE         | Jon    |     3703 |
+|   11378 | LEE         | Mike   |     3988 |
+|   11379 | LEE         | Jon    |     4456 |
+|   11380 | LEE         | Mike   |     6220 |
+|   11381 | LEE         | Jon    |     6960 |
+|   11382 | LEE         | Jon    |     7449 |
+|   11383 | LEE         | Jon    |     8025 |
+|   11384 | LEE         | Mike   |     8268 |
+|   11385 | LEE         | Mike   |     8725 |
+|   11386 | LEE         | Jon    |     9377 |
+|   11387 | LEE         | Jon    |     9875 |
+|   11388 | LEE         | Mike   |    10200 |
+|   11389 | LEE         | Jon    |    11089 |
+|   11390 | LEE         | Mike   |    11263 |
+|   11391 | LEE         | Mike   |    11523 |
+|   11392 | LEE         | Mike   |    12279 |
+|   11393 | LEE         | Jon    |    13461 |
+|   11394 | LEE         | Mike   |    13872 |
+|   11395 | LEE         | Mike   |    14742 |
+|   11396 | LEE         | Mike   |    14887 |
+|   11397 | LEE         | Jon    |    15710 |
+|   11398 | MELVIN      | Mike   |      398 |
+|   11399 | MELVIN      | Mike   |     1846 |
+|   11400 | MELVIN      | Mike   |     1897 |
+|   11401 | MELVIN      | Jon    |     2747 |
+|   11402 | MELVIN      | Mike   |     2778 |
+|   11403 | MELVIN      | Mike   |     3553 |
+|   11404 | MELVIN      | Jon    |     4463 |
+|   11405 | MELVIN      | Jon    |     4504 |
+|   11406 | MELVIN      | Mike   |     5784 |
+|   11407 | MELVIN      | Jon    |     7827 |
+|   11408 | MELVIN      | Jon    |     8206 |
+|   11409 | MELVIN      | Jon    |     9541 |
+|   11410 | MELVIN      | Jon    |    10833 |
+|   11411 | MELVIN      | Jon    |    11325 |
+|   11412 | MELVIN      | Mike   |    11658 |
+|   11413 | MELVIN      | Mike   |    11842 |
+|   11414 | MELVIN      | Mike   |    12907 |
+|   11415 | MELVIN      | Jon    |    13216 |
+|   11416 | MELVIN      | Jon    |    13625 |
+|   11417 | MELVIN      | Jon    |    13709 |
+|   11418 | MELVIN      | Jon    |    13722 |
+|   11419 | MELVIN      | Mike   |    14861 |
+|   11420 | MELVIN      | Mike   |    15272 |
+|   11421 | MELVIN      | Mike   |    15273 |
+|   11422 | MELVIN      | Jon    |    15316 |
+|   11423 | MELVIN      | Jon    |    15441 |
+|   11424 | ALFRED      | Mike   |     1504 |
+|   11425 | ALFRED      | Jon    |     1827 |
+|   11426 | ALFRED      | Mike   |     2600 |
+|   11427 | ALFRED      | Jon    |     2758 |
+|   11428 | ALFRED      | Mike   |     3072 |
+|   11429 | ALFRED      | Jon    |     4105 |
+|   11430 | ALFRED      | Mike   |     4250 |
+|   11431 | ALFRED      | Mike   |     4679 |
+|   11432 | ALFRED      | Mike   |     6506 |
+|   11433 | ALFRED      | Mike   |     7016 |
+|   11434 | ALFRED      | Jon    |     7141 |
+|   11435 | ALFRED      | Mike   |     7157 |
+|   11436 | ALFRED      | Mike   |     7290 |
+|   11437 | ALFRED      | Jon    |     7539 |
+|   11438 | ALFRED      | Mike   |     7849 |
+|   11439 | ALFRED      | Jon    |     8082 |
+|   11440 | ALFRED      | Jon    |     8595 |
+|   11441 | ALFRED      | Jon    |     9026 |
+|   11442 | ALFRED      | Mike   |    10488 |
+|   11443 | ALFRED      | Mike   |    11091 |
+|   11444 | ALFRED      | Jon    |    11514 |
+|   11445 | ALFRED      | Jon    |    12806 |
+|   11446 | ALFRED      | Jon    |    14191 |
+|   11447 | ALFRED      | Jon    |    14902 |
+|   11448 | ALFRED      | Mike   |    15380 |
+|   11449 | ALFRED      | Mike   |    15755 |
+|   11450 | KYLE        | Jon    |      403 |
+|   11451 | KYLE        | Jon    |     3044 |
+|   11452 | KYLE        | Mike   |     3166 |
+|   11453 | KYLE        | Jon    |     3404 |
+|   11454 | KYLE        | Jon    |     3746 |
+|   11455 | KYLE        | Jon    |     4512 |
+|   11456 | KYLE        | Jon    |     4559 |
+|   11457 | KYLE        | Jon    |     4696 |
+|   11458 | KYLE        | Mike   |     5568 |
+|   11459 | KYLE        | Mike   |     5611 |
+|   11460 | KYLE        | Mike   |     6589 |
+|   11461 | KYLE        | Mike   |     7594 |
+|   11462 | KYLE        | Jon    |     8194 |
+|   11463 | KYLE        | Mike   |     8918 |
+|   11464 | KYLE        | Jon    |     8964 |
+|   11465 | KYLE        | Jon    |     8999 |
+|   11466 | KYLE        | Mike   |     9471 |
+|   11467 | KYLE        | Mike   |     9516 |
+|   11468 | KYLE        | Jon    |     9878 |
+|   11469 | KYLE        | Mike   |    10017 |
+|   11470 | KYLE        | Jon    |    10369 |
+|   11471 | KYLE        | Mike   |    10866 |
+|   11472 | KYLE        | Jon    |    11374 |
+|   11473 | KYLE        | Jon    |    11562 |
+|   11474 | KYLE        | Jon    |    11833 |
+|   11475 | KYLE        | Jon    |    12729 |
+|   11476 | KYLE        | Jon    |    13793 |
+|   11477 | KYLE        | Jon    |    15113 |
+|   11478 | KYLE        | Jon    |    15941 |
+|   11479 | KYLE        | Mike   |    15094 |
+|   11480 | FRANCIS     | Jon    |     1098 |
+|   11481 | FRANCIS     | Mike   |     3276 |
+|   11482 | FRANCIS     | Mike   |     3807 |
+|   11483 | FRANCIS     | Jon    |     4361 |
+|   11484 | FRANCIS     | Jon    |     4362 |
+|   11485 | FRANCIS     | Jon    |     4483 |
+|   11486 | FRANCIS     | Mike   |     4659 |
+|   11487 | FRANCIS     | Mike   |     4884 |
+|   11488 | FRANCIS     | Mike   |     4939 |
+|   11489 | FRANCIS     | Jon    |     5363 |
+|   11490 | FRANCIS     | Mike   |     5371 |
+|   11491 | FRANCIS     | Jon    |     6318 |
+|   11492 | FRANCIS     | Mike   |     6603 |
+|   11493 | FRANCIS     | Mike   |     7249 |
+|   11494 | FRANCIS     | Mike   |     8974 |
+|   11495 | FRANCIS     | Mike   |     9170 |
+|   11496 | FRANCIS     | Jon    |     9682 |
+|   11497 | FRANCIS     | Mike   |    10121 |
+|   11498 | FRANCIS     | Jon    |    10163 |
+|   11499 | FRANCIS     | Mike   |    10545 |
+|   11500 | FRANCIS     | Jon    |    13040 |
+|   11501 | FRANCIS     | Jon    |    14089 |
+|   11502 | FRANCIS     | Jon    |    14881 |
+|   11503 | FRANCIS     | Mike   |    15064 |
+|   11504 | FRANCIS     | Jon    |    15784 |
+|   11505 | FRANCIS     | Jon    |    16036 |
+|   11506 | BRADLEY     | Jon    |      604 |
+|   11507 | BRADLEY     | Mike   |     1709 |
+|   11508 | BRADLEY     | Mike   |     1842 |
+|   11509 | BRADLEY     | Mike   |     2204 |
+|   11510 | BRADLEY     | Mike   |     2804 |
+|   11511 | BRADLEY     | Mike   |     3243 |
+|   11512 | BRADLEY     | Jon    |     4114 |
+|   11513 | BRADLEY     | Jon    |     4398 |
+|   11514 | BRADLEY     | Mike   |     4900 |
+|   11515 | BRADLEY     | Mike   |     5725 |
+|   11516 | BRADLEY     | Mike   |     7495 |
+|   11517 | BRADLEY     | Mike   |     7527 |
+|   11518 | BRADLEY     | Mike   |     7711 |
+|   11519 | BRADLEY     | Mike   |     7789 |
+|   11520 | BRADLEY     | Mike   |     9185 |
+|   11521 | BRADLEY     | Jon    |     9247 |
+|   11522 | BRADLEY     | Jon    |    10172 |
+|   11523 | BRADLEY     | Mike   |    10505 |
+|   11524 | BRADLEY     | Jon    |    11237 |
+|   11525 | BRADLEY     | Jon    |    11876 |
+|   11526 | BRADLEY     | Jon    |    11938 |
+|   11527 | BRADLEY     | Jon    |    12548 |
+|   11528 | BRADLEY     | Jon    |    12707 |
+|   11529 | BRADLEY     | Mike   |    12822 |
+|   11530 | BRADLEY     | Jon    |    13834 |
+|   11531 | BRADLEY     | Jon    |    14151 |
+|   11532 | BRADLEY     | Jon    |    14826 |
+|   11533 | JESUS       | Jon    |       82 |
+|   11534 | JESUS       | Mike   |     1342 |
+|   11535 | JESUS       | Jon    |     1628 |
+|   11536 | JESUS       | Mike   |     1648 |
+|   11537 | JESUS       | Mike   |     1857 |
+|   11538 | JESUS       | Jon    |     2466 |
+|   11539 | JESUS       | Mike   |     4793 |
+|   11540 | JESUS       | Jon    |     5476 |
+|   11541 | JESUS       | Jon    |     5586 |
+|   11542 | JESUS       | Mike   |     6423 |
+|   11543 | JESUS       | Mike   |     6509 |
+|   11544 | JESUS       | Jon    |     6938 |
+|   11545 | JESUS       | Jon    |     8182 |
+|   11546 | JESUS       | Mike   |     8531 |
+|   11547 | JESUS       | Jon    |     8658 |
+|   11548 | JESUS       | Jon    |     9978 |
+|   11549 | JESUS       | Mike   |    10417 |
+|   11550 | JESUS       | Mike   |    10464 |
+|   11551 | JESUS       | Jon    |    10560 |
+|   11552 | JESUS       | Mike   |    11024 |
+|   11553 | JESUS       | Mike   |    13720 |
+|   11554 | JESUS       | Jon    |    14201 |
+|   11555 | JESUS       | Mike   |    14287 |
+|   11556 | JESUS       | Mike   |    15330 |
+|   11557 | HERBERT     | Jon    |      634 |
+|   11558 | HERBERT     | Mike   |     1227 |
+|   11559 | HERBERT     | Jon    |     1471 |
+|   11560 | HERBERT     | Mike   |     1601 |
+|   11561 | HERBERT     | Mike   |     2677 |
+|   11562 | HERBERT     | Jon    |     3377 |
+|   11563 | HERBERT     | Mike   |     3702 |
+|   11564 | HERBERT     | Mike   |     3925 |
+|   11565 | HERBERT     | Mike   |     4151 |
+|   11566 | HERBERT     | Mike   |     5373 |
+|   11567 | HERBERT     | Mike   |     6735 |
+|   11568 | HERBERT     | Mike   |     7823 |
+|   11569 | HERBERT     | Mike   |     8155 |
+|   11570 | HERBERT     | Jon    |     8387 |
+|   11571 | HERBERT     | Jon    |     8528 |
+|   11572 | HERBERT     | Mike   |     9904 |
+|   11573 | HERBERT     | Jon    |     9982 |
+|   11574 | HERBERT     | Jon    |    10577 |
+|   11575 | HERBERT     | Jon    |    10888 |
+|   11576 | HERBERT     | Jon    |    11536 |
+|   11577 | FREDERICK   | Jon    |      150 |
+|   11578 | FREDERICK   | Jon    |      290 |
+|   11579 | FREDERICK   | Jon    |      601 |
+|   11580 | FREDERICK   | Jon    |      799 |
+|   11581 | FREDERICK   | Jon    |      844 |
+|   11582 | FREDERICK   | Jon    |     1781 |
+|   11583 | FREDERICK   | Jon    |     1798 |
+|   11584 | FREDERICK   | Jon    |     1916 |
+|   11585 | FREDERICK   | Mike   |     3409 |
+|   11586 | FREDERICK   | Jon    |     5868 |
+|   11587 | FREDERICK   | Jon    |     6196 |
+|   11588 | FREDERICK   | Jon    |     6886 |
+|   11589 | FREDERICK   | Mike   |     6977 |
+|   11590 | FREDERICK   | Jon    |     7352 |
+|   11591 | FREDERICK   | Jon    |     8136 |
+|   11592 | FREDERICK   | Jon    |     8143 |
+|   11593 | FREDERICK   | Jon    |     8175 |
+|   11594 | FREDERICK   | Mike   |     9849 |
+|   11595 | FREDERICK   | Mike   |    12259 |
+|   11596 | FREDERICK   | Mike   |    12953 |
+|   11597 | FREDERICK   | Jon    |    14495 |
+|   11598 | RAY         | Jon    |       30 |
+|   11599 | RAY         | Mike   |      364 |
+|   11600 | RAY         | Jon    |     1207 |
+|   11601 | RAY         | Mike   |     1274 |
+|   11602 | RAY         | Mike   |     1538 |
+|   11603 | RAY         | Mike   |     1759 |
+|   11604 | RAY         | Jon    |     2892 |
+|   11605 | RAY         | Jon    |     3153 |
+|   11606 | RAY         | Mike   |     5002 |
+|   11607 | RAY         | Mike   |     5217 |
+|   11608 | RAY         | Jon    |     5879 |
+|   11609 | RAY         | Mike   |     5958 |
+|   11610 | RAY         | Jon    |     6043 |
+|   11611 | RAY         | Mike   |     8560 |
+|   11612 | RAY         | Jon    |     9450 |
+|   11613 | RAY         | Mike   |    12723 |
+|   11614 | RAY         | Mike   |    12965 |
+|   11615 | RAY         | Mike   |    13007 |
+|   11616 | RAY         | Jon    |    13452 |
+|   11617 | RAY         | Jon    |    13454 |
+|   11618 | RAY         | Mike   |    14058 |
+|   11619 | RAY         | Mike   |    15031 |
+|   11620 | JOEL        | Jon    |     1126 |
+|   11621 | JOEL        | Jon    |     1561 |
+|   11622 | JOEL        | Mike   |     2096 |
+|   11623 | JOEL        | Mike   |     2269 |
+|   11624 | JOEL        | Jon    |     2281 |
+|   11625 | JOEL        | Jon    |     2761 |
+|   11626 | JOEL        | Jon    |     3304 |
+|   11627 | JOEL        | Jon    |     3369 |
+|   11628 | JOEL        | Mike   |     4144 |
+|   11629 | JOEL        | Mike   |     4801 |
+|   11630 | JOEL        | Mike   |     4863 |
+|   11631 | JOEL        | Jon    |     7978 |
+|   11632 | JOEL        | Jon    |     8810 |
+|   11633 | JOEL        | Jon    |    10508 |
+|   11634 | JOEL        | Mike   |    10527 |
+|   11635 | JOEL        | Jon    |    10959 |
+|   11636 | JOEL        | Jon    |    11538 |
+|   11637 | JOEL        | Mike   |    12273 |
+|   11638 | JOEL        | Jon    |    13153 |
+|   11639 | JOEL        | Mike   |    13784 |
+|   11640 | JOEL        | Mike   |    15809 |
+|   11641 | JOEL        | Mike   |    15960 |
+|   11642 | JOEL        | Jon    |    13587 |
+|   11643 | EDWIN       | Jon    |      326 |
+|   11644 | EDWIN       | Mike   |      550 |
+|   11645 | EDWIN       | Mike   |      897 |
+|   11646 | EDWIN       | Jon    |     1180 |
+|   11647 | EDWIN       | Jon    |     1597 |
+|   11648 | EDWIN       | Jon    |     3194 |
+|   11649 | EDWIN       | Mike   |     4965 |
+|   11650 | EDWIN       | Mike   |     4973 |
+|   11651 | EDWIN       | Mike   |     5204 |
+|   11652 | EDWIN       | Mike   |     5322 |
+|   11653 | EDWIN       | Mike   |     5944 |
+|   11654 | EDWIN       | Mike   |     5990 |
+|   11655 | EDWIN       | Jon    |     7326 |
+|   11656 | EDWIN       | Jon    |     7681 |
+|   11657 | EDWIN       | Jon    |     8079 |
+|   11658 | EDWIN       | Jon    |     8094 |
+|   11659 | EDWIN       | Jon    |     9916 |
+|   11660 | EDWIN       | Jon    |     9984 |
+|   11661 | EDWIN       | Jon    |    11870 |
+|   11662 | EDWIN       | Mike   |    12767 |
+|   11663 | EDWIN       | Mike   |    14027 |
+|   11664 | EDWIN       | Mike   |    15523 |
+|   11665 | EDWIN       | Mike   |    15713 |
+|   11666 | DON         | Jon    |      146 |
+|   11667 | DON         | Mike   |      691 |
+|   11668 | DON         | Jon    |     4087 |
+|   11669 | DON         | Jon    |     4158 |
+|   11670 | DON         | Jon    |     4988 |
+|   11671 | DON         | Jon    |     5457 |
+|   11672 | DON         | Mike   |     5969 |
+|   11673 | DON         | Mike   |     6765 |
+|   11674 | DON         | Mike   |     6848 |
+|   11675 | DON         | Mike   |     6850 |
+|   11676 | DON         | Mike   |     7821 |
+|   11677 | DON         | Jon    |     7907 |
+|   11678 | DON         | Mike   |     8414 |
+|   11679 | DON         | Mike   |     8713 |
+|   11680 | DON         | Jon    |     9161 |
+|   11681 | DON         | Mike   |     9294 |
+|   11682 | DON         | Mike   |    10663 |
+|   11683 | DON         | Mike   |    11664 |
+|   11684 | DON         | Jon    |    12669 |
+|   11685 | DON         | Jon    |    13273 |
+|   11686 | DON         | Mike   |    13801 |
+|   11687 | DON         | Jon    |    14523 |
+|   11688 | DON         | Mike   |    14559 |
+|   11689 | DON         | Jon    |    15476 |
+|   11690 | DON         | Mike   |    15502 |
+|   11691 | EDDIE       | Jon    |      508 |
+|   11692 | EDDIE       | Mike   |     1225 |
+|   11693 | EDDIE       | Jon    |     1584 |
+|   11694 | EDDIE       | Jon    |     2415 |
+|   11695 | EDDIE       | Mike   |     2430 |
+|   11696 | EDDIE       | Mike   |     2494 |
+|   11697 | EDDIE       | Mike   |     3014 |
+|   11698 | EDDIE       | Jon    |     3037 |
+|   11699 | EDDIE       | Mike   |     4414 |
+|   11700 | EDDIE       | Jon    |     4654 |
+|   11701 | EDDIE       | Jon    |     4960 |
+|   11702 | EDDIE       | Jon    |     5464 |
+|   11703 | EDDIE       | Jon    |     6972 |
+|   11704 | EDDIE       | Mike   |     7260 |
+|   11705 | EDDIE       | Jon    |     7479 |
+|   11706 | EDDIE       | Mike   |     8205 |
+|   11707 | EDDIE       | Mike   |     9350 |
+|   11708 | EDDIE       | Mike   |    11242 |
+|   11709 | EDDIE       | Mike   |    11867 |
+|   11710 | EDDIE       | Jon    |    12030 |
+|   11711 | EDDIE       | Jon    |    12146 |
+|   11712 | EDDIE       | Jon    |    12624 |
+|   11713 | EDDIE       | Jon    |    13359 |
+|   11714 | EDDIE       | Mike   |    13383 |
+|   11715 | EDDIE       | Jon    |    14553 |
+|   11716 | EDDIE       | Jon    |    15016 |
+|   11717 | EDDIE       | Jon    |    15385 |
+|   11718 | RICKY       | Mike   |      757 |
+|   11719 | RICKY       | Mike   |      806 |
+|   11720 | RICKY       | Jon    |     1443 |
+|   11721 | RICKY       | Mike   |     2984 |
+|   11722 | RICKY       | Mike   |     3690 |
+|   11723 | RICKY       | Mike   |     3918 |
+|   11724 | RICKY       | Jon    |     5220 |
+|   11725 | RICKY       | Jon    |     6051 |
+|   11726 | RICKY       | Mike   |     6935 |
+|   11727 | RICKY       | Mike   |     8386 |
+|   11728 | RICKY       | Jon    |     8891 |
+|   11729 | RICKY       | Jon    |     9269 |
+|   11730 | RICKY       | Mike   |     9655 |
+|   11731 | RICKY       | Jon    |     9829 |
+|   11732 | RICKY       | Mike   |    10998 |
+|   11733 | RICKY       | Mike   |    11041 |
+|   11734 | RICKY       | Mike   |    11786 |
+|   11735 | RICKY       | Mike   |    11796 |
+|   11736 | RICKY       | Jon    |    12046 |
+|   11737 | RICKY       | Mike   |    12741 |
+|   11738 | RICKY       | Jon    |    13208 |
+|   11739 | RICKY       | Mike   |    14696 |
+|   11740 | RICKY       | Mike   |    14765 |
+|   11741 | RICKY       | Mike   |    14850 |
+|   11742 | RICKY       | Mike   |    15136 |
+|   11743 | TROY        | Mike   |       45 |
+|   11744 | TROY        | Mike   |      256 |
+|   11745 | TROY        | Mike   |      848 |
+|   11746 | TROY        | Mike   |     2291 |
+|   11747 | TROY        | Jon    |     3851 |
+|   11748 | TROY        | Jon    |     3944 |
+|   11749 | TROY        | Jon    |     4643 |
+|   11750 | TROY        | Jon    |     4751 |
+|   11751 | TROY        | Mike   |     4782 |
+|   11752 | TROY        | Mike   |     5959 |
+|   11753 | TROY        | Mike   |     7593 |
+|   11754 | TROY        | Jon    |     8027 |
+|   11755 | TROY        | Jon    |     8097 |
+|   11756 | TROY        | Mike   |     9345 |
+|   11757 | TROY        | Mike   |     9539 |
+|   11758 | TROY        | Mike   |     9638 |
+|   11759 | TROY        | Jon    |    10216 |
+|   11760 | TROY        | Jon    |    11160 |
+|   11761 | TROY        | Mike   |    11580 |
+|   11762 | TROY        | Jon    |    11615 |
+|   11763 | TROY        | Jon    |    11896 |
+|   11764 | TROY        | Jon    |    12297 |
+|   11765 | TROY        | Jon    |    12429 |
+|   11766 | TROY        | Jon    |    13099 |
+|   11767 | TROY        | Jon    |    13382 |
+|   11768 | TROY        | Mike   |    13533 |
+|   11769 | TROY        | Mike   |    13760 |
+|   11770 | TROY        | Mike   |    13814 |
+|   11771 | TROY        | Jon    |    13826 |
+|   11772 | TROY        | Jon    |    15766 |
+|   11773 | RANDALL     | Mike   |      192 |
+|   11774 | RANDALL     | Jon    |      656 |
+|   11775 | RANDALL     | Mike   |      666 |
+|   11776 | RANDALL     | Jon    |     2239 |
+|   11777 | RANDALL     | Mike   |     2792 |
+|   11778 | RANDALL     | Jon    |     3265 |
+|   11779 | RANDALL     | Mike   |     3747 |
+|   11780 | RANDALL     | Jon    |     4765 |
+|   11781 | RANDALL     | Jon    |     5085 |
+|   11782 | RANDALL     | Mike   |     5167 |
+|   11783 | RANDALL     | Jon    |     5744 |
+|   11784 | RANDALL     | Jon    |     5864 |
+|   11785 | RANDALL     | Jon    |     8215 |
+|   11786 | RANDALL     | Jon    |     9172 |
+|   11787 | RANDALL     | Jon    |     9333 |
+|   11788 | RANDALL     | Jon    |    10009 |
+|   11789 | RANDALL     | Jon    |    10249 |
+|   11790 | RANDALL     | Jon    |    11417 |
+|   11791 | RANDALL     | Mike   |    12205 |
+|   11792 | RANDALL     | Jon    |    13838 |
+|   11793 | RANDALL     | Mike   |    13839 |
+|   11794 | RANDALL     | Mike   |    13905 |
+|   11795 | RANDALL     | Mike   |    14993 |
+|   11796 | BARRY       | Jon    |       23 |
+|   11797 | BARRY       | Jon    |     1036 |
+|   11798 | BARRY       | Mike   |     1138 |
+|   11799 | BARRY       | Mike   |     1431 |
+|   11800 | BARRY       | Jon    |     1779 |
+|   11801 | BARRY       | Jon    |     2206 |
+|   11802 | BARRY       | Mike   |     2591 |
+|   11803 | BARRY       | Mike   |     3315 |
+|   11804 | BARRY       | Jon    |     3368 |
+|   11805 | BARRY       | Mike   |     4355 |
+|   11806 | BARRY       | Jon    |     4446 |
+|   11807 | BARRY       | Jon    |     5316 |
+|   11808 | BARRY       | Jon    |     5426 |
+|   11809 | BARRY       | Mike   |     5870 |
+|   11810 | BARRY       | Jon    |     6138 |
+|   11811 | BARRY       | Mike   |     6563 |
+|   11812 | BARRY       | Jon    |     6615 |
+|   11813 | BARRY       | Jon    |     7357 |
+|   11814 | BARRY       | Jon    |     7374 |
+|   11815 | BARRY       | Mike   |     7598 |
+|   11816 | BARRY       | Jon    |     8547 |
+|   11817 | BARRY       | Mike   |     9082 |
+|   11818 | BARRY       | Jon    |     9782 |
+|   11819 | BARRY       | Mike   |    10512 |
+|   11820 | BARRY       | Mike   |    10607 |
+|   11821 | BARRY       | Jon    |    11644 |
+|   11822 | BARRY       | Jon    |    11933 |
+|   11823 | BARRY       | Jon    |    12654 |
+|   11824 | BARRY       | Jon    |    13319 |
+|   11825 | BARRY       | Mike   |    13414 |
+|   11826 | BARRY       | Jon    |    14582 |
+|   11827 | BARRY       | Jon    |    15893 |
+|   11828 | BARRY       | Jon    |    12524 |
+|   11829 | ALEXANDER   | Mike   |      126 |
+|   11830 | ALEXANDER   | Jon    |      367 |
+|   11831 | ALEXANDER   | Mike   |      786 |
+|   11832 | ALEXANDER   | Mike   |     1264 |
+|   11833 | ALEXANDER   | Jon    |     1557 |
+|   11834 | ALEXANDER   | Jon    |     2097 |
+|   11835 | ALEXANDER   | Mike   |     2621 |
+|   11836 | ALEXANDER   | Mike   |     2992 |
+|   11837 | ALEXANDER   | Mike   |     3294 |
+|   11838 | ALEXANDER   | Jon    |     3774 |
+|   11839 | ALEXANDER   | Mike   |     4528 |
+|   11840 | ALEXANDER   | Mike   |     4813 |
+|   11841 | ALEXANDER   | Jon    |     5801 |
+|   11842 | ALEXANDER   | Mike   |     5893 |
+|   11843 | ALEXANDER   | Mike   |     6577 |
+|   11844 | ALEXANDER   | Jon    |     6672 |
+|   11845 | ALEXANDER   | Mike   |     8343 |
+|   11846 | ALEXANDER   | Mike   |     8624 |
+|   11847 | ALEXANDER   | Jon    |     8703 |
+|   11848 | ALEXANDER   | Mike   |     9275 |
+|   11849 | ALEXANDER   | Mike   |     9322 |
+|   11850 | ALEXANDER   | Jon    |    10744 |
+|   11851 | ALEXANDER   | Mike   |    10905 |
+|   11852 | ALEXANDER   | Jon    |    11042 |
+|   11853 | ALEXANDER   | Jon    |    11544 |
+|   11854 | ALEXANDER   | Mike   |    11989 |
+|   11855 | ALEXANDER   | Mike   |    12621 |
+|   11856 | ALEXANDER   | Jon    |    12755 |
+|   11857 | ALEXANDER   | Jon    |    12826 |
+|   11858 | ALEXANDER   | Jon    |    13358 |
+|   11859 | ALEXANDER   | Jon    |    14730 |
+|   11860 | ALEXANDER   | Jon    |    15044 |
+|   11861 | ALEXANDER   | Jon    |    15162 |
+|   11862 | ALEXANDER   | Jon    |    15653 |
+|   11863 | ALEXANDER   | Mike   |    15818 |
+|   11864 | ALEXANDER   | Mike   |    16018 |
+|   11865 | BERNARD     | Jon    |      957 |
+|   11866 | BERNARD     | Mike   |     4301 |
+|   11867 | BERNARD     | Mike   |     4946 |
+|   11868 | BERNARD     | Jon    |     5423 |
+|   11869 | BERNARD     | Jon    |     5594 |
+|   11870 | BERNARD     | Jon    |     5731 |
+|   11871 | BERNARD     | Jon    |     5782 |
+|   11872 | BERNARD     | Jon    |     7585 |
+|   11873 | BERNARD     | Mike   |     7614 |
+|   11874 | BERNARD     | Mike   |     7806 |
+|   11875 | BERNARD     | Mike   |     9001 |
+|   11876 | BERNARD     | Mike   |     9195 |
+|   11877 | BERNARD     | Mike   |     9547 |
+|   11878 | BERNARD     | Jon    |    12403 |
+|   11879 | BERNARD     | Mike   |    12850 |
+|   11880 | BERNARD     | Jon    |    13384 |
+|   11881 | BERNARD     | Jon    |    13779 |
+|   11882 | BERNARD     | Mike   |    14555 |
+|   11883 | BERNARD     | Jon    |    14863 |
+|   11884 | BERNARD     | Jon    |    15264 |
+|   11885 | BERNARD     | Mike   |    15925 |
+|   11886 | BERNARD     | Mike   |    13106 |
+|   11887 | MARIO       | Mike   |      823 |
+|   11888 | MARIO       | Mike   |     1602 |
+|   11889 | MARIO       | Jon    |     2328 |
+|   11890 | MARIO       | Jon    |     3629 |
+|   11891 | MARIO       | Jon    |     3695 |
+|   11892 | MARIO       | Mike   |     4084 |
+|   11893 | MARIO       | Jon    |     4208 |
+|   11894 | MARIO       | Jon    |     5129 |
+|   11895 | MARIO       | Mike   |     5811 |
+|   11896 | MARIO       | Jon    |     6636 |
+|   11897 | MARIO       | Mike   |     6642 |
+|   11898 | MARIO       | Mike   |     6941 |
+|   11899 | MARIO       | Jon    |     8237 |
+|   11900 | MARIO       | Mike   |     8281 |
+|   11901 | MARIO       | Mike   |     8427 |
+|   11902 | MARIO       | Mike   |     8575 |
+|   11903 | MARIO       | Jon    |     8617 |
+|   11904 | MARIO       | Jon    |     9644 |
+|   11905 | MARIO       | Jon    |     9854 |
+|   11906 | MARIO       | Jon    |    10139 |
+|   11907 | MARIO       | Mike   |    10846 |
+|   11908 | MARIO       | Jon    |    11247 |
+|   11909 | MARIO       | Jon    |    13483 |
+|   11910 | MARIO       | Jon    |    13739 |
+|   11911 | MARIO       | Mike   |    13932 |
+|   11912 | MARIO       | Jon    |    14796 |
+|   11913 | MARIO       | Jon    |    15070 |
+|   11914 | MARIO       | Mike   |    14878 |
+|   11915 | LEROY       | Jon    |      466 |
+|   11916 | LEROY       | Jon    |      558 |
+|   11917 | LEROY       | Mike   |      632 |
+|   11918 | LEROY       | Mike   |     1251 |
+|   11919 | LEROY       | Jon    |     1358 |
+|   11920 | LEROY       | Jon    |     1576 |
+|   11921 | LEROY       | Mike   |     1774 |
+|   11922 | LEROY       | Jon    |     3545 |
+|   11923 | LEROY       | Mike   |     3661 |
+|   11924 | LEROY       | Mike   |     4052 |
+|   11925 | LEROY       | Mike   |     4058 |
+|   11926 | LEROY       | Jon    |     4365 |
+|   11927 | LEROY       | Jon    |     4577 |
+|   11928 | LEROY       | Jon    |     6590 |
+|   11929 | LEROY       | Jon    |     6632 |
+|   11930 | LEROY       | Jon    |     7427 |
+|   11931 | LEROY       | Mike   |     7460 |
+|   11932 | LEROY       | Mike   |     7671 |
+|   11933 | LEROY       | Mike   |     8044 |
+|   11934 | LEROY       | Mike   |     8758 |
+|   11935 | LEROY       | Mike   |     9180 |
+|   11936 | LEROY       | Jon    |     9873 |
+|   11937 | LEROY       | Mike   |    10034 |
+|   11938 | LEROY       | Jon    |    10365 |
+|   11939 | LEROY       | Jon    |    10452 |
+|   11940 | LEROY       | Mike   |    12948 |
+|   11941 | LEROY       | Jon    |    13004 |
+|   11942 | LEROY       | Mike   |    13155 |
+|   11943 | LEROY       | Jon    |    14199 |
+|   11944 | LEROY       | Mike   |    14418 |
+|   11945 | LEROY       | Mike   |    14466 |
+|   11946 | LEROY       | Jon    |    15207 |
+|   11947 | FRANCISCO   | Jon    |     1068 |
+|   11948 | FRANCISCO   | Mike   |     2871 |
+|   11949 | FRANCISCO   | Jon    |     3510 |
+|   11950 | FRANCISCO   | Jon    |     6625 |
+|   11951 | FRANCISCO   | Mike   |     6913 |
+|   11952 | FRANCISCO   | Jon    |     6983 |
+|   11953 | FRANCISCO   | Mike   |     7317 |
+|   11954 | FRANCISCO   | Mike   |     7667 |
+|   11955 | FRANCISCO   | Mike   |     7987 |
+|   11956 | FRANCISCO   | Jon    |     9740 |
+|   11957 | FRANCISCO   | Mike   |    10014 |
+|   11958 | FRANCISCO   | Jon    |    10081 |
+|   11959 | FRANCISCO   | Jon    |    10360 |
+|   11960 | FRANCISCO   | Mike   |    11449 |
+|   11961 | FRANCISCO   | Mike   |    12415 |
+|   11962 | FRANCISCO   | Jon    |    12857 |
+|   11963 | FRANCISCO   | Mike   |    13489 |
+|   11964 | FRANCISCO   | Mike   |    14561 |
+|   11965 | FRANCISCO   | Jon    |    14611 |
+|   11966 | FRANCISCO   | Mike   |    15182 |
+|   11967 | FRANCISCO   | Jon    |    15393 |
+|   11968 | FRANCISCO   | Mike   |    15519 |
+|   11969 | MARCUS      | Mike   |      201 |
+|   11970 | MARCUS      | Mike   |      557 |
+|   11971 | MARCUS      | Mike   |     1239 |
+|   11972 | MARCUS      | Jon    |     1397 |
+|   11973 | MARCUS      | Jon    |     1441 |
+|   11974 | MARCUS      | Mike   |     2551 |
+|   11975 | MARCUS      | Jon    |     3301 |
+|   11976 | MARCUS      | Jon    |     3415 |
+|   11977 | MARCUS      | Jon    |     3498 |
+|   11978 | MARCUS      | Mike   |     3539 |
+|   11979 | MARCUS      | Jon    |     4648 |
+|   11980 | MARCUS      | Mike   |     5753 |
+|   11981 | MARCUS      | Jon    |     5825 |
+|   11982 | MARCUS      | Jon    |     6285 |
+|   11983 | MARCUS      | Jon    |     7679 |
+|   11984 | MARCUS      | Jon    |     9634 |
+|   11985 | MARCUS      | Mike   |    10529 |
+|   11986 | MARCUS      | Mike   |    10693 |
+|   11987 | MARCUS      | Jon    |    11353 |
+|   11988 | MARCUS      | Jon    |    11419 |
+|   11989 | MARCUS      | Mike   |    11728 |
+|   11990 | MARCUS      | Mike   |    12161 |
+|   11991 | MARCUS      | Jon    |    12712 |
+|   11992 | MARCUS      | Jon    |    12946 |
+|   11993 | MARCUS      | Mike   |    13488 |
+|   11994 | MARCUS      | Jon    |    13559 |
+|   11995 | MARCUS      | Mike   |    13924 |
+|   11996 | MARCUS      | Mike   |    15249 |
+|   11997 | MARCUS      | Mike   |    15557 |
+|   11998 | MARCUS      | Jon    |    15815 |
+|   11999 | MICHEAL     | Mike   |      481 |
+|   12000 | MICHEAL     | Mike   |      960 |
+|   12001 | MICHEAL     | Mike   |     4041 |
+|   12002 | MICHEAL     | Mike   |     4193 |
+|   12003 | MICHEAL     | Jon    |     5225 |
+|   12004 | MICHEAL     | Mike   |     6346 |
+|   12005 | MICHEAL     | Jon    |     7351 |
+|   12006 | MICHEAL     | Jon    |     7971 |
+|   12007 | MICHEAL     | Mike   |     8851 |
+|   12008 | MICHEAL     | Jon    |     8911 |
+|   12009 | MICHEAL     | Jon    |     9625 |
+|   12010 | MICHEAL     | Mike   |    10007 |
+|   12011 | MICHEAL     | Jon    |    10334 |
+|   12012 | MICHEAL     | Jon    |    10341 |
+|   12013 | MICHEAL     | Jon    |    10936 |
+|   12014 | MICHEAL     | Mike   |    11383 |
+|   12015 | MICHEAL     | Mike   |    11868 |
+|   12016 | MICHEAL     | Mike   |    11877 |
+|   12017 | MICHEAL     | Jon    |    13586 |
+|   12018 | MICHEAL     | Mike   |    14612 |
+|   12019 | MICHEAL     | Jon    |    14673 |
+|   12020 | MICHEAL     | Mike   |    14866 |
+|   12021 | MICHEAL     | Mike   |    14955 |
+|   12022 | MICHEAL     | Mike   |    15123 |
+|   12023 | MICHEAL     | Mike   |    15791 |
+|   12024 | MICHEAL     | Jon    |    15906 |
+|   12025 | THEODORE    | Jon    |       14 |
+|   12026 | THEODORE    | Mike   |      236 |
+|   12027 | THEODORE    | Mike   |      355 |
+|   12028 | THEODORE    | Mike   |     2248 |
+|   12029 | THEODORE    | Jon    |     2335 |
+|   12030 | THEODORE    | Jon    |     2520 |
+|   12031 | THEODORE    | Jon    |     2710 |
+|   12032 | THEODORE    | Mike   |     3060 |
+|   12033 | THEODORE    | Jon    |     3168 |
+|   12034 | THEODORE    | Jon    |     4358 |
+|   12035 | THEODORE    | Jon    |     5393 |
+|   12036 | THEODORE    | Jon    |     5409 |
+|   12037 | THEODORE    | Jon    |     6454 |
+|   12038 | THEODORE    | Mike   |     6510 |
+|   12039 | THEODORE    | Mike   |     6535 |
+|   12040 | THEODORE    | Mike   |     6734 |
+|   12041 | THEODORE    | Mike   |     7005 |
+|   12042 | THEODORE    | Jon    |     7089 |
+|   12043 | THEODORE    | Mike   |     7576 |
+|   12044 | THEODORE    | Jon    |     8284 |
+|   12045 | THEODORE    | Mike   |     8309 |
+|   12046 | THEODORE    | Jon    |     8670 |
+|   12047 | THEODORE    | Jon    |     8691 |
+|   12048 | THEODORE    | Jon    |     8922 |
+|   12049 | THEODORE    | Mike   |     8923 |
+|   12050 | THEODORE    | Mike   |     9116 |
+|   12051 | THEODORE    | Mike   |    11051 |
+|   12052 | THEODORE    | Jon    |    12253 |
+|   12053 | THEODORE    | Jon    |    12480 |
+|   12054 | THEODORE    | Mike   |    15808 |
+|   12055 | THEODORE    | Jon    |    15951 |
+|   12056 | CLIFFORD    | Mike   |      461 |
+|   12057 | CLIFFORD    | Jon    |      732 |
+|   12058 | CLIFFORD    | Jon    |     1230 |
+|   12059 | CLIFFORD    | Jon    |     1890 |
+|   12060 | CLIFFORD    | Mike   |     2025 |
+|   12061 | CLIFFORD    | Jon    |     2285 |
+|   12062 | CLIFFORD    | Jon    |     4403 |
+|   12063 | CLIFFORD    | Mike   |     4858 |
+|   12064 | CLIFFORD    | Mike   |     5331 |
+|   12065 | CLIFFORD    | Mike   |     5734 |
+|   12066 | CLIFFORD    | Jon    |     5987 |
+|   12067 | CLIFFORD    | Mike   |     6651 |
+|   12068 | CLIFFORD    | Mike   |     6690 |
+|   12069 | CLIFFORD    | Mike   |     8537 |
+|   12070 | CLIFFORD    | Jon    |     8945 |
+|   12071 | CLIFFORD    | Jon    |     9076 |
+|   12072 | CLIFFORD    | Mike   |     9288 |
+|   12073 | CLIFFORD    | Mike   |    10425 |
+|   12074 | CLIFFORD    | Jon    |    10957 |
+|   12075 | CLIFFORD    | Jon    |    11108 |
+|   12076 | CLIFFORD    | Mike   |    11465 |
+|   12077 | CLIFFORD    | Jon    |    12511 |
+|   12078 | CLIFFORD    | Mike   |    13072 |
+|   12079 | CLIFFORD    | Jon    |    13110 |
+|   12080 | CLIFFORD    | Mike   |    13848 |
+|   12081 | CLIFFORD    | Jon    |    14443 |
+|   12082 | CLIFFORD    | Mike   |    15108 |
+|   12083 | CLIFFORD    | Mike   |    15997 |
+|   12084 | CLIFFORD    | Jon    |    16032 |
+|   12085 | MIGUEL      | Mike   |      299 |
+|   12086 | MIGUEL      | Jon    |     1123 |
+|   12087 | MIGUEL      | Mike   |     1313 |
+|   12088 | MIGUEL      | Jon    |     1823 |
+|   12089 | MIGUEL      | Jon    |     2697 |
+|   12090 | MIGUEL      | Jon    |     3225 |
+|   12091 | MIGUEL      | Jon    |     3347 |
+|   12092 | MIGUEL      | Jon    |     3959 |
+|   12093 | MIGUEL      | Jon    |     3992 |
+|   12094 | MIGUEL      | Jon    |     4024 |
+|   12095 | MIGUEL      | Jon    |     4206 |
+|   12096 | MIGUEL      | Mike   |     4406 |
+|   12097 | MIGUEL      | Jon    |     4537 |
+|   12098 | MIGUEL      | Jon    |     4558 |
+|   12099 | MIGUEL      | Jon    |     6341 |
+|   12100 | MIGUEL      | Jon    |     6985 |
+|   12101 | MIGUEL      | Mike   |     9178 |
+|   12102 | MIGUEL      | Jon    |    11608 |
+|   12103 | MIGUEL      | Mike   |    11798 |
+|   12104 | MIGUEL      | Mike   |    12446 |
+|   12105 | MIGUEL      | Mike   |    13220 |
+|   12106 | MIGUEL      | Jon    |    13250 |
+|   12107 | MIGUEL      | Mike   |    13982 |
+|   12108 | MIGUEL      | Mike   |    14580 |
+|   12109 | MIGUEL      | Mike   |    14711 |
+|   12110 | MIGUEL      | Jon    |    15358 |
+|   12111 | MIGUEL      | Mike   |    15427 |
+|   12112 | MIGUEL      | Jon    |    14734 |
+|   12113 | MIGUEL      | Mike   |    13577 |
+|   12114 | OSCAR       | Jon    |      263 |
+|   12115 | OSCAR       | Jon    |      325 |
+|   12116 | OSCAR       | Mike   |      849 |
+|   12117 | OSCAR       | Jon    |     1295 |
+|   12118 | OSCAR       | Mike   |     2348 |
+|   12119 | OSCAR       | Jon    |     2970 |
+|   12120 | OSCAR       | Mike   |     3503 |
+|   12121 | OSCAR       | Mike   |     3977 |
+|   12122 | OSCAR       | Jon    |     4433 |
+|   12123 | OSCAR       | Mike   |     5824 |
+|   12124 | OSCAR       | Jon    |     7755 |
+|   12125 | OSCAR       | Jon    |     7803 |
+|   12126 | OSCAR       | Jon    |     8002 |
+|   12127 | OSCAR       | Jon    |    10083 |
+|   12128 | OSCAR       | Jon    |    10409 |
+|   12129 | OSCAR       | Mike   |    10416 |
+|   12130 | OSCAR       | Mike   |    10516 |
+|   12131 | OSCAR       | Jon    |    10688 |
+|   12132 | OSCAR       | Mike   |    12212 |
+|   12133 | OSCAR       | Jon    |    14962 |
+|   12134 | JAY         | Jon    |      548 |
+|   12135 | JAY         | Jon    |     1639 |
+|   12136 | JAY         | Mike   |     1739 |
+|   12137 | JAY         | Jon    |     1914 |
+|   12138 | JAY         | Jon    |     2278 |
+|   12139 | JAY         | Mike   |     2501 |
+|   12140 | JAY         | Mike   |     2626 |
+|   12141 | JAY         | Mike   |     3155 |
+|   12142 | JAY         | Mike   |     3570 |
+|   12143 | JAY         | Mike   |     5999 |
+|   12144 | JAY         | Mike   |     6028 |
+|   12145 | JAY         | Jon    |     7365 |
+|   12146 | JAY         | Mike   |     7610 |
+|   12147 | JAY         | Mike   |     7626 |
+|   12148 | JAY         | Jon    |     8733 |
+|   12149 | JAY         | Jon    |    10432 |
+|   12150 | JAY         | Mike   |    10984 |
+|   12151 | JAY         | Jon    |    12812 |
+|   12152 | JAY         | Jon    |    13731 |
+|   12153 | JAY         | Mike   |    13810 |
+|   12154 | JAY         | Mike   |    13828 |
+|   12155 | JAY         | Mike   |    14282 |
+|   12156 | JAY         | Jon    |    15019 |
+|   12157 | JAY         | Mike   |    15327 |
+|   12158 | JAY         | Jon    |    15419 |
+|   12159 | JAY         | Mike   |    14172 |
+|   12160 | JIM         | Jon    |       77 |
+|   12161 | JIM         | Jon    |      328 |
+|   12162 | JIM         | Jon    |     1113 |
+|   12163 | JIM         | Mike   |     1202 |
+|   12164 | JIM         | Mike   |     1851 |
+|   12165 | JIM         | Mike   |     1940 |
+|   12166 | JIM         | Mike   |     2671 |
+|   12167 | JIM         | Mike   |     2909 |
+|   12168 | JIM         | Jon    |     2917 |
+|   12169 | JIM         | Mike   |     3316 |
+|   12170 | JIM         | Jon    |     3826 |
+|   12171 | JIM         | Mike   |     4538 |
+|   12172 | JIM         | Mike   |     4794 |
+|   12173 | JIM         | Jon    |     4930 |
+|   12174 | JIM         | Mike   |     5005 |
+|   12175 | JIM         | Jon    |     5518 |
+|   12176 | JIM         | Mike   |     7018 |
+|   12177 | JIM         | Jon    |    10337 |
+|   12178 | JIM         | Mike   |    10856 |
+|   12179 | JIM         | Jon    |    10950 |
+|   12180 | JIM         | Jon    |    11167 |
+|   12181 | JIM         | Jon    |    11381 |
+|   12182 | JIM         | Mike   |    11790 |
+|   12183 | JIM         | Jon    |    12371 |
+|   12184 | JIM         | Mike   |    12422 |
+|   12185 | JIM         | Jon    |    13003 |
+|   12186 | JIM         | Jon    |    13100 |
+|   12187 | JIM         | Jon    |    13252 |
+|   12188 | JIM         | Jon    |    13380 |
+|   12189 | JIM         | Mike   |    13666 |
+|   12190 | JIM         | Mike   |    13705 |
+|   12191 | JIM         | Jon    |    14500 |
+|   12192 | JIM         | Mike   |    15651 |
+|   12193 | TOM         | Mike   |      354 |
+|   12194 | TOM         | Jon    |      714 |
+|   12195 | TOM         | Mike   |      726 |
+|   12196 | TOM         | Jon    |     1203 |
+|   12197 | TOM         | Mike   |     1512 |
+|   12198 | TOM         | Mike   |     1794 |
+|   12199 | TOM         | Mike   |     2263 |
+|   12200 | TOM         | Jon    |     2266 |
+|   12201 | TOM         | Mike   |     2504 |
+|   12202 | TOM         | Jon    |     2661 |
+|   12203 | TOM         | Jon    |     3638 |
+|   12204 | TOM         | Mike   |     3791 |
+|   12205 | TOM         | Jon    |     3907 |
+|   12206 | TOM         | Mike   |     4348 |
+|   12207 | TOM         | Jon    |     4353 |
+|   12208 | TOM         | Jon    |     4417 |
+|   12209 | TOM         | Mike   |     4720 |
+|   12210 | TOM         | Mike   |     5177 |
+|   12211 | TOM         | Jon    |     5480 |
+|   12212 | TOM         | Jon    |     6959 |
+|   12213 | TOM         | Jon    |     7899 |
+|   12214 | TOM         | Mike   |     8898 |
+|   12215 | TOM         | Jon    |     9379 |
+|   12216 | TOM         | Jon    |    11715 |
+|   12217 | TOM         | Mike   |    11735 |
+|   12218 | TOM         | Mike   |    12355 |
+|   12219 | TOM         | Mike   |    12630 |
+|   12220 | TOM         | Mike   |    13080 |
+|   12221 | TOM         | Mike   |    13642 |
+|   12222 | TOM         | Mike   |    14660 |
+|   12223 | TOM         | Mike   |    15909 |
+|   12224 | TOM         | Mike   |    14175 |
+|   12225 | CALVIN      | Jon    |     2852 |
+|   12226 | CALVIN      | Mike   |     2853 |
+|   12227 | CALVIN      | Jon    |     2887 |
+|   12228 | CALVIN      | Jon    |     3929 |
+|   12229 | CALVIN      | Jon    |     4033 |
+|   12230 | CALVIN      | Mike   |     4717 |
+|   12231 | CALVIN      | Jon    |     4805 |
+|   12232 | CALVIN      | Jon    |     5359 |
+|   12233 | CALVIN      | Mike   |     6752 |
+|   12234 | CALVIN      | Mike   |     7563 |
+|   12235 | CALVIN      | Jon    |     9289 |
+|   12236 | CALVIN      | Jon    |     9406 |
+|   12237 | CALVIN      | Jon    |     9900 |
+|   12238 | CALVIN      | Mike   |    11794 |
+|   12239 | CALVIN      | Mike   |    12703 |
+|   12240 | CALVIN      | Mike   |    13711 |
+|   12241 | CALVIN      | Mike   |    13785 |
+|   12242 | CALVIN      | Mike   |    14133 |
+|   12243 | CALVIN      | Jon    |    14306 |
+|   12244 | CALVIN      | Jon    |    14644 |
+|   12245 | CALVIN      | Mike   |    14652 |
+|   12246 | CALVIN      | Mike   |    15252 |
+|   12247 | CALVIN      | Jon    |    15627 |
+|   12248 | ALEX        | Mike   |      735 |
+|   12249 | ALEX        | Jon    |     1647 |
+|   12250 | ALEX        | Jon    |     1844 |
+|   12251 | ALEX        | Mike   |     1861 |
+|   12252 | ALEX        | Mike   |     1938 |
+|   12253 | ALEX        | Jon    |     2048 |
+|   12254 | ALEX        | Jon    |     2182 |
+|   12255 | ALEX        | Mike   |     2437 |
+|   12256 | ALEX        | Jon    |     2666 |
+|   12257 | ALEX        | Mike   |     3221 |
+|   12258 | ALEX        | Mike   |     3362 |
+|   12259 | ALEX        | Mike   |     3622 |
+|   12260 | ALEX        | Jon    |     4562 |
+|   12261 | ALEX        | Jon    |     5088 |
+|   12262 | ALEX        | Jon    |     5446 |
+|   12263 | ALEX        | Jon    |     6260 |
+|   12264 | ALEX        | Jon    |     6701 |
+|   12265 | ALEX        | Jon    |     8481 |
+|   12266 | ALEX        | Mike   |     8806 |
+|   12267 | ALEX        | Jon    |     9041 |
+|   12268 | ALEX        | Mike   |     9372 |
+|   12269 | ALEX        | Mike   |    10005 |
+|   12270 | ALEX        | Jon    |    12347 |
+|   12271 | ALEX        | Mike   |    12553 |
+|   12272 | ALEX        | Jon    |    13496 |
+|   12273 | ALEX        | Jon    |    13513 |
+|   12274 | ALEX        | Jon    |    13694 |
+|   12275 | ALEX        | Mike   |    13805 |
+|   12276 | ALEX        | Mike   |    14799 |
+|   12277 | ALEX        | Jon    |    14843 |
+|   12278 | ALEX        | Jon    |    15012 |
+|   12279 | ALEX        | Mike   |    15301 |
+|   12280 | ALEX        | Jon    |    15608 |
+|   12281 | JON         | Jon    |      115 |
+|   12282 | JON         | Jon    |      343 |
+|   12283 | JON         | Jon    |     1382 |
+|   12284 | JON         | Mike   |     1802 |
+|   12285 | JON         | Mike   |     1906 |
+|   12286 | JON         | Jon    |     2356 |
+|   12287 | JON         | Jon    |     4195 |
+|   12288 | JON         | Mike   |     4861 |
+|   12289 | JON         | Mike   |     4964 |
+|   12290 | JON         | Mike   |     5504 |
+|   12291 | JON         | Jon    |     6729 |
+|   12292 | JON         | Mike   |     7388 |
+|   12293 | JON         | Jon    |     7498 |
+|   12294 | JON         | Jon    |     7905 |
+|   12295 | JON         | Jon    |     8291 |
+|   12296 | JON         | Mike   |    10436 |
+|   12297 | JON         | Mike   |    11605 |
+|   12298 | JON         | Mike   |    12163 |
+|   12299 | JON         | Mike   |    12314 |
+|   12300 | JON         | Jon    |    13083 |
+|   12301 | JON         | Jon    |    13813 |
+|   12302 | JON         | Mike   |    14294 |
+|   12303 | JON         | Jon    |    14583 |
+|   12304 | JON         | Mike   |    15494 |
+|   12305 | RONNIE      | Jon    |       19 |
+|   12306 | RONNIE      | Mike   |     1288 |
+|   12307 | RONNIE      | Mike   |     1700 |
+|   12308 | RONNIE      | Jon    |     2103 |
+|   12309 | RONNIE      | Jon    |     2146 |
+|   12310 | RONNIE      | Mike   |     2192 |
+|   12311 | RONNIE      | Mike   |     2404 |
+|   12312 | RONNIE      | Mike   |     2581 |
+|   12313 | RONNIE      | Mike   |     3743 |
+|   12314 | RONNIE      | Jon    |     3881 |
+|   12315 | RONNIE      | Mike   |     4141 |
+|   12316 | RONNIE      | Jon    |     5964 |
+|   12317 | RONNIE      | Jon    |     6023 |
+|   12318 | RONNIE      | Jon    |     7248 |
+|   12319 | RONNIE      | Mike   |     8749 |
+|   12320 | RONNIE      | Jon    |    10519 |
+|   12321 | RONNIE      | Mike   |    10813 |
+|   12322 | RONNIE      | Mike   |    12188 |
+|   12323 | RONNIE      | Mike   |    13144 |
+|   12324 | RONNIE      | Mike   |    13348 |
+|   12325 | RONNIE      | Mike   |    13547 |
+|   12326 | RONNIE      | Jon    |    14253 |
+|   12327 | RONNIE      | Jon    |    14690 |
+|   12328 | RONNIE      | Mike   |    15720 |
+|   12329 | RONNIE      | Mike   |    15910 |
+|   12330 | BILL        | Jon    |     1024 |
+|   12331 | BILL        | Jon    |     1453 |
+|   12332 | BILL        | Jon    |     1727 |
+|   12333 | BILL        | Mike   |     2030 |
+|   12334 | BILL        | Mike   |     2172 |
+|   12335 | BILL        | Mike   |     2670 |
+|   12336 | BILL        | Mike   |     2762 |
+|   12337 | BILL        | Mike   |     2811 |
+|   12338 | BILL        | Jon    |     3115 |
+|   12339 | BILL        | Jon    |     3184 |
+|   12340 | BILL        | Jon    |     4600 |
+|   12341 | BILL        | Mike   |     5500 |
+|   12342 | BILL        | Mike   |     6467 |
+|   12343 | BILL        | Mike   |     7184 |
+|   12344 | BILL        | Jon    |     8373 |
+|   12345 | BILL        | Mike   |     8502 |
+|   12346 | BILL        | Mike   |    10049 |
+|   12347 | BILL        | Jon    |    11956 |
+|   12348 | BILL        | Mike   |    12115 |
+|   12349 | BILL        | Mike   |    12171 |
+|   12350 | BILL        | Mike   |    13088 |
+|   12351 | BILL        | Mike   |    13150 |
+|   12352 | BILL        | Jon    |    13934 |
+|   12353 | BILL        | Jon    |    14327 |
+|   12354 | BILL        | Mike   |    14365 |
+|   12355 | BILL        | Mike   |    15128 |
+|   12356 | BILL        | Mike   |    12645 |
+|   12357 | BILL        | Jon    |    14516 |
+|   12358 | LLOYD       | Jon    |     2629 |
+|   12359 | LLOYD       | Jon    |     3322 |
+|   12360 | LLOYD       | Jon    |     4525 |
+|   12361 | LLOYD       | Mike   |     5412 |
+|   12362 | LLOYD       | Mike   |     5572 |
+|   12363 | LLOYD       | Jon    |     6250 |
+|   12364 | LLOYD       | Mike   |     6431 |
+|   12365 | LLOYD       | Jon    |     6595 |
+|   12366 | LLOYD       | Mike   |     6654 |
+|   12367 | LLOYD       | Jon    |     7923 |
+|   12368 | LLOYD       | Mike   |     8158 |
+|   12369 | LLOYD       | Jon    |    11138 |
+|   12370 | LLOYD       | Jon    |    11975 |
+|   12371 | LLOYD       | Jon    |    12768 |
+|   12372 | LLOYD       | Jon    |    13259 |
+|   12373 | LLOYD       | Jon    |    13487 |
+|   12374 | LLOYD       | Jon    |    13571 |
+|   12375 | LLOYD       | Jon    |    14428 |
+|   12376 | LLOYD       | Mike   |    15604 |
+|   12377 | TOMMY       | Jon    |        2 |
+|   12378 | TOMMY       | Jon    |     1876 |
+|   12379 | TOMMY       | Jon    |     1977 |
+|   12380 | TOMMY       | Jon    |     2075 |
+|   12381 | TOMMY       | Mike   |     2899 |
+|   12382 | TOMMY       | Jon    |     3041 |
+|   12383 | TOMMY       | Jon    |     3045 |
+|   12384 | TOMMY       | Jon    |     3234 |
+|   12385 | TOMMY       | Mike   |     3506 |
+|   12386 | TOMMY       | Jon    |     4519 |
+|   12387 | TOMMY       | Mike   |     5301 |
+|   12388 | TOMMY       | Mike   |     5695 |
+|   12389 | TOMMY       | Mike   |     6206 |
+|   12390 | TOMMY       | Jon    |     6750 |
+|   12391 | TOMMY       | Mike   |     7623 |
+|   12392 | TOMMY       | Jon    |     7639 |
+|   12393 | TOMMY       | Mike   |     7717 |
+|   12394 | TOMMY       | Mike   |     7820 |
+|   12395 | TOMMY       | Mike   |     7913 |
+|   12396 | TOMMY       | Mike   |     8289 |
+|   12397 | TOMMY       | Jon    |     8557 |
+|   12398 | TOMMY       | Mike   |     8897 |
+|   12399 | TOMMY       | Mike   |     9137 |
+|   12400 | TOMMY       | Jon    |     9639 |
+|   12401 | TOMMY       | Mike   |     9744 |
+|   12402 | TOMMY       | Jon    |    10117 |
+|   12403 | TOMMY       | Mike   |    10233 |
+|   12404 | TOMMY       | Jon    |    10255 |
+|   12405 | TOMMY       | Mike   |    10499 |
+|   12406 | TOMMY       | Mike   |    10531 |
+|   12407 | TOMMY       | Mike   |    12527 |
+|   12408 | TOMMY       | Mike   |    12629 |
+|   12409 | TOMMY       | Jon    |    13960 |
+|   12410 | TOMMY       | Mike   |    13967 |
+|   12411 | TOMMY       | Mike   |    14315 |
+|   12412 | TOMMY       | Mike   |    15126 |
+|   12413 | TOMMY       | Jon    |    15342 |
+|   12414 | TOMMY       | Mike   |    15814 |
+|   12415 | LEON        | Mike   |      223 |
+|   12416 | LEON        | Jon    |      298 |
+|   12417 | LEON        | Mike   |      880 |
+|   12418 | LEON        | Jon    |     1064 |
+|   12419 | LEON        | Jon    |     1392 |
+|   12420 | LEON        | Jon    |     3820 |
+|   12421 | LEON        | Mike   |     4452 |
+|   12422 | LEON        | Jon    |     5482 |
+|   12423 | LEON        | Mike   |     6613 |
+|   12424 | LEON        | Mike   |     6788 |
+|   12425 | LEON        | Mike   |     7125 |
+|   12426 | LEON        | Mike   |     7785 |
+|   12427 | LEON        | Jon    |     8656 |
+|   12428 | LEON        | Jon    |    10754 |
+|   12429 | LEON        | Mike   |    10926 |
+|   12430 | LEON        | Jon    |    11554 |
+|   12431 | LEON        | Mike   |    12056 |
+|   12432 | LEON        | Jon    |    12586 |
+|   12433 | LEON        | Mike   |    12865 |
+|   12434 | LEON        | Jon    |    13215 |
+|   12435 | LEON        | Mike   |    13341 |
+|   12436 | LEON        | Jon    |    13920 |
+|   12437 | LEON        | Jon    |    14864 |
+|   12438 | LEON        | Mike   |    14923 |
+|   12439 | LEON        | Jon    |    15954 |
+|   12440 | DEREK       | Mike   |      684 |
+|   12441 | DEREK       | Jon    |     3127 |
+|   12442 | DEREK       | Jon    |     3319 |
+|   12443 | DEREK       | Jon    |     3698 |
+|   12444 | DEREK       | Jon    |     4586 |
+|   12445 | DEREK       | Mike   |     5650 |
+|   12446 | DEREK       | Mike   |     5809 |
+|   12447 | DEREK       | Jon    |     7334 |
+|   12448 | DEREK       | Jon    |     7664 |
+|   12449 | DEREK       | Jon    |     8133 |
+|   12450 | DEREK       | Jon    |     8164 |
+|   12451 | DEREK       | Jon    |     9499 |
+|   12452 | DEREK       | Mike   |     9885 |
+|   12453 | DEREK       | Jon    |    10113 |
+|   12454 | DEREK       | Mike   |    10260 |
+|   12455 | DEREK       | Jon    |    11063 |
+|   12456 | DEREK       | Jon    |    11219 |
+|   12457 | DEREK       | Jon    |    12022 |
+|   12458 | DEREK       | Mike   |    13223 |
+|   12459 | DEREK       | Mike   |    13269 |
+|   12460 | DEREK       | Mike   |    14186 |
+|   12461 | DEREK       | Mike   |    14893 |
+|   12462 | DEREK       | Mike   |    15067 |
+|   12463 | DEREK       | Jon    |    15187 |
+|   12464 | DEREK       | Mike   |    15336 |
+|   12465 | DEREK       | Jon    |    15411 |
+|   12466 | DEREK       | Jon    |    15449 |
+|   12467 | DEREK       | Jon    |    15613 |
+|   12468 | WARREN      | Jon    |      156 |
+|   12469 | WARREN      | Jon    |      590 |
+|   12470 | WARREN      | Jon    |     1773 |
+|   12471 | WARREN      | Jon    |     1926 |
+|   12472 | WARREN      | Mike   |     3279 |
+|   12473 | WARREN      | Mike   |     4500 |
+|   12474 | WARREN      | Jon    |     4728 |
+|   12475 | WARREN      | Mike   |     6583 |
+|   12476 | WARREN      | Mike   |     6630 |
+|   12477 | WARREN      | Mike   |     6710 |
+|   12478 | WARREN      | Mike   |     6721 |
+|   12479 | WARREN      | Jon    |     7295 |
+|   12480 | WARREN      | Mike   |     7324 |
+|   12481 | WARREN      | Mike   |     7762 |
+|   12482 | WARREN      | Mike   |     7932 |
+|   12483 | WARREN      | Jon    |     7935 |
+|   12484 | WARREN      | Mike   |     8066 |
+|   12485 | WARREN      | Mike   |     8282 |
+|   12486 | WARREN      | Mike   |     8290 |
+|   12487 | WARREN      | Jon    |     8757 |
+|   12488 | WARREN      | Mike   |     9891 |
+|   12489 | WARREN      | Mike   |    10283 |
+|   12490 | WARREN      | Jon    |    11639 |
+|   12491 | WARREN      | Mike   |    11808 |
+|   12492 | WARREN      | Mike   |    12466 |
+|   12493 | WARREN      | Jon    |    12582 |
+|   12494 | WARREN      | Mike   |    12802 |
+|   12495 | WARREN      | Jon    |    13041 |
+|   12496 | WARREN      | Mike   |    13328 |
+|   12497 | WARREN      | Mike   |    13492 |
+|   12498 | WARREN      | Jon    |    15581 |
+|   12499 | WARREN      | Mike   |    15943 |
+|   12500 | WARREN      | Mike   |    16013 |
+|   12501 | DARRELL     | Mike   |      560 |
+|   12502 | DARRELL     | Mike   |     1284 |
+|   12503 | DARRELL     | Jon    |     2527 |
+|   12504 | DARRELL     | Mike   |     3217 |
+|   12505 | DARRELL     | Mike   |     3309 |
+|   12506 | DARRELL     | Mike   |     5026 |
+|   12507 | DARRELL     | Mike   |     5157 |
+|   12508 | DARRELL     | Mike   |     5448 |
+|   12509 | DARRELL     | Jon    |     6294 |
+|   12510 | DARRELL     | Mike   |     6932 |
+|   12511 | DARRELL     | Mike   |     7013 |
+|   12512 | DARRELL     | Mike   |     7361 |
+|   12513 | DARRELL     | Mike   |     8762 |
+|   12514 | DARRELL     | Jon    |     9405 |
+|   12515 | DARRELL     | Mike   |     9954 |
+|   12516 | DARRELL     | Mike   |    10275 |
+|   12517 | DARRELL     | Jon    |    10405 |
+|   12518 | DARRELL     | Jon    |    10906 |
+|   12519 | DARRELL     | Jon    |    12096 |
+|   12520 | DARRELL     | Jon    |    12679 |
+|   12521 | DARRELL     | Mike   |    12950 |
+|   12522 | DARRELL     | Jon    |    13938 |
+|   12523 | DARRELL     | Mike   |    14689 |
+|   12524 | DARRELL     | Mike   |    14859 |
+|   12525 | DARRELL     | Jon    |    15151 |
+|   12526 | JEROME      | Mike   |      305 |
+|   12527 | JEROME      | Jon    |      373 |
+|   12528 | JEROME      | Jon    |     1277 |
+|   12529 | JEROME      | Mike   |     3167 |
+|   12530 | JEROME      | Mike   |     3761 |
+|   12531 | JEROME      | Mike   |     4337 |
+|   12532 | JEROME      | Jon    |     5455 |
+|   12533 | JEROME      | Mike   |     5910 |
+|   12534 | JEROME      | Jon    |     6601 |
+|   12535 | JEROME      | Mike   |     9600 |
+|   12536 | JEROME      | Jon    |    11275 |
+|   12537 | JEROME      | Mike   |    13644 |
+|   12538 | JEROME      | Jon    |    13943 |
+|   12539 | JEROME      | Mike   |    15092 |
+|   12540 | JEROME      | Jon    |    15854 |
+|   12541 | JEROME      | Mike   |    15983 |
+|   12542 | FLOYD       | Jon    |      640 |
+|   12543 | FLOYD       | Mike   |     1337 |
+|   12544 | FLOYD       | Mike   |     2079 |
+|   12545 | FLOYD       | Mike   |     2159 |
+|   12546 | FLOYD       | Jon    |     2524 |
+|   12547 | FLOYD       | Mike   |     4763 |
+|   12548 | FLOYD       | Jon    |     6904 |
+|   12549 | FLOYD       | Jon    |     7508 |
+|   12550 | FLOYD       | Mike   |    10542 |
+|   12551 | FLOYD       | Mike   |    11156 |
+|   12552 | FLOYD       | Mike   |    11586 |
+|   12553 | FLOYD       | Jon    |    11648 |
+|   12554 | FLOYD       | Jon    |    12106 |
+|   12555 | FLOYD       | Mike   |    12814 |
+|   12556 | FLOYD       | Mike   |    12864 |
+|   12557 | FLOYD       | Mike   |    15550 |
+|   12558 | FLOYD       | Jon    |    15859 |
+|   12559 | LEO         | Jon    |     1104 |
+|   12560 | LEO         | Jon    |     1808 |
+|   12561 | LEO         | Jon    |     2446 |
+|   12562 | LEO         | Mike   |     3022 |
+|   12563 | LEO         | Jon    |     3237 |
+|   12564 | LEO         | Jon    |     3343 |
+|   12565 | LEO         | Jon    |     5048 |
+|   12566 | LEO         | Mike   |     5691 |
+|   12567 | LEO         | Mike   |     6073 |
+|   12568 | LEO         | Jon    |     7080 |
+|   12569 | LEO         | Jon    |     8276 |
+|   12570 | LEO         | Mike   |     9202 |
+|   12571 | LEO         | Mike   |     9257 |
+|   12572 | LEO         | Mike   |    10469 |
+|   12573 | LEO         | Jon    |    11343 |
+|   12574 | LEO         | Mike   |    11359 |
+|   12575 | LEO         | Mike   |    12048 |
+|   12576 | LEO         | Mike   |    13478 |
+|   12577 | LEO         | Mike   |    13884 |
+|   12578 | LEO         | Mike   |    13988 |
+|   12579 | LEO         | Jon    |    14546 |
+|   12580 | LEO         | Jon    |    15230 |
+|   12581 | LEO         | Mike   |    16005 |
+|   12582 | ALVIN       | Jon    |      225 |
+|   12583 | ALVIN       | Mike   |     1737 |
+|   12584 | ALVIN       | Jon    |     2121 |
+|   12585 | ALVIN       | Jon    |     2870 |
+|   12586 | ALVIN       | Mike   |     3250 |
+|   12587 | ALVIN       | Mike   |     4216 |
+|   12588 | ALVIN       | Jon    |     4222 |
+|   12589 | ALVIN       | Mike   |     4259 |
+|   12590 | ALVIN       | Jon    |     5160 |
+|   12591 | ALVIN       | Jon    |     6271 |
+|   12592 | ALVIN       | Jon    |     7360 |
+|   12593 | ALVIN       | Jon    |     7573 |
+|   12594 | ALVIN       | Mike   |     7611 |
+|   12595 | ALVIN       | Mike   |     8010 |
+|   12596 | ALVIN       | Jon    |     8061 |
+|   12597 | ALVIN       | Jon    |     8224 |
+|   12598 | ALVIN       | Jon    |     8480 |
+|   12599 | ALVIN       | Mike   |     8767 |
+|   12600 | ALVIN       | Jon    |    10239 |
+|   12601 | ALVIN       | Jon    |    11332 |
+|   12602 | ALVIN       | Mike   |    11874 |
+|   12603 | ALVIN       | Mike   |    12266 |
+|   12604 | ALVIN       | Mike   |    12437 |
+|   12605 | ALVIN       | Mike   |    12641 |
+|   12606 | ALVIN       | Mike   |    14402 |
+|   12607 | ALVIN       | Mike   |    14451 |
+|   12608 | ALVIN       | Mike   |    14842 |
+|   12609 | ALVIN       | Mike   |    15032 |
+|   12610 | ALVIN       | Jon    |    15830 |
+|   12611 | TIM         | Jon    |      101 |
+|   12612 | TIM         | Mike   |      186 |
+|   12613 | TIM         | Jon    |      296 |
+|   12614 | TIM         | Jon    |      459 |
+|   12615 | TIM         | Mike   |      673 |
+|   12616 | TIM         | Jon    |     1229 |
+|   12617 | TIM         | Mike   |     1627 |
+|   12618 | TIM         | Mike   |     1821 |
+|   12619 | TIM         | Mike   |     1975 |
+|   12620 | TIM         | Jon    |     2462 |
+|   12621 | TIM         | Mike   |     2831 |
+|   12622 | TIM         | Jon    |     3724 |
+|   12623 | TIM         | Mike   |     3840 |
+|   12624 | TIM         | Jon    |     4184 |
+|   12625 | TIM         | Jon    |     4527 |
+|   12626 | TIM         | Mike   |     5285 |
+|   12627 | TIM         | Mike   |     6392 |
+|   12628 | TIM         | Mike   |     6581 |
+|   12629 | TIM         | Jon    |     6815 |
+|   12630 | TIM         | Jon    |     7292 |
+|   12631 | TIM         | Mike   |     7685 |
+|   12632 | TIM         | Jon    |     8423 |
+|   12633 | TIM         | Jon    |     8768 |
+|   12634 | TIM         | Mike   |     9598 |
+|   12635 | TIM         | Mike   |     9690 |
+|   12636 | TIM         | Jon    |    11257 |
+|   12637 | TIM         | Jon    |    11633 |
+|   12638 | TIM         | Jon    |    12026 |
+|   12639 | TIM         | Jon    |    13221 |
+|   12640 | TIM         | Mike   |    13417 |
+|   12641 | TIM         | Jon    |    14154 |
+|   12642 | TIM         | Jon    |    14210 |
+|   12643 | TIM         | Mike   |    14309 |
+|   12644 | TIM         | Mike   |    14313 |
+|   12645 | TIM         | Mike   |    14614 |
+|   12646 | TIM         | Jon    |    15435 |
+|   12647 | TIM         | Mike   |    15522 |
+|   12648 | TIM         | Mike   |    15836 |
+|   12649 | TIM         | Jon    |    16044 |
+|   12650 | WESLEY      | Mike   |      168 |
+|   12651 | WESLEY      | Jon    |      506 |
+|   12652 | WESLEY      | Jon    |      529 |
+|   12653 | WESLEY      | Jon    |      936 |
+|   12654 | WESLEY      | Mike   |     1119 |
+|   12655 | WESLEY      | Jon    |     1399 |
+|   12656 | WESLEY      | Mike   |     1680 |
+|   12657 | WESLEY      | Jon    |     3522 |
+|   12658 | WESLEY      | Mike   |     3526 |
+|   12659 | WESLEY      | Jon    |     4067 |
+|   12660 | WESLEY      | Jon    |     4123 |
+|   12661 | WESLEY      | Mike   |     5133 |
+|   12662 | WESLEY      | Mike   |     5299 |
+|   12663 | WESLEY      | Jon    |     5664 |
+|   12664 | WESLEY      | Jon    |     6022 |
+|   12665 | WESLEY      | Jon    |     6099 |
+|   12666 | WESLEY      | Mike   |     6797 |
+|   12667 | WESLEY      | Mike   |     6955 |
+|   12668 | WESLEY      | Jon    |     7062 |
+|   12669 | WESLEY      | Jon    |     7271 |
+|   12670 | WESLEY      | Jon    |     7756 |
+|   12671 | WESLEY      | Mike   |     7914 |
+|   12672 | WESLEY      | Jon    |     8791 |
+|   12673 | WESLEY      | Mike   |     9187 |
+|   12674 | WESLEY      | Jon    |    10075 |
+|   12675 | WESLEY      | Mike   |    10258 |
+|   12676 | WESLEY      | Mike   |    10316 |
+|   12677 | WESLEY      | Mike   |    10658 |
+|   12678 | WESLEY      | Mike   |    10741 |
+|   12679 | WESLEY      | Jon    |    11185 |
+|   12680 | WESLEY      | Jon    |    12035 |
+|   12681 | WESLEY      | Mike   |    12447 |
+|   12682 | WESLEY      | Mike   |    12633 |
+|   12683 | WESLEY      | Mike   |    13654 |
+|   12684 | WESLEY      | Mike   |    13763 |
+|   12685 | WESLEY      | Jon    |    14197 |
+|   12686 | WESLEY      | Jon    |    14661 |
+|   12687 | WESLEY      | Mike   |    15487 |
+|   12688 | WESLEY      | Mike   |    15561 |
+|   12689 | WESLEY      | Mike   |    15851 |
+|   12690 | GORDON      | Jon    |       60 |
+|   12691 | GORDON      | Jon    |     1256 |
+|   12692 | GORDON      | Mike   |     1283 |
+|   12693 | GORDON      | Jon    |     1594 |
+|   12694 | GORDON      | Mike   |     3764 |
+|   12695 | GORDON      | Mike   |     3841 |
+|   12696 | GORDON      | Mike   |     3922 |
+|   12697 | GORDON      | Mike   |     4373 |
+|   12698 | GORDON      | Jon    |     4502 |
+|   12699 | GORDON      | Jon    |     5082 |
+|   12700 | GORDON      | Mike   |     6009 |
+|   12701 | GORDON      | Mike   |     6198 |
+|   12702 | GORDON      | Jon    |     6703 |
+|   12703 | GORDON      | Mike   |     6927 |
+|   12704 | GORDON      | Mike   |     6942 |
+|   12705 | GORDON      | Mike   |     7663 |
+|   12706 | GORDON      | Jon    |     8476 |
+|   12707 | GORDON      | Mike   |     8890 |
+|   12708 | GORDON      | Mike   |     9422 |
+|   12709 | GORDON      | Mike   |     9687 |
+|   12710 | GORDON      | Mike   |    10006 |
+|   12711 | GORDON      | Mike   |    10236 |
+|   12712 | GORDON      | Jon    |    10944 |
+|   12713 | GORDON      | Jon    |    11397 |
+|   12714 | GORDON      | Jon    |    11711 |
+|   12715 | GORDON      | Mike   |    11742 |
+|   12716 | GORDON      | Jon    |    12177 |
+|   12717 | GORDON      | Jon    |    12423 |
+|   12718 | GORDON      | Mike   |    12753 |
+|   12719 | GORDON      | Jon    |    13585 |
+|   12720 | GORDON      | Mike   |    13592 |
+|   12721 | GORDON      | Jon    |    14405 |
+|   12722 | DEAN        | Mike   |      616 |
+|   12723 | DEAN        | Mike   |     1447 |
+|   12724 | DEAN        | Jon    |     1449 |
+|   12725 | DEAN        | Jon    |     2165 |
+|   12726 | DEAN        | Jon    |     2350 |
+|   12727 | DEAN        | Jon    |     3073 |
+|   12728 | DEAN        | Mike   |     3917 |
+|   12729 | DEAN        | Mike   |     4020 |
+|   12730 | DEAN        | Jon    |     6293 |
+|   12731 | DEAN        | Mike   |     6336 |
+|   12732 | DEAN        | Mike   |     6912 |
+|   12733 | DEAN        | Mike   |     8199 |
+|   12734 | DEAN        | Mike   |     9077 |
+|   12735 | DEAN        | Mike   |     9502 |
+|   12736 | DEAN        | Jon    |     9560 |
+|   12737 | DEAN        | Mike   |    10430 |
+|   12738 | DEAN        | Jon    |    10828 |
+|   12739 | DEAN        | Jon    |    11601 |
+|   12740 | DEAN        | Mike   |    12271 |
+|   12741 | DEAN        | Mike   |    13661 |
+|   12742 | DEAN        | Mike   |    14085 |
+|   12743 | DEAN        | Mike   |    14094 |
+|   12744 | DEAN        | Mike   |    14317 |
+|   12745 | DEAN        | Jon    |    14538 |
+|   12746 | DEAN        | Jon    |    14942 |
+|   12747 | DEAN        | Jon    |    15184 |
+|   12748 | DEAN        | Mike   |    15654 |
+|   12749 | GREG        | Jon    |      142 |
+|   12750 | GREG        | Jon    |      249 |
+|   12751 | GREG        | Jon    |      800 |
+|   12752 | GREG        | Jon    |      994 |
+|   12753 | GREG        | Mike   |     1389 |
+|   12754 | GREG        | Jon    |     1776 |
+|   12755 | GREG        | Mike   |     2538 |
+|   12756 | GREG        | Mike   |     2974 |
+|   12757 | GREG        | Mike   |     2991 |
+|   12758 | GREG        | Mike   |     3254 |
+|   12759 | GREG        | Jon    |     3815 |
+|   12760 | GREG        | Jon    |     5318 |
+|   12761 | GREG        | Mike   |     5612 |
+|   12762 | GREG        | Mike   |     6119 |
+|   12763 | GREG        | Jon    |     6274 |
+|   12764 | GREG        | Mike   |     6308 |
+|   12765 | GREG        | Mike   |     6584 |
+|   12766 | GREG        | Jon    |     8929 |
+|   12767 | GREG        | Jon    |     9926 |
+|   12768 | GREG        | Mike   |    10282 |
+|   12769 | GREG        | Mike   |    10627 |
+|   12770 | GREG        | Mike   |    11911 |
+|   12771 | GREG        | Jon    |    12763 |
+|   12772 | GREG        | Jon    |    13188 |
+|   12773 | GREG        | Mike   |    14209 |
+|   12774 | GREG        | Jon    |    14596 |
+|   12775 | GREG        | Mike   |    14597 |
+|   12776 | GREG        | Jon    |    15185 |
+|   12777 | GREG        | Jon    |    15278 |
+|   12778 | GREG        | Jon    |    14928 |
+|   12779 | JORGE       | Mike   |      348 |
+|   12780 | JORGE       | Jon    |      942 |
+|   12781 | JORGE       | Jon    |      973 |
+|   12782 | JORGE       | Jon    |     1748 |
+|   12783 | JORGE       | Mike   |     2125 |
+|   12784 | JORGE       | Jon    |     2553 |
+|   12785 | JORGE       | Jon    |     2748 |
+|   12786 | JORGE       | Mike   |     3971 |
+|   12787 | JORGE       | Jon    |     4006 |
+|   12788 | JORGE       | Jon    |     4625 |
+|   12789 | JORGE       | Mike   |     4873 |
+|   12790 | JORGE       | Jon    |     5447 |
+|   12791 | JORGE       | Mike   |     6446 |
+|   12792 | JORGE       | Jon    |     6890 |
+|   12793 | JORGE       | Mike   |     7111 |
+|   12794 | JORGE       | Mike   |     7215 |
+|   12795 | JORGE       | Jon    |     7918 |
+|   12796 | JORGE       | Jon    |     7928 |
+|   12797 | JORGE       | Mike   |     9025 |
+|   12798 | JORGE       | Jon    |     9120 |
+|   12799 | JORGE       | Mike   |    10867 |
+|   12800 | JORGE       | Jon    |    11006 |
+|   12801 | JORGE       | Mike   |    11216 |
+|   12802 | JORGE       | Mike   |    11336 |
+|   12803 | JORGE       | Jon    |    11421 |
+|   12804 | JORGE       | Mike   |    11741 |
+|   12805 | JORGE       | Jon    |    13984 |
+|   12806 | JORGE       | Jon    |    14202 |
+|   12807 | JORGE       | Jon    |    14550 |
+|   12808 | JORGE       | Jon    |    14658 |
+|   12809 | JORGE       | Jon    |    14757 |
+|   12810 | JORGE       | Mike   |    15118 |
+|   12811 | JORGE       | Jon    |    15400 |
+|   12812 | JORGE       | Jon    |    16024 |
+|   12813 | DUSTIN      | Mike   |      816 |
+|   12814 | DUSTIN      | Mike   |     1758 |
+|   12815 | DUSTIN      | Jon    |     2944 |
+|   12816 | DUSTIN      | Jon    |     3787 |
+|   12817 | DUSTIN      | Jon    |     4048 |
+|   12818 | DUSTIN      | Mike   |     4481 |
+|   12819 | DUSTIN      | Mike   |     4533 |
+|   12820 | DUSTIN      | Jon    |     4785 |
+|   12821 | DUSTIN      | Mike   |     4809 |
+|   12822 | DUSTIN      | Jon    |     4886 |
+|   12823 | DUSTIN      | Mike   |     5251 |
+|   12824 | DUSTIN      | Mike   |     6499 |
+|   12825 | DUSTIN      | Mike   |     8991 |
+|   12826 | DUSTIN      | Jon    |    10376 |
+|   12827 | DUSTIN      | Jon    |    11117 |
+|   12828 | DUSTIN      | Mike   |    11489 |
+|   12829 | DUSTIN      | Jon    |    11537 |
+|   12830 | DUSTIN      | Mike   |    12083 |
+|   12831 | DUSTIN      | Mike   |    12236 |
+|   12832 | DUSTIN      | Mike   |    12440 |
+|   12833 | DUSTIN      | Jon    |    12597 |
+|   12834 | DUSTIN      | Mike   |    12702 |
+|   12835 | DUSTIN      | Mike   |    14728 |
+|   12836 | DUSTIN      | Jon    |    15046 |
+|   12837 | DUSTIN      | Mike   |    15558 |
+|   12838 | DUSTIN      | Mike   |    11909 |
+|   12839 | PEDRO       | Jon    |      417 |
+|   12840 | PEDRO       | Mike   |      702 |
+|   12841 | PEDRO       | Jon    |     3980 |
+|   12842 | PEDRO       | Mike   |     4013 |
+|   12843 | PEDRO       | Mike   |     4617 |
+|   12844 | PEDRO       | Jon    |     5379 |
+|   12845 | PEDRO       | Mike   |     5407 |
+|   12846 | PEDRO       | Jon    |     5415 |
+|   12847 | PEDRO       | Jon    |     5469 |
+|   12848 | PEDRO       | Mike   |     6224 |
+|   12849 | PEDRO       | Mike   |     7641 |
+|   12850 | PEDRO       | Mike   |     7775 |
+|   12851 | PEDRO       | Jon    |     8207 |
+|   12852 | PEDRO       | Mike   |     9183 |
+|   12853 | PEDRO       | Mike   |     9647 |
+|   12854 | PEDRO       | Mike   |     9737 |
+|   12855 | PEDRO       | Jon    |    10162 |
+|   12856 | PEDRO       | Mike   |    10357 |
+|   12857 | PEDRO       | Mike   |    10633 |
+|   12858 | PEDRO       | Mike   |    11293 |
+|   12859 | PEDRO       | Mike   |    11770 |
+|   12860 | PEDRO       | Jon    |    14303 |
+|   12861 | PEDRO       | Mike   |    15097 |
+|   12862 | PEDRO       | Mike   |    15288 |
+|   12863 | DERRICK     | Mike   |      489 |
+|   12864 | DERRICK     | Mike   |      771 |
+|   12865 | DERRICK     | Mike   |     1682 |
+|   12866 | DERRICK     | Mike   |     2080 |
+|   12867 | DERRICK     | Jon    |     2508 |
+|   12868 | DERRICK     | Jon    |     3448 |
+|   12869 | DERRICK     | Jon    |     3477 |
+|   12870 | DERRICK     | Mike   |     4010 |
+|   12871 | DERRICK     | Jon    |     4171 |
+|   12872 | DERRICK     | Jon    |     5644 |
+|   12873 | DERRICK     | Mike   |     6151 |
+|   12874 | DERRICK     | Mike   |     7461 |
+|   12875 | DERRICK     | Mike   |     8146 |
+|   12876 | DERRICK     | Jon    |     9325 |
+|   12877 | DERRICK     | Jon    |     9743 |
+|   12878 | DERRICK     | Mike   |    10346 |
+|   12879 | DERRICK     | Mike   |    10617 |
+|   12880 | DERRICK     | Mike   |    10826 |
+|   12881 | DERRICK     | Mike   |    12616 |
+|   12882 | DERRICK     | Jon    |    12709 |
+|   12883 | DERRICK     | Mike   |    15413 |
+|   12884 | DERRICK     | Mike   |    13941 |
+|   12885 | DAN         | Mike   |      882 |
+|   12886 | DAN         | Mike   |     1714 |
+|   12887 | DAN         | Mike   |     2187 |
+|   12888 | DAN         | Mike   |     2306 |
+|   12889 | DAN         | Jon    |     2676 |
+|   12890 | DAN         | Jon    |     4237 |
+|   12891 | DAN         | Mike   |     4283 |
+|   12892 | DAN         | Jon    |     4956 |
+|   12893 | DAN         | Jon    |     6265 |
+|   12894 | DAN         | Jon    |     7302 |
+|   12895 | DAN         | Jon    |     7904 |
+|   12896 | DAN         | Mike   |     8515 |
+|   12897 | DAN         | Mike   |     8821 |
+|   12898 | DAN         | Jon    |     8857 |
+|   12899 | DAN         | Jon    |     9446 |
+|   12900 | DAN         | Mike   |    10500 |
+|   12901 | DAN         | Jon    |    10912 |
+|   12902 | DAN         | Jon    |    12420 |
+|   12903 | DAN         | Mike   |    13002 |
+|   12904 | DAN         | Jon    |    14552 |
+|   12905 | DAN         | Jon    |    15091 |
+|   12906 | DAN         | Mike   |    15929 |
+|   12907 | LEWIS       | Mike   |     1708 |
+|   12908 | LEWIS       | Jon    |     2358 |
+|   12909 | LEWIS       | Mike   |     2529 |
+|   12910 | LEWIS       | Jon    |     2616 |
+|   12911 | LEWIS       | Jon    |     2765 |
+|   12912 | LEWIS       | Jon    |     3259 |
+|   12913 | LEWIS       | Mike   |     3691 |
+|   12914 | LEWIS       | Mike   |     5837 |
+|   12915 | LEWIS       | Mike   |     7522 |
+|   12916 | LEWIS       | Jon    |     8488 |
+|   12917 | LEWIS       | Mike   |     9665 |
+|   12918 | LEWIS       | Jon    |    10016 |
+|   12919 | LEWIS       | Jon    |    10127 |
+|   12920 | LEWIS       | Mike   |    11906 |
+|   12921 | LEWIS       | Jon    |    13162 |
+|   12922 | LEWIS       | Jon    |    13507 |
+|   12923 | LEWIS       | Mike   |    15027 |
+|   12924 | LEWIS       | Jon    |    15188 |
+|   12925 | LEWIS       | Mike   |    15724 |
+|   12926 | ZACHARY     | Jon    |      132 |
+|   12927 | ZACHARY     | Mike   |      709 |
+|   12928 | ZACHARY     | Mike   |     1902 |
+|   12929 | ZACHARY     | Jon    |     1947 |
+|   12930 | ZACHARY     | Jon    |     1987 |
+|   12931 | ZACHARY     | Jon    |     2071 |
+|   12932 | ZACHARY     | Jon    |     2376 |
+|   12933 | ZACHARY     | Jon    |     2764 |
+|   12934 | ZACHARY     | Jon    |     3537 |
+|   12935 | ZACHARY     | Mike   |     3798 |
+|   12936 | ZACHARY     | Jon    |     4183 |
+|   12937 | ZACHARY     | Mike   |     5481 |
+|   12938 | ZACHARY     | Mike   |     5751 |
+|   12939 | ZACHARY     | Jon    |     6084 |
+|   12940 | ZACHARY     | Mike   |     6421 |
+|   12941 | ZACHARY     | Mike   |     6597 |
+|   12942 | ZACHARY     | Jon    |     6849 |
+|   12943 | ZACHARY     | Mike   |     7060 |
+|   12944 | ZACHARY     | Jon    |     7893 |
+|   12945 | ZACHARY     | Mike   |     9347 |
+|   12946 | ZACHARY     | Mike   |     9439 |
+|   12947 | ZACHARY     | Jon    |     9697 |
+|   12948 | ZACHARY     | Jon    |     9754 |
+|   12949 | ZACHARY     | Jon    |    10303 |
+|   12950 | ZACHARY     | Jon    |    11109 |
+|   12951 | ZACHARY     | Jon    |    11584 |
+|   12952 | ZACHARY     | Jon    |    11835 |
+|   12953 | ZACHARY     | Jon    |    12401 |
+|   12954 | ZACHARY     | Jon    |    13078 |
+|   12955 | ZACHARY     | Mike   |    13974 |
+|   12956 | ZACHARY     | Mike   |    12101 |
+|   12957 | COREY       | Mike   |      518 |
+|   12958 | COREY       | Mike   |      720 |
+|   12959 | COREY       | Jon    |      822 |
+|   12960 | COREY       | Mike   |     1353 |
+|   12961 | COREY       | Mike   |     1733 |
+|   12962 | COREY       | Jon    |     3507 |
+|   12963 | COREY       | Jon    |     5633 |
+|   12964 | COREY       | Mike   |     6191 |
+|   12965 | COREY       | Mike   |     7257 |
+|   12966 | COREY       | Jon    |     7910 |
+|   12967 | COREY       | Jon    |     8847 |
+|   12968 | COREY       | Mike   |     8967 |
+|   12969 | COREY       | Jon    |     9332 |
+|   12970 | COREY       | Jon    |    10808 |
+|   12971 | COREY       | Jon    |    11017 |
+|   12972 | COREY       | Mike   |    11369 |
+|   12973 | COREY       | Jon    |    12905 |
+|   12974 | COREY       | Jon    |    13092 |
+|   12975 | COREY       | Jon    |    13131 |
+|   12976 | COREY       | Mike   |    13831 |
+|   12977 | COREY       | Jon    |    15363 |
+|   12978 | COREY       | Jon    |    15579 |
+|   12979 | HERMAN      | Jon    |     1109 |
+|   12980 | HERMAN      | Jon    |     1168 |
+|   12981 | HERMAN      | Jon    |     2296 |
+|   12982 | HERMAN      | Jon    |     3285 |
+|   12983 | HERMAN      | Jon    |     3293 |
+|   12984 | HERMAN      | Mike   |     3863 |
+|   12985 | HERMAN      | Mike   |     4473 |
+|   12986 | HERMAN      | Mike   |     4505 |
+|   12987 | HERMAN      | Mike   |     4532 |
+|   12988 | HERMAN      | Mike   |     4668 |
+|   12989 | HERMAN      | Jon    |     5711 |
+|   12990 | HERMAN      | Mike   |     6044 |
+|   12991 | HERMAN      | Mike   |     7228 |
+|   12992 | HERMAN      | Jon    |     7836 |
+|   12993 | HERMAN      | Mike   |     8243 |
+|   12994 | HERMAN      | Jon    |     8271 |
+|   12995 | HERMAN      | Mike   |     9481 |
+|   12996 | HERMAN      | Mike   |    10018 |
+|   12997 | HERMAN      | Jon    |    11207 |
+|   12998 | HERMAN      | Jon    |    11387 |
+|   12999 | HERMAN      | Mike   |    11752 |
+|   13000 | HERMAN      | Mike   |    11885 |
+|   13001 | HERMAN      | Jon    |    12160 |
+|   13002 | HERMAN      | Mike   |    12981 |
+|   13003 | HERMAN      | Jon    |    13497 |
+|   13004 | HERMAN      | Jon    |    13878 |
+|   13005 | HERMAN      | Mike   |    13990 |
+|   13006 | HERMAN      | Jon    |    14280 |
+|   13007 | HERMAN      | Jon    |    14584 |
+|   13008 | MAURICE     | Mike   |      259 |
+|   13009 | MAURICE     | Jon    |      680 |
+|   13010 | MAURICE     | Jon    |      879 |
+|   13011 | MAURICE     | Jon    |     3048 |
+|   13012 | MAURICE     | Jon    |     3255 |
+|   13013 | MAURICE     | Jon    |     3650 |
+|   13014 | MAURICE     | Mike   |     4768 |
+|   13015 | MAURICE     | Mike   |     5334 |
+|   13016 | MAURICE     | Mike   |     5466 |
+|   13017 | MAURICE     | Jon    |     5810 |
+|   13018 | MAURICE     | Jon    |     5880 |
+|   13019 | MAURICE     | Mike   |     6355 |
+|   13020 | MAURICE     | Jon    |     6447 |
+|   13021 | MAURICE     | Jon    |     6844 |
+|   13022 | MAURICE     | Jon    |     7840 |
+|   13023 | MAURICE     | Jon    |     8584 |
+|   13024 | MAURICE     | Jon    |     9874 |
+|   13025 | MAURICE     | Jon    |    10824 |
+|   13026 | MAURICE     | Jon    |    10839 |
+|   13027 | MAURICE     | Jon    |    11498 |
+|   13028 | MAURICE     | Mike   |    13174 |
+|   13029 | MAURICE     | Jon    |    14383 |
+|   13030 | MAURICE     | Jon    |    14732 |
+|   13031 | MAURICE     | Jon    |    14891 |
+|   13032 | MAURICE     | Jon    |    14995 |
+|   13033 | MAURICE     | Mike   |    15391 |
+|   13034 | MAURICE     | Mike   |    15849 |
+|   13035 | MAURICE     | Jon    |    15865 |
+|   13036 | MAURICE     | Mike   |    15879 |
+|   13037 | VERNON      | Jon    |      742 |
+|   13038 | VERNON      | Mike   |     2855 |
+|   13039 | VERNON      | Jon    |     2867 |
+|   13040 | VERNON      | Mike   |     3380 |
+|   13041 | VERNON      | Jon    |     3559 |
+|   13042 | VERNON      | Mike   |     5823 |
+|   13043 | VERNON      | Jon    |     6478 |
+|   13044 | VERNON      | Jon    |     6899 |
+|   13045 | VERNON      | Jon    |     7137 |
+|   13046 | VERNON      | Mike   |     7381 |
+|   13047 | VERNON      | Mike   |     7669 |
+|   13048 | VERNON      | Mike   |     8057 |
+|   13049 | VERNON      | Mike   |     8356 |
+|   13050 | VERNON      | Jon    |    10677 |
+|   13051 | VERNON      | Mike   |    10953 |
+|   13052 | VERNON      | Jon    |    12331 |
+|   13053 | VERNON      | Jon    |    12695 |
+|   13054 | VERNON      | Jon    |    12875 |
+|   13055 | ROBERTO     | Jon    |       35 |
+|   13056 | ROBERTO     | Jon    |      668 |
+|   13057 | ROBERTO     | Jon    |      727 |
+|   13058 | ROBERTO     | Mike   |     1351 |
+|   13059 | ROBERTO     | Jon    |     1643 |
+|   13060 | ROBERTO     | Mike   |     2015 |
+|   13061 | ROBERTO     | Mike   |     2044 |
+|   13062 | ROBERTO     | Mike   |     4214 |
+|   13063 | ROBERTO     | Mike   |     5389 |
+|   13064 | ROBERTO     | Jon    |     5708 |
+|   13065 | ROBERTO     | Mike   |     5852 |
+|   13066 | ROBERTO     | Jon    |     5866 |
+|   13067 | ROBERTO     | Jon    |     5977 |
+|   13068 | ROBERTO     | Jon    |     6296 |
+|   13069 | ROBERTO     | Mike   |     6863 |
+|   13070 | ROBERTO     | Jon    |     7440 |
+|   13071 | ROBERTO     | Jon    |     7548 |
+|   13072 | ROBERTO     | Jon    |     8508 |
+|   13073 | ROBERTO     | Jon    |     9141 |
+|   13074 | ROBERTO     | Jon    |     9414 |
+|   13075 | ROBERTO     | Mike   |     9769 |
+|   13076 | ROBERTO     | Jon    |    10166 |
+|   13077 | ROBERTO     | Jon    |    11871 |
+|   13078 | ROBERTO     | Mike   |    12024 |
+|   13079 | ROBERTO     | Mike   |    12771 |
+|   13080 | ROBERTO     | Mike   |    12993 |
+|   13081 | ROBERTO     | Jon    |    13160 |
+|   13082 | ROBERTO     | Jon    |    13956 |
+|   13083 | ROBERTO     | Mike   |    15607 |
+|   13084 | ROBERTO     | Mike   |    16026 |
+|   13085 | CLYDE       | Mike   |     1009 |
+|   13086 | CLYDE       | Jon    |     1684 |
+|   13087 | CLYDE       | Mike   |     1721 |
+|   13088 | CLYDE       | Jon    |     3579 |
+|   13089 | CLYDE       | Mike   |     3899 |
+|   13090 | CLYDE       | Mike   |     3904 |
+|   13091 | CLYDE       | Jon    |     4137 |
+|   13092 | CLYDE       | Jon    |     4667 |
+|   13093 | CLYDE       | Mike   |     5193 |
+|   13094 | CLYDE       | Mike   |     5343 |
+|   13095 | CLYDE       | Mike   |     5367 |
+|   13096 | CLYDE       | Mike   |     5820 |
+|   13097 | CLYDE       | Jon    |     6810 |
+|   13098 | CLYDE       | Jon    |     6902 |
+|   13099 | CLYDE       | Mike   |     7144 |
+|   13100 | CLYDE       | Jon    |     8984 |
+|   13101 | CLYDE       | Jon    |     9039 |
+|   13102 | CLYDE       | Mike   |     9053 |
+|   13103 | CLYDE       | Jon    |     9189 |
+|   13104 | CLYDE       | Mike   |     9535 |
+|   13105 | CLYDE       | Mike   |     9565 |
+|   13106 | CLYDE       | Mike   |    10771 |
+|   13107 | CLYDE       | Jon    |    10772 |
+|   13108 | CLYDE       | Jon    |    11188 |
+|   13109 | CLYDE       | Mike   |    11921 |
+|   13110 | CLYDE       | Mike   |    11974 |
+|   13111 | CLYDE       | Jon    |    12261 |
+|   13112 | CLYDE       | Jon    |    12487 |
+|   13113 | CLYDE       | Jon    |    13055 |
+|   13114 | GLEN        | Mike   |      909 |
+|   13115 | GLEN        | Jon    |      946 |
+|   13116 | GLEN        | Jon    |     1129 |
+|   13117 | GLEN        | Mike   |     2036 |
+|   13118 | GLEN        | Mike   |     2102 |
+|   13119 | GLEN        | Jon    |     2566 |
+|   13120 | GLEN        | Jon    |     2797 |
+|   13121 | GLEN        | Mike   |     3835 |
+|   13122 | GLEN        | Jon    |     4110 |
+|   13123 | GLEN        | Mike   |     4205 |
+|   13124 | GLEN        | Mike   |     4381 |
+|   13125 | GLEN        | Mike   |     4772 |
+|   13126 | GLEN        | Jon    |     5006 |
+|   13127 | GLEN        | Jon    |     6383 |
+|   13128 | GLEN        | Jon    |     7127 |
+|   13129 | GLEN        | Jon    |     7446 |
+|   13130 | GLEN        | Jon    |     8425 |
+|   13131 | GLEN        | Jon    |     9142 |
+|   13132 | GLEN        | Mike   |    10079 |
+|   13133 | GLEN        | Jon    |    10902 |
+|   13134 | GLEN        | Mike   |    12465 |
+|   13135 | GLEN        | Jon    |    12609 |
+|   13136 | GLEN        | Mike   |    13048 |
+|   13137 | GLEN        | Jon    |    13803 |
+|   13138 | GLEN        | Jon    |    14251 |
+|   13139 | GLEN        | Jon    |    14284 |
+|   13140 | HECTOR      | Jon    |     3100 |
+|   13141 | HECTOR      | Jon    |     3994 |
+|   13142 | HECTOR      | Jon    |     4854 |
+|   13143 | HECTOR      | Mike   |     5634 |
+|   13144 | HECTOR      | Mike   |     6928 |
+|   13145 | HECTOR      | Mike   |     7097 |
+|   13146 | HECTOR      | Mike   |     7788 |
+|   13147 | HECTOR      | Jon    |     7949 |
+|   13148 | HECTOR      | Jon    |     8510 |
+|   13149 | HECTOR      | Jon    |     8689 |
+|   13150 | HECTOR      | Mike   |     8814 |
+|   13151 | HECTOR      | Mike   |     8988 |
+|   13152 | HECTOR      | Jon    |     9457 |
+|   13153 | HECTOR      | Mike   |     9490 |
+|   13154 | HECTOR      | Jon    |    10123 |
+|   13155 | HECTOR      | Jon    |    10511 |
+|   13156 | HECTOR      | Jon    |    10555 |
+|   13157 | HECTOR      | Mike   |    10832 |
+|   13158 | HECTOR      | Jon    |    10877 |
+|   13159 | HECTOR      | Mike   |    10978 |
+|   13160 | HECTOR      | Mike   |    11669 |
+|   13161 | HECTOR      | Jon    |    11890 |
+|   13162 | HECTOR      | Mike   |    12493 |
+|   13163 | HECTOR      | Jon    |    13210 |
+|   13164 | HECTOR      | Mike   |    13658 |
+|   13165 | HECTOR      | Jon    |    15665 |
+|   13166 | SHANE       | Jon    |     1655 |
+|   13167 | SHANE       | Jon    |     1704 |
+|   13168 | SHANE       | Jon    |     4133 |
+|   13169 | SHANE       | Jon    |     4233 |
+|   13170 | SHANE       | Mike   |     5141 |
+|   13171 | SHANE       | Jon    |     6548 |
+|   13172 | SHANE       | Mike   |     7373 |
+|   13173 | SHANE       | Mike   |     8005 |
+|   13174 | SHANE       | Jon    |     8050 |
+|   13175 | SHANE       | Jon    |     8064 |
+|   13176 | SHANE       | Jon    |     9083 |
+|   13177 | SHANE       | Mike   |     9532 |
+|   13178 | SHANE       | Mike   |     9537 |
+|   13179 | SHANE       | Jon    |    10474 |
+|   13180 | SHANE       | Mike   |    10767 |
+|   13181 | SHANE       | Mike   |    11774 |
+|   13182 | SHANE       | Jon    |    12483 |
+|   13183 | SHANE       | Jon    |    13446 |
+|   13184 | SHANE       | Jon    |    14948 |
+|   13185 | SHANE       | Jon    |    15259 |
+|   13186 | SHANE       | Mike   |    15350 |
+|   13187 | SHANE       | Jon    |    15499 |
+|   13188 | RICARDO     | Mike   |      219 |
+|   13189 | RICARDO     | Jon    |      513 |
+|   13190 | RICARDO     | Jon    |     1614 |
+|   13191 | RICARDO     | Mike   |     2201 |
+|   13192 | RICARDO     | Mike   |     2370 |
+|   13193 | RICARDO     | Mike   |     2802 |
+|   13194 | RICARDO     | Jon    |     3816 |
+|   13195 | RICARDO     | Mike   |     4774 |
+|   13196 | RICARDO     | Mike   |     6963 |
+|   13197 | RICARDO     | Jon    |     9231 |
+|   13198 | RICARDO     | Mike   |     9459 |
+|   13199 | RICARDO     | Jon    |    11119 |
+|   13200 | RICARDO     | Mike   |    11705 |
+|   13201 | RICARDO     | Mike   |    12496 |
+|   13202 | RICARDO     | Jon    |    12701 |
+|   13203 | RICARDO     | Mike   |    13462 |
+|   13204 | RICARDO     | Jon    |    14095 |
+|   13205 | RICARDO     | Jon    |    14328 |
+|   13206 | RICARDO     | Jon    |    14424 |
+|   13207 | RICARDO     | Mike   |    15205 |
+|   13208 | RICARDO     | Mike   |    15981 |
+|   13209 | SAM         | Jon    |      585 |
+|   13210 | SAM         | Jon    |      676 |
+|   13211 | SAM         | Mike   |     1665 |
+|   13212 | SAM         | Mike   |     3476 |
+|   13213 | SAM         | Jon    |     3932 |
+|   13214 | SAM         | Mike   |     4083 |
+|   13215 | SAM         | Mike   |     4906 |
+|   13216 | SAM         | Jon    |     5173 |
+|   13217 | SAM         | Jon    |     5489 |
+|   13218 | SAM         | Mike   |     5654 |
+|   13219 | SAM         | Jon    |     6230 |
+|   13220 | SAM         | Mike   |     6803 |
+|   13221 | SAM         | Jon    |     6888 |
+|   13222 | SAM         | Jon    |     6923 |
+|   13223 | SAM         | Mike   |     8552 |
+|   13224 | SAM         | Jon    |     9108 |
+|   13225 | SAM         | Mike   |     9554 |
+|   13226 | SAM         | Mike   |    10786 |
+|   13227 | SAM         | Mike   |    10955 |
+|   13228 | SAM         | Jon    |    11965 |
+|   13229 | SAM         | Jon    |    14557 |
+|   13230 | SAM         | Jon    |    14761 |
+|   13231 | SAM         | Jon    |    15276 |
+|   13232 | SAM         | Mike   |    15448 |
+|   13233 | RICK        | Mike   |      484 |
+|   13234 | RICK        | Jon    |     1097 |
+|   13235 | RICK        | Jon    |     1198 |
+|   13236 | RICK        | Mike   |     1371 |
+|   13237 | RICK        | Jon    |     2026 |
+|   13238 | RICK        | Mike   |     2259 |
+|   13239 | RICK        | Jon    |     2391 |
+|   13240 | RICK        | Jon    |     3031 |
+|   13241 | RICK        | Mike   |     3440 |
+|   13242 | RICK        | Mike   |     4046 |
+|   13243 | RICK        | Mike   |     4392 |
+|   13244 | RICK        | Jon    |     5134 |
+|   13245 | RICK        | Mike   |     5889 |
+|   13246 | RICK        | Jon    |     6171 |
+|   13247 | RICK        | Jon    |     7019 |
+|   13248 | RICK        | Jon    |     7281 |
+|   13249 | RICK        | Jon    |     7688 |
+|   13250 | RICK        | Mike   |     7871 |
+|   13251 | RICK        | Jon    |    10036 |
+|   13252 | RICK        | Jon    |    10178 |
+|   13253 | RICK        | Jon    |    10974 |
+|   13254 | RICK        | Mike   |    11048 |
+|   13255 | RICK        | Mike   |    11590 |
+|   13256 | RICK        | Mike   |    11840 |
+|   13257 | RICK        | Jon    |    13607 |
+|   13258 | RICK        | Mike   |    14780 |
+|   13259 | RICK        | Jon    |    15685 |
+|   13260 | LESTER      | Mike   |       84 |
+|   13261 | LESTER      | Jon    |     1691 |
+|   13262 | LESTER      | Jon    |     1855 |
+|   13263 | LESTER      | Jon    |     1956 |
+|   13264 | LESTER      | Mike   |     3298 |
+|   13265 | LESTER      | Jon    |     4128 |
+|   13266 | LESTER      | Mike   |     4142 |
+|   13267 | LESTER      | Jon    |     4258 |
+|   13268 | LESTER      | Jon    |     5325 |
+|   13269 | LESTER      | Mike   |     5609 |
+|   13270 | LESTER      | Mike   |     6257 |
+|   13271 | LESTER      | Jon    |     7203 |
+|   13272 | LESTER      | Jon    |    12971 |
+|   13273 | LESTER      | Mike   |    14255 |
+|   13274 | LESTER      | Jon    |    15822 |
+|   13275 | LESTER      | Mike   |    15958 |
+|   13276 | BRENT       | Mike   |      543 |
+|   13277 | BRENT       | Jon    |     2109 |
+|   13278 | BRENT       | Mike   |     2365 |
+|   13279 | BRENT       | Mike   |     2579 |
+|   13280 | BRENT       | Mike   |     2864 |
+|   13281 | BRENT       | Jon    |     3586 |
+|   13282 | BRENT       | Mike   |     3655 |
+|   13283 | BRENT       | Mike   |     6549 |
+|   13284 | BRENT       | Mike   |     6552 |
+|   13285 | BRENT       | Mike   |     7026 |
+|   13286 | BRENT       | Jon    |     7043 |
+|   13287 | BRENT       | Mike   |     8298 |
+|   13288 | BRENT       | Mike   |     8616 |
+|   13289 | BRENT       | Mike   |    10777 |
+|   13290 | BRENT       | Jon    |    10885 |
+|   13291 | BRENT       | Mike   |    13638 |
+|   13292 | BRENT       | Jon    |    13675 |
+|   13293 | BRENT       | Mike   |    14117 |
+|   13294 | BRENT       | Jon    |    15177 |
+|   13295 | BRENT       | Mike   |    15355 |
+|   13296 | BRENT       | Mike   |    15490 |
+|   13297 | BRENT       | Jon    |    15878 |
+|   13298 | BRENT       | Jon    |    14160 |
+|   13299 | RAMON       | Mike   |      608 |
+|   13300 | RAMON       | Mike   |     1683 |
+|   13301 | RAMON       | Mike   |     3511 |
+|   13302 | RAMON       | Jon    |     3803 |
+|   13303 | RAMON       | Jon    |     3913 |
+|   13304 | RAMON       | Mike   |     4086 |
+|   13305 | RAMON       | Jon    |     4397 |
+|   13306 | RAMON       | Jon    |     4551 |
+|   13307 | RAMON       | Jon    |     5083 |
+|   13308 | RAMON       | Mike   |     5180 |
+|   13309 | RAMON       | Jon    |     7258 |
+|   13310 | RAMON       | Jon    |     7546 |
+|   13311 | RAMON       | Jon    |     7737 |
+|   13312 | RAMON       | Jon    |     8333 |
+|   13313 | RAMON       | Jon    |     8895 |
+|   13314 | RAMON       | Mike   |     8934 |
+|   13315 | RAMON       | Jon    |     9012 |
+|   13316 | RAMON       | Jon    |     9510 |
+|   13317 | RAMON       | Mike   |     9799 |
+|   13318 | RAMON       | Jon    |     9943 |
+|   13319 | RAMON       | Mike   |    10403 |
+|   13320 | RAMON       | Mike   |    10623 |
+|   13321 | RAMON       | Jon    |    11152 |
+|   13322 | RAMON       | Mike   |    11987 |
+|   13323 | RAMON       | Jon    |    13094 |
+|   13324 | RAMON       | Jon    |    13301 |
+|   13325 | RAMON       | Jon    |    14634 |
+|   13326 | RAMON       | Mike   |    14832 |
+|   13327 | RAMON       | Mike   |    15086 |
+|   13328 | RAMON       | Jon    |    15156 |
+|   13329 | RAMON       | Jon    |    15291 |
+|   13330 | CHARLIE     | Jon    |      623 |
+|   13331 | CHARLIE     | Jon    |      741 |
+|   13332 | CHARLIE     | Jon    |     2074 |
+|   13333 | CHARLIE     | Mike   |     2349 |
+|   13334 | CHARLIE     | Mike   |     2549 |
+|   13335 | CHARLIE     | Mike   |     3129 |
+|   13336 | CHARLIE     | Jon    |     3966 |
+|   13337 | CHARLIE     | Jon    |     5484 |
+|   13338 | CHARLIE     | Jon    |     6426 |
+|   13339 | CHARLIE     | Jon    |     7191 |
+|   13340 | CHARLIE     | Mike   |     8151 |
+|   13341 | CHARLIE     | Mike   |     8383 |
+|   13342 | CHARLIE     | Mike   |     8451 |
+|   13343 | CHARLIE     | Mike   |     8672 |
+|   13344 | CHARLIE     | Mike   |     9387 |
+|   13345 | CHARLIE     | Mike   |     9741 |
+|   13346 | CHARLIE     | Jon    |    10065 |
+|   13347 | CHARLIE     | Jon    |    10643 |
+|   13348 | CHARLIE     | Mike   |    10783 |
+|   13349 | CHARLIE     | Mike   |    12782 |
+|   13350 | CHARLIE     | Jon    |    12837 |
+|   13351 | CHARLIE     | Jon    |    13205 |
+|   13352 | CHARLIE     | Jon    |    13445 |
+|   13353 | CHARLIE     | Jon    |    13818 |
+|   13354 | CHARLIE     | Mike   |    15984 |
+|   13355 | CHARLIE     | Jon    |    13753 |
+|   13356 | TYLER       | Jon    |      322 |
+|   13357 | TYLER       | Jon    |      966 |
+|   13358 | TYLER       | Mike   |     2567 |
+|   13359 | TYLER       | Jon    |     3569 |
+|   13360 | TYLER       | Mike   |     4070 |
+|   13361 | TYLER       | Mike   |     4261 |
+|   13362 | TYLER       | Mike   |     4269 |
+|   13363 | TYLER       | Mike   |     5559 |
+|   13364 | TYLER       | Jon    |     5949 |
+|   13365 | TYLER       | Mike   |     7133 |
+|   13366 | TYLER       | Jon    |     8221 |
+|   13367 | TYLER       | Mike   |    11060 |
+|   13368 | TYLER       | Jon    |    11448 |
+|   13369 | TYLER       | Mike   |    11893 |
+|   13370 | TYLER       | Jon    |    12605 |
+|   13371 | TYLER       | Mike   |    13569 |
+|   13372 | TYLER       | Jon    |    14013 |
+|   13373 | TYLER       | Mike   |    14332 |
+|   13374 | TYLER       | Mike   |    14348 |
+|   13375 | TYLER       | Jon    |    15750 |
+|   13376 | TYLER       | Mike   |    13182 |
+|   13377 | GILBERT     | Mike   |     1100 |
+|   13378 | GILBERT     | Jon    |     2180 |
+|   13379 | GILBERT     | Mike   |     2298 |
+|   13380 | GILBERT     | Mike   |     2406 |
+|   13381 | GILBERT     | Jon    |     2818 |
+|   13382 | GILBERT     | Mike   |     3696 |
+|   13383 | GILBERT     | Jon    |     4218 |
+|   13384 | GILBERT     | Mike   |     4516 |
+|   13385 | GILBERT     | Mike   |     4578 |
+|   13386 | GILBERT     | Jon    |     4795 |
+|   13387 | GILBERT     | Mike   |     5030 |
+|   13388 | GILBERT     | Mike   |     5239 |
+|   13389 | GILBERT     | Jon    |     7603 |
+|   13390 | GILBERT     | Jon    |     8011 |
+|   13391 | GILBERT     | Mike   |     8150 |
+|   13392 | GILBERT     | Jon    |     8813 |
+|   13393 | GILBERT     | Jon    |     8867 |
+|   13394 | GILBERT     | Mike   |     9273 |
+|   13395 | GILBERT     | Jon    |     9850 |
+|   13396 | GILBERT     | Jon    |    10760 |
+|   13397 | GILBERT     | Mike   |    12123 |
+|   13398 | GILBERT     | Mike   |    13159 |
+|   13399 | GILBERT     | Mike   |    13289 |
+|   13400 | GILBERT     | Jon    |    14134 |
+|   13401 | GILBERT     | Mike   |    15362 |
+|   13402 | GILBERT     | Jon    |    15633 |
+|   13403 | GILBERT     | Mike   |    15919 |
+|   13404 | GILBERT     | Mike   |    12698 |
+|   13405 | GENE        | Jon    |       49 |
+|   13406 | GENE        | Mike   |      429 |
+|   13407 | GENE        | Jon    |      718 |
+|   13408 | GENE        | Mike   |     1253 |
+|   13409 | GENE        | Mike   |     1782 |
+|   13410 | GENE        | Mike   |     2344 |
+|   13411 | GENE        | Mike   |     2449 |
+|   13412 | GENE        | Mike   |     3098 |
+|   13413 | GENE        | Jon    |     3360 |
+|   13414 | GENE        | Jon    |     3828 |
+|   13415 | GENE        | Jon    |     3856 |
+|   13416 | GENE        | Mike   |     4311 |
+|   13417 | GENE        | Jon    |     4972 |
+|   13418 | GENE        | Mike   |     5286 |
+|   13419 | GENE        | Jon    |     5884 |
+|   13420 | GENE        | Mike   |     6058 |
+|   13421 | GENE        | Mike   |     6088 |
+|   13422 | GENE        | Mike   |     7285 |
+|   13423 | GENE        | Mike   |     7286 |
+|   13424 | GENE        | Mike   |     7341 |
+|   13425 | GENE        | Jon    |     8020 |
+|   13426 | GENE        | Mike   |     8229 |
+|   13427 | GENE        | Jon    |     9021 |
+|   13428 | GENE        | Jon    |     9689 |
+|   13429 | GENE        | Mike   |    10225 |
+|   13430 | GENE        | Mike   |    11455 |
+|   13431 | GENE        | Mike   |    12893 |
+|   13432 | MARC        | Jon    |       89 |
+|   13433 | MARC        | Mike   |     1355 |
+|   13434 | MARC        | Jon    |     1526 |
+|   13435 | MARC        | Jon    |     1830 |
+|   13436 | MARC        | Jon    |     3241 |
+|   13437 | MARC        | Mike   |     3794 |
+|   13438 | MARC        | Mike   |     5022 |
+|   13439 | MARC        | Jon    |     5392 |
+|   13440 | MARC        | Jon    |     5427 |
+|   13441 | MARC        | Mike   |     5956 |
+|   13442 | MARC        | Jon    |     6723 |
+|   13443 | MARC        | Mike   |     7800 |
+|   13444 | MARC        | Mike   |     7831 |
+|   13445 | MARC        | Mike   |     7898 |
+|   13446 | MARC        | Jon    |     8130 |
+|   13447 | MARC        | Mike   |     8770 |
+|   13448 | MARC        | Mike   |     9588 |
+|   13449 | MARC        | Jon    |    10333 |
+|   13450 | MARC        | Jon    |    10497 |
+|   13451 | MARC        | Mike   |    11513 |
+|   13452 | MARC        | Jon    |    11606 |
+|   13453 | MARC        | Jon    |    11978 |
+|   13454 | MARC        | Mike   |    12004 |
+|   13455 | MARC        | Mike   |    12354 |
+|   13456 | MARC        | Mike   |    12436 |
+|   13457 | MARC        | Mike   |    12587 |
+|   13458 | MARC        | Jon    |    12947 |
+|   13459 | MARC        | Jon    |    13822 |
+|   13460 | MARC        | Mike   |    14858 |
+|   13461 | MARC        | Mike   |    15587 |
+|   13462 | REGINALD    | Mike   |      112 |
+|   13463 | REGINALD    | Mike   |      389 |
+|   13464 | REGINALD    | Mike   |      610 |
+|   13465 | REGINALD    | Mike   |     1375 |
+|   13466 | REGINALD    | Jon    |     1388 |
+|   13467 | REGINALD    | Jon    |     2189 |
+|   13468 | REGINALD    | Jon    |     2526 |
+|   13469 | REGINALD    | Mike   |     2996 |
+|   13470 | REGINALD    | Jon    |     3926 |
+|   13471 | REGINALD    | Mike   |     4561 |
+|   13472 | REGINALD    | Jon    |     4790 |
+|   13473 | REGINALD    | Jon    |     6018 |
+|   13474 | REGINALD    | Jon    |     6187 |
+|   13475 | REGINALD    | Jon    |     6801 |
+|   13476 | REGINALD    | Mike   |     7857 |
+|   13477 | REGINALD    | Mike   |     7925 |
+|   13478 | REGINALD    | Mike   |     8538 |
+|   13479 | REGINALD    | Mike   |     8925 |
+|   13480 | REGINALD    | Jon    |     9290 |
+|   13481 | REGINALD    | Mike   |    10947 |
+|   13482 | REGINALD    | Jon    |    11218 |
+|   13483 | REGINALD    | Mike   |    12639 |
+|   13484 | REGINALD    | Jon    |    12813 |
+|   13485 | REGINALD    | Jon    |    13628 |
+|   13486 | REGINALD    | Mike   |    14407 |
+|   13487 | REGINALD    | Mike   |    14964 |
+|   13488 | REGINALD    | Mike   |    15584 |
+|   13489 | REGINALD    | Mike   |    15853 |
+|   13490 | RUBEN       | Mike   |      493 |
+|   13491 | RUBEN       | Mike   |      605 |
+|   13492 | RUBEN       | Jon    |     3222 |
+|   13493 | RUBEN       | Mike   |     3412 |
+|   13494 | RUBEN       | Jon    |     3541 |
+|   13495 | RUBEN       | Jon    |     3723 |
+|   13496 | RUBEN       | Jon    |     4769 |
+|   13497 | RUBEN       | Jon    |     5520 |
+|   13498 | RUBEN       | Jon    |     6095 |
+|   13499 | RUBEN       | Mike   |     7456 |
+|   13500 | RUBEN       | Mike   |     8021 |
+|   13501 | RUBEN       | Jon    |     8529 |
+|   13502 | RUBEN       | Mike   |     9359 |
+|   13503 | RUBEN       | Mike   |    10817 |
+|   13504 | RUBEN       | Jon    |    11393 |
+|   13505 | RUBEN       | Mike   |    11640 |
+|   13506 | RUBEN       | Jon    |    11799 |
+|   13507 | RUBEN       | Mike   |    12914 |
+|   13508 | RUBEN       | Jon    |    13889 |
+|   13509 | RUBEN       | Mike   |    15239 |
+|   13510 | RUBEN       | Mike   |    15699 |
+|   13511 | BRETT       | Jon    |      258 |
+|   13512 | BRETT       | Mike   |      861 |
+|   13513 | BRETT       | Mike   |      893 |
+|   13514 | BRETT       | Jon    |      965 |
+|   13515 | BRETT       | Jon    |     1696 |
+|   13516 | BRETT       | Jon    |     2420 |
+|   13517 | BRETT       | Mike   |     2911 |
+|   13518 | BRETT       | Jon    |     3614 |
+|   13519 | BRETT       | Mike   |     4606 |
+|   13520 | BRETT       | Jon    |     5368 |
+|   13521 | BRETT       | Jon    |     5662 |
+|   13522 | BRETT       | Jon    |     6414 |
+|   13523 | BRETT       | Mike   |     6760 |
+|   13524 | BRETT       | Jon    |     6828 |
+|   13525 | BRETT       | Jon    |     6924 |
+|   13526 | BRETT       | Jon    |     7213 |
+|   13527 | BRETT       | Mike   |     7255 |
+|   13528 | BRETT       | Mike   |     7757 |
+|   13529 | BRETT       | Mike   |     7884 |
+|   13530 | BRETT       | Jon    |     8034 |
+|   13531 | BRETT       | Jon    |     9232 |
+|   13532 | BRETT       | Mike   |     9599 |
+|   13533 | BRETT       | Jon    |    10390 |
+|   13534 | BRETT       | Mike   |    10938 |
+|   13535 | BRETT       | Jon    |    11036 |
+|   13536 | BRETT       | Mike   |    11301 |
+|   13537 | BRETT       | Mike   |    11317 |
+|   13538 | BRETT       | Mike   |    11435 |
+|   13539 | BRETT       | Mike   |    11620 |
+|   13540 | BRETT       | Mike   |    12762 |
+|   13541 | BRETT       | Mike   |    13052 |
+|   13542 | BRETT       | Mike   |    14411 |
+|   13543 | BRETT       | Mike   |    15486 |
+|   13544 | BRETT       | Mike   |    16034 |
+|   13545 | ANGEL       | Jon    |      109 |
+|   13546 | ANGEL       | Mike   |      353 |
+|   13547 | ANGEL       | Mike   |      631 |
+|   13548 | ANGEL       | Mike   |     1074 |
+|   13549 | ANGEL       | Jon    |     2108 |
+|   13550 | ANGEL       | Mike   |     2225 |
+|   13551 | ANGEL       | Jon    |     3430 |
+|   13552 | ANGEL       | Jon    |     3935 |
+|   13553 | ANGEL       | Jon    |     4570 |
+|   13554 | ANGEL       | Jon    |     5465 |
+|   13555 | ANGEL       | Mike   |     5925 |
+|   13556 | ANGEL       | Mike   |     6166 |
+|   13557 | ANGEL       | Mike   |     6529 |
+|   13558 | ANGEL       | Jon    |     6950 |
+|   13559 | ANGEL       | Mike   |     8178 |
+|   13560 | ANGEL       | Jon    |     9725 |
+|   13561 | ANGEL       | Mike   |     9974 |
+|   13562 | ANGEL       | Jon    |    11075 |
+|   13563 | ANGEL       | Mike   |    11161 |
+|   13564 | ANGEL       | Mike   |    11858 |
+|   13565 | ANGEL       | Jon    |    12370 |
+|   13566 | ANGEL       | Jon    |    12783 |
+|   13567 | ANGEL       | Mike   |    13332 |
+|   13568 | ANGEL       | Mike   |    13551 |
+|   13569 | ANGEL       | Mike   |    14823 |
+|   13570 | ANGEL       | Mike   |    14913 |
+|   13571 | ANGEL       | Jon    |    15056 |
+|   13572 | ANGEL       | Jon    |    15077 |
+|   13573 | ANGEL       | Mike   |    15588 |
+|   13574 | ANGEL       | Mike   |    15692 |
+|   13575 | ANGEL       | Mike   |    15726 |
+|   13576 | ANGEL       | Mike   |    15797 |
+|   13577 | NATHANIEL   | Jon    |      136 |
+|   13578 | NATHANIEL   | Jon    |      470 |
+|   13579 | NATHANIEL   | Mike   |      838 |
+|   13580 | NATHANIEL   | Mike   |     2720 |
+|   13581 | NATHANIEL   | Mike   |     2938 |
+|   13582 | NATHANIEL   | Jon    |     3712 |
+|   13583 | NATHANIEL   | Mike   |     3713 |
+|   13584 | NATHANIEL   | Mike   |     4329 |
+|   13585 | NATHANIEL   | Mike   |     4757 |
+|   13586 | NATHANIEL   | Jon    |     5153 |
+|   13587 | NATHANIEL   | Jon    |     7342 |
+|   13588 | NATHANIEL   | Mike   |     7567 |
+|   13589 | NATHANIEL   | Jon    |     7807 |
+|   13590 | NATHANIEL   | Jon    |     7875 |
+|   13591 | NATHANIEL   | Jon    |     7944 |
+|   13592 | NATHANIEL   | Mike   |     8393 |
+|   13593 | NATHANIEL   | Jon    |    10397 |
+|   13594 | NATHANIEL   | Jon    |    10509 |
+|   13595 | NATHANIEL   | Jon    |    11569 |
+|   13596 | NATHANIEL   | Mike   |    12769 |
+|   13597 | NATHANIEL   | Mike   |    13166 |
+|   13598 | NATHANIEL   | Jon    |    13206 |
+|   13599 | NATHANIEL   | Jon    |    13387 |
+|   13600 | NATHANIEL   | Jon    |    13859 |
+|   13601 | NATHANIEL   | Jon    |    15018 |
+|   13602 | NATHANIEL   | Mike   |    15166 |
+|   13603 | NATHANIEL   | Mike   |    15723 |
+|   13604 | NATHANIEL   | Jon    |    16022 |
+|   13605 | RAFAEL      | Mike   |      159 |
+|   13606 | RAFAEL      | Mike   |      645 |
+|   13607 | RAFAEL      | Jon    |     1799 |
+|   13608 | RAFAEL      | Jon    |     1886 |
+|   13609 | RAFAEL      | Mike   |     2773 |
+|   13610 | RAFAEL      | Mike   |     3137 |
+|   13611 | RAFAEL      | Jon    |     4008 |
+|   13612 | RAFAEL      | Mike   |     4507 |
+|   13613 | RAFAEL      | Jon    |     5976 |
+|   13614 | RAFAEL      | Jon    |     6292 |
+|   13615 | RAFAEL      | Mike   |     6441 |
+|   13616 | RAFAEL      | Mike   |     7784 |
+|   13617 | RAFAEL      | Jon    |    10219 |
+|   13618 | RAFAEL      | Mike   |    10896 |
+|   13619 | RAFAEL      | Mike   |    11163 |
+|   13620 | RAFAEL      | Mike   |    11907 |
+|   13621 | RAFAEL      | Jon    |    13612 |
+|   13622 | RAFAEL      | Mike   |    14398 |
+|   13623 | RAFAEL      | Mike   |    14802 |
+|   13624 | RAFAEL      | Mike   |    15436 |
+|   13625 | RAFAEL      | Jon    |    15867 |
+|   13626 | LESLIE      | Mike   |      114 |
+|   13627 | LESLIE      | Jon    |      387 |
+|   13628 | LESLIE      | Jon    |      410 |
+|   13629 | LESLIE      | Mike   |      547 |
+|   13630 | LESLIE      | Jon    |      907 |
+|   13631 | LESLIE      | Mike   |     1042 |
+|   13632 | LESLIE      | Jon    |     1153 |
+|   13633 | LESLIE      | Mike   |     1446 |
+|   13634 | LESLIE      | Mike   |     1467 |
+|   13635 | LESLIE      | Jon    |     1565 |
+|   13636 | LESLIE      | Mike   |     2755 |
+|   13637 | LESLIE      | Jon    |     2824 |
+|   13638 | LESLIE      | Jon    |     4594 |
+|   13639 | LESLIE      | Jon    |     4640 |
+|   13640 | LESLIE      | Jon    |     4806 |
+|   13641 | LESLIE      | Jon    |     5985 |
+|   13642 | LESLIE      | Mike   |     6783 |
+|   13643 | LESLIE      | Mike   |     7020 |
+|   13644 | LESLIE      | Jon    |     8096 |
+|   13645 | LESLIE      | Jon    |     8506 |
+|   13646 | LESLIE      | Jon    |     9654 |
+|   13647 | LESLIE      | Jon    |     9972 |
+|   13648 | LESLIE      | Mike   |    10477 |
+|   13649 | LESLIE      | Mike   |    10873 |
+|   13650 | LESLIE      | Jon    |    11238 |
+|   13651 | LESLIE      | Jon    |    11781 |
+|   13652 | LESLIE      | Mike   |    12994 |
+|   13653 | LESLIE      | Jon    |    13073 |
+|   13654 | LESLIE      | Jon    |    13767 |
+|   13655 | LESLIE      | Mike   |    14074 |
+|   13656 | LESLIE      | Mike   |    14337 |
+|   13657 | LESLIE      | Jon    |    14395 |
+|   13658 | LESLIE      | Jon    |    15022 |
+|   13659 | LESLIE      | Jon    |    15572 |
+|   13660 | LESLIE      | Mike   |    15694 |
+|   13661 | EDGAR       | Mike   |       52 |
+|   13662 | EDGAR       | Jon    |      713 |
+|   13663 | EDGAR       | Jon    |     1307 |
+|   13664 | EDGAR       | Mike   |     2143 |
+|   13665 | EDGAR       | Jon    |     2283 |
+|   13666 | EDGAR       | Mike   |     3660 |
+|   13667 | EDGAR       | Mike   |     3880 |
+|   13668 | EDGAR       | Jon    |     4440 |
+|   13669 | EDGAR       | Jon    |     4455 |
+|   13670 | EDGAR       | Jon    |     4744 |
+|   13671 | EDGAR       | Jon    |     4901 |
+|   13672 | EDGAR       | Mike   |     5962 |
+|   13673 | EDGAR       | Mike   |     6351 |
+|   13674 | EDGAR       | Mike   |     6396 |
+|   13675 | EDGAR       | Mike   |     6891 |
+|   13676 | EDGAR       | Jon    |     7770 |
+|   13677 | EDGAR       | Mike   |     7970 |
+|   13678 | EDGAR       | Jon    |     8369 |
+|   13679 | EDGAR       | Jon    |     8976 |
+|   13680 | EDGAR       | Mike   |     9003 |
+|   13681 | EDGAR       | Jon    |    12071 |
+|   13682 | EDGAR       | Jon    |    12275 |
+|   13683 | EDGAR       | Mike   |    12343 |
+|   13684 | EDGAR       | Jon    |    14625 |
+|   13685 | EDGAR       | Mike   |    15394 |
+|   13686 | MILTON      | Mike   |      369 |
+|   13687 | MILTON      | Jon    |      921 |
+|   13688 | MILTON      | Jon    |     1661 |
+|   13689 | MILTON      | Jon    |     5657 |
+|   13690 | MILTON      | Jon    |     5978 |
+|   13691 | MILTON      | Mike   |     6101 |
+|   13692 | MILTON      | Jon    |     6646 |
+|   13693 | MILTON      | Jon    |     6929 |
+|   13694 | MILTON      | Mike   |     7283 |
+|   13695 | MILTON      | Jon    |     7322 |
+|   13696 | MILTON      | Jon    |     7327 |
+|   13697 | MILTON      | Jon    |     7668 |
+|   13698 | MILTON      | Jon    |     7676 |
+|   13699 | MILTON      | Jon    |     8191 |
+|   13700 | MILTON      | Jon    |     9694 |
+|   13701 | MILTON      | Mike   |     9706 |
+|   13702 | MILTON      | Jon    |    10128 |
+|   13703 | MILTON      | Mike   |    10746 |
+|   13704 | MILTON      | Mike   |    11365 |
+|   13705 | MILTON      | Jon    |    11447 |
+|   13706 | MILTON      | Mike   |    13095 |
+|   13707 | MILTON      | Jon    |    13201 |
+|   13708 | MILTON      | Mike   |    15010 |
+|   13709 | MILTON      | Mike   |    15195 |
+|   13710 | MILTON      | Mike   |    14318 |
+|   13711 | RAUL        | Mike   |       22 |
+|   13712 | RAUL        | Mike   |      831 |
+|   13713 | RAUL        | Mike   |     1267 |
+|   13714 | RAUL        | Jon    |     2919 |
+|   13715 | RAUL        | Jon    |     4139 |
+|   13716 | RAUL        | Jon    |     4266 |
+|   13717 | RAUL        | Jon    |     4832 |
+|   13718 | RAUL        | Jon    |     5008 |
+|   13719 | RAUL        | Mike   |     6591 |
+|   13720 | RAUL        | Mike   |     7848 |
+|   13721 | RAUL        | Mike   |     8114 |
+|   13722 | RAUL        | Mike   |     8214 |
+|   13723 | RAUL        | Jon    |     8240 |
+|   13724 | RAUL        | Mike   |    10189 |
+|   13725 | RAUL        | Jon    |    10988 |
+|   13726 | RAUL        | Mike   |    11814 |
+|   13727 | RAUL        | Jon    |    12109 |
+|   13728 | RAUL        | Jon    |    14045 |
+|   13729 | RAUL        | Jon    |    14994 |
+|   13730 | RAUL        | Mike   |    15965 |
+|   13731 | BEN         | Mike   |       75 |
+|   13732 | BEN         | Mike   |      372 |
+|   13733 | BEN         | Jon    |     1118 |
+|   13734 | BEN         | Jon    |     1435 |
+|   13735 | BEN         | Jon    |     1757 |
+|   13736 | BEN         | Jon    |     1925 |
+|   13737 | BEN         | Mike   |     2729 |
+|   13738 | BEN         | Jon    |     2806 |
+|   13739 | BEN         | Jon    |     2817 |
+|   13740 | BEN         | Jon    |     3352 |
+|   13741 | BEN         | Jon    |     3465 |
+|   13742 | BEN         | Jon    |     3744 |
+|   13743 | BEN         | Mike   |     4014 |
+|   13744 | BEN         | Jon    |     5851 |
+|   13745 | BEN         | Mike   |     6531 |
+|   13746 | BEN         | Mike   |     7457 |
+|   13747 | BEN         | Mike   |     7678 |
+|   13748 | BEN         | Jon    |     7794 |
+|   13749 | BEN         | Jon    |     8763 |
+|   13750 | BEN         | Mike   |     8926 |
+|   13751 | BEN         | Mike   |    10131 |
+|   13752 | BEN         | Jon    |    10265 |
+|   13753 | BEN         | Jon    |    11996 |
+|   13754 | BEN         | Mike   |    12317 |
+|   13755 | BEN         | Jon    |    12406 |
+|   13756 | BEN         | Mike   |    15065 |
+|   13757 | CHESTER     | Mike   |       56 |
+|   13758 | CHESTER     | Mike   |      819 |
+|   13759 | CHESTER     | Jon    |     1281 |
+|   13760 | CHESTER     | Mike   |     1508 |
+|   13761 | CHESTER     | Jon    |     2966 |
+|   13762 | CHESTER     | Jon    |     3366 |
+|   13763 | CHESTER     | Jon    |     3600 |
+|   13764 | CHESTER     | Mike   |     3852 |
+|   13765 | CHESTER     | Mike   |     4482 |
+|   13766 | CHESTER     | Jon    |     5164 |
+|   13767 | CHESTER     | Mike   |     5601 |
+|   13768 | CHESTER     | Jon    |     6040 |
+|   13769 | CHESTER     | Mike   |     6320 |
+|   13770 | CHESTER     | Mike   |     8026 |
+|   13771 | CHESTER     | Mike   |     9095 |
+|   13772 | CHESTER     | Mike   |     9143 |
+|   13773 | CHESTER     | Mike   |     9760 |
+|   13774 | CHESTER     | Mike   |    10231 |
+|   13775 | CHESTER     | Jon    |    10429 |
+|   13776 | CHESTER     | Jon    |    12110 |
+|   13777 | CHESTER     | Mike   |    12920 |
+|   13778 | CHESTER     | Mike   |    14213 |
+|   13779 | CHESTER     | Mike   |    14302 |
+|   13780 | CHESTER     | Mike   |    15172 |
+|   13781 | CECIL       | Mike   |     1176 |
+|   13782 | CECIL       | Jon    |     2029 |
+|   13783 | CECIL       | Mike   |     2364 |
+|   13784 | CECIL       | Mike   |     4752 |
+|   13785 | CECIL       | Mike   |     4799 |
+|   13786 | CECIL       | Mike   |     5064 |
+|   13787 | CECIL       | Jon    |     5813 |
+|   13788 | CECIL       | Mike   |     7219 |
+|   13789 | CECIL       | Mike   |     7507 |
+|   13790 | CECIL       | Mike   |     7715 |
+|   13791 | CECIL       | Jon    |     8868 |
+|   13792 | CECIL       | Mike   |     9055 |
+|   13793 | CECIL       | Jon    |    10232 |
+|   13794 | CECIL       | Jon    |    10670 |
+|   13795 | CECIL       | Jon    |    11818 |
+|   13796 | CECIL       | Jon    |    12957 |
+|   13797 | CECIL       | Jon    |    13156 |
+|   13798 | CECIL       | Jon    |    13771 |
+|   13799 | CECIL       | Mike   |    14288 |
+|   13800 | CECIL       | Mike   |    14870 |
+|   13801 | CECIL       | Mike   |    15153 |
+|   13802 | CECIL       | Jon    |    15265 |
+|   13803 | CECIL       | Mike   |    15317 |
+|   13804 | CECIL       | Jon    |    15733 |
+|   13805 | CECIL       | Jon    |    15990 |
+|   13806 | CECIL       | Mike   |    12786 |
+|   13807 | DUANE       | Jon    |      993 |
+|   13808 | DUANE       | Mike   |     1607 |
+|   13809 | DUANE       | Jon    |     2290 |
+|   13810 | DUANE       | Jon    |     2737 |
+|   13811 | DUANE       | Jon    |     3872 |
+|   13812 | DUANE       | Jon    |     4055 |
+|   13813 | DUANE       | Jon    |     4178 |
+|   13814 | DUANE       | Jon    |     4220 |
+|   13815 | DUANE       | Mike   |     5741 |
+|   13816 | DUANE       | Mike   |     6027 |
+|   13817 | DUANE       | Mike   |     7655 |
+|   13818 | DUANE       | Jon    |     8320 |
+|   13819 | DUANE       | Mike   |     8350 |
+|   13820 | DUANE       | Jon    |     8683 |
+|   13821 | DUANE       | Mike   |     8798 |
+|   13822 | DUANE       | Jon    |     9862 |
+|   13823 | DUANE       | Mike   |    10012 |
+|   13824 | DUANE       | Jon    |    11081 |
+|   13825 | DUANE       | Mike   |    11165 |
+|   13826 | DUANE       | Mike   |    11407 |
+|   13827 | DUANE       | Mike   |    11755 |
+|   13828 | DUANE       | Mike   |    12559 |
+|   13829 | DUANE       | Jon    |    12784 |
+|   13830 | DUANE       | Jon    |    12807 |
+|   13831 | DUANE       | Mike   |    13596 |
+|   13832 | DUANE       | Mike   |    13690 |
+|   13833 | DUANE       | Jon    |    14844 |
+|   13834 | DUANE       | Mike   |    14875 |
+|   13835 | DUANE       | Mike   |    15035 |
+|   13836 | DUANE       | Jon    |    15289 |
+|   13837 | DUANE       | Jon    |    15545 |
+|   13838 | FRANKLIN    | Jon    |      536 |
+|   13839 | FRANKLIN    | Jon    |     1692 |
+|   13840 | FRANKLIN    | Mike   |     2002 |
+|   13841 | FRANKLIN    | Jon    |     2362 |
+|   13842 | FRANKLIN    | Mike   |     2789 |
+|   13843 | FRANKLIN    | Jon    |     3084 |
+|   13844 | FRANKLIN    | Mike   |     3385 |
+|   13845 | FRANKLIN    | Jon    |     3668 |
+|   13846 | FRANKLIN    | Jon    |     3860 |
+|   13847 | FRANKLIN    | Mike   |     7791 |
+|   13848 | FRANKLIN    | Mike   |     9038 |
+|   13849 | FRANKLIN    | Mike   |    11675 |
+|   13850 | FRANKLIN    | Jon    |    12067 |
+|   13851 | FRANKLIN    | Mike   |    12293 |
+|   13852 | FRANKLIN    | Mike   |    12302 |
+|   13853 | FRANKLIN    | Jon    |    12578 |
+|   13854 | FRANKLIN    | Mike   |    12752 |
+|   13855 | FRANKLIN    | Jon    |    13344 |
+|   13856 | FRANKLIN    | Mike   |    14052 |
+|   13857 | FRANKLIN    | Mike   |    14386 |
+|   13858 | FRANKLIN    | Mike   |    15451 |
+|   13859 | FRANKLIN    | Mike   |    15776 |
+|   13860 | ANDRE       | Jon    |      187 |
+|   13861 | ANDRE       | Jon    |      292 |
+|   13862 | ANDRE       | Mike   |     1244 |
+|   13863 | ANDRE       | Jon    |     1531 |
+|   13864 | ANDRE       | Jon    |     2003 |
+|   13865 | ANDRE       | Jon    |     2484 |
+|   13866 | ANDRE       | Jon    |     2513 |
+|   13867 | ANDRE       | Jon    |     3063 |
+|   13868 | ANDRE       | Jon    |     3782 |
+|   13869 | ANDRE       | Jon    |     4111 |
+|   13870 | ANDRE       | Jon    |     5216 |
+|   13871 | ANDRE       | Jon    |     5546 |
+|   13872 | ANDRE       | Jon    |     5697 |
+|   13873 | ANDRE       | Jon    |     7429 |
+|   13874 | ANDRE       | Mike   |     8706 |
+|   13875 | ANDRE       | Mike   |    10159 |
+|   13876 | ANDRE       | Jon    |    10716 |
+|   13877 | ANDRE       | Mike   |    11451 |
+|   13878 | ANDRE       | Jon    |    11572 |
+|   13879 | ANDRE       | Mike   |    11691 |
+|   13880 | ANDRE       | Jon    |    11937 |
+|   13881 | ANDRE       | Jon    |    12416 |
+|   13882 | ANDRE       | Mike   |    12486 |
+|   13883 | ANDRE       | Mike   |    12889 |
+|   13884 | ANDRE       | Jon    |    14072 |
+|   13885 | ANDRE       | Jon    |    14378 |
+|   13886 | ANDRE       | Jon    |    14414 |
+|   13887 | ANDRE       | Jon    |    15274 |
+|   13888 | ELMER       | Jon    |      339 |
+|   13889 | ELMER       | Mike   |      571 |
+|   13890 | ELMER       | Jon    |     1159 |
+|   13891 | ELMER       | Mike   |     1200 |
+|   13892 | ELMER       | Mike   |     1718 |
+|   13893 | ELMER       | Mike   |     2017 |
+|   13894 | ELMER       | Jon    |     3068 |
+|   13895 | ELMER       | Mike   |     3431 |
+|   13896 | ELMER       | Jon    |     5780 |
+|   13897 | ELMER       | Jon    |     6677 |
+|   13898 | ELMER       | Mike   |     6858 |
+|   13899 | ELMER       | Mike   |     7628 |
+|   13900 | ELMER       | Mike   |     7882 |
+|   13901 | ELMER       | Jon    |     8396 |
+|   13902 | ELMER       | Jon    |     8534 |
+|   13903 | ELMER       | Jon    |     8585 |
+|   13904 | ELMER       | Jon    |     9243 |
+|   13905 | ELMER       | Jon    |    11926 |
+|   13906 | ELMER       | Jon    |    11939 |
+|   13907 | ELMER       | Mike   |    12535 |
+|   13908 | ELMER       | Mike   |    13276 |
+|   13909 | ELMER       | Mike   |    14932 |
+|   13910 | ELMER       | Mike   |    15526 |
+|   13911 | ELMER       | Mike   |    15701 |
+|   13912 | ELMER       | Mike   |    12130 |
+|   13913 | ELMER       | Mike   |    12915 |
+|   13914 | BRAD        | Jon    |      850 |
+|   13915 | BRAD        | Jon    |     1653 |
+|   13916 | BRAD        | Mike   |     1809 |
+|   13917 | BRAD        | Mike   |     1850 |
+|   13918 | BRAD        | Jon    |     2534 |
+|   13919 | BRAD        | Mike   |     3113 |
+|   13920 | BRAD        | Jon    |     4094 |
+|   13921 | BRAD        | Mike   |     4109 |
+|   13922 | BRAD        | Mike   |     4369 |
+|   13923 | BRAD        | Jon    |     4374 |
+|   13924 | BRAD        | Jon    |     4934 |
+|   13925 | BRAD        | Mike   |     4993 |
+|   13926 | BRAD        | Mike   |     5206 |
+|   13927 | BRAD        | Jon    |     5974 |
+|   13928 | BRAD        | Jon    |     6594 |
+|   13929 | BRAD        | Jon    |     6903 |
+|   13930 | BRAD        | Jon    |     7988 |
+|   13931 | BRAD        | Mike   |    10063 |
+|   13932 | BRAD        | Jon    |    10358 |
+|   13933 | BRAD        | Jon    |    10433 |
+|   13934 | BRAD        | Mike   |    11684 |
+|   13935 | BRAD        | Jon    |    12705 |
+|   13936 | BRAD        | Mike   |    13396 |
+|   13937 | BRAD        | Jon    |    14190 |
+|   13938 | BRAD        | Mike   |    15559 |
+|   13939 | GABRIEL     | Mike   |      710 |
+|   13940 | GABRIEL     | Jon    |     1552 |
+|   13941 | GABRIEL     | Jon    |     3311 |
+|   13942 | GABRIEL     | Mike   |     3652 |
+|   13943 | GABRIEL     | Jon    |     4029 |
+|   13944 | GABRIEL     | Jon    |     4661 |
+|   13945 | GABRIEL     | Jon    |     4948 |
+|   13946 | GABRIEL     | Mike   |     6652 |
+|   13947 | GABRIEL     | Mike   |     6957 |
+|   13948 | GABRIEL     | Jon    |     7038 |
+|   13949 | GABRIEL     | Jon    |     7154 |
+|   13950 | GABRIEL     | Jon    |     7382 |
+|   13951 | GABRIEL     | Mike   |     7657 |
+|   13952 | GABRIEL     | Jon    |     7839 |
+|   13953 | GABRIEL     | Mike   |     8107 |
+|   13954 | GABRIEL     | Mike   |     8397 |
+|   13955 | GABRIEL     | Mike   |    10751 |
+|   13956 | GABRIEL     | Jon    |    11433 |
+|   13957 | GABRIEL     | Jon    |    12450 |
+|   13958 | GABRIEL     | Jon    |    12681 |
+|   13959 | GABRIEL     | Mike   |    13065 |
+|   13960 | GABRIEL     | Mike   |    13539 |
+|   13961 | GABRIEL     | Mike   |    14088 |
+|   13962 | GABRIEL     | Mike   |    14149 |
+|   13963 | GABRIEL     | Jon    |    14980 |
+|   13964 | GABRIEL     | Jon    |    15434 |
+|   13965 | RON         | Mike   |     1056 |
+|   13966 | RON         | Mike   |     1941 |
+|   13967 | RON         | Jon    |     2505 |
+|   13968 | RON         | Jon    |     2997 |
+|   13969 | RON         | Jon    |     4564 |
+|   13970 | RON         | Jon    |     4773 |
+|   13971 | RON         | Jon    |     5236 |
+|   13972 | RON         | Jon    |     5547 |
+|   13973 | RON         | Jon    |     6063 |
+|   13974 | RON         | Mike   |     6599 |
+|   13975 | RON         | Mike   |     9417 |
+|   13976 | RON         | Jon    |     9441 |
+|   13977 | RON         | Jon    |     9534 |
+|   13978 | RON         | Jon    |     9645 |
+|   13979 | RON         | Jon    |     9886 |
+|   13980 | RON         | Mike   |     9905 |
+|   13981 | RON         | Mike   |    10097 |
+|   13982 | RON         | Jon    |    10697 |
+|   13983 | RON         | Jon    |    12648 |
+|   13984 | RON         | Jon    |    12924 |
+|   13985 | RON         | Mike   |    13647 |
+|   13986 | RON         | Mike   |    14182 |
+|   13987 | RON         | Jon    |    15347 |
+|   13988 | MITCHELL    | Mike   |      962 |
+|   13989 | MITCHELL    | Mike   |     1411 |
+|   13990 | MITCHELL    | Jon    |     2174 |
+|   13991 | MITCHELL    | Mike   |     2772 |
+|   13992 | MITCHELL    | Jon    |     3482 |
+|   13993 | MITCHELL    | Mike   |     3499 |
+|   13994 | MITCHELL    | Jon    |     4346 |
+|   13995 | MITCHELL    | Jon    |     5799 |
+|   13996 | MITCHELL    | Mike   |     5802 |
+|   13997 | MITCHELL    | Mike   |     5853 |
+|   13998 | MITCHELL    | Mike   |     6029 |
+|   13999 | MITCHELL    | Jon    |     7198 |
+|   14000 | MITCHELL    | Mike   |     7720 |
+|   14001 | MITCHELL    | Mike   |     7936 |
+|   14002 | MITCHELL    | Mike   |     8294 |
+|   14003 | MITCHELL    | Jon    |     8435 |
+|   14004 | MITCHELL    | Mike   |     9803 |
+|   14005 | MITCHELL    | Mike   |    10072 |
+|   14006 | MITCHELL    | Jon    |    10530 |
+|   14007 | MITCHELL    | Mike   |    11566 |
+|   14008 | MITCHELL    | Mike   |    12517 |
+|   14009 | MITCHELL    | Mike   |    12628 |
+|   14010 | MITCHELL    | Mike   |    12647 |
+|   14011 | MITCHELL    | Mike   |    13311 |
+|   14012 | MITCHELL    | Jon    |    13438 |
+|   14013 | MITCHELL    | Jon    |    13659 |
+|   14014 | MITCHELL    | Jon    |    13746 |
+|   14015 | MITCHELL    | Mike   |    14372 |
+|   14016 | MITCHELL    | Mike   |    14509 |
+|   14017 | MITCHELL    | Mike   |    15465 |
+|   14018 | MITCHELL    | Jon    |    15492 |
+|   14019 | MITCHELL    | Mike   |    15948 |
+|   14020 | ROLAND      | Mike   |     1761 |
+|   14021 | ROLAND      | Jon    |     2053 |
+|   14022 | ROLAND      | Jon    |     4284 |
+|   14023 | ROLAND      | Jon    |     4439 |
+|   14024 | ROLAND      | Mike   |     5276 |
+|   14025 | ROLAND      | Jon    |     5458 |
+|   14026 | ROLAND      | Jon    |     5580 |
+|   14027 | ROLAND      | Jon    |     5686 |
+|   14028 | ROLAND      | Mike   |     7478 |
+|   14029 | ROLAND      | Mike   |     9556 |
+|   14030 | ROLAND      | Jon    |     9937 |
+|   14031 | ROLAND      | Mike   |    10587 |
+|   14032 | ROLAND      | Jon    |    11625 |
+|   14033 | ROLAND      | Mike   |    11967 |
+|   14034 | ROLAND      | Jon    |    12082 |
+|   14035 | ROLAND      | Mike   |    12530 |
+|   14036 | ROLAND      | Mike   |    13527 |
+|   14037 | ROLAND      | Mike   |    14423 |
+|   14038 | ROLAND      | Jon    |    14551 |
+|   14039 | ROLAND      | Jon    |    14738 |
+|   14040 | ROLAND      | Jon    |    15170 |
+|   14041 | ROLAND      | Jon    |    15329 |
+|   14042 | ROLAND      | Jon    |    11672 |
+|   14043 | ARNOLD      | Jon    |      426 |
+|   14044 | ARNOLD      | Mike   |     1289 |
+|   14045 | ARNOLD      | Jon    |     3102 |
+|   14046 | ARNOLD      | Mike   |     3188 |
+|   14047 | ARNOLD      | Jon    |     3191 |
+|   14048 | ARNOLD      | Mike   |     3594 |
+|   14049 | ARNOLD      | Jon    |     4078 |
+|   14050 | ARNOLD      | Jon    |     4563 |
+|   14051 | ARNOLD      | Jon    |     4701 |
+|   14052 | ARNOLD      | Jon    |     5271 |
+|   14053 | ARNOLD      | Jon    |     5514 |
+|   14054 | ARNOLD      | Jon    |     5532 |
+|   14055 | ARNOLD      | Jon    |     5936 |
+|   14056 | ARNOLD      | Jon    |     7262 |
+|   14057 | ARNOLD      | Mike   |     7955 |
+|   14058 | ARNOLD      | Jon    |     8181 |
+|   14059 | ARNOLD      | Mike   |     8642 |
+|   14060 | ARNOLD      | Mike   |     8966 |
+|   14061 | ARNOLD      | Mike   |     9047 |
+|   14062 | ARNOLD      | Jon    |     9227 |
+|   14063 | ARNOLD      | Mike   |     9335 |
+|   14064 | ARNOLD      | Mike   |     9412 |
+|   14065 | ARNOLD      | Jon    |     9533 |
+|   14066 | ARNOLD      | Jon    |    10223 |
+|   14067 | ARNOLD      | Mike   |    10411 |
+|   14068 | ARNOLD      | Mike   |    10675 |
+|   14069 | ARNOLD      | Jon    |    10821 |
+|   14070 | ARNOLD      | Jon    |    11696 |
+|   14071 | ARNOLD      | Jon    |    11830 |
+|   14072 | ARNOLD      | Jon    |    12494 |
+|   14073 | ARNOLD      | Jon    |    13605 |
+|   14074 | ARNOLD      | Jon    |    14467 |
+|   14075 | ARNOLD      | Mike   |    15921 |
+|   14076 | HARVEY      | Mike   |       42 |
+|   14077 | HARVEY      | Jon    |      664 |
+|   14078 | HARVEY      | Jon    |     1729 |
+|   14079 | HARVEY      | Mike   |     2447 |
+|   14080 | HARVEY      | Mike   |     2583 |
+|   14081 | HARVEY      | Jon    |     2669 |
+|   14082 | HARVEY      | Mike   |     4605 |
+|   14083 | HARVEY      | Jon    |     5155 |
+|   14084 | HARVEY      | Mike   |     5287 |
+|   14085 | HARVEY      | Jon    |     5932 |
+|   14086 | HARVEY      | Jon    |     6675 |
+|   14087 | HARVEY      | Jon    |     7642 |
+|   14088 | HARVEY      | Jon    |     8141 |
+|   14089 | HARVEY      | Mike   |     8372 |
+|   14090 | HARVEY      | Mike   |     9071 |
+|   14091 | HARVEY      | Jon    |     9667 |
+|   14092 | HARVEY      | Jon    |    10470 |
+|   14093 | HARVEY      | Mike   |    11827 |
+|   14094 | HARVEY      | Mike   |    12288 |
+|   14095 | HARVEY      | Mike   |    13133 |
+|   14096 | HARVEY      | Mike   |    14766 |
+|   14097 | HARVEY      | Mike   |    15040 |
+|   14098 | JARED       | Jon    |      118 |
+|   14099 | JARED       | Mike   |      982 |
+|   14100 | JARED       | Mike   |     1306 |
+|   14101 | JARED       | Jon    |     1651 |
+|   14102 | JARED       | Jon    |     3454 |
+|   14103 | JARED       | Mike   |     4366 |
+|   14104 | JARED       | Jon    |     5037 |
+|   14105 | JARED       | Jon    |     6161 |
+|   14106 | JARED       | Mike   |     6240 |
+|   14107 | JARED       | Jon    |     6745 |
+|   14108 | JARED       | Jon    |     7014 |
+|   14109 | JARED       | Mike   |     7040 |
+|   14110 | JARED       | Mike   |     8507 |
+|   14111 | JARED       | Jon    |    13626 |
+|   14112 | JARED       | Jon    |    14046 |
+|   14113 | JARED       | Mike   |    14178 |
+|   14114 | JARED       | Mike   |    14366 |
+|   14115 | JARED       | Jon    |    14680 |
+|   14116 | JARED       | Jon    |    15206 |
+|   14117 | ADRIAN      | Mike   |      437 |
+|   14118 | ADRIAN      | Jon    |     1772 |
+|   14119 | ADRIAN      | Mike   |     3993 |
+|   14120 | ADRIAN      | Mike   |     5841 |
+|   14121 | ADRIAN      | Jon    |     6098 |
+|   14122 | ADRIAN      | Jon    |     6388 |
+|   14123 | ADRIAN      | Mike   |     6689 |
+|   14124 | ADRIAN      | Jon    |     7337 |
+|   14125 | ADRIAN      | Jon    |     7591 |
+|   14126 | ADRIAN      | Mike   |     8007 |
+|   14127 | ADRIAN      | Mike   |     8960 |
+|   14128 | ADRIAN      | Jon    |     9507 |
+|   14129 | ADRIAN      | Mike   |     9702 |
+|   14130 | ADRIAN      | Mike   |    10496 |
+|   14131 | ADRIAN      | Jon    |    11406 |
+|   14132 | ADRIAN      | Mike   |    11660 |
+|   14133 | ADRIAN      | Mike   |    15159 |
+|   14134 | ADRIAN      | Jon    |    15623 |
+|   14135 | ADRIAN      | Mike   |    14954 |
+|   14136 | KARL        | Mike   |      495 |
+|   14137 | KARL        | Jon    |      679 |
+|   14138 | KARL        | Jon    |     1015 |
+|   14139 | KARL        | Mike   |     1255 |
+|   14140 | KARL        | Jon    |     1848 |
+|   14141 | KARL        | Jon    |     1865 |
+|   14142 | KARL        | Jon    |     1972 |
+|   14143 | KARL        | Mike   |     1981 |
+|   14144 | KARL        | Jon    |     2398 |
+|   14145 | KARL        | Mike   |     2828 |
+|   14146 | KARL        | Jon    |     2932 |
+|   14147 | KARL        | Mike   |     3339 |
+|   14148 | KARL        | Mike   |     3619 |
+|   14149 | KARL        | Jon    |     3905 |
+|   14150 | KARL        | Mike   |     4423 |
+|   14151 | KARL        | Jon    |     5056 |
+|   14152 | KARL        | Jon    |     5121 |
+|   14153 | KARL        | Mike   |     6316 |
+|   14154 | KARL        | Mike   |     6404 |
+|   14155 | KARL        | Jon    |     6650 |
+|   14156 | KARL        | Mike   |     6671 |
+|   14157 | KARL        | Jon    |     7270 |
+|   14158 | KARL        | Jon    |     7343 |
+|   14159 | KARL        | Jon    |     7399 |
+|   14160 | KARL        | Jon    |     7543 |
+|   14161 | KARL        | Jon    |     7883 |
+|   14162 | KARL        | Mike   |     8053 |
+|   14163 | KARL        | Mike   |     8232 |
+|   14164 | KARL        | Mike   |     8441 |
+|   14165 | KARL        | Jon    |     9577 |
+|   14166 | KARL        | Jon    |    10020 |
+|   14167 | KARL        | Jon    |    10199 |
+|   14168 | KARL        | Jon    |    11046 |
+|   14169 | KARL        | Mike   |    11503 |
+|   14170 | KARL        | Mike   |    11612 |
+|   14171 | KARL        | Jon    |    11702 |
+|   14172 | KARL        | Mike   |    12607 |
+|   14173 | KARL        | Jon    |    13224 |
+|   14174 | KARL        | Jon    |    13580 |
+|   14175 | KARL        | Mike   |    13617 |
+|   14176 | KARL        | Jon    |    14487 |
+|   14177 | KARL        | Mike   |    14590 |
+|   14178 | KARL        | Mike   |    15168 |
+|   14179 | KARL        | Mike   |    15395 |
+|   14180 | KARL        | Mike   |    16043 |
+|   14181 | CORY        | Mike   |     1398 |
+|   14182 | CORY        | Mike   |     2422 |
+|   14183 | CORY        | Jon    |     2496 |
+|   14184 | CORY        | Mike   |     2539 |
+|   14185 | CORY        | Mike   |     4888 |
+|   14186 | CORY        | Mike   |     5365 |
+|   14187 | CORY        | Jon    |     6003 |
+|   14188 | CORY        | Jon    |     6011 |
+|   14189 | CORY        | Mike   |     6050 |
+|   14190 | CORY        | Jon    |     6975 |
+|   14191 | CORY        | Mike   |     7506 |
+|   14192 | CORY        | Mike   |     8854 |
+|   14193 | CORY        | Jon    |     9750 |
+|   14194 | CORY        | Jon    |    10486 |
+|   14195 | CORY        | Jon    |    10613 |
+|   14196 | CORY        | Mike   |    11013 |
+|   14197 | CORY        | Mike   |    11150 |
+|   14198 | CORY        | Mike   |    11624 |
+|   14199 | CORY        | Mike   |    12136 |
+|   14200 | CORY        | Mike   |    12513 |
+|   14201 | CORY        | Mike   |    14352 |
+|   14202 | CORY        | Mike   |    15144 |
+|   14203 | CORY        | Mike   |    15552 |
+|   14204 | CORY        | Mike   |    14267 |
+|   14205 | CLAUDE      | Mike   |      204 |
+|   14206 | CLAUDE      | Jon    |      472 |
+|   14207 | CLAUDE      | Mike   |      533 |
+|   14208 | CLAUDE      | Jon    |      695 |
+|   14209 | CLAUDE      | Jon    |      793 |
+|   14210 | CLAUDE      | Jon    |     1875 |
+|   14211 | CLAUDE      | Mike   |     2019 |
+|   14212 | CLAUDE      | Jon    |     3654 |
+|   14213 | CLAUDE      | Mike   |     3664 |
+|   14214 | CLAUDE      | Jon    |     4050 |
+|   14215 | CLAUDE      | Mike   |     4593 |
+|   14216 | CLAUDE      | Jon    |     5215 |
+|   14217 | CLAUDE      | Jon    |     6561 |
+|   14218 | CLAUDE      | Mike   |     7569 |
+|   14219 | CLAUDE      | Jon    |     8112 |
+|   14220 | CLAUDE      | Mike   |     8727 |
+|   14221 | CLAUDE      | Jon    |     9488 |
+|   14222 | CLAUDE      | Mike   |    10084 |
+|   14223 | CLAUDE      | Mike   |    10673 |
+|   14224 | CLAUDE      | Mike   |    10880 |
+|   14225 | CLAUDE      | Mike   |    12818 |
+|   14226 | CLAUDE      | Jon    |    13518 |
+|   14227 | CLAUDE      | Mike   |    13600 |
+|   14228 | CLAUDE      | Jon    |    14148 |
+|   14229 | CLAUDE      | Jon    |    15880 |
+|   14230 | ERIK        | Mike   |      453 |
+|   14231 | ERIK        | Mike   |     1234 |
+|   14232 | ERIK        | Jon    |     1686 |
+|   14233 | ERIK        | Jon    |     3354 |
+|   14234 | ERIK        | Jon    |     4045 |
+|   14235 | ERIK        | Jon    |     4254 |
+|   14236 | ERIK        | Jon    |     4444 |
+|   14237 | ERIK        | Mike   |     4553 |
+|   14238 | ERIK        | Mike   |     5993 |
+|   14239 | ERIK        | Jon    |     6538 |
+|   14240 | ERIK        | Jon    |     6541 |
+|   14241 | ERIK        | Mike   |     6908 |
+|   14242 | ERIK        | Mike   |     7128 |
+|   14243 | ERIK        | Jon    |     8708 |
+|   14244 | ERIK        | Mike   |     8979 |
+|   14245 | ERIK        | Jon    |     9310 |
+|   14246 | ERIK        | Jon    |     9375 |
+|   14247 | ERIK        | Jon    |    10361 |
+|   14248 | ERIK        | Mike   |    11862 |
+|   14249 | ERIK        | Jon    |    12356 |
+|   14250 | ERIK        | Mike   |    12622 |
+|   14251 | ERIK        | Mike   |    13011 |
+|   14252 | ERIK        | Jon    |    13132 |
+|   14253 | ERIK        | Mike   |    13797 |
+|   14254 | ERIK        | Jon    |    13946 |
+|   14255 | ERIK        | Jon    |    14449 |
+|   14256 | ERIK        | Jon    |    14764 |
+|   14257 | ERIK        | Mike   |    14970 |
+|   14258 | ERIK        | Jon    |    15305 |
+|   14259 | DARRYL      | Mike   |      851 |
+|   14260 | DARRYL      | Jon    |     1273 |
+|   14261 | DARRYL      | Mike   |     1516 |
+|   14262 | DARRYL      | Mike   |     2158 |
+|   14263 | DARRYL      | Jon    |     3669 |
+|   14264 | DARRYL      | Jon    |     3887 |
+|   14265 | DARRYL      | Jon    |     5663 |
+|   14266 | DARRYL      | Mike   |     7031 |
+|   14267 | DARRYL      | Jon    |     7075 |
+|   14268 | DARRYL      | Mike   |     7218 |
+|   14269 | DARRYL      | Jon    |     8208 |
+|   14270 | DARRYL      | Mike   |     8736 |
+|   14271 | DARRYL      | Mike   |     9914 |
+|   14272 | DARRYL      | Jon    |    10211 |
+|   14273 | DARRYL      | Jon    |    10504 |
+|   14274 | DARRYL      | Mike   |    11326 |
+|   14275 | DARRYL      | Mike   |    12220 |
+|   14276 | DARRYL      | Mike   |    12387 |
+|   14277 | DARRYL      | Mike   |    12649 |
+|   14278 | DARRYL      | Mike   |    13998 |
+|   14279 | DARRYL      | Jon    |    14707 |
+|   14280 | DARRYL      | Jon    |    15066 |
+|   14281 | DARRYL      | Mike   |    13561 |
+|   14282 | JAMIE       | Mike   |      233 |
+|   14283 | JAMIE       | Mike   |      681 |
+|   14284 | JAMIE       | Jon    |     2972 |
+|   14285 | JAMIE       | Jon    |     3921 |
+|   14286 | JAMIE       | Mike   |     5587 |
+|   14287 | JAMIE       | Jon    |     5850 |
+|   14288 | JAMIE       | Jon    |     5904 |
+|   14289 | JAMIE       | Mike   |     6756 |
+|   14290 | JAMIE       | Mike   |     6876 |
+|   14291 | JAMIE       | Jon    |     7204 |
+|   14292 | JAMIE       | Mike   |     7391 |
+|   14293 | JAMIE       | Jon    |     7444 |
+|   14294 | JAMIE       | Jon    |     7753 |
+|   14295 | JAMIE       | Jon    |     8359 |
+|   14296 | JAMIE       | Jon    |     8860 |
+|   14297 | JAMIE       | Jon    |     8943 |
+|   14298 | JAMIE       | Jon    |     9107 |
+|   14299 | JAMIE       | Jon    |    10920 |
+|   14300 | JAMIE       | Mike   |    10941 |
+|   14301 | JAMIE       | Jon    |    11026 |
+|   14302 | JAMIE       | Mike   |    11265 |
+|   14303 | JAMIE       | Mike   |    11666 |
+|   14304 | JAMIE       | Mike   |    12923 |
+|   14305 | JAMIE       | Jon    |    13300 |
+|   14306 | JAMIE       | Jon    |    15360 |
+|   14307 | NEIL        | Mike   |       43 |
+|   14308 | NEIL        | Mike   |     1694 |
+|   14309 | NEIL        | Jon    |     2821 |
+|   14310 | NEIL        | Mike   |     4336 |
+|   14311 | NEIL        | Jon    |     4962 |
+|   14312 | NEIL        | Jon    |     5190 |
+|   14313 | NEIL        | Mike   |     5253 |
+|   14314 | NEIL        | Jon    |     5278 |
+|   14315 | NEIL        | Jon    |     5805 |
+|   14316 | NEIL        | Mike   |     5887 |
+|   14317 | NEIL        | Jon    |     6345 |
+|   14318 | NEIL        | Jon    |     6598 |
+|   14319 | NEIL        | Mike   |     6730 |
+|   14320 | NEIL        | Mike   |     7192 |
+|   14321 | NEIL        | Jon    |     7572 |
+|   14322 | NEIL        | Mike   |     8273 |
+|   14323 | NEIL        | Mike   |     9843 |
+|   14324 | NEIL        | Jon    |    10286 |
+|   14325 | NEIL        | Jon    |    10712 |
+|   14326 | NEIL        | Mike   |    10945 |
+|   14327 | NEIL        | Jon    |    11251 |
+|   14328 | NEIL        | Jon    |    11318 |
+|   14329 | NEIL        | Jon    |    12061 |
+|   14330 | NEIL        | Jon    |    12295 |
+|   14331 | NEIL        | Jon    |    13038 |
+|   14332 | NEIL        | Mike   |    13192 |
+|   14333 | NEIL        | Mike   |    13254 |
+|   14334 | NEIL        | Mike   |    13908 |
+|   14335 | NEIL        | Jon    |    15180 |
+|   14336 | NEIL        | Jon    |    15414 |
+|   14337 | NEIL        | Mike   |    16014 |
+|   14338 | NEIL        | Mike   |    14616 |
+|   14339 | JESSIE      | Mike   |      173 |
+|   14340 | JESSIE      | Jon    |      190 |
+|   14341 | JESSIE      | Mike   |      615 |
+|   14342 | JESSIE      | Mike   |     1421 |
+|   14343 | JESSIE      | Mike   |     1652 |
+|   14344 | JESSIE      | Mike   |     1859 |
+|   14345 | JESSIE      | Mike   |     1954 |
+|   14346 | JESSIE      | Jon    |     2770 |
+|   14347 | JESSIE      | Mike   |     2956 |
+|   14348 | JESSIE      | Mike   |     4112 |
+|   14349 | JESSIE      | Mike   |     4788 |
+|   14350 | JESSIE      | Jon    |     6781 |
+|   14351 | JESSIE      | Jon    |     6834 |
+|   14352 | JESSIE      | Jon    |     6837 |
+|   14353 | JESSIE      | Jon    |     7555 |
+|   14354 | JESSIE      | Mike   |     8093 |
+|   14355 | JESSIE      | Jon    |     8104 |
+|   14356 | JESSIE      | Jon    |     8250 |
+|   14357 | JESSIE      | Mike   |     8471 |
+|   14358 | JESSIE      | Mike   |     8676 |
+|   14359 | JESSIE      | Jon    |     8786 |
+|   14360 | JESSIE      | Jon    |    10090 |
+|   14361 | JESSIE      | Mike   |    10380 |
+|   14362 | JESSIE      | Mike   |    10614 |
+|   14363 | JESSIE      | Jon    |    11524 |
+|   14364 | JESSIE      | Mike   |    11758 |
+|   14365 | JESSIE      | Mike   |    11918 |
+|   14366 | JESSIE      | Mike   |    12602 |
+|   14367 | JESSIE      | Mike   |    12655 |
+|   14368 | JESSIE      | Mike   |    14263 |
+|   14369 | JESSIE      | Mike   |    14800 |
+|   14370 | JESSIE      | Jon    |    16006 |
+|   14371 | JESSIE      | Jon    |    14018 |
+|   14372 | CHRISTIAN   | Jon    |      304 |
+|   14373 | CHRISTIAN   | Jon    |      940 |
+|   14374 | CHRISTIAN   | Mike   |     1610 |
+|   14375 | CHRISTIAN   | Mike   |     1673 |
+|   14376 | CHRISTIAN   | Mike   |     2436 |
+|   14377 | CHRISTIAN   | Jon    |     3213 |
+|   14378 | CHRISTIAN   | Mike   |     3216 |
+|   14379 | CHRISTIAN   | Mike   |     3735 |
+|   14380 | CHRISTIAN   | Jon    |     4998 |
+|   14381 | CHRISTIAN   | Jon    |     7113 |
+|   14382 | CHRISTIAN   | Mike   |     7662 |
+|   14383 | CHRISTIAN   | Jon    |     8633 |
+|   14384 | CHRISTIAN   | Mike   |     9456 |
+|   14385 | CHRISTIAN   | Jon    |     9464 |
+|   14386 | CHRISTIAN   | Jon    |    10465 |
+|   14387 | CHRISTIAN   | Jon    |    10725 |
+|   14388 | CHRISTIAN   | Mike   |    10796 |
+|   14389 | CHRISTIAN   | Jon    |    11180 |
+|   14390 | CHRISTIAN   | Jon    |    12305 |
+|   14391 | CHRISTIAN   | Mike   |    12691 |
+|   14392 | CHRISTIAN   | Jon    |    12798 |
+|   14393 | CHRISTIAN   | Jon    |    13294 |
+|   14394 | CHRISTIAN   | Jon    |    14816 |
+|   14395 | CHRISTIAN   | Mike   |    14526 |
+|   14396 | JAVIER      | Mike   |       37 |
+|   14397 | JAVIER      | Jon    |      541 |
+|   14398 | JAVIER      | Mike   |      778 |
+|   14399 | JAVIER      | Jon    |      959 |
+|   14400 | JAVIER      | Mike   |     1712 |
+|   14401 | JAVIER      | Mike   |     3228 |
+|   14402 | JAVIER      | Mike   |     4331 |
+|   14403 | JAVIER      | Mike   |     4718 |
+|   14404 | JAVIER      | Mike   |     4743 |
+|   14405 | JAVIER      | Jon    |     4914 |
+|   14406 | JAVIER      | Mike   |     5588 |
+|   14407 | JAVIER      | Jon    |     5890 |
+|   14408 | JAVIER      | Mike   |     6504 |
+|   14409 | JAVIER      | Mike   |     8395 |
+|   14410 | JAVIER      | Mike   |     8645 |
+|   14411 | JAVIER      | Jon    |     9440 |
+|   14412 | JAVIER      | Mike   |     9524 |
+|   14413 | JAVIER      | Jon    |    10322 |
+|   14414 | JAVIER      | Jon    |    10353 |
+|   14415 | JAVIER      | Jon    |    11736 |
+|   14416 | JAVIER      | Mike   |    11855 |
+|   14417 | JAVIER      | Jon    |    12168 |
+|   14418 | JAVIER      | Mike   |    12233 |
+|   14419 | JAVIER      | Jon    |    12673 |
+|   14420 | JAVIER      | Mike   |    12732 |
+|   14421 | JAVIER      | Jon    |    12750 |
+|   14422 | JAVIER      | Mike   |    13631 |
+|   14423 | JAVIER      | Mike   |    13852 |
+|   14424 | JAVIER      | Mike   |    14522 |
+|   14425 | JAVIER      | Jon    |    15075 |
+|   14426 | JAVIER      | Mike   |    15287 |
+|   14427 | JAVIER      | Mike   |    16017 |
+|   14428 | FERNANDO    | Mike   |      237 |
+|   14429 | FERNANDO    | Mike   |      929 |
+|   14430 | FERNANDO    | Mike   |     1582 |
+|   14431 | FERNANDO    | Jon    |     1962 |
+|   14432 | FERNANDO    | Jon    |     2403 |
+|   14433 | FERNANDO    | Mike   |     3483 |
+|   14434 | FERNANDO    | Mike   |     3514 |
+|   14435 | FERNANDO    | Mike   |     4448 |
+|   14436 | FERNANDO    | Jon    |     5196 |
+|   14437 | FERNANDO    | Mike   |     6400 |
+|   14438 | FERNANDO    | Mike   |     7065 |
+|   14439 | FERNANDO    | Jon    |     8535 |
+|   14440 | FERNANDO    | Mike   |     8679 |
+|   14441 | FERNANDO    | Mike   |     8958 |
+|   14442 | FERNANDO    | Mike   |     9411 |
+|   14443 | FERNANDO    | Mike   |     9727 |
+|   14444 | FERNANDO    | Jon    |    10019 |
+|   14445 | FERNANDO    | Mike   |    11473 |
+|   14446 | FERNANDO    | Mike   |    11826 |
+|   14447 | FERNANDO    | Jon    |    11977 |
+|   14448 | FERNANDO    | Jon    |    12052 |
+|   14449 | FERNANDO    | Jon    |    13505 |
+|   14450 | FERNANDO    | Mike   |    15130 |
+|   14451 | FERNANDO    | Mike   |    15978 |
+|   14452 | FERNANDO    | Mike   |    15979 |
+|   14453 | CLINTON     | Jon    |      603 |
+|   14454 | CLINTON     | Mike   |     1445 |
+|   14455 | CLINTON     | Jon    |     2184 |
+|   14456 | CLINTON     | Mike   |     2586 |
+|   14457 | CLINTON     | Jon    |     3134 |
+|   14458 | CLINTON     | Mike   |     3555 |
+|   14459 | CLINTON     | Jon    |     3853 |
+|   14460 | CLINTON     | Mike   |     5630 |
+|   14461 | CLINTON     | Jon    |     5877 |
+|   14462 | CLINTON     | Jon    |     6310 |
+|   14463 | CLINTON     | Mike   |     6409 |
+|   14464 | CLINTON     | Mike   |     6746 |
+|   14465 | CLINTON     | Mike   |     7179 |
+|   14466 | CLINTON     | Jon    |     7810 |
+|   14467 | CLINTON     | Jon    |     8126 |
+|   14468 | CLINTON     | Jon    |     8256 |
+|   14469 | CLINTON     | Mike   |     9967 |
+|   14470 | CLINTON     | Jon    |    12984 |
+|   14471 | CLINTON     | Jon    |    13885 |
+|   14472 | CLINTON     | Mike   |    14010 |
+|   14473 | CLINTON     | Jon    |    14506 |
+|   14474 | CLINTON     | Mike   |    14670 |
+|   14475 | CLINTON     | Mike   |    15149 |
+|   14476 | CLINTON     | Mike   |    15832 |
+|   14477 | CLINTON     | Mike   |    13419 |
+|   14478 | TED         | Jon    |      594 |
+|   14479 | TED         | Jon    |      734 |
+|   14480 | TED         | Mike   |     1314 |
+|   14481 | TED         | Mike   |     1912 |
+|   14482 | TED         | Mike   |     2682 |
+|   14483 | TED         | Jon    |     3189 |
+|   14484 | TED         | Jon    |     3554 |
+|   14485 | TED         | Jon    |     5135 |
+|   14486 | TED         | Mike   |     5369 |
+|   14487 | TED         | Mike   |     5486 |
+|   14488 | TED         | Mike   |     5898 |
+|   14489 | TED         | Jon    |     6130 |
+|   14490 | TED         | Mike   |     6332 |
+|   14491 | TED         | Jon    |     6936 |
+|   14492 | TED         | Mike   |     7694 |
+|   14493 | TED         | Mike   |     8765 |
+|   14494 | TED         | Mike   |     9307 |
+|   14495 | TED         | Mike   |     9643 |
+|   14496 | TED         | Jon    |     9897 |
+|   14497 | TED         | Jon    |     9939 |
+|   14498 | TED         | Jon    |    10701 |
+|   14499 | TED         | Mike   |    10732 |
+|   14500 | TED         | Mike   |    10962 |
+|   14501 | TED         | Jon    |    12089 |
+|   14502 | TED         | Mike   |    13544 |
+|   14503 | TED         | Jon    |    13770 |
+|   14504 | TED         | Jon    |    14572 |
+|   14505 | TED         | Mike   |    14591 |
+|   14506 | TED         | Mike   |    15343 |
+|   14507 | MATHEW      | Jon    |      250 |
+|   14508 | MATHEW      | Mike   |      342 |
+|   14509 | MATHEW      | Jon    |     1282 |
+|   14510 | MATHEW      | Mike   |     1327 |
+|   14511 | MATHEW      | Jon    |     1444 |
+|   14512 | MATHEW      | Mike   |     4035 |
+|   14513 | MATHEW      | Mike   |     4247 |
+|   14514 | MATHEW      | Jon    |     5086 |
+|   14515 | MATHEW      | Jon    |     5139 |
+|   14516 | MATHEW      | Jon    |     5493 |
+|   14517 | MATHEW      | Jon    |     6874 |
+|   14518 | MATHEW      | Mike   |     7781 |
+|   14519 | MATHEW      | Jon    |     8247 |
+|   14520 | MATHEW      | Jon    |     8761 |
+|   14521 | MATHEW      | Jon    |     9250 |
+|   14522 | MATHEW      | Mike   |     9777 |
+|   14523 | MATHEW      | Mike   |     9796 |
+|   14524 | MATHEW      | Jon    |    10922 |
+|   14525 | MATHEW      | Mike   |    12848 |
+|   14526 | MATHEW      | Jon    |    13615 |
+|   14527 | MATHEW      | Jon    |    13778 |
+|   14528 | MATHEW      | Mike   |    15356 |
+|   14529 | TYRONE      | Jon    |     1263 |
+|   14530 | TYRONE      | Jon    |     1290 |
+|   14531 | TYRONE      | Jon    |     2640 |
+|   14532 | TYRONE      | Mike   |     2953 |
+|   14533 | TYRONE      | Mike   |     3340 |
+|   14534 | TYRONE      | Jon    |     4628 |
+|   14535 | TYRONE      | Jon    |     4991 |
+|   14536 | TYRONE      | Mike   |     6103 |
+|   14537 | TYRONE      | Jon    |     6145 |
+|   14538 | TYRONE      | Jon    |     6182 |
+|   14539 | TYRONE      | Mike   |     6748 |
+|   14540 | TYRONE      | Mike   |     6919 |
+|   14541 | TYRONE      | Jon    |     9762 |
+|   14542 | TYRONE      | Jon    |     9815 |
+|   14543 | TYRONE      | Mike   |    10924 |
+|   14544 | TYRONE      | Mike   |    11198 |
+|   14545 | TYRONE      | Jon    |    11324 |
+|   14546 | TYRONE      | Jon    |    11432 |
+|   14547 | TYRONE      | Jon    |    12058 |
+|   14548 | TYRONE      | Jon    |    12201 |
+|   14549 | TYRONE      | Mike   |    12300 |
+|   14550 | TYRONE      | Jon    |    14910 |
+|   14551 | TYRONE      | Jon    |    15079 |
+|   14552 | TYRONE      | Jon    |    15953 |
+|   14553 | DARREN      | Mike   |     1021 |
+|   14554 | DARREN      | Mike   |     1066 |
+|   14555 | DARREN      | Jon    |     1986 |
+|   14556 | DARREN      | Mike   |     2708 |
+|   14557 | DARREN      | Mike   |     5018 |
+|   14558 | DARREN      | Jon    |     5197 |
+|   14559 | DARREN      | Jon    |     6468 |
+|   14560 | DARREN      | Jon    |     6718 |
+|   14561 | DARREN      | Mike   |     8113 |
+|   14562 | DARREN      | Mike   |     8322 |
+|   14563 | DARREN      | Jon    |     9603 |
+|   14564 | DARREN      | Mike   |    10306 |
+|   14565 | DARREN      | Jon    |    11273 |
+|   14566 | DARREN      | Mike   |    12306 |
+|   14567 | DARREN      | Jon    |    12395 |
+|   14568 | DARREN      | Mike   |    12894 |
+|   14569 | DARREN      | Jon    |    13239 |
+|   14570 | DARREN      | Jon    |    13640 |
+|   14571 | DARREN      | Jon    |    14938 |
+|   14572 | DARREN      | Mike   |    15071 |
+|   14573 | DARREN      | Jon    |    15141 |
+|   14574 | DARREN      | Mike   |    15223 |
+|   14575 | DARREN      | Mike   |    15421 |
+|   14576 | DARREN      | Jon    |    15924 |
+|   14577 | LONNIE      | Mike   |      220 |
+|   14578 | LONNIE      | Jon    |      376 |
+|   14579 | LONNIE      | Mike   |     2610 |
+|   14580 | LONNIE      | Jon    |     2957 |
+|   14581 | LONNIE      | Jon    |     5293 |
+|   14582 | LONNIE      | Mike   |     5477 |
+|   14583 | LONNIE      | Jon    |     6077 |
+|   14584 | LONNIE      | Jon    |     6325 |
+|   14585 | LONNIE      | Mike   |     6887 |
+|   14586 | LONNIE      | Jon    |     7672 |
+|   14587 | LONNIE      | Mike   |     8533 |
+|   14588 | LONNIE      | Jon    |     8544 |
+|   14589 | LONNIE      | Mike   |    10280 |
+|   14590 | LONNIE      | Jon    |    11583 |
+|   14591 | LONNIE      | Jon    |    11903 |
+|   14592 | LONNIE      | Mike   |    12819 |
+|   14593 | LONNIE      | Mike   |    13447 |
+|   14594 | LONNIE      | Jon    |    14982 |
+|   14595 | LANCE       | Mike   |      243 |
+|   14596 | LANCE       | Jon    |      476 |
+|   14597 | LANCE       | Jon    |     1720 |
+|   14598 | LANCE       | Mike   |     2426 |
+|   14599 | LANCE       | Jon    |     3070 |
+|   14600 | LANCE       | Mike   |     3128 |
+|   14601 | LANCE       | Jon    |     3467 |
+|   14602 | LANCE       | Mike   |     4887 |
+|   14603 | LANCE       | Jon    |     5467 |
+|   14604 | LANCE       | Jon    |     6013 |
+|   14605 | LANCE       | Jon    |     7312 |
+|   14606 | LANCE       | Mike   |     8580 |
+|   14607 | LANCE       | Jon    |     8845 |
+|   14608 | LANCE       | Mike   |     9505 |
+|   14609 | LANCE       | Mike   |     9999 |
+|   14610 | LANCE       | Jon    |    10257 |
+|   14611 | LANCE       | Mike   |    10520 |
+|   14612 | LANCE       | Jon    |    11241 |
+|   14613 | LANCE       | Mike   |    11681 |
+|   14614 | LANCE       | Mike   |    13187 |
+|   14615 | LANCE       | Jon    |    15281 |
+|   14616 | LANCE       | Mike   |    15785 |
+|   14617 | CODY        | Mike   |      397 |
+|   14618 | CODY        | Mike   |      864 |
+|   14619 | CODY        | Mike   |     1248 |
+|   14620 | CODY        | Jon    |     1434 |
+|   14621 | CODY        | Mike   |     2373 |
+|   14622 | CODY        | Mike   |     2395 |
+|   14623 | CODY        | Mike   |     4395 |
+|   14624 | CODY        | Mike   |     4703 |
+|   14625 | CODY        | Jon    |     4847 |
+|   14626 | CODY        | Jon    |     8566 |
+|   14627 | CODY        | Mike   |     8937 |
+|   14628 | CODY        | Mike   |     8963 |
+|   14629 | CODY        | Mike   |    10735 |
+|   14630 | CODY        | Mike   |    11401 |
+|   14631 | CODY        | Jon    |    11766 |
+|   14632 | CODY        | Jon    |    12640 |
+|   14633 | CODY        | Jon    |    14142 |
+|   14634 | CODY        | Mike   |    14498 |
+|   14635 | CODY        | Jon    |    14651 |
+|   14636 | CODY        | Mike   |    14981 |
+|   14637 | CODY        | Mike   |    15219 |
+|   14638 | CODY        | Mike   |    15605 |
+|   14639 | JULIO       | Jon    |      248 |
+|   14640 | JULIO       | Jon    |      715 |
+|   14641 | JULIO       | Mike   |     2123 |
+|   14642 | JULIO       | Jon    |     3693 |
+|   14643 | JULIO       | Mike   |     3975 |
+|   14644 | JULIO       | Mike   |     4597 |
+|   14645 | JULIO       | Mike   |     5264 |
+|   14646 | JULIO       | Mike   |     7078 |
+|   14647 | JULIO       | Jon    |     8599 |
+|   14648 | JULIO       | Jon    |     8848 |
+|   14649 | JULIO       | Jon    |     9810 |
+|   14650 | JULIO       | Jon    |     9942 |
+|   14651 | JULIO       | Jon    |    10931 |
+|   14652 | JULIO       | Jon    |    11760 |
+|   14653 | JULIO       | Mike   |    12098 |
+|   14654 | JULIO       | Mike   |    12349 |
+|   14655 | JULIO       | Jon    |    12667 |
+|   14656 | JULIO       | Mike   |    12800 |
+|   14657 | JULIO       | Mike   |    13595 |
+|   14658 | JULIO       | Mike   |    15585 |
+|   14659 | JULIO       | Jon    |    15998 |
+|   14660 | KELLY       | Mike   |      197 |
+|   14661 | KELLY       | Mike   |      482 |
+|   14662 | KELLY       | Mike   |     1181 |
+|   14663 | KELLY       | Jon    |     1403 |
+|   14664 | KELLY       | Mike   |     1787 |
+|   14665 | KELLY       | Mike   |     2361 |
+|   14666 | KELLY       | Mike   |     3738 |
+|   14667 | KELLY       | Jon    |     4664 |
+|   14668 | KELLY       | Mike   |     4734 |
+|   14669 | KELLY       | Mike   |     5629 |
+|   14670 | KELLY       | Jon    |     6758 |
+|   14671 | KELLY       | Mike   |     6786 |
+|   14672 | KELLY       | Jon    |     6910 |
+|   14673 | KELLY       | Mike   |     8532 |
+|   14674 | KELLY       | Mike   |     9087 |
+|   14676 | KELLY       | Jon    |     9626 |
+|   14677 | KELLY       | Jon    |    10370 |
+|   14678 | KELLY       | Jon    |    11352 |
+|   14679 | KELLY       | Mike   |    11797 |
+|   14680 | KELLY       | Jon    |    12591 |
+|   14681 | KELLY       | Jon    |    13850 |
+|   14682 | KELLY       | Mike   |    14797 |
+|   14683 | KELLY       | Mike   |    14829 |
+|   14684 | KELLY       | Mike   |    14929 |
+|   14685 | KELLY       | Jon    |    15565 |
+|   14686 | KURT        | Mike   |      306 |
+|   14687 | KURT        | Jon    |      443 |
+|   14688 | KURT        | Jon    |     1094 |
+|   14689 | KURT        | Jon    |     2022 |
+|   14690 | KURT        | Jon    |     3679 |
+|   14691 | KURT        | Mike   |     3765 |
+|   14692 | KURT        | Jon    |     5327 |
+|   14693 | KURT        | Jon    |     5854 |
+|   14694 | KURT        | Mike   |     6605 |
+|   14695 | KURT        | Jon    |     7420 |
+|   14696 | KURT        | Jon    |     7547 |
+|   14697 | KURT        | Mike   |     7835 |
+|   14698 | KURT        | Mike   |     7859 |
+|   14699 | KURT        | Mike   |     8828 |
+|   14700 | KURT        | Mike   |    10903 |
+|   14701 | KURT        | Mike   |    10980 |
+|   14702 | KURT        | Jon    |    11170 |
+|   14703 | KURT        | Jon    |    11361 |
+|   14704 | KURT        | Mike   |    12579 |
+|   14705 | KURT        | Jon    |    12943 |
+|   14706 | KURT        | Jon    |    13307 |
+|   14707 | KURT        | Mike   |    14510 |
+|   14708 | KURT        | Jon    |    14884 |
+|   14709 | ALLAN       | Jon    |      177 |
+|   14710 | ALLAN       | Mike   |      743 |
+|   14711 | ALLAN       | Jon    |      872 |
+|   14712 | ALLAN       | Mike   |     1326 |
+|   14713 | ALLAN       | Mike   |     2280 |
+|   14714 | ALLAN       | Jon    |     2978 |
+|   14715 | ALLAN       | Mike   |     3686 |
+|   14716 | ALLAN       | Jon    |     3777 |
+|   14717 | ALLAN       | Mike   |     4155 |
+|   14718 | ALLAN       | Jon    |     5138 |
+|   14719 | ALLAN       | Jon    |     6490 |
+|   14720 | ALLAN       | Mike   |     9614 |
+|   14721 | ALLAN       | Jon    |    10318 |
+|   14722 | ALLAN       | Mike   |    12860 |
+|   14723 | ALLAN       | Mike   |    13691 |
+|   14724 | ALLAN       | Jon    |    13730 |
+|   14725 | ALLAN       | Jon    |    14188 |
+|   14726 | ALLAN       | Jon    |    14723 |
+|   14727 | ALLAN       | Mike   |    13584 |
+|   14728 | NELSON      | Mike   |        6 |
+|   14729 | NELSON      | Jon    |      852 |
+|   14730 | NELSON      | Mike   |      906 |
+|   14731 | NELSON      | Jon    |     1086 |
+|   14732 | NELSON      | Mike   |     2050 |
+|   14733 | NELSON      | Jon    |     3523 |
+|   14734 | NELSON      | Jon    |     3892 |
+|   14735 | NELSON      | Mike   |     4447 |
+|   14736 | NELSON      | Mike   |     7252 |
+|   14737 | NELSON      | Jon    |     8239 |
+|   14738 | NELSON      | Mike   |     8316 |
+|   14739 | NELSON      | Jon    |     9445 |
+|   14740 | NELSON      | Jon    |     9511 |
+|   14741 | NELSON      | Jon    |     9887 |
+|   14742 | NELSON      | Jon    |    10281 |
+|   14743 | NELSON      | Jon    |    11737 |
+|   14744 | NELSON      | Jon    |    11878 |
+|   14745 | NELSON      | Jon    |    12634 |
+|   14746 | NELSON      | Jon    |    12747 |
+|   14747 | NELSON      | Mike   |    14434 |
+|   14748 | GUY         | Jon    |      922 |
+|   14749 | GUY         | Mike   |     1233 |
+|   14750 | GUY         | Mike   |     1863 |
+|   14751 | GUY         | Jon    |     1883 |
+|   14752 | GUY         | Mike   |     3154 |
+|   14753 | GUY         | Jon    |     3236 |
+|   14754 | GUY         | Mike   |     3272 |
+|   14755 | GUY         | Mike   |     3979 |
+|   14756 | GUY         | Mike   |     5727 |
+|   14757 | GUY         | Mike   |     6695 |
+|   14758 | GUY         | Mike   |     7030 |
+|   14759 | GUY         | Jon    |     7838 |
+|   14760 | GUY         | Mike   |     8628 |
+|   14761 | GUY         | Jon    |     8838 |
+|   14762 | GUY         | Mike   |     8959 |
+|   14763 | GUY         | Mike   |     9616 |
+|   14764 | GUY         | Mike   |     9748 |
+|   14765 | GUY         | Jon    |    10140 |
+|   14766 | GUY         | Mike   |    11246 |
+|   14767 | GUY         | Jon    |    11320 |
+|   14768 | GUY         | Mike   |    11969 |
+|   14769 | GUY         | Mike   |    12063 |
+|   14770 | GUY         | Jon    |    12077 |
+|   14771 | GUY         | Mike   |    13114 |
+|   14772 | GUY         | Jon    |    14071 |
+|   14773 | GUY         | Jon    |    14127 |
+|   14774 | GUY         | Jon    |    14375 |
+|   14775 | GUY         | Mike   |    14687 |
+|   14776 | GUY         | Jon    |    15431 |
+|   14777 | GUY         | Mike   |    15883 |
+|   14778 | GUY         | Jon    |    15977 |
+|   14779 | GUY         | Jon    |    11757 |
+|   14780 | CLAYTON     | Jon    |      155 |
+|   14781 | CLAYTON     | Mike   |      728 |
+|   14782 | CLAYTON     | Mike   |      795 |
+|   14783 | CLAYTON     | Jon    |      969 |
+|   14784 | CLAYTON     | Jon    |     1005 |
+|   14785 | CLAYTON     | Jon    |     2069 |
+|   14786 | CLAYTON     | Mike   |     2776 |
+|   14787 | CLAYTON     | Jon    |     3996 |
+|   14788 | CLAYTON     | Mike   |     5201 |
+|   14789 | CLAYTON     | Jon    |     5528 |
+|   14790 | CLAYTON     | Mike   |     6041 |
+|   14791 | CLAYTON     | Jon    |     7095 |
+|   14792 | CLAYTON     | Mike   |     8986 |
+|   14793 | CLAYTON     | Mike   |     9287 |
+|   14794 | CLAYTON     | Jon    |     9765 |
+|   14795 | CLAYTON     | Jon    |    11380 |
+|   14796 | CLAYTON     | Jon    |    11883 |
+|   14797 | CLAYTON     | Jon    |    12208 |
+|   14798 | CLAYTON     | Jon    |    12868 |
+|   14799 | CLAYTON     | Mike   |    13439 |
+|   14800 | CLAYTON     | Mike   |    14420 |
+|   14801 | CLAYTON     | Jon    |    14609 |
+|   14802 | CLAYTON     | Jon    |    14633 |
+|   14803 | CLAYTON     | Mike   |    14833 |
+|   14804 | CLAYTON     | Mike   |    15377 |
+|   14805 | CLAYTON     | Jon    |    15390 |
+|   14806 | HUGH        | Jon    |      174 |
+|   14807 | HUGH        | Jon    |     2320 |
+|   14808 | HUGH        | Jon    |     3397 |
+|   14809 | HUGH        | Mike   |     4477 |
+|   14810 | HUGH        | Mike   |     5213 |
+|   14811 | HUGH        | Jon    |     6189 |
+|   14812 | HUGH        | Mike   |     7772 |
+|   14813 | HUGH        | Mike   |     8085 |
+|   14814 | HUGH        | Jon    |     8192 |
+|   14815 | HUGH        | Jon    |     8614 |
+|   14816 | HUGH        | Jon    |     8894 |
+|   14817 | HUGH        | Mike   |     9342 |
+|   14818 | HUGH        | Mike   |    11146 |
+|   14819 | HUGH        | Jon    |    11205 |
+|   14820 | HUGH        | Jon    |    11300 |
+|   14821 | HUGH        | Jon    |    12433 |
+|   14822 | HUGH        | Jon    |    12880 |
+|   14823 | HUGH        | Jon    |    13574 |
+|   14824 | HUGH        | Mike   |    13693 |
+|   14825 | HUGH        | Jon    |    14724 |
+|   14826 | HUGH        | Jon    |    15700 |
+|   14827 | MAX         | Jon    |      789 |
+|   14828 | MAX         | Jon    |     1862 |
+|   14829 | MAX         | Mike   |     2460 |
+|   14830 | MAX         | Jon    |     3103 |
+|   14831 | MAX         | Mike   |     3495 |
+|   14832 | MAX         | Jon    |     3793 |
+|   14833 | MAX         | Jon    |     3859 |
+|   14834 | MAX         | Mike   |     3890 |
+|   14835 | MAX         | Jon    |     3891 |
+|   14836 | MAX         | Jon    |     3942 |
+|   14837 | MAX         | Mike   |     4257 |
+|   14838 | MAX         | Jon    |     4662 |
+|   14839 | MAX         | Jon    |     4845 |
+|   14840 | MAX         | Jon    |     4941 |
+|   14841 | MAX         | Mike   |     6069 |
+|   14842 | MAX         | Jon    |     6657 |
+|   14843 | MAX         | Mike   |     6812 |
+|   14844 | MAX         | Mike   |     7890 |
+|   14845 | MAX         | Jon    |     9272 |
+|   14846 | MAX         | Jon    |     9601 |
+|   14847 | MAX         | Jon    |    11710 |
+|   14848 | MAX         | Mike   |    13972 |
+|   14849 | MAX         | Mike   |    15042 |
+|   14850 | MAX         | Mike   |    15506 |
+|   14851 | DWAYNE      | Mike   |      607 |
+|   14852 | DWAYNE      | Mike   |      817 |
+|   14853 | DWAYNE      | Mike   |     1959 |
+|   14854 | DWAYNE      | Mike   |     2279 |
+|   14855 | DWAYNE      | Jon    |     3278 |
+|   14856 | DWAYNE      | Mike   |     3312 |
+|   14857 | DWAYNE      | Jon    |     4902 |
+|   14858 | DWAYNE      | Mike   |     5527 |
+|   14859 | DWAYNE      | Mike   |     5968 |
+|   14860 | DWAYNE      | Mike   |     6144 |
+|   14861 | DWAYNE      | Mike   |    10612 |
+|   14862 | DWAYNE      | Jon    |    10829 |
+|   14863 | DWAYNE      | Jon    |    11589 |
+|   14864 | DWAYNE      | Mike   |    11873 |
+|   14865 | DWAYNE      | Mike   |    12010 |
+|   14866 | DWAYNE      | Mike   |    12014 |
+|   14867 | DWAYNE      | Jon    |    13139 |
+|   14868 | DWAYNE      | Jon    |    14015 |
+|   14869 | DWAYNE      | Mike   |    14098 |
+|   14870 | DWAYNE      | Mike   |    14469 |
+|   14871 | DWAYNE      | Mike   |    14626 |
+|   14872 | DWAYNE      | Jon    |    15690 |
+|   14873 | DWIGHT      | Jon    |     3232 |
+|   14874 | DWIGHT      | Jon    |     4875 |
+|   14875 | DWIGHT      | Mike   |     8161 |
+|   14876 | DWIGHT      | Mike   |     8245 |
+|   14877 | DWIGHT      | Mike   |     9299 |
+|   14878 | DWIGHT      | Jon    |     9990 |
+|   14879 | DWIGHT      | Jon    |    10076 |
+|   14880 | DWIGHT      | Mike   |    10921 |
+|   14881 | DWIGHT      | Mike   |    11168 |
+|   14882 | DWIGHT      | Mike   |    11718 |
+|   14883 | DWIGHT      | Jon    |    11747 |
+|   14884 | DWIGHT      | Jon    |    12091 |
+|   14885 | DWIGHT      | Jon    |    12150 |
+|   14886 | DWIGHT      | Jon    |    12182 |
+|   14887 | DWIGHT      | Mike   |    12388 |
+|   14888 | DWIGHT      | Mike   |    12883 |
+|   14889 | DWIGHT      | Jon    |    15102 |
+|   14890 | ARMANDO     | Mike   |      184 |
+|   14891 | ARMANDO     | Jon    |      772 |
+|   14892 | ARMANDO     | Mike   |     1083 |
+|   14893 | ARMANDO     | Mike   |     2092 |
+|   14894 | ARMANDO     | Jon    |     2593 |
+|   14895 | ARMANDO     | Jon    |     2986 |
+|   14896 | ARMANDO     | Mike   |     3093 |
+|   14897 | ARMANDO     | Jon    |     3438 |
+|   14898 | ARMANDO     | Jon    |     4719 |
+|   14899 | ARMANDO     | Jon    |     4839 |
+|   14900 | ARMANDO     | Mike   |     4846 |
+|   14901 | ARMANDO     | Jon    |     5722 |
+|   14902 | ARMANDO     | Jon    |     6484 |
+|   14903 | ARMANDO     | Mike   |     8909 |
+|   14904 | ARMANDO     | Jon    |    10106 |
+|   14905 | ARMANDO     | Jon    |    10518 |
+|   14906 | ARMANDO     | Mike   |    11466 |
+|   14907 | ARMANDO     | Jon    |    11804 |
+|   14908 | ARMANDO     | Mike   |    12045 |
+|   14909 | ARMANDO     | Mike   |    14176 |
+|   14910 | ARMANDO     | Mike   |    15568 |
+|   14911 | FELIX       | Jon    |      467 |
+|   14912 | FELIX       | Mike   |      478 |
+|   14913 | FELIX       | Mike   |     1666 |
+|   14914 | FELIX       | Jon    |     2988 |
+|   14915 | FELIX       | Mike   |     3050 |
+|   14916 | FELIX       | Mike   |     4651 |
+|   14917 | FELIX       | Mike   |     4851 |
+|   14918 | FELIX       | Mike   |     6459 |
+|   14919 | FELIX       | Jon    |     6713 |
+|   14920 | FELIX       | Jon    |     6823 |
+|   14921 | FELIX       | Jon    |     6898 |
+|   14922 | FELIX       | Mike   |     9336 |
+|   14923 | FELIX       | Mike   |     9341 |
+|   14924 | FELIX       | Jon    |     9366 |
+|   14925 | FELIX       | Jon    |     9367 |
+|   14926 | FELIX       | Mike   |    11181 |
+|   14927 | FELIX       | Mike   |    12555 |
+|   14928 | FELIX       | Mike   |    12789 |
+|   14929 | FELIX       | Mike   |    13540 |
+|   14930 | FELIX       | Jon    |    13794 |
+|   14931 | FELIX       | Jon    |    15236 |
+|   14932 | FELIX       | Jon    |    15570 |
+|   14933 | FELIX       | Jon    |    15914 |
+|   14934 | FELIX       | Mike   |    14278 |
+|   14935 | JIMMIE      | Jon    |     1967 |
+|   14936 | JIMMIE      | Mike   |     2411 |
+|   14937 | JIMMIE      | Jon    |     2544 |
+|   14938 | JIMMIE      | Jon    |     3016 |
+|   14939 | JIMMIE      | Jon    |     3451 |
+|   14940 | JIMMIE      | Mike   |     3731 |
+|   14941 | JIMMIE      | Mike   |     3954 |
+|   14942 | JIMMIE      | Mike   |     3990 |
+|   14943 | JIMMIE      | Mike   |     4192 |
+|   14944 | JIMMIE      | Mike   |     4932 |
+|   14945 | JIMMIE      | Jon    |     5375 |
+|   14946 | JIMMIE      | Mike   |     5492 |
+|   14947 | JIMMIE      | Jon    |     6278 |
+|   14948 | JIMMIE      | Jon    |     6479 |
+|   14949 | JIMMIE      | Jon    |     6742 |
+|   14950 | JIMMIE      | Mike   |     6757 |
+|   14951 | JIMMIE      | Mike   |     7424 |
+|   14952 | JIMMIE      | Mike   |     8523 |
+|   14953 | JIMMIE      | Mike   |     8858 |
+|   14954 | JIMMIE      | Mike   |     8889 |
+|   14955 | JIMMIE      | Jon    |    10707 |
+|   14956 | JIMMIE      | Mike   |    11268 |
+|   14957 | JIMMIE      | Jon    |    11567 |
+|   14958 | JIMMIE      | Jon    |    12040 |
+|   14959 | JIMMIE      | Mike   |    12194 |
+|   14960 | JIMMIE      | Jon    |    13566 |
+|   14961 | JIMMIE      | Jon    |    14235 |
+|   14962 | JIMMIE      | Mike   |    14286 |
+|   14963 | EVERETT     | Jon    |     2576 |
+|   14964 | EVERETT     | Mike   |     2706 |
+|   14965 | EVERETT     | Jon    |     3046 |
+|   14966 | EVERETT     | Mike   |     3370 |
+|   14967 | EVERETT     | Mike   |     3674 |
+|   14968 | EVERETT     | Mike   |     4120 |
+|   14969 | EVERETT     | Mike   |     4370 |
+|   14970 | EVERETT     | Jon    |     5396 |
+|   14971 | EVERETT     | Mike   |     6201 |
+|   14972 | EVERETT     | Mike   |     6915 |
+|   14973 | EVERETT     | Mike   |     7169 |
+|   14974 | EVERETT     | Mike   |     7680 |
+|   14975 | EVERETT     | Mike   |     8631 |
+|   14976 | EVERETT     | Jon    |     9134 |
+|   14977 | EVERETT     | Mike   |     9877 |
+|   14978 | EVERETT     | Jon    |    10146 |
+|   14979 | EVERETT     | Mike   |    10377 |
+|   14980 | EVERETT     | Mike   |    10669 |
+|   14981 | EVERETT     | Jon    |    10876 |
+|   14982 | EVERETT     | Jon    |    11136 |
+|   14983 | EVERETT     | Mike   |    13234 |
+|   14984 | EVERETT     | Jon    |    13248 |
+|   14985 | EVERETT     | Jon    |    13322 |
+|   14986 | EVERETT     | Mike   |    13845 |
+|   14987 | EVERETT     | Mike   |    14342 |
+|   14988 | EVERETT     | Jon    |    14622 |
+|   14989 | EVERETT     | Jon    |    15440 |
+|   14990 | EVERETT     | Mike   |    15877 |
+|   14991 | JORDAN      | Mike   |      137 |
+|   14992 | JORDAN      | Mike   |     1271 |
+|   14993 | JORDAN      | Jon    |     1572 |
+|   14994 | JORDAN      | Mike   |     3941 |
+|   14995 | JORDAN      | Mike   |     4298 |
+|   14996 | JORDAN      | Jon    |     4375 |
+|   14997 | JORDAN      | Mike   |     4453 |
+|   14998 | JORDAN      | Jon    |     5208 |
+|   14999 | JORDAN      | Mike   |     6410 |
+|   15000 | JORDAN      | Mike   |     6945 |
+|   15001 | JORDAN      | Jon    |     7202 |
+|   15002 | JORDAN      | Mike   |     7891 |
+|   15003 | JORDAN      | Mike   |     8753 |
+|   15004 | JORDAN      | Jon    |     8861 |
+|   15005 | JORDAN      | Jon    |     8906 |
+|   15006 | JORDAN      | Mike   |     9265 |
+|   15007 | JORDAN      | Jon    |     9895 |
+|   15008 | JORDAN      | Jon    |    10480 |
+|   15009 | JORDAN      | Mike   |    10702 |
+|   15010 | JORDAN      | Mike   |    10733 |
+|   15011 | JORDAN      | Mike   |    11334 |
+|   15012 | JORDAN      | Mike   |    11788 |
+|   15013 | JORDAN      | Jon    |    14008 |
+|   15014 | JORDAN      | Mike   |    14341 |
+|   15015 | JORDAN      | Jon    |    14363 |
+|   15016 | JORDAN      | Mike   |    14436 |
+|   15017 | JORDAN      | Jon    |    14785 |
+|   15018 | JORDAN      | Mike   |    15352 |
+|   15019 | JORDAN      | Jon    |    12116 |
+|   15020 | JORDAN      | Jon    |    14425 |
+|   15021 | IAN         | Mike   |      902 |
+|   15022 | IAN         | Jon    |      971 |
+|   15023 | IAN         | Jon    |     1193 |
+|   15024 | IAN         | Jon    |     1505 |
+|   15025 | IAN         | Jon    |     1620 |
+|   15026 | IAN         | Mike   |     2119 |
+|   15027 | IAN         | Mike   |     2357 |
+|   15028 | IAN         | Mike   |     2548 |
+|   15029 | IAN         | Mike   |     2950 |
+|   15030 | IAN         | Mike   |     3160 |
+|   15031 | IAN         | Mike   |     3427 |
+|   15032 | IAN         | Jon    |     6361 |
+|   15033 | IAN         | Mike   |     6435 |
+|   15034 | IAN         | Mike   |     6621 |
+|   15035 | IAN         | Mike   |     6843 |
+|   15036 | IAN         | Mike   |     7698 |
+|   15037 | IAN         | Mike   |     8504 |
+|   15038 | IAN         | Jon    |     9839 |
+|   15039 | IAN         | Jon    |    10317 |
+|   15040 | IAN         | Mike   |    10907 |
+|   15041 | IAN         | Mike   |    11371 |
+|   15042 | IAN         | Jon    |    11402 |
+|   15043 | IAN         | Jon    |    12441 |
+|   15044 | IAN         | Jon    |    14139 |
+|   15045 | IAN         | Mike   |    15573 |
+|   15046 | IAN         | Mike   |    15946 |
+|   15047 | IAN         | Mike   |    14415 |
+|   15048 | WALLACE     | Jon    |      788 |
+|   15049 | WALLACE     | Mike   |      941 |
+|   15050 | WALLACE     | Mike   |     1139 |
+|   15051 | WALLACE     | Mike   |     1998 |
+|   15052 | WALLACE     | Mike   |     2705 |
+|   15053 | WALLACE     | Mike   |     2746 |
+|   15054 | WALLACE     | Jon    |     3242 |
+|   15055 | WALLACE     | Jon    |     4732 |
+|   15056 | WALLACE     | Mike   |     4802 |
+|   15057 | WALLACE     | Jon    |     5360 |
+|   15058 | WALLACE     | Jon    |     6065 |
+|   15059 | WALLACE     | Mike   |     6607 |
+|   15060 | WALLACE     | Jon    |     7166 |
+|   15061 | WALLACE     | Mike   |     7430 |
+|   15062 | WALLACE     | Jon    |     7560 |
+|   15063 | WALLACE     | Jon    |     8132 |
+|   15064 | WALLACE     | Jon    |    10868 |
+|   15065 | WALLACE     | Jon    |    12008 |
+|   15066 | WALLACE     | Mike   |    12248 |
+|   15067 | WALLACE     | Jon    |    13225 |
+|   15068 | WALLACE     | Jon    |    13347 |
+|   15069 | WALLACE     | Jon    |    13639 |
+|   15070 | WALLACE     | Mike   |    15212 |
+|   15071 | WALLACE     | Jon    |    15475 |
+|   15072 | WALLACE     | Mike   |    15900 |
+|   15073 | KEN         | Mike   |      758 |
+|   15074 | KEN         | Jon    |      773 |
+|   15075 | KEN         | Jon    |     1545 |
+|   15076 | KEN         | Jon    |     2573 |
+|   15077 | KEN         | Mike   |     4106 |
+|   15078 | KEN         | Jon    |     4436 |
+|   15079 | KEN         | Mike   |     4565 |
+|   15080 | KEN         | Jon    |     4629 |
+|   15081 | KEN         | Jon    |     4711 |
+|   15082 | KEN         | Jon    |     4776 |
+|   15083 | KEN         | Jon    |     4808 |
+|   15084 | KEN         | Jon    |     4825 |
+|   15085 | KEN         | Mike   |     4883 |
+|   15086 | KEN         | Mike   |     5406 |
+|   15087 | KEN         | Jon    |     6326 |
+|   15088 | KEN         | Jon    |     7612 |
+|   15089 | KEN         | Mike   |     8262 |
+|   15090 | KEN         | Mike   |     8610 |
+|   15091 | KEN         | Jon    |     8632 |
+|   15092 | KEN         | Jon    |     8812 |
+|   15093 | KEN         | Jon    |    11829 |
+|   15094 | KEN         | Mike   |    12039 |
+|   15095 | KEN         | Mike   |    12202 |
+|   15096 | KEN         | Mike   |    12832 |
+|   15097 | KEN         | Jon    |    13863 |
+|   15098 | KEN         | Jon    |    14592 |
+|   15099 | KEN         | Jon    |    15507 |
+|   15100 | KEN         | Jon    |    15638 |
+|   15101 | KEN         | Mike   |    15850 |
+|   15102 | BOB         | Jon    |      195 |
+|   15103 | BOB         | Mike   |      985 |
+|   15104 | BOB         | Jon    |     1705 |
+|   15105 | BOB         | Mike   |     4196 |
+|   15106 | BOB         | Jon    |     4385 |
+|   15107 | BOB         | Mike   |     6973 |
+|   15108 | BOB         | Jon    |     7470 |
+|   15109 | BOB         | Jon    |     8426 |
+|   15110 | BOB         | Mike   |     8874 |
+|   15111 | BOB         | Jon    |     9063 |
+|   15112 | BOB         | Jon    |     9929 |
+|   15113 | BOB         | Mike   |    10129 |
+|   15114 | BOB         | Jon    |    10352 |
+|   15115 | BOB         | Jon    |    10401 |
+|   15116 | BOB         | Mike   |    10528 |
+|   15117 | BOB         | Jon    |    11768 |
+|   15118 | BOB         | Jon    |    12197 |
+|   15119 | BOB         | Jon    |    12617 |
+|   15120 | BOB         | Jon    |    13324 |
+|   15121 | BOB         | Jon    |    13558 |
+|   15122 | BOB         | Mike   |    13701 |
+|   15123 | BOB         | Jon    |    14439 |
+|   15124 | BOB         | Mike   |    14593 |
+|   15125 | BOB         | Jon    |    15059 |
+|   15126 | JAIME       | Mike   |      458 |
+|   15127 | JAIME       | Mike   |     1004 |
+|   15128 | JAIME       | Jon    |     1460 |
+|   15129 | JAIME       | Mike   |     2321 |
+|   15130 | JAIME       | Mike   |     3300 |
+|   15131 | JAIME       | Jon    |     3470 |
+|   15132 | JAIME       | Mike   |     3838 |
+|   15133 | JAIME       | Mike   |     4413 |
+|   15134 | JAIME       | Jon    |     5020 |
+|   15135 | JAIME       | Mike   |     5124 |
+|   15136 | JAIME       | Mike   |     6264 |
+|   15137 | JAIME       | Mike   |     6627 |
+|   15138 | JAIME       | Mike   |     6699 |
+|   15139 | JAIME       | Jon    |     7242 |
+|   15140 | JAIME       | Mike   |     9628 |
+|   15141 | JAIME       | Mike   |    10025 |
+|   15142 | JAIME       | Jon    |    10776 |
+|   15143 | JAIME       | Jon    |    10913 |
+|   15144 | JAIME       | Jon    |    11189 |
+|   15145 | JAIME       | Mike   |    11399 |
+|   15146 | JAIME       | Jon    |    11506 |
+|   15147 | JAIME       | Mike   |    11588 |
+|   15148 | JAIME       | Mike   |    11795 |
+|   15149 | JAIME       | Jon    |    12743 |
+|   15150 | JAIME       | Jon    |    13195 |
+|   15151 | JAIME       | Jon    |    13217 |
+|   15152 | JAIME       | Mike   |    13362 |
+|   15153 | JAIME       | Mike   |    13925 |
+|   15154 | JAIME       | Mike   |    15885 |
+|   15155 | CASEY       | Jon    |      234 |
+|   15156 | CASEY       | Jon    |      768 |
+|   15157 | CASEY       | Mike   |     1635 |
+|   15158 | CASEY       | Jon    |     1982 |
+|   15159 | CASEY       | Mike   |     2367 |
+|   15160 | CASEY       | Mike   |     3379 |
+|   15161 | CASEY       | Jon    |     3663 |
+|   15162 | CASEY       | Mike   |     3943 |
+|   15163 | CASEY       | Mike   |     3998 |
+|   15164 | CASEY       | Mike   |     5079 |
+|   15165 | CASEY       | Jon    |     6365 |
+|   15166 | CASEY       | Mike   |     7677 |
+|   15167 | CASEY       | Jon    |     7941 |
+|   15168 | CASEY       | Jon    |     8118 |
+|   15169 | CASEY       | Mike   |     8157 |
+|   15170 | CASEY       | Mike   |     8257 |
+|   15171 | CASEY       | Jon    |     8305 |
+|   15172 | CASEY       | Jon    |     8660 |
+|   15173 | CASEY       | Mike   |     8710 |
+|   15174 | CASEY       | Mike   |     8797 |
+|   15175 | CASEY       | Jon    |     9101 |
+|   15176 | CASEY       | Jon    |     9470 |
+|   15177 | CASEY       | Mike   |     9688 |
+|   15178 | CASEY       | Jon    |     9915 |
+|   15179 | CASEY       | Jon    |    10259 |
+|   15180 | CASEY       | Jon    |    10289 |
+|   15181 | CASEY       | Jon    |    11129 |
+|   15182 | CASEY       | Mike   |    11717 |
+|   15183 | CASEY       | Mike   |    11941 |
+|   15184 | CASEY       | Jon    |    12382 |
+|   15185 | CASEY       | Jon    |    12995 |
+|   15186 | CASEY       | Jon    |    13762 |
+|   15187 | CASEY       | Mike   |    14277 |
+|   15188 | CASEY       | Mike   |    14297 |
+|   15189 | ALFREDO     | Jon    |     2689 |
+|   15190 | ALFREDO     | Mike   |     3010 |
+|   15191 | ALFREDO     | Mike   |     3769 |
+|   15192 | ALFREDO     | Jon    |     4457 |
+|   15193 | ALFREDO     | Jon    |     4576 |
+|   15194 | ALFREDO     | Mike   |     4949 |
+|   15195 | ALFREDO     | Jon    |     6358 |
+|   15196 | ALFREDO     | Jon    |     6551 |
+|   15197 | ALFREDO     | Jon    |     7340 |
+|   15198 | ALFREDO     | Mike   |     8201 |
+|   15199 | ALFREDO     | Mike   |     8629 |
+|   15200 | ALFREDO     | Mike   |     9279 |
+|   15201 | ALFREDO     | Mike   |     9475 |
+|   15202 | ALFREDO     | Jon    |    10708 |
+|   15203 | ALFREDO     | Jon    |    11749 |
+|   15204 | ALFREDO     | Mike   |    12119 |
+|   15205 | ALFREDO     | Jon    |    13031 |
+|   15206 | ALFREDO     | Jon    |    14839 |
+|   15207 | ALFREDO     | Jon    |    15074 |
+|   15208 | ALFREDO     | Jon    |    15594 |
+|   15209 | ALBERTO     | Jon    |     1658 |
+|   15210 | ALBERTO     | Jon    |     2382 |
+|   15211 | ALBERTO     | Jon    |     2668 |
+|   15212 | ALBERTO     | Mike   |     3227 |
+|   15213 | ALBERTO     | Jon    |     3462 |
+|   15214 | ALBERTO     | Mike   |     4322 |
+|   15215 | ALBERTO     | Jon    |     5332 |
+|   15216 | ALBERTO     | Mike   |     5622 |
+|   15217 | ALBERTO     | Mike   |     5776 |
+|   15218 | ALBERTO     | Jon    |     7068 |
+|   15219 | ALBERTO     | Jon    |     8185 |
+|   15220 | ALBERTO     | Jon    |     9583 |
+|   15221 | ALBERTO     | Mike   |     9738 |
+|   15222 | ALBERTO     | Mike   |    10340 |
+|   15223 | ALBERTO     | Jon    |    10689 |
+|   15224 | ALBERTO     | Jon    |    10869 |
+|   15225 | ALBERTO     | Mike   |    11331 |
+|   15226 | ALBERTO     | Mike   |    13883 |
+|   15227 | ALBERTO     | Jon    |    15069 |
+|   15228 | ALBERTO     | Mike   |    15203 |
+|   15229 | ALBERTO     | Jon    |    14531 |
+|   15230 | DAVE        | Jon    |       53 |
+|   15231 | DAVE        | Mike   |      487 |
+|   15232 | DAVE        | Mike   |      624 |
+|   15233 | DAVE        | Mike   |      647 |
+|   15234 | DAVE        | Jon    |     1037 |
+|   15235 | DAVE        | Mike   |     1463 |
+|   15236 | DAVE        | Jon    |     1668 |
+|   15237 | DAVE        | Mike   |     4204 |
+|   15238 | DAVE        | Jon    |     5003 |
+|   15239 | DAVE        | Jon    |     6046 |
+|   15240 | DAVE        | Mike   |     8910 |
+|   15241 | DAVE        | Jon    |     9220 |
+|   15242 | DAVE        | Mike   |     9399 |
+|   15243 | DAVE        | Jon    |     9960 |
+|   15244 | DAVE        | Jon    |    10192 |
+|   15245 | DAVE        | Jon    |    10884 |
+|   15246 | DAVE        | Mike   |    11030 |
+|   15247 | DAVE        | Jon    |    11255 |
+|   15248 | DAVE        | Mike   |    11354 |
+|   15249 | DAVE        | Mike   |    11946 |
+|   15250 | DAVE        | Mike   |    12157 |
+|   15251 | DAVE        | Jon    |    12308 |
+|   15252 | DAVE        | Mike   |    12568 |
+|   15253 | DAVE        | Jon    |    12958 |
+|   15254 | DAVE        | Mike   |    13287 |
+|   15255 | DAVE        | Jon    |    13554 |
+|   15256 | DAVE        | Jon    |    14207 |
+|   15257 | DAVE        | Jon    |    14400 |
+|   15258 | DAVE        | Mike   |    14896 |
+|   15259 | DAVE        | Mike   |    14959 |
+|   15260 | DAVE        | Jon    |    15617 |
+|   15261 | DAVE        | Jon    |    16025 |
+|   15262 | IVAN        | Jon    |     1060 |
+|   15263 | IVAN        | Mike   |     1259 |
+|   15264 | IVAN        | Jon    |     1417 |
+|   15265 | IVAN        | Jon    |     1804 |
+|   15266 | IVAN        | Jon    |     2008 |
+|   15267 | IVAN        | Jon    |     2031 |
+|   15268 | IVAN        | Jon    |     2261 |
+|   15269 | IVAN        | Jon    |     3138 |
+|   15270 | IVAN        | Jon    |     3984 |
+|   15271 | IVAN        | Mike   |     4069 |
+|   15272 | IVAN        | Mike   |     4698 |
+|   15273 | IVAN        | Jon    |     5638 |
+|   15274 | IVAN        | Mike   |     6253 |
+|   15275 | IVAN        | Mike   |     6556 |
+|   15276 | IVAN        | Jon    |     7174 |
+|   15277 | IVAN        | Jon    |     8735 |
+|   15278 | IVAN        | Mike   |     9385 |
+|   15279 | IVAN        | Mike   |     9398 |
+|   15280 | IVAN        | Jon    |     9432 |
+|   15281 | IVAN        | Mike   |     9766 |
+|   15282 | IVAN        | Mike   |    10004 |
+|   15283 | IVAN        | Jon    |    10168 |
+|   15284 | IVAN        | Mike   |    11098 |
+|   15285 | IVAN        | Jon    |    12042 |
+|   15286 | IVAN        | Jon    |    14768 |
+|   15287 | IVAN        | Mike   |    12716 |
+|   15288 | JOHNNIE     | Mike   |      228 |
+|   15289 | JOHNNIE     | Jon    |      689 |
+|   15290 | JOHNNIE     | Mike   |     1254 |
+|   15291 | JOHNNIE     | Jon    |     1400 |
+|   15292 | JOHNNIE     | Mike   |     1756 |
+|   15293 | JOHNNIE     | Jon    |     1990 |
+|   15294 | JOHNNIE     | Mike   |     2327 |
+|   15295 | JOHNNIE     | Mike   |     2977 |
+|   15296 | JOHNNIE     | Jon    |     3616 |
+|   15297 | JOHNNIE     | Mike   |     4162 |
+|   15298 | JOHNNIE     | Jon    |     5789 |
+|   15299 | JOHNNIE     | Jon    |     6676 |
+|   15300 | JOHNNIE     | Mike   |     6792 |
+|   15301 | JOHNNIE     | Mike   |     8084 |
+|   15302 | JOHNNIE     | Mike   |     8638 |
+|   15303 | JOHNNIE     | Jon    |     9300 |
+|   15304 | JOHNNIE     | Mike   |     9408 |
+|   15305 | JOHNNIE     | Mike   |    10227 |
+|   15306 | JOHNNIE     | Jon    |    11080 |
+|   15307 | JOHNNIE     | Jon    |    11191 |
+|   15308 | JOHNNIE     | Mike   |    13228 |
+|   15309 | JOHNNIE     | Jon    |    13266 |
+|   15310 | JOHNNIE     | Mike   |    14956 |
+|   15311 | JOHNNIE     | Mike   |    15841 |
+|   15312 | SIDNEY      | Jon    |      559 |
+|   15313 | SIDNEY      | Jon    |     1889 |
+|   15314 | SIDNEY      | Mike   |     2007 |
+|   15315 | SIDNEY      | Mike   |     2458 |
+|   15316 | SIDNEY      | Mike   |     4601 |
+|   15317 | SIDNEY      | Mike   |     5595 |
+|   15318 | SIDNEY      | Mike   |     5713 |
+|   15319 | SIDNEY      | Jon    |     6108 |
+|   15320 | SIDNEY      | Mike   |     7161 |
+|   15321 | SIDNEY      | Mike   |     7345 |
+|   15322 | SIDNEY      | Jon    |     7713 |
+|   15323 | SIDNEY      | Jon    |     8342 |
+|   15324 | SIDNEY      | Mike   |     8432 |
+|   15325 | SIDNEY      | Mike   |     9081 |
+|   15326 | SIDNEY      | Jon    |     9950 |
+|   15327 | SIDNEY      | Jon    |    10204 |
+|   15328 | SIDNEY      | Mike   |    11114 |
+|   15329 | SIDNEY      | Mike   |    11121 |
+|   15330 | SIDNEY      | Jon    |    11415 |
+|   15331 | SIDNEY      | Mike   |    11426 |
+|   15332 | SIDNEY      | Mike   |    11526 |
+|   15333 | SIDNEY      | Mike   |    12256 |
+|   15334 | SIDNEY      | Jon    |    13377 |
+|   15335 | SIDNEY      | Jon    |    13523 |
+|   15336 | SIDNEY      | Mike   |    13688 |
+|   15337 | BYRON       | Jon    |      827 |
+|   15338 | BYRON       | Mike   |     1613 |
+|   15339 | BYRON       | Jon    |     2622 |
+|   15340 | BYRON       | Mike   |     2995 |
+|   15341 | BYRON       | Mike   |     3295 |
+|   15342 | BYRON       | Jon    |     3768 |
+|   15343 | BYRON       | Mike   |     3930 |
+|   15344 | BYRON       | Jon    |     4023 |
+|   15345 | BYRON       | Mike   |     4085 |
+|   15346 | BYRON       | Mike   |     4609 |
+|   15347 | BYRON       | Mike   |     4770 |
+|   15348 | BYRON       | Mike   |     5036 |
+|   15349 | BYRON       | Jon    |     5522 |
+|   15350 | BYRON       | Jon    |     5903 |
+|   15351 | BYRON       | Mike   |     6693 |
+|   15352 | BYRON       | Mike   |     8400 |
+|   15353 | BYRON       | Jon    |     9837 |
+|   15354 | BYRON       | Jon    |     9846 |
+|   15355 | BYRON       | Jon    |     9963 |
+|   15356 | BYRON       | Jon    |     9971 |
+|   15357 | BYRON       | Mike   |    10296 |
+|   15358 | BYRON       | Mike   |    10887 |
+|   15359 | BYRON       | Mike   |    11043 |
+|   15360 | BYRON       | Jon    |    11912 |
+|   15361 | BYRON       | Mike   |    12017 |
+|   15362 | BYRON       | Mike   |    12125 |
+|   15363 | BYRON       | Mike   |    12269 |
+|   15364 | BYRON       | Mike   |    12791 |
+|   15365 | BYRON       | Jon    |    13113 |
+|   15366 | JULIAN      | Jon    |      433 |
+|   15367 | JULIAN      | Mike   |     1559 |
+|   15368 | JULIAN      | Jon    |     1636 |
+|   15369 | JULIAN      | Mike   |     1817 |
+|   15370 | JULIAN      | Mike   |     2632 |
+|   15371 | JULIAN      | Mike   |     3220 |
+|   15372 | JULIAN      | Mike   |     3583 |
+|   15373 | JULIAN      | Mike   |     4004 |
+|   15374 | JULIAN      | Mike   |     4212 |
+|   15375 | JULIAN      | Jon    |     4890 |
+|   15376 | JULIAN      | Jon    |     5010 |
+|   15377 | JULIAN      | Mike   |     5076 |
+|   15378 | JULIAN      | Mike   |     5077 |
+|   15379 | JULIAN      | Mike   |     5640 |
+|   15380 | JULIAN      | Mike   |     6523 |
+|   15381 | JULIAN      | Mike   |     7093 |
+|   15382 | JULIAN      | Mike   |     7134 |
+|   15383 | JULIAN      | Mike   |     7964 |
+|   15384 | JULIAN      | Mike   |     8303 |
+|   15385 | JULIAN      | Mike   |     9589 |
+|   15386 | JULIAN      | Mike   |     9759 |
+|   15387 | JULIAN      | Mike   |    10347 |
+|   15388 | JULIAN      | Jon    |    11775 |
+|   15389 | JULIAN      | Mike   |    12462 |
+|   15390 | JULIAN      | Mike   |    13589 |
+|   15391 | JULIAN      | Mike   |    14076 |
+|   15392 | JULIAN      | Jon    |    14941 |
+|   15393 | JULIAN      | Jon    |    15214 |
+|   15394 | ISAAC       | Mike   |       17 |
+|   15395 | ISAAC       | Mike   |      395 |
+|   15396 | ISAAC       | Jon    |      454 |
+|   15397 | ISAAC       | Jon    |      769 |
+|   15398 | ISAAC       | Mike   |      774 |
+|   15399 | ISAAC       | Jon    |     1494 |
+|   15400 | ISAAC       | Mike   |     1824 |
+|   15401 | ISAAC       | Jon    |     1866 |
+|   15402 | ISAAC       | Mike   |     3558 |
+|   15403 | ISAAC       | Jon    |     5875 |
+|   15404 | ISAAC       | Jon    |     6907 |
+|   15405 | ISAAC       | Mike   |     7083 |
+|   15406 | ISAAC       | Mike   |     7139 |
+|   15407 | ISAAC       | Jon    |     8711 |
+|   15408 | ISAAC       | Jon    |     8904 |
+|   15409 | ISAAC       | Jon    |     8989 |
+|   15410 | ISAAC       | Mike   |     9733 |
+|   15411 | ISAAC       | Mike   |    10331 |
+|   15412 | ISAAC       | Jon    |    10629 |
+|   15413 | ISAAC       | Mike   |    11097 |
+|   15414 | ISAAC       | Mike   |    11458 |
+|   15415 | ISAAC       | Mike   |    12204 |
+|   15416 | ISAAC       | Jon    |    12289 |
+|   15417 | ISAAC       | Jon    |    12770 |
+|   15418 | ISAAC       | Jon    |    13408 |
+|   15419 | ISAAC       | Jon    |    13465 |
+|   15420 | ISAAC       | Jon    |    14952 |
+|   15421 | ISAAC       | Jon    |    15749 |
+|   15422 | ISAAC       | Jon    |    15857 |
+|   15423 | MORRIS      | Jon    |      755 |
+|   15424 | MORRIS      | Mike   |      968 |
+|   15425 | MORRIS      | Mike   |     1366 |
+|   15426 | MORRIS      | Jon    |     1742 |
+|   15427 | MORRIS      | Mike   |     2309 |
+|   15428 | MORRIS      | Jon    |     2444 |
+|   15429 | MORRIS      | Mike   |     2651 |
+|   15430 | MORRIS      | Jon    |     2799 |
+|   15431 | MORRIS      | Jon    |     3226 |
+|   15432 | MORRIS      | Mike   |     3877 |
+|   15433 | MORRIS      | Jon    |     3889 |
+|   15434 | MORRIS      | Jon    |     3934 |
+|   15435 | MORRIS      | Mike   |     4514 |
+|   15436 | MORRIS      | Jon    |     5597 |
+|   15437 | MORRIS      | Mike   |     5934 |
+|   15438 | MORRIS      | Jon    |     7319 |
+|   15439 | MORRIS      | Mike   |     7605 |
+|   15440 | MORRIS      | Mike   |     8907 |
+|   15441 | MORRIS      | Mike   |     9133 |
+|   15442 | MORRIS      | Jon    |     9548 |
+|   15443 | MORRIS      | Jon    |     9620 |
+|   15444 | MORRIS      | Jon    |     9962 |
+|   15445 | MORRIS      | Mike   |     9979 |
+|   15446 | MORRIS      | Mike   |    10000 |
+|   15447 | MORRIS      | Jon    |    10724 |
+|   15448 | MORRIS      | Jon    |    12112 |
+|   15449 | MORRIS      | Mike   |    12245 |
+|   15450 | MORRIS      | Mike   |    13061 |
+|   15451 | MORRIS      | Mike   |    13326 |
+|   15452 | MORRIS      | Mike   |    14501 |
+|   15453 | MORRIS      | Mike   |    14541 |
+|   15454 | MORRIS      | Mike   |    15634 |
+|   15455 | MORRIS      | Jon    |    11942 |
+|   15456 | MORRIS      | Mike   |    13464 |
+|   15457 | CLIFTON     | Jon    |      291 |
+|   15459 | CLIFTON     | Jon    |     2399 |
+|   15460 | CLIFTON     | Jon    |     3286 |
+|   15461 | CLIFTON     | Jon    |     3401 |
+|   15462 | CLIFTON     | Jon    |     3599 |
+|   15463 | CLIFTON     | Mike   |     3785 |
+|   15464 | CLIFTON     | Mike   |     4922 |
+|   15465 | CLIFTON     | Mike   |     6500 |
+|   15466 | CLIFTON     | Jon    |     6534 |
+|   15467 | CLIFTON     | Jon    |     7197 |
+|   15468 | CLIFTON     | Mike   |     7371 |
+|   15469 | CLIFTON     | Jon    |     7876 |
+|   15470 | CLIFTON     | Mike   |     8043 |
+|   15471 | CLIFTON     | Mike   |     8060 |
+|   15472 | CLIFTON     | Jon    |     8671 |
+|   15473 | CLIFTON     | Jon    |    10323 |
+|   15474 | CLIFTON     | Mike   |    10487 |
+|   15475 | CLIFTON     | Mike   |    10782 |
+|   15476 | CLIFTON     | Mike   |    11054 |
+|   15477 | CLIFTON     | Jon    |    11464 |
+|   15478 | CLIFTON     | Mike   |    12664 |
+|   15479 | CLIFTON     | Jon    |    12671 |
+|   15480 | CLIFTON     | Jon    |    13200 |
+|   15481 | CLIFTON     | Jon    |    13500 |
+|   15482 | CLIFTON     | Jon    |    15480 |
+|   15483 | CLIFTON     | Jon    |    15873 |
+|   15484 | CLIFTON     | Jon    |    16003 |
+|   15485 | WILLARD     | Jon    |      660 |
+|   15486 | WILLARD     | Jon    |     1826 |
+|   15487 | WILLARD     | Jon    |     2615 |
+|   15488 | WILLARD     | Mike   |     3305 |
+|   15489 | WILLARD     | Jon    |     4496 |
+|   15490 | WILLARD     | Mike   |     5377 |
+|   15491 | WILLARD     | Mike   |     5445 |
+|   15492 | WILLARD     | Jon    |     5876 |
+|   15493 | WILLARD     | Mike   |     6784 |
+|   15494 | WILLARD     | Mike   |     6830 |
+|   15495 | WILLARD     | Jon    |     7059 |
+|   15496 | WILLARD     | Mike   |     8179 |
+|   15497 | WILLARD     | Mike   |     8218 |
+|   15498 | WILLARD     | Jon    |     9970 |
+|   15499 | WILLARD     | Mike   |    10029 |
+|   15500 | WILLARD     | Jon    |    10182 |
+|   15501 | WILLARD     | Mike   |    10779 |
+|   15502 | WILLARD     | Mike   |    11199 |
+|   15503 | WILLARD     | Jon    |    13071 |
+|   15504 | WILLARD     | Jon    |    13498 |
+|   15505 | WILLARD     | Jon    |    13552 |
+|   15506 | WILLARD     | Mike   |    15652 |
+|   15507 | DARYL       | Jon    |     2425 |
+|   15508 | DARYL       | Mike   |     2522 |
+|   15509 | DARYL       | Mike   |     3111 |
+|   15510 | DARYL       | Mike   |     4619 |
+|   15511 | DARYL       | Mike   |     4933 |
+|   15512 | DARYL       | Mike   |     6304 |
+|   15513 | DARYL       | Jon    |     6814 |
+|   15514 | DARYL       | Jon    |     6824 |
+|   15515 | DARYL       | Jon    |     6969 |
+|   15516 | DARYL       | Jon    |     7221 |
+|   15517 | DARYL       | Mike   |     8354 |
+|   15518 | DARYL       | Mike   |     8876 |
+|   15519 | DARYL       | Mike   |     8996 |
+|   15520 | DARYL       | Jon    |     9349 |
+|   15521 | DARYL       | Jon    |     9553 |
+|   15522 | DARYL       | Jon    |     9976 |
+|   15523 | DARYL       | Jon    |     9997 |
+|   15524 | DARYL       | Mike   |    11494 |
+|   15525 | DARYL       | Jon    |    12051 |
+|   15526 | DARYL       | Jon    |    12315 |
+|   15527 | DARYL       | Jon    |    14047 |
+|   15528 | DARYL       | Mike   |    14185 |
+|   15529 | DARYL       | Mike   |    14543 |
+|   15530 | DARYL       | Jon    |    14560 |
+|   15531 | DARYL       | Jon    |    15601 |
+|   15532 | DARYL       | Mike   |    15838 |
+|   15533 | DARYL       | Jon    |    15794 |
+|   15534 | ROSS        | Mike   |      611 |
+|   15535 | ROSS        | Mike   |     1469 |
+|   15536 | ROSS        | Jon    |     3571 |
+|   15537 | ROSS        | Jon    |     3867 |
+|   15538 | ROSS        | Jon    |     4169 |
+|   15539 | ROSS        | Jon    |     4590 |
+|   15540 | ROSS        | Mike   |     5937 |
+|   15541 | ROSS        | Mike   |     6089 |
+|   15542 | ROSS        | Jon    |     6170 |
+|   15543 | ROSS        | Mike   |     7620 |
+|   15544 | ROSS        | Jon    |     8784 |
+|   15545 | ROSS        | Mike   |     8839 |
+|   15546 | ROSS        | Mike   |     9199 |
+|   15547 | ROSS        | Mike   |     9239 |
+|   15548 | ROSS        | Mike   |     9460 |
+|   15549 | ROSS        | Jon    |     9604 |
+|   15550 | ROSS        | Jon    |     9865 |
+|   15551 | ROSS        | Mike   |    10723 |
+|   15552 | ROSS        | Jon    |    10965 |
+|   15553 | ROSS        | Mike   |    11164 |
+|   15554 | ROSS        | Jon    |    12670 |
+|   15555 | ROSS        | Jon    |    13313 |
+|   15556 | ROSS        | Jon    |    13742 |
+|   15557 | ROSS        | Jon    |    14818 |
+|   15558 | ROSS        | Mike   |    15157 |
+|   15559 | ROSS        | Mike   |    15630 |
+|   15560 | ROSS        | Mike   |    15947 |
+|   15561 | VIRGIL      | Mike   |      976 |
+|   15562 | VIRGIL      | Mike   |     1151 |
+|   15563 | VIRGIL      | Jon    |     1958 |
+|   15564 | VIRGIL      | Jon    |     2101 |
+|   15565 | VIRGIL      | Mike   |     2137 |
+|   15566 | VIRGIL      | Jon    |     4210 |
+|   15567 | VIRGIL      | Jon    |     4244 |
+|   15568 | VIRGIL      | Mike   |     4338 |
+|   15569 | VIRGIL      | Jon    |     4613 |
+|   15570 | VIRGIL      | Mike   |     4669 |
+|   15571 | VIRGIL      | Mike   |     4815 |
+|   15572 | VIRGIL      | Mike   |     4833 |
+|   15573 | VIRGIL      | Mike   |     5516 |
+|   15574 | VIRGIL      | Mike   |     5707 |
+|   15575 | VIRGIL      | Jon    |     5812 |
+|   15576 | VIRGIL      | Jon    |     7048 |
+|   15577 | VIRGIL      | Mike   |     7783 |
+|   15578 | VIRGIL      | Mike   |     9278 |
+|   15579 | VIRGIL      | Mike   |     9449 |
+|   15580 | VIRGIL      | Jon    |    11443 |
+|   15581 | VIRGIL      | Jon    |    11707 |
+|   15582 | VIRGIL      | Jon    |    13621 |
+|   15583 | VIRGIL      | Jon    |    13712 |
+|   15584 | VIRGIL      | Jon    |    14070 |
+|   15585 | VIRGIL      | Mike   |    14976 |
+|   15586 | VIRGIL      | Mike   |    15403 |
+|   15587 | VIRGIL      | Jon    |    15792 |
+|   15588 | ANDY        | Mike   |      281 |
+|   15589 | ANDY        | Mike   |     1719 |
+|   15590 | ANDY        | Mike   |     2337 |
+|   15591 | ANDY        | Jon    |     3071 |
+|   15592 | ANDY        | Mike   |     3767 |
+|   15593 | ANDY        | Jon    |     6629 |
+|   15594 | ANDY        | Jon    |     7126 |
+|   15595 | ANDY        | Jon    |     7311 |
+|   15596 | ANDY        | Jon    |     7412 |
+|   15597 | ANDY        | Mike   |     7575 |
+|   15598 | ANDY        | Jon    |     8308 |
+|   15599 | ANDY        | Mike   |     8554 |
+|   15600 | ANDY        | Mike   |     8778 |
+|   15601 | ANDY        | Mike   |     9768 |
+|   15602 | ANDY        | Jon    |    11290 |
+|   15603 | ANDY        | Mike   |    11667 |
+|   15604 | ANDY        | Mike   |    11708 |
+|   15605 | ANDY        | Jon    |    13815 |
+|   15606 | ANDY        | Mike   |    14376 |
+|   15607 | ANDY        | Mike   |    14568 |
+|   15608 | ANDY        | Mike   |    15090 |
+|   15609 | ANDY        | Mike   |    15503 |
+|   15610 | ANDY        | Mike   |    15539 |
+|   15611 | ANDY        | Jon    |    15911 |
+|   15612 | ANDY        | Jon    |    12127 |
+|   15613 | MARSHALL    | Mike   |     1428 |
+|   15614 | MARSHALL    | Mike   |     2429 |
+|   15615 | MARSHALL    | Jon    |     2663 |
+|   15616 | MARSHALL    | Jon    |     2845 |
+|   15617 | MARSHALL    | Jon    |     2879 |
+|   15618 | MARSHALL    | Mike   |     3424 |
+|   15619 | MARSHALL    | Mike   |     3779 |
+|   15620 | MARSHALL    | Mike   |     3842 |
+|   15621 | MARSHALL    | Jon    |     3991 |
+|   15622 | MARSHALL    | Mike   |     4464 |
+|   15623 | MARSHALL    | Mike   |     5462 |
+|   15624 | MARSHALL    | Mike   |     5478 |
+|   15625 | MARSHALL    | Jon    |     5747 |
+|   15626 | MARSHALL    | Jon    |     6684 |
+|   15627 | MARSHALL    | Mike   |     7401 |
+|   15628 | MARSHALL    | Jon    |     8568 |
+|   15629 | MARSHALL    | Mike   |     9550 |
+|   15630 | MARSHALL    | Jon    |     9808 |
+|   15631 | MARSHALL    | Jon    |    10301 |
+|   15632 | MARSHALL    | Jon    |    10586 |
+|   15633 | MARSHALL    | Jon    |    10800 |
+|   15634 | MARSHALL    | Jon    |    11002 |
+|   15635 | MARSHALL    | Mike   |    14259 |
+|   15636 | SALVADOR    | Jon    |      379 |
+|   15637 | SALVADOR    | Mike   |      626 |
+|   15638 | SALVADOR    | Mike   |      920 |
+|   15639 | SALVADOR    | Jon    |     1436 |
+|   15640 | SALVADOR    | Jon    |     3317 |
+|   15641 | SALVADOR    | Jon    |     3741 |
+|   15642 | SALVADOR    | Jon    |     3895 |
+|   15643 | SALVADOR    | Mike   |     4410 |
+|   15644 | SALVADOR    | Mike   |     4977 |
+|   15645 | SALVADOR    | Jon    |     6954 |
+|   15646 | SALVADOR    | Mike   |     7186 |
+|   15647 | SALVADOR    | Mike   |     7372 |
+|   15648 | SALVADOR    | Mike   |     7659 |
+|   15649 | SALVADOR    | Jon    |     8879 |
+|   15650 | SALVADOR    | Jon    |     9451 |
+|   15651 | SALVADOR    | Mike   |     9719 |
+|   15652 | SALVADOR    | Jon    |    10073 |
+|   15653 | SALVADOR    | Mike   |    10914 |
+|   15654 | SALVADOR    | Jon    |    10966 |
+|   15655 | SALVADOR    | Mike   |    11213 |
+|   15656 | SALVADOR    | Jon    |    11500 |
+|   15657 | SALVADOR    | Jon    |    12507 |
+|   15658 | SALVADOR    | Jon    |    12541 |
+|   15659 | SALVADOR    | Jon    |    12693 |
+|   15660 | SALVADOR    | Mike   |    12844 |
+|   15661 | SALVADOR    | Jon    |    14102 |
+|   15662 | SALVADOR    | Jon    |    14230 |
+|   15663 | SALVADOR    | Jon    |    14447 |
+|   15664 | SALVADOR    | Mike   |    14930 |
+|   15665 | SALVADOR    | Mike   |    15615 |
+|   15666 | PERRY       | Mike   |     1344 |
+|   15667 | PERRY       | Jon    |     1346 |
+|   15668 | PERRY       | Mike   |     2674 |
+|   15669 | PERRY       | Mike   |     2930 |
+|   15670 | PERRY       | Jon    |     4156 |
+|   15671 | PERRY       | Jon    |     4579 |
+|   15672 | PERRY       | Mike   |     4684 |
+|   15673 | PERRY       | Jon    |     5284 |
+|   15674 | PERRY       | Jon    |     5950 |
+|   15675 | PERRY       | Jon    |     6733 |
+|   15676 | PERRY       | Mike   |     7131 |
+|   15677 | PERRY       | Mike   |     7384 |
+|   15678 | PERRY       | Jon    |     7409 |
+|   15679 | PERRY       | Jon    |     8353 |
+|   15680 | PERRY       | Jon    |     9407 |
+|   15681 | PERRY       | Mike   |     9590 |
+|   15682 | PERRY       | Mike   |     9860 |
+|   15683 | PERRY       | Jon    |    10573 |
+|   15684 | PERRY       | Mike   |    11285 |
+|   15685 | PERRY       | Jon    |    13593 |
+|   15686 | PERRY       | Jon    |    13939 |
+|   15687 | PERRY       | Mike   |    15804 |
+|   15688 | PERRY       | Mike   |    15896 |
+|   15689 | PERRY       | Jon    |    14604 |
+|   15690 | KIRK        | Mike   |      138 |
+|   15691 | KIRK        | Mike   |      900 |
+|   15692 | KIRK        | Mike   |     1260 |
+|   15693 | KIRK        | Jon    |     1540 |
+|   15694 | KIRK        | Jon    |     3487 |
+|   15695 | KIRK        | Jon    |     3733 |
+|   15696 | KIRK        | Jon    |     5382 |
+|   15697 | KIRK        | Mike   |     6679 |
+|   15698 | KIRK        | Jon    |     9786 |
+|   15699 | KIRK        | Jon    |     9896 |
+|   15700 | KIRK        | Mike   |    11034 |
+|   15701 | KIRK        | Mike   |    11763 |
+|   15702 | KIRK        | Mike   |    12013 |
+|   15703 | KIRK        | Mike   |    12898 |
+|   15704 | KIRK        | Jon    |    14043 |
+|   15705 | KIRK        | Mike   |    14392 |
+|   15706 | KIRK        | Jon    |    14533 |
+|   15707 | KIRK        | Mike   |    15666 |
+|   15708 | KIRK        | Jon    |    15684 |
+|   15709 | SERGIO      | Mike   |      181 |
+|   15710 | SERGIO      | Mike   |      361 |
+|   15711 | SERGIO      | Jon    |     1330 |
+|   15712 | SERGIO      | Jon    |     2034 |
+|   15713 | SERGIO      | Mike   |     2220 |
+|   15714 | SERGIO      | Mike   |     2329 |
+|   15715 | SERGIO      | Jon    |     3562 |
+|   15716 | SERGIO      | Jon    |     3969 |
+|   15717 | SERGIO      | Jon    |     5243 |
+|   15718 | SERGIO      | Mike   |     6639 |
+|   15719 | SERGIO      | Jon    |     6665 |
+|   15720 | SERGIO      | Mike   |     7501 |
+|   15721 | SERGIO      | Jon    |     8776 |
+|   15722 | SERGIO      | Jon    |     9720 |
+|   15723 | SERGIO      | Jon    |     9785 |
+|   15724 | SERGIO      | Jon    |     9909 |
+|   15725 | SERGIO      | Jon    |    10224 |
+|   15726 | SERGIO      | Mike   |    10825 |
+|   15727 | SERGIO      | Mike   |    11078 |
+|   15728 | SERGIO      | Jon    |    11403 |
+|   15729 | SERGIO      | Jon    |    12164 |
+|   15730 | SERGIO      | Jon    |    12330 |
+|   15731 | SERGIO      | Jon    |    14710 |
+|   15732 | SERGIO      | Jon    |    15348 |
+|   15733 | SERGIO      | Jon    |    15349 |
+|   15734 | SERGIO      | Mike   |    12144 |
+|   15735 | MARION      | Mike   |      576 |
+|   15736 | MARION      | Mike   |      961 |
+|   15737 | MARION      | Jon    |     1885 |
+|   15738 | MARION      | Jon    |     1903 |
+|   15739 | MARION      | Jon    |     2270 |
+|   15740 | MARION      | Mike   |     2453 |
+|   15741 | MARION      | Jon    |     2920 |
+|   15742 | MARION      | Mike   |     3628 |
+|   15743 | MARION      | Mike   |     4101 |
+|   15744 | MARION      | Jon    |     4207 |
+|   15745 | MARION      | Jon    |     5203 |
+|   15746 | MARION      | Mike   |     5335 |
+|   15747 | MARION      | Mike   |     6368 |
+|   15748 | MARION      | Jon    |     7377 |
+|   15749 | MARION      | Jon    |     7903 |
+|   15750 | MARION      | Mike   |     8421 |
+|   15751 | MARION      | Mike   |     8429 |
+|   15752 | MARION      | Jon    |     8519 |
+|   15753 | MARION      | Mike   |     8769 |
+|   15754 | MARION      | Jon    |     9326 |
+|   15755 | MARION      | Jon    |     9370 |
+|   15756 | MARION      | Jon    |    10373 |
+|   15757 | MARION      | Mike   |    12185 |
+|   15758 | MARION      | Jon    |    12815 |
+|   15759 | MARION      | Mike   |    13064 |
+|   15760 | MARION      | Mike   |    13923 |
+|   15761 | MARION      | Mike   |    15109 |
+|   15762 | MARION      | Mike   |    15158 |
+|   15763 | MARION      | Mike   |    15209 |
+|   15764 | TRACY       | Mike   |      531 |
+|   15765 | TRACY       | Mike   |      596 |
+|   15766 | TRACY       | Mike   |      737 |
+|   15767 | TRACY       | Mike   |     1439 |
+|   15768 | TRACY       | Jon    |     1703 |
+|   15769 | TRACY       | Jon    |     2652 |
+|   15770 | TRACY       | Mike   |     2707 |
+|   15771 | TRACY       | Mike   |     2979 |
+|   15772 | TRACY       | Jon    |     4986 |
+|   15773 | TRACY       | Mike   |     5951 |
+|   15774 | TRACY       | Jon    |     6177 |
+|   15775 | TRACY       | Jon    |     6247 |
+|   15776 | TRACY       | Jon    |     7250 |
+|   15777 | TRACY       | Jon    |     7431 |
+|   15778 | TRACY       | Jon    |     7948 |
+|   15779 | TRACY       | Jon    |     8056 |
+|   15780 | TRACY       | Mike   |     8374 |
+|   15781 | TRACY       | Mike   |     9153 |
+|   15782 | TRACY       | Jon    |    10544 |
+|   15783 | TRACY       | Mike   |    11980 |
+|   15784 | TRACY       | Mike   |    12738 |
+|   15785 | TRACY       | Jon    |    12933 |
+|   15786 | TRACY       | Mike   |    14038 |
+|   15787 | TRACY       | Mike   |    14254 |
+|   15788 | TRACY       | Mike   |    14544 |
+|   15789 | TRACY       | Jon    |    14706 |
+|   15790 | TRACY       | Jon    |    15917 |
+|   15791 | TRACY       | Jon    |    15992 |
+|   15792 | SETH        | Mike   |      602 |
+|   15793 | SETH        | Jon    |     1456 |
+|   15794 | SETH        | Jon    |     2352 |
+|   15795 | SETH        | Jon    |     2775 |
+|   15796 | SETH        | Mike   |     2916 |
+|   15797 | SETH        | Mike   |     2964 |
+|   15798 | SETH        | Jon    |     4685 |
+|   15799 | SETH        | Mike   |     4710 |
+|   15800 | SETH        | Jon    |     4722 |
+|   15801 | SETH        | Mike   |     5165 |
+|   15802 | SETH        | Mike   |     5529 |
+|   15803 | SETH        | Mike   |     5991 |
+|   15804 | SETH        | Jon    |     6232 |
+|   15805 | SETH        | Jon    |     6492 |
+|   15806 | SETH        | Mike   |     7010 |
+|   15807 | SETH        | Jon    |     7665 |
+|   15808 | SETH        | Mike   |     8195 |
+|   15809 | SETH        | Mike   |     8801 |
+|   15810 | SETH        | Jon    |     9126 |
+|   15811 | SETH        | Mike   |     9884 |
+|   15812 | SETH        | Mike   |    10657 |
+|   15813 | SETH        | Jon    |    11578 |
+|   15814 | SETH        | Jon    |    11713 |
+|   15815 | SETH        | Mike   |    14830 |
+|   15816 | SETH        | Jon    |    15458 |
+|   15817 | KENT        | Mike   |     1418 |
+|   15818 | KENT        | Jon    |     3341 |
+|   15819 | KENT        | Jon    |     3435 |
+|   15820 | KENT        | Mike   |     3636 |
+|   15821 | KENT        | Jon    |     4383 |
+|   15822 | KENT        | Mike   |     4581 |
+|   15823 | KENT        | Mike   |     5704 |
+|   15824 | KENT        | Mike   |     5759 |
+|   15825 | KENT        | Mike   |     7118 |
+|   15826 | KENT        | Mike   |     7212 |
+|   15827 | KENT        | Jon    |     7511 |
+|   15828 | KENT        | Mike   |     7549 |
+|   15829 | KENT        | Jon    |     7741 |
+|   15830 | KENT        | Mike   |     7997 |
+|   15831 | KENT        | Mike   |     8149 |
+|   15832 | KENT        | Jon    |     8666 |
+|   15833 | KENT        | Jon    |     8819 |
+|   15834 | KENT        | Mike   |     9684 |
+|   15835 | KENT        | Mike   |    10415 |
+|   15836 | KENT        | Jon    |    12203 |
+|   15837 | KENT        | Jon    |    12227 |
+|   15838 | KENT        | Mike   |    12547 |
+|   15839 | KENT        | Mike   |    12571 |
+|   15840 | KENT        | Mike   |    12934 |
+|   15841 | KENT        | Jon    |    13104 |
+|   15842 | KENT        | Jon    |    13343 |
+|   15843 | KENT        | Mike   |    13867 |
+|   15844 | TERRANCE    | Jon    |     1163 |
+|   15845 | TERRANCE    | Jon    |     1423 |
+|   15846 | TERRANCE    | Mike   |     1479 |
+|   15847 | TERRANCE    | Mike   |     2627 |
+|   15848 | TERRANCE    | Mike   |     3158 |
+|   15849 | TERRANCE    | Jon    |     3560 |
+|   15850 | TERRANCE    | Mike   |     3973 |
+|   15851 | TERRANCE    | Mike   |     4129 |
+|   15852 | TERRANCE    | Mike   |     4145 |
+|   15853 | TERRANCE    | Mike   |     4460 |
+|   15854 | TERRANCE    | Mike   |     4518 |
+|   15855 | TERRANCE    | Mike   |     6937 |
+|   15856 | TERRANCE    | Jon    |     7173 |
+|   15857 | TERRANCE    | Mike   |     7278 |
+|   15858 | TERRANCE    | Jon    |     7364 |
+|   15859 | TERRANCE    | Mike   |     8730 |
+|   15860 | TERRANCE    | Jon    |     8773 |
+|   15861 | TERRANCE    | Mike   |     9268 |
+|   15862 | TERRANCE    | Mike   |     9437 |
+|   15863 | TERRANCE    | Jon    |     9666 |
+|   15864 | TERRANCE    | Jon    |    10383 |
+|   15865 | TERRANCE    | Jon    |    10634 |
+|   15866 | TERRANCE    | Mike   |    11410 |
+|   15867 | TERRANCE    | Jon    |    12043 |
+|   15868 | TERRANCE    | Jon    |    12619 |
+|   15869 | TERRANCE    | Mike   |    12976 |
+|   15870 | TERRANCE    | Mike   |    13157 |
+|   15871 | TERRANCE    | Jon    |    13662 |
+|   15872 | TERRANCE    | Jon    |    14606 |
+|   15873 | RENE        | Mike   |      790 |
+|   15874 | RENE        | Mike   |      991 |
+|   15875 | RENE        | Jon    |     2055 |
+|   15876 | RENE        | Jon    |     2205 |
+|   15877 | RENE        | Mike   |     2441 |
+|   15878 | RENE        | Mike   |     2832 |
+|   15879 | RENE        | Jon    |     3542 |
+|   15880 | RENE        | Jon    |     4075 |
+|   15881 | RENE        | Jon    |     4280 |
+|   15882 | RENE        | Jon    |     4623 |
+|   15883 | RENE        | Jon    |     4781 |
+|   15884 | RENE        | Jon    |     4867 |
+|   15885 | RENE        | Mike   |     6386 |
+|   15886 | RENE        | Mike   |     6731 |
+|   15887 | RENE        | Jon    |     7958 |
+|   15888 | RENE        | Mike   |     8497 |
+|   15889 | RENE        | Jon    |     9329 |
+|   15890 | RENE        | Mike   |     9483 |
+|   15891 | RENE        | Mike   |    10368 |
+|   15892 | RENE        | Jon    |    10533 |
+|   15893 | RENE        | Mike   |    10840 |
+|   15894 | RENE        | Jon    |    10904 |
+|   15895 | RENE        | Jon    |    12744 |
+|   15896 | RENE        | Mike   |    13524 |
+|   15897 | RENE        | Mike   |    14408 |
+|   15898 | RENE        | Mike   |    14653 |
+|   15899 | EDUARDO     | Mike   |      313 |
+|   15900 | EDUARDO     | Mike   |      360 |
+|   15901 | EDUARDO     | Jon    |     1018 |
+|   15902 | EDUARDO     | Mike   |     1045 |
+|   15903 | EDUARDO     | Jon    |     1537 |
+|   15904 | EDUARDO     | Mike   |     1816 |
+|   15905 | EDUARDO     | Mike   |     1950 |
+|   15906 | EDUARDO     | Mike   |     2276 |
+|   15907 | EDUARDO     | Jon    |     2786 |
+|   15908 | EDUARDO     | Jon    |     3302 |
+|   15909 | EDUARDO     | Jon    |     3474 |
+|   15910 | EDUARDO     | Mike   |     3546 |
+|   15911 | EDUARDO     | Jon    |     3960 |
+|   15912 | EDUARDO     | Mike   |     4037 |
+|   15913 | EDUARDO     | Mike   |     4154 |
+|   15914 | EDUARDO     | Jon    |     5386 |
+|   15915 | EDUARDO     | Mike   |     6473 |
+|   15916 | EDUARDO     | Mike   |     7533 |
+|   15917 | EDUARDO     | Mike   |     8567 |
+|   15918 | EDUARDO     | Mike   |     8603 |
+|   15919 | EDUARDO     | Jon    |     8820 |
+|   15920 | EDUARDO     | Mike   |     9545 |
+|   15921 | EDUARDO     | Mike   |     9698 |
+|   15922 | EDUARDO     | Jon    |     9802 |
+|   15923 | EDUARDO     | Jon    |    10704 |
+|   15924 | EDUARDO     | Jon    |    14824 |
+|   15925 | EDUARDO     | Mike   |    14999 |
+|   15926 | TERRENCE    | Mike   |      613 |
+|   15927 | TERRENCE    | Jon    |     1170 |
+|   15928 | TERRENCE    | Jon    |     3371 |
+|   15929 | TERRENCE    | Mike   |     3789 |
+|   15930 | TERRENCE    | Mike   |     4017 |
+|   15931 | TERRENCE    | Mike   |     4241 |
+|   15932 | TERRENCE    | Jon    |     4775 |
+|   15933 | TERRENCE    | Mike   |     5631 |
+|   15934 | TERRENCE    | Mike   |     5952 |
+|   15935 | TERRENCE    | Mike   |     6105 |
+|   15936 | TERRENCE    | Mike   |     6704 |
+|   15937 | TERRENCE    | Mike   |     7086 |
+|   15938 | TERRENCE    | Jon    |     7307 |
+|   15939 | TERRENCE    | Mike   |     7396 |
+|   15940 | TERRENCE    | Jon    |     7490 |
+|   15941 | TERRENCE    | Mike   |     9152 |
+|   15942 | TERRENCE    | Jon    |     9223 |
+|   15943 | TERRENCE    | Mike   |     9354 |
+|   15944 | TERRENCE    | Jon    |     9497 |
+|   15945 | TERRENCE    | Jon    |     9542 |
+|   15946 | TERRENCE    | Mike   |     9631 |
+|   15947 | TERRENCE    | Jon    |     9826 |
+|   15948 | TERRENCE    | Mike   |    10729 |
+|   15949 | TERRENCE    | Mike   |    10932 |
+|   15950 | TERRENCE    | Jon    |    11748 |
+|   15951 | TERRENCE    | Mike   |    12235 |
+|   15952 | TERRENCE    | Mike   |    14334 |
+|   15953 | TERRENCE    | Jon    |    15576 |
+|   15954 | TERRENCE    | Jon    |    15994 |
+|   15955 | TERRENCE    | Jon    |    16016 |
+|   15956 | ENRIQUE     | Jon    |      303 |
+|   15957 | ENRIQUE     | Jon    |      625 |
+|   15958 | ENRIQUE     | Jon    |      667 |
+|   15959 | ENRIQUE     | Jon    |      782 |
+|   15960 | ENRIQUE     | Mike   |      914 |
+|   15961 | ENRIQUE     | Mike   |      974 |
+|   15962 | ENRIQUE     | Mike   |     1644 |
+|   15963 | ENRIQUE     | Mike   |     2767 |
+|   15964 | ENRIQUE     | Jon    |     5742 |
+|   15965 | ENRIQUE     | Mike   |     6015 |
+|   15966 | ENRIQUE     | Mike   |     6017 |
+|   15967 | ENRIQUE     | Mike   |     6197 |
+|   15968 | ENRIQUE     | Jon    |     6883 |
+|   15969 | ENRIQUE     | Mike   |    10094 |
+|   15970 | ENRIQUE     | Jon    |    10692 |
+|   15971 | ENRIQUE     | Mike   |    10756 |
+|   15972 | ENRIQUE     | Jon    |    10804 |
+|   15973 | ENRIQUE     | Jon    |    11009 |
+|   15974 | ENRIQUE     | Jon    |    11852 |
+|   15975 | ENRIQUE     | Mike   |    11934 |
+|   15976 | ENRIQUE     | Jon    |    12560 |
+|   15977 | ENRIQUE     | Mike   |    12878 |
+|   15978 | ENRIQUE     | Mike   |    13648 |
+|   15979 | ENRIQUE     | Mike   |    14050 |
+|   15980 | ENRIQUE     | Mike   |    14417 |
+|   15981 | ENRIQUE     | Mike   |    15405 |
+|   15982 | ENRIQUE     | Mike   |    15899 |
+|   15983 | ENRIQUE     | Mike   |    15423 |
+|   15984 | FREDDIE     | Jon    |       34 |
+|   15985 | FREDDIE     | Jon    |      514 |
+|   15986 | FREDDIE     | Mike   |     2379 |
+|   15987 | FREDDIE     | Mike   |     2696 |
+|   15988 | FREDDIE     | Mike   |     3201 |
+|   15989 | FREDDIE     | Mike   |     5093 |
+|   15990 | FREDDIE     | Mike   |     5348 |
+|   15991 | FREDDIE     | Jon    |     5732 |
+|   15992 | FREDDIE     | Mike   |     6508 |
+|   15993 | FREDDIE     | Jon    |     7968 |
+|   15994 | FREDDIE     | Jon    |     8948 |
+|   15995 | FREDDIE     | Jon    |    10021 |
+|   15996 | FREDDIE     | Mike   |    10214 |
+|   15997 | FREDDIE     | Jon    |    10986 |
+|   15998 | FREDDIE     | Jon    |    11147 |
+|   15999 | FREDDIE     | Jon    |    11223 |
+|   16000 | FREDDIE     | Mike   |    11240 |
+|   16001 | FREDDIE     | Mike   |    11880 |
+|   16002 | FREDDIE     | Mike   |    12081 |
+|   16003 | FREDDIE     | Mike   |    12992 |
+|   16004 | FREDDIE     | Jon    |    13019 |
+|   16005 | FREDDIE     | Mike   |    13152 |
+|   16006 | FREDDIE     | Jon    |    15275 |
+|   16007 | FREDDIE     | Mike   |    15469 |
+|   16008 | FREDDIE     | Mike   |    11652 |
+|   16009 | WADE        | Mike   |     3005 |
+|   16010 | WADE        | Mike   |     3648 |
+|   16011 | WADE        | Jon    |     3950 |
+|   16012 | WADE        | Mike   |     3972 |
+|   16013 | WADE        | Mike   |     4181 |
+|   16014 | WADE        | Jon    |     5688 |
+|   16015 | WADE        | Mike   |     6519 |
+|   16016 | WADE        | Jon    |     6528 |
+|   16017 | WADE        | Jon    |     6575 |
+|   16018 | WADE        | Jon    |     6660 |
+|   16019 | WADE        | Jon    |     7201 |
+|   16020 | WADE        | Jon    |     7354 |
+|   16021 | WADE        | Mike   |     7998 |
+|   16022 | WADE        | Jon    |     8436 |
+|   16023 | WADE        | Mike   |     8511 |
+|   16024 | WADE        | Mike   |     8939 |
+|   16025 | WADE        | Mike   |    10054 |
+|   16026 | WADE        | Jon    |    11350 |
+|   16027 | WADE        | Jon    |    12601 |
+|   16028 | WADE        | Jon    |    14345 |
+|   16029 | WADE        | Jon    |    15307 |
+|   16030 | WADE        | Mike   |    15443 |
+|   16031 | AUSTIN      | Jon    |     1008 |
+|   16032 | AUSTIN      | Mike   |     2272 |
+|   16033 | AUSTIN      | Jon    |     3043 |
+|   16034 | AUSTIN      | Jon    |     3398 |
+|   16035 | AUSTIN      | Mike   |     3429 |
+|   16036 | AUSTIN      | Mike   |     5065 |
+|   16037 | AUSTIN      | Mike   |     5843 |
+|   16038 | AUSTIN      | Jon    |     6800 |
+|   16039 | AUSTIN      | Jon    |     6895 |
+|   16040 | AUSTIN      | Mike   |     8965 |
+|   16041 | AUSTIN      | Jon    |     9630 |
+|   16042 | AUSTIN      | Jon    |     9679 |
+|   16043 | AUSTIN      | Jon    |    11522 |
+|   16044 | AUSTIN      | Mike   |    14233 |
+|   16045 | AUSTIN      | Mike   |    14599 |
+|   16046 | AUSTIN      | Mike   |    14719 |
+|   16047 | AUSTIN      | Jon    |    15590 |
+|   16048 | AUSTIN      | Jon    |    15719 |
+|   16049 | AUSTIN      | Jon    |    15725 |
++---------+-------------+--------+----------+
+16044 rows in set (0,05 sec)
+```
+
+Listar las películas y los idiomas en los que están disponibles.
+
+```
+select ft.title, i.nombre
+from pelicula p
+join film_text ft
+	on ft.film_id = p.id_pelicula
+join idioma i
+	on p.id_idioma = i.id_idioma;
++-----------------------------+---------+
+| title                       | nombre  |
++-----------------------------+---------+
+| ACADEMY DINOSAUR            | English |
+| ACE GOLDFINGER              | English |
+| ADAPTATION HOLES            | English |
+| AFFAIR PREJUDICE            | English |
+| AFRICAN EGG                 | English |
+| AGENT TRUMAN                | English |
+| AIRPLANE SIERRA             | English |
+| AIRPORT POLLOCK             | English |
+| ALABAMA DEVIL               | English |
+| ALADDIN CALENDAR            | English |
+| ALAMO VIDEOTAPE             | English |
+| ALASKA PHANTOM              | English |
+| ALI FOREVER                 | English |
+| ALICE FANTASIA              | English |
+| ALIEN CENTER                | English |
+| ALLEY EVOLUTION             | English |
+| ALONE TRIP                  | English |
+| ALTER VICTORY               | English |
+| AMADEUS HOLY                | English |
+| AMELIE HELLFIGHTERS         | English |
+| AMERICAN CIRCUS             | English |
+| AMISTAD MIDSUMMER           | English |
+| ANACONDA CONFESSIONS        | English |
+| ANALYZE HOOSIERS            | English |
+| ANGELS LIFE                 | English |
+| ANNIE IDENTITY              | English |
+| ANONYMOUS HUMAN             | English |
+| ANTHEM LUKE                 | English |
+| ANTITRUST TOMATOES          | English |
+| ANYTHING SAVANNAH           | English |
+| APACHE DIVINE               | English |
+| APOCALYPSE FLAMINGOS        | English |
+| APOLLO TEEN                 | English |
+| ARABIA DOGMA                | English |
+| ARACHNOPHOBIA ROLLERCOASTER | English |
+| ARGONAUTS TOWN              | English |
+| ARIZONA BANG                | English |
+| ARK RIDGEMONT               | English |
+| ARMAGEDDON LOST             | English |
+| ARMY FLINTSTONES            | English |
+| ARSENIC INDEPENDENCE        | English |
+| ARTIST COLDBLOODED          | English |
+| ATLANTIS CAUSE              | English |
+| ATTACKS HATE                | English |
+| ATTRACTION NEWTON           | English |
+| AUTUMN CROW                 | English |
+| BABY HALL                   | English |
+| BACKLASH UNDEFEATED         | English |
+| BADMAN DAWN                 | English |
+| BAKED CLEOPATRA             | English |
+| BALLOON HOMEWARD            | English |
+| BALLROOM MOCKINGBIRD        | English |
+| BANG KWAI                   | English |
+| BANGER PINOCCHIO            | English |
+| BARBARELLA STREETCAR        | English |
+| BAREFOOT MANCHURIAN         | English |
+| BASIC EASY                  | English |
+| BEACH HEARTBREAKERS         | English |
+| BEAR GRACELAND              | English |
+| BEAST HUNCHBACK             | English |
+| BEAUTY GREASE               | English |
+| BED HIGHBALL                | English |
+| BEDAZZLED MARRIED           | English |
+| BEETHOVEN EXORCIST          | English |
+| BEHAVIOR RUNAWAY            | English |
+| BENEATH RUSH                | English |
+| BERETS AGENT                | English |
+| BETRAYED REAR               | English |
+| BEVERLY OUTLAW              | English |
+| BIKINI BORROWERS            | English |
+| BILKO ANONYMOUS             | English |
+| BILL OTHERS                 | English |
+| BINGO TALENTED              | English |
+| BIRCH ANTITRUST             | English |
+| BIRD INDEPENDENCE           | English |
+| BIRDCAGE CASPER             | English |
+| BIRDS PERDITION             | English |
+| BLACKOUT PRIVATE            | English |
+| BLADE POLISH                | English |
+| BLANKET BEVERLY             | English |
+| BLINDNESS GUN               | English |
+| BLOOD ARGONAUTS             | English |
+| BLUES INSTINCT              | English |
+| BOILED DARES                | English |
+| BONNIE HOLOCAUST            | English |
+| BOOGIE AMELIE               | English |
+| BOONDOCK BALLROOM           | English |
+| BORN SPINAL                 | English |
+| BORROWERS BEDAZZLED         | English |
+| BOULEVARD MOB               | English |
+| BOUND CHEAPER               | English |
+| BOWFINGER GABLES            | English |
+| BRANNIGAN SUNRISE           | English |
+| BRAVEHEART HUMAN            | English |
+| BREAKFAST GOLDFINGER        | English |
+| BREAKING HOME               | English |
+| BRIDE INTRIGUE              | English |
+| BRIGHT ENCOUNTERS           | English |
+| BRINGING HYSTERICAL         | English |
+| BROOKLYN DESERT             | English |
+| BROTHERHOOD BLANKET         | English |
+| BUBBLE GROSSE               | English |
+| BUCKET BROTHERHOOD          | English |
+| BUGSY SONG                  | English |
+| BULL SHAWSHANK              | English |
+| BULWORTH COMMANDMENTS       | English |
+| BUNCH MINDS                 | English |
+| BUTCH PANTHER               | English |
+| BUTTERFLY CHOCOLAT          | English |
+| CABIN FLASH                 | English |
+| CADDYSHACK JEDI             | English |
+| CALENDAR GUNFIGHT           | English |
+| CALIFORNIA BIRDS            | English |
+| CAMELOT VACATION            | English |
+| CAMPUS REMEMBER             | English |
+| CANDIDATE PERDITION         | English |
+| CANDLES GRAPES              | English |
+| CANYON STOCK                | English |
+| CAPER MOTIONS               | English |
+| CARIBBEAN LIBERTY           | English |
+| CAROL TEXAS                 | English |
+| CARRIE BUNCH                | English |
+| CASABLANCA SUPER            | English |
+| CASPER DRAGONFLY            | English |
+| CASSIDY WYOMING             | English |
+| CASUALTIES ENCINO           | English |
+| CAT CONEHEADS               | English |
+| CATCH AMISTAD               | English |
+| CAUSE DATE                  | English |
+| CELEBRITY HORN              | English |
+| CENTER DINOSAUR             | English |
+| CHAINSAW UPTOWN             | English |
+| CHAMBER ITALIAN             | English |
+| CHAMPION FLATLINERS         | English |
+| CHANCE RESURRECTION         | English |
+| CHAPLIN LICENSE             | English |
+| CHARADE DUFFEL              | English |
+| CHARIOTS CONSPIRACY         | English |
+| CHASING FIGHT               | English |
+| CHEAPER CLYDE               | English |
+| CHICAGO NORTH               | English |
+| CHICKEN HELLFIGHTERS        | English |
+| CHILL LUCK                  | English |
+| CHINATOWN GLADIATOR         | English |
+| CHISUM BEHAVIOR             | English |
+| CHITTY LOCK                 | English |
+| CHOCOLAT HARRY              | English |
+| CHOCOLATE DUCK              | English |
+| CHRISTMAS MOONSHINE         | English |
+| CIDER DESIRE                | English |
+| CINCINATTI WHISPERER        | English |
+| CIRCUS YOUTH                | English |
+| CITIZEN SHREK               | English |
+| CLASH FREDDY                | English |
+| CLEOPATRA DEVIL             | English |
+| CLERKS ANGELS               | English |
+| CLOCKWORK PARADISE          | English |
+| CLONES PINOCCHIO            | English |
+| CLOSER BANG                 | English |
+| CLUB GRAFFITI               | English |
+| CLUE GRAIL                  | English |
+| CLUELESS BUCKET             | English |
+| CLYDE THEORY                | English |
+| COAST RAINBOW               | English |
+| COLDBLOODED DARLING         | English |
+| COLOR PHILADELPHIA          | English |
+| COMA HEAD                   | English |
+| COMANCHEROS ENEMY           | English |
+| COMFORTS RUSH               | English |
+| COMMAND DARLING             | English |
+| COMMANDMENTS EXPRESS        | English |
+| CONEHEADS SMOOCHY           | English |
+| CONFESSIONS MAGUIRE         | English |
+| CONFIDENTIAL INTERVIEW      | English |
+| CONFUSED CANDLES            | English |
+| CONGENIALITY QUEST          | English |
+| CONNECTICUT TRAMP           | English |
+| CONNECTION MICROCOSMOS      | English |
+| CONQUERER NUTS              | English |
+| CONSPIRACY SPIRIT           | English |
+| CONTACT ANONYMOUS           | English |
+| CONTROL ANTHEM              | English |
+| CONVERSATION DOWNHILL       | English |
+| CORE SUIT                   | English |
+| COWBOY DOOM                 | English |
+| CRAFT OUTFIELD              | English |
+| CRANES RESERVOIR            | English |
+| CRAZY HOME                  | English |
+| CREATURES SHAKESPEARE       | English |
+| CREEPERS KANE               | English |
+| CROOKED FROGMEN             | English |
+| CROSSING DIVORCE            | English |
+| CROSSROADS CASUALTIES       | English |
+| CROW GREASE                 | English |
+| CROWDS TELEMARK             | English |
+| CRUELTY UNFORGIVEN          | English |
+| CRUSADE HONEY               | English |
+| CRYSTAL BREAKING            | English |
+| CUPBOARD SINNERS            | English |
+| CURTAIN VIDEOTAPE           | English |
+| CYCLONE FAMILY              | English |
+| DADDY PITTSBURGH            | English |
+| DAISY MENAGERIE             | English |
+| DALMATIONS SWEDEN           | English |
+| DANCES NONE                 | English |
+| DANCING FEVER               | English |
+| DANGEROUS UPTOWN            | English |
+| DARES PLUTO                 | English |
+| DARKNESS WAR                | English |
+| DARKO DORADO                | English |
+| DARLING BREAKING            | English |
+| DARN FORRESTER              | English |
+| DATE SPEED                  | English |
+| DAUGHTER MADIGAN            | English |
+| DAWN POND                   | English |
+| DAY UNFAITHFUL              | English |
+| DAZED PUNK                  | English |
+| DECEIVER BETRAYED           | English |
+| DEEP CRUSADE                | English |
+| DEER VIRGINIAN              | English |
+| DELIVERANCE MULHOLLAND      | English |
+| DESERT POSEIDON             | English |
+| DESIRE ALIEN                | English |
+| DESPERATE TRAINSPOTTING     | English |
+| DESTINATION JERK            | English |
+| DESTINY SATURDAY            | English |
+| DETAILS PACKER              | English |
+| DETECTIVE VISION            | English |
+| DEVIL DESIRE                | English |
+| DIARY PANIC                 | English |
+| DINOSAUR SECRETARY          | English |
+| DIRTY ACE                   | English |
+| DISCIPLE MOTHER             | English |
+| DISTURBING SCARFACE         | English |
+| DIVIDE MONSTER              | English |
+| DIVINE RESURRECTION         | English |
+| DIVORCE SHINING             | English |
+| DOCTOR GRAIL                | English |
+| DOGMA FAMILY                | English |
+| DOLLS RAGE                  | English |
+| DONNIE ALLEY                | English |
+| DOOM DANCING                | English |
+| DOORS PRESIDENT             | English |
+| DORADO NOTTING              | English |
+| DOUBLE WRATH                | English |
+| DOUBTFIRE LABYRINTH         | English |
+| DOWNHILL ENOUGH             | English |
+| DOZEN LION                  | English |
+| DRACULA CRYSTAL             | English |
+| DRAGON SQUAD                | English |
+| DRAGONFLY STRANGERS         | English |
+| DREAM PICKUP                | English |
+| DRIFTER COMMANDMENTS        | English |
+| DRIVER ANNIE                | English |
+| DRIVING POLISH              | English |
+| DROP WATERFRONT             | English |
+| DRUMLINE CYCLONE            | English |
+| DRUMS DYNAMITE              | English |
+| DUCK RACER                  | English |
+| DUDE BLINDNESS              | English |
+| DUFFEL APOCALYPSE           | English |
+| DUMBO LUST                  | English |
+| DURHAM PANKY                | English |
+| DWARFS ALTER                | English |
+| DYING MAKER                 | English |
+| DYNAMITE TARZAN             | English |
+| EAGLES PANKY                | English |
+| EARLY HOME                  | English |
+| EARRING INSTINCT            | English |
+| EARTH VISION                | English |
+| EASY GLADIATOR              | English |
+| EDGE KISSING                | English |
+| EFFECT GLADIATOR            | English |
+| EGG IGBY                    | English |
+| EGYPT TENENBAUMS            | English |
+| ELEMENT FREDDY              | English |
+| ELEPHANT TROJAN             | English |
+| ELF MURDER                  | English |
+| ELIZABETH SHANE             | English |
+| EMPIRE MALKOVICH            | English |
+| ENCINO ELF                  | English |
+| ENCOUNTERS CURTAIN          | English |
+| ENDING CROWDS               | English |
+| ENEMY ODDS                  | English |
+| ENGLISH BULWORTH            | English |
+| ENOUGH RAGING               | English |
+| ENTRAPMENT SATISFACTION     | English |
+| ESCAPE METROPOLIS           | English |
+| EVE RESURRECTION            | English |
+| EVERYONE CRAFT              | English |
+| EVOLUTION ALTER             | English |
+| EXCITEMENT EVE              | English |
+| EXORCIST STING              | English |
+| EXPECATIONS NATURAL         | English |
+| EXPENDABLE STALLION         | English |
+| EXPRESS LONELY              | English |
+| EXTRAORDINARY CONQUERER     | English |
+| EYES DRIVING                | English |
+| FACTORY DRAGON              | English |
+| FALCON VOLUME               | English |
+| FAMILY SWEET                | English |
+| FANTASIA PARK               | English |
+| FANTASY TROOPERS            | English |
+| FARGO GANDHI                | English |
+| FATAL HAUNTED               | English |
+| FEATHERS METAL              | English |
+| FELLOWSHIP AUTUMN           | English |
+| FERRIS MOTHER               | English |
+| FEUD FROGMEN                | English |
+| FEVER EMPIRE                | English |
+| FICTION CHRISTMAS           | English |
+| FIDDLER LOST                | English |
+| FIDELITY DEVIL              | English |
+| FIGHT JAWBREAKER            | English |
+| FINDING ANACONDA            | English |
+| FIRE WOLVES                 | English |
+| FIREBALL PHILADELPHIA       | English |
+| FIREHOUSE VIETNAM           | English |
+| FISH OPUS                   | English |
+| FLAMINGOS CONNECTICUT       | English |
+| FLASH WARS                  | English |
+| FLATLINERS KILLER           | English |
+| FLIGHT LIES                 | English |
+| FLINTSTONES HAPPINESS       | English |
+| FLOATS GARDEN               | English |
+| FLYING HOOK                 | English |
+| FOOL MOCKINGBIRD            | English |
+| FOREVER CANDIDATE           | English |
+| FORREST SONS                | English |
+| FORRESTER COMANCHEROS       | English |
+| FORWARD TEMPLE              | English |
+| FRANKENSTEIN STRANGER       | English |
+| FREAKY POCUS                | English |
+| FREDDY STORM                | English |
+| FREEDOM CLEOPATRA           | English |
+| FRENCH HOLIDAY              | English |
+| FRIDA SLIPPER               | English |
+| FRISCO FORREST              | English |
+| FROGMEN BREAKING            | English |
+| FRONTIER CABIN              | English |
+| FROST HEAD                  | English |
+| FUGITIVE MAGUIRE            | English |
+| FULL FLATLINERS             | English |
+| FURY MURDER                 | English |
+| GABLES METROPOLIS           | English |
+| GALAXY SWEETHEARTS          | English |
+| GAMES BOWFINGER             | English |
+| GANDHI KWAI                 | English |
+| GANGS PRIDE                 | English |
+| GARDEN ISLAND               | English |
+| GASLIGHT CRUSADE            | English |
+| GATHERING CALENDAR          | English |
+| GENTLEMEN STAGE             | English |
+| GHOST GROUNDHOG             | English |
+| GHOSTBUSTERS ELF            | English |
+| GIANT TROOPERS              | English |
+| GILBERT PELICAN             | English |
+| GILMORE BOILED              | English |
+| GLADIATOR WESTWARD          | English |
+| GLASS DYING                 | English |
+| GLEAMING JAWBREAKER         | English |
+| GLORY TRACY                 | English |
+| GO PURPLE                   | English |
+| GODFATHER DIARY             | English |
+| GOLD RIVER                  | English |
+| GOLDFINGER SENSIBILITY      | English |
+| GOLDMINE TYCOON             | English |
+| GONE TROUBLE                | English |
+| GOODFELLAS SALUTE           | English |
+| GORGEOUS BINGO              | English |
+| GOSFORD DONNIE              | English |
+| GRACELAND DYNAMITE          | English |
+| GRADUATE LORD               | English |
+| GRAFFITI LOVE               | English |
+| GRAIL FRANKENSTEIN          | English |
+| GRAPES FURY                 | English |
+| GREASE YOUTH                | English |
+| GREATEST NORTH              | English |
+| GREEDY ROOTS                | English |
+| GREEK EVERYONE              | English |
+| GRINCH MASSAGE              | English |
+| GRIT CLOCKWORK              | English |
+| GROOVE FICTION              | English |
+| GROSSE WONDERFUL            | English |
+| GROUNDHOG UNCUT             | English |
+| GUMP DATE                   | English |
+| GUN BONNIE                  | English |
+| GUNFIGHT MOON               | English |
+| GUNFIGHTER MUSSOLINI        | English |
+| GUYS FALCON                 | English |
+| HALF OUTFIELD               | English |
+| HALL CASSIDY                | English |
+| HALLOWEEN NUTS              | English |
+| HAMLET WISDOM               | English |
+| HANDICAP BOONDOCK           | English |
+| HANGING DEEP                | English |
+| HANKY OCTOBER               | English |
+| HANOVER GALAXY              | English |
+| HAPPINESS UNITED            | English |
+| HARDLY ROBBERS              | English |
+| HAROLD FRENCH               | English |
+| HARPER DYING                | English |
+| HARRY IDAHO                 | English |
+| HATE HANDICAP               | English |
+| HAUNTED ANTITRUST           | English |
+| HAUNTING PIANIST            | English |
+| HAWK CHILL                  | English |
+| HEAD STRANGER               | English |
+| HEARTBREAKERS BRIGHT        | English |
+| HEAVEN FREEDOM              | English |
+| HEAVENLY GUN                | English |
+| HEAVYWEIGHTS BEAST          | English |
+| HEDWIG ALTER                | English |
+| HELLFIGHTERS SIERRA         | English |
+| HIGH ENCINO                 | English |
+| HIGHBALL POTTER             | English |
+| HILLS NEIGHBORS             | English |
+| HOBBIT ALIEN                | English |
+| HOCUS FRIDA                 | English |
+| HOLES BRANNIGAN             | English |
+| HOLIDAY GAMES               | English |
+| HOLLOW JEOPARDY             | English |
+| HOLLYWOOD ANONYMOUS         | English |
+| HOLOCAUST HIGHBALL          | English |
+| HOLY TADPOLE                | English |
+| HOME PITY                   | English |
+| HOMEWARD CIDER              | English |
+| HOMICIDE PEACH              | English |
+| HONEY TIES                  | English |
+| HOOK CHARIOTS               | English |
+| HOOSIERS BIRDCAGE           | English |
+| HOPE TOOTSIE                | English |
+| HORN WORKING                | English |
+| HORROR REIGN                | English |
+| HOTEL HAPPINESS             | English |
+| HOURS RAGE                  | English |
+| HOUSE DYNAMITE              | English |
+| HUMAN GRAFFITI              | English |
+| HUNCHBACK IMPOSSIBLE        | English |
+| HUNGER ROOF                 | English |
+| HUNTER ALTER                | English |
+| HUNTING MUSKETEERS          | English |
+| HURRICANE AFFAIR            | English |
+| HUSTLER PARTY               | English |
+| HYDE DOCTOR                 | English |
+| HYSTERICAL GRAIL            | English |
+| ICE CROSSING                | English |
+| IDAHO LOVE                  | English |
+| IDENTITY LOVER              | English |
+| IDOLS SNATCHERS             | English |
+| IGBY MAKER                  | English |
+| ILLUSION AMELIE             | English |
+| IMAGE PRINCESS              | English |
+| IMPACT ALADDIN              | English |
+| IMPOSSIBLE PREJUDICE        | English |
+| INCH JET                    | English |
+| INDEPENDENCE HOTEL          | English |
+| INDIAN LOVE                 | English |
+| INFORMER DOUBLE             | English |
+| INNOCENT USUAL              | English |
+| INSECTS STONE               | English |
+| INSIDER ARIZONA             | English |
+| INSTINCT AIRPORT            | English |
+| INTENTIONS EMPIRE           | English |
+| INTERVIEW LIAISONS          | English |
+| INTOLERABLE INTENTIONS      | English |
+| INTRIGUE WORST              | English |
+| INVASION CYCLONE            | English |
+| IRON MOON                   | English |
+| ISHTAR ROCKETEER            | English |
+| ISLAND EXORCIST             | English |
+| ITALIAN AFRICAN             | English |
+| JACKET FRISCO               | English |
+| JADE BUNCH                  | English |
+| JAPANESE RUN                | English |
+| JASON TRAP                  | English |
+| JAWBREAKER BROOKLYN         | English |
+| JAWS HARRY                  | English |
+| JEDI BENEATH                | English |
+| JEEPERS WEDDING             | English |
+| JEKYLL FROGMEN              | English |
+| JEOPARDY ENCINO             | English |
+| JERICHO MULAN               | English |
+| JERK PAYCHECK               | English |
+| JERSEY SASSY                | English |
+| JET NEIGHBORS               | English |
+| JINGLE SAGEBRUSH            | English |
+| JOON NORTHWEST              | English |
+| JUGGLER HARDLY              | English |
+| JUMANJI BLADE               | English |
+| JUMPING WRATH               | English |
+| JUNGLE CLOSER               | English |
+| KANE EXORCIST               | English |
+| KARATE MOON                 | English |
+| KENTUCKIAN GIANT            | English |
+| KICK SAVANNAH               | English |
+| KILL BROTHERHOOD            | English |
+| KILLER INNOCENT             | English |
+| KING EVOLUTION              | English |
+| KISS GLORY                  | English |
+| KISSING DOLLS               | English |
+| KNOCK WARLOCK               | English |
+| KRAMER CHOCOLATE            | English |
+| KWAI HOMEWARD               | English |
+| LABYRINTH LEAGUE            | English |
+| LADY STAGE                  | English |
+| LADYBUGS ARMAGEDDON         | English |
+| LAMBS CINCINATTI            | English |
+| LANGUAGE COWBOY             | English |
+| LAWLESS VISION              | English |
+| LAWRENCE LOVE               | English |
+| LEAGUE HELLFIGHTERS         | English |
+| LEATHERNECKS DWARFS         | English |
+| LEBOWSKI SOLDIERS           | English |
+| LEGALLY SECRETARY           | English |
+| LEGEND JEDI                 | English |
+| LESSON CLEOPATRA            | English |
+| LIAISONS SWEET              | English |
+| LIBERTY MAGNIFICENT         | English |
+| LICENSE WEEKEND             | English |
+| LIES TREATMENT              | English |
+| LIFE TWISTED                | English |
+| LIGHTS DEER                 | English |
+| LION UNCUT                  | English |
+| LOATHING LEGALLY            | English |
+| LOCK REAR                   | English |
+| LOLA AGENT                  | English |
+| LOLITA WORLD                | English |
+| LONELY ELEPHANT             | English |
+| LORD ARIZONA                | English |
+| LOSE INCH                   | English |
+| LOSER HUSTLER               | English |
+| LOST BIRD                   | English |
+| LOUISIANA HARRY             | English |
+| LOVE SUICIDES               | English |
+| LOVELY JINGLE               | English |
+| LOVER TRUMAN                | English |
+| LOVERBOY ATTACKS            | English |
+| LUCK OPUS                   | English |
+| LUCKY FLYING                | English |
+| LUKE MUMMY                  | English |
+| LUST LOCK                   | English |
+| MADIGAN DORADO              | English |
+| MADISON TRAP                | English |
+| MADNESS ATTACKS             | English |
+| MADRE GABLES                | English |
+| MAGIC MALLRATS              | English |
+| MAGNIFICENT CHITTY          | English |
+| MAGNOLIA FORRESTER          | English |
+| MAGUIRE APACHE              | English |
+| MAIDEN HOME                 | English |
+| MAJESTIC FLOATS             | English |
+| MAKER GABLES                | English |
+| MALKOVICH PET               | English |
+| MALLRATS UNITED             | English |
+| MALTESE HOPE                | English |
+| MANCHURIAN CURTAIN          | English |
+| MANNEQUIN WORST             | English |
+| MARRIED GO                  | English |
+| MARS ROMAN                  | English |
+| MASK PEACH                  | English |
+| MASKED BUBBLE               | English |
+| MASSACRE USUAL              | English |
+| MASSAGE IMAGE               | English |
+| MATRIX SNOWMAN              | English |
+| MAUDE MOD                   | English |
+| MEET CHOCOLATE              | English |
+| MEMENTO ZOOLANDER           | English |
+| MENAGERIE RUSHMORE          | English |
+| MERMAID INSECTS             | English |
+| METAL ARMAGEDDON            | English |
+| METROPOLIS COMA             | English |
+| MICROCOSMOS PARADISE        | English |
+| MIDNIGHT WESTWARD           | English |
+| MIDSUMMER GROUNDHOG         | English |
+| MIGHTY LUCK                 | English |
+| MILE MULAN                  | English |
+| MILLION ACE                 | English |
+| MINDS TRUMAN                | English |
+| MINE TITANS                 | English |
+| MINORITY KISS               | English |
+| MIRACLE VIRTUAL             | English |
+| MISSION ZOOLANDER           | English |
+| MIXED DOORS                 | English |
+| MOB DUFFEL                  | English |
+| MOCKINGBIRD HOLLYWOOD       | English |
+| MOD SECRETARY               | English |
+| MODEL FISH                  | English |
+| MODERN DORADO               | English |
+| MONEY HAROLD                | English |
+| MONSOON CAUSE               | English |
+| MONSTER SPARTACUS           | English |
+| MONTEREY LABYRINTH          | English |
+| MONTEZUMA COMMAND           | English |
+| MOON BUNCH                  | English |
+| MOONSHINE CABIN             | English |
+| MOONWALKER FOOL             | English |
+| MOSQUITO ARMAGEDDON         | English |
+| MOTHER OLEANDER             | English |
+| MOTIONS DETAILS             | English |
+| MOULIN WAKE                 | English |
+| MOURNING PURPLE             | English |
+| MOVIE SHAKESPEARE           | English |
+| MULAN MOON                  | English |
+| MULHOLLAND BEAST            | English |
+| MUMMY CREATURES             | English |
+| MUPPET MILE                 | English |
+| MURDER ANTITRUST            | English |
+| MUSCLE BRIGHT               | English |
+| MUSIC BOONDOCK              | English |
+| MUSKETEERS WAIT             | English |
+| MUSSOLINI SPOILERS          | English |
+| MYSTIC TRUMAN               | English |
+| NAME DETECTIVE              | English |
+| NASH CHOCOLAT               | English |
+| NATIONAL STORY              | English |
+| NATURAL STOCK               | English |
+| NECKLACE OUTBREAK           | English |
+| NEIGHBORS CHARADE           | English |
+| NEMO CAMPUS                 | English |
+| NETWORK PEAK                | English |
+| NEWSIES STORY               | English |
+| NEWTON LABYRINTH            | English |
+| NIGHTMARE CHILL             | English |
+| NONE SPIKING                | English |
+| NOON PAPI                   | English |
+| NORTH TEQUILA               | English |
+| NORTHWEST POLISH            | English |
+| NOTORIOUS REUNION           | English |
+| NOTTING SPEAKEASY           | English |
+| NOVOCAINE FLIGHT            | English |
+| NUTS TIES                   | English |
+| OCTOBER SUBMARINE           | English |
+| ODDS BOOGIE                 | English |
+| OKLAHOMA JUMANJI            | English |
+| OLEANDER CLUE               | English |
+| OPEN AFRICAN                | English |
+| OPERATION OPERATION         | English |
+| OPPOSITE NECKLACE           | English |
+| OPUS ICE                    | English |
+| ORANGE GRAPES               | English |
+| ORDER BETRAYED              | English |
+| ORIENT CLOSER               | English |
+| OSCAR GOLD                  | English |
+| OTHERS SOUP                 | English |
+| OUTBREAK DIVINE             | English |
+| OUTFIELD MASSACRE           | English |
+| OUTLAW HANKY                | English |
+| OZ LIAISONS                 | English |
+| PACIFIC AMISTAD             | English |
+| PACKER MADIGAN              | English |
+| PAJAMA JAWBREAKER           | English |
+| PANIC CLUB                  | English |
+| PANKY SUBMARINE             | English |
+| PANTHER REDS                | English |
+| PAPI NECKLACE               | English |
+| PARADISE SABRINA            | English |
+| PARIS WEEKEND               | English |
+| PARK CITIZEN                | English |
+| PARTY KNOCK                 | English |
+| PAST SUICIDES               | English |
+| PATHS CONTROL               | English |
+| PATIENT SISTER              | English |
+| PATRIOT ROMAN               | English |
+| PATTON INTERVIEW            | English |
+| PAYCHECK WAIT               | English |
+| PEACH INNOCENT              | English |
+| PEAK FOREVER                | English |
+| PEARL DESTINY               | English |
+| PELICAN COMFORTS            | English |
+| PERDITION FARGO             | English |
+| PERFECT GROOVE              | English |
+| PERSONAL LADYBUGS           | English |
+| PET HAUNTING                | English |
+| PHANTOM GLORY               | English |
+| PHILADELPHIA WIFE           | English |
+| PIANIST OUTFIELD            | English |
+| PICKUP DRIVING              | English |
+| PILOT HOOSIERS              | English |
+| PINOCCHIO SIMON             | English |
+| PIRATES ROXANNE             | English |
+| PITTSBURGH HUNCHBACK        | English |
+| PITY BOUND                  | English |
+| PIZZA JUMANJI               | English |
+| PLATOON INSTINCT            | English |
+| PLUTO OLEANDER              | English |
+| POCUS PULP                  | English |
+| POLISH BROOKLYN             | English |
+| POLLOCK DELIVERANCE         | English |
+| POND SEATTLE                | English |
+| POSEIDON FOREVER            | English |
+| POTLUCK MIXED               | English |
+| POTTER CONNECTICUT          | English |
+| PREJUDICE OLEANDER          | English |
+| PRESIDENT BANG              | English |
+| PRIDE ALAMO                 | English |
+| PRIMARY GLASS               | English |
+| PRINCESS GIANT              | English |
+| PRIVATE DROP                | English |
+| PRIX UNDEFEATED             | English |
+| PSYCHO SHRUNK               | English |
+| PULP BEVERLY                | English |
+| PUNK DIVORCE                | English |
+| PURE RUNNER                 | English |
+| PURPLE MOVIE                | English |
+| QUEEN LUKE                  | English |
+| QUEST MUSSOLINI             | English |
+| QUILLS BULL                 | English |
+| RACER EGG                   | English |
+| RAGE GAMES                  | English |
+| RAGING AIRPLANE             | English |
+| RAIDERS ANTITRUST           | English |
+| RAINBOW SHOCK               | English |
+| RANDOM GO                   | English |
+| RANGE MOONWALKER            | English |
+| REAP UNFAITHFUL             | English |
+| REAR TRADING                | English |
+| REBEL AIRPORT               | English |
+| RECORDS ZORRO               | English |
+| REDEMPTION COMFORTS         | English |
+| REDS POCUS                  | English |
+| REEF SALUTE                 | English |
+| REIGN GENTLEMEN             | English |
+| REMEMBER DIARY              | English |
+| REQUIEM TYCOON              | English |
+| RESERVOIR ADAPTATION        | English |
+| RESURRECTION SILVERADO      | English |
+| REUNION WITCHES             | English |
+| RIDER CADDYSHACK            | English |
+| RIDGEMONT SUBMARINE         | English |
+| RIGHT CRANES                | English |
+| RINGS HEARTBREAKERS         | English |
+| RIVER OUTLAW                | English |
+| ROAD ROXANNE                | English |
+| ROBBERS JOON                | English |
+| ROBBERY BRIGHT              | English |
+| ROCK INSTINCT               | English |
+| ROCKETEER MOTHER            | English |
+| ROCKY WAR                   | English |
+| ROLLERCOASTER BRINGING      | English |
+| ROMAN PUNK                  | English |
+| ROOF CHAMPION               | English |
+| ROOM ROMAN                  | English |
+| ROOTS REMEMBER              | English |
+| ROSES TREASURE              | English |
+| ROUGE SQUAD                 | English |
+| ROXANNE REBEL               | English |
+| RUGRATS SHAKESPEARE         | English |
+| RULES HUMAN                 | English |
+| RUN PACIFIC                 | English |
+| RUNAWAY TENENBAUMS          | English |
+| RUNNER MADIGAN              | English |
+| RUSH GOODFELLAS             | English |
+| RUSHMORE MERMAID            | English |
+| SABRINA MIDNIGHT            | English |
+| SADDLE ANTITRUST            | English |
+| SAGEBRUSH CLUELESS          | English |
+| SAINTS BRIDE                | English |
+| SALUTE APOLLO               | English |
+| SAMURAI LION                | English |
+| SANTA PARIS                 | English |
+| SASSY PACKER                | English |
+| SATISFACTION CONFIDENTIAL   | English |
+| SATURDAY LAMBS              | English |
+| SATURN NAME                 | English |
+| SAVANNAH TOWN               | English |
+| SCALAWAG DUCK               | English |
+| SCARFACE BANG               | English |
+| SCHOOL JACKET               | English |
+| SCISSORHANDS SLUMS          | English |
+| SCORPION APOLLO             | English |
+| SEA VIRGIN                  | English |
+| SEABISCUIT PUNK             | English |
+| SEARCHERS WAIT              | English |
+| SEATTLE EXPECATIONS         | English |
+| SECRET GROUNDHOG            | English |
+| SECRETARY ROUGE             | English |
+| SECRETS PARADISE            | English |
+| SENSE GREEK                 | English |
+| SENSIBILITY REAR            | English |
+| SEVEN SWARM                 | English |
+| SHAKESPEARE SADDLE          | English |
+| SHANE DARKNESS              | English |
+| SHANGHAI TYCOON             | English |
+| SHAWSHANK BUBBLE            | English |
+| SHEPHERD MIDSUMMER          | English |
+| SHINING ROSES               | English |
+| SHIP WONDERLAND             | English |
+| SHOCK CABIN                 | English |
+| SHOOTIST SUPERFLY           | English |
+| SHOW LORD                   | English |
+| SHREK LICENSE               | English |
+| SHRUNK DIVINE               | English |
+| SIDE ARK                    | English |
+| SIEGE MADRE                 | English |
+| SIERRA DIVIDE               | English |
+| SILENCE KANE                | English |
+| SILVERADO GOLDFINGER        | English |
+| SIMON NORTH                 | English |
+| SINNERS ATLANTIS            | English |
+| SISTER FREDDY               | English |
+| SKY MIRACLE                 | English |
+| SLACKER LIAISONS            | English |
+| SLEEPING SUSPECTS           | English |
+| SLEEPLESS MONSOON           | English |
+| SLEEPY JAPANESE             | English |
+| SLEUTH ORIENT               | English |
+| SLING LUKE                  | English |
+| SLIPPER FIDELITY            | English |
+| SLUMS DUCK                  | English |
+| SMILE EARRING               | English |
+| SMOKING BARBARELLA          | English |
+| SMOOCHY CONTROL             | English |
+| SNATCH SLIPPER              | English |
+| SNATCHERS MONTEZUMA         | English |
+| SNOWMAN ROLLERCOASTER       | English |
+| SOLDIERS EVOLUTION          | English |
+| SOMETHING DUCK              | English |
+| SONG HEDWIG                 | English |
+| SONS INTERVIEW              | English |
+| SORORITY QUEEN              | English |
+| SOUP WISDOM                 | English |
+| SOUTH WAIT                  | English |
+| SPARTACUS CHEAPER           | English |
+| SPEAKEASY DATE              | English |
+| SPEED SUIT                  | English |
+| SPICE SORORITY              | English |
+| SPIKING ELEMENT             | English |
+| SPINAL ROCKY                | English |
+| SPIRIT FLINTSTONES          | English |
+| SPIRITED CASUALTIES         | English |
+| SPLASH GUMP                 | English |
+| SPLENDOR PATTON             | English |
+| SPOILERS HELLFIGHTERS       | English |
+| SPY MILE                    | English |
+| SQUAD FISH                  | English |
+| STAGE WORLD                 | English |
+| STAGECOACH ARMAGEDDON       | English |
+| STALLION SUNDANCE           | English |
+| STAMPEDE DISTURBING         | English |
+| STAR OPERATION              | English |
+| STATE WASTELAND             | English |
+| STEEL SANTA                 | English |
+| STEERS ARMAGEDDON           | English |
+| STEPMOM DREAM               | English |
+| STING PERSONAL              | English |
+| STOCK GLASS                 | English |
+| STONE FIRE                  | English |
+| STORM HAPPINESS             | English |
+| STORY SIDE                  | English |
+| STRAIGHT HOURS              | English |
+| STRANGELOVE DESIRE          | English |
+| STRANGER STRANGERS          | English |
+| STRANGERS GRAFFITI          | English |
+| STREAK RIDGEMONT            | English |
+| STREETCAR INTENTIONS        | English |
+| STRICTLY SCARFACE           | English |
+| SUBMARINE BED               | English |
+| SUGAR WONKA                 | English |
+| SUICIDES SILENCE            | English |
+| SUIT WALLS                  | English |
+| SUMMER SCARFACE             | English |
+| SUN CONFESSIONS             | English |
+| SUNDANCE INVASION           | English |
+| SUNRISE LEAGUE              | English |
+| SUNSET RACER                | English |
+| SUPER WYOMING               | English |
+| SUPERFLY TRIP               | English |
+| SUSPECTS QUILLS             | English |
+| SWARM GOLD                  | English |
+| SWEDEN SHINING              | English |
+| SWEET BROTHERHOOD           | English |
+| SWEETHEARTS SUSPECTS        | English |
+| TADPOLE PARK                | English |
+| TALENTED HOMICIDE           | English |
+| TARZAN VIDEOTAPE            | English |
+| TAXI KICK                   | English |
+| TEEN APOLLO                 | English |
+| TELEGRAPH VOYAGE            | English |
+| TELEMARK HEARTBREAKERS      | English |
+| TEMPLE ATTRACTION           | English |
+| TENENBAUMS COMMAND          | English |
+| TEQUILA PAST                | English |
+| TERMINATOR CLUB             | English |
+| TEXAS WATCH                 | English |
+| THEORY MERMAID              | English |
+| THIEF PELICAN               | English |
+| THIN SAGEBRUSH              | English |
+| TIES HUNGER                 | English |
+| TIGHTS DAWN                 | English |
+| TIMBERLAND SKY              | English |
+| TITANIC BOONDOCK            | English |
+| TITANS JERK                 | English |
+| TOMATOES HELLFIGHTERS       | English |
+| TOMORROW HUSTLER            | English |
+| TOOTSIE PILOT               | English |
+| TORQUE BOUND                | English |
+| TOURIST PELICAN             | English |
+| TOWERS HURRICANE            | English |
+| TOWN ARK                    | English |
+| TRACY CIDER                 | English |
+| TRADING PINOCCHIO           | English |
+| TRAFFIC HOBBIT              | English |
+| TRAIN BUNCH                 | English |
+| TRAINSPOTTING STRANGERS     | English |
+| TRAMP OTHERS                | English |
+| TRANSLATION SUMMER          | English |
+| TRAP GUYS                   | English |
+| TREASURE COMMAND            | English |
+| TREATMENT JEKYLL            | English |
+| TRIP NEWTON                 | English |
+| TROJAN TOMORROW             | English |
+| TROOPERS METAL              | English |
+| TROUBLE DATE                | English |
+| TRUMAN CRAZY                | English |
+| TURN STAR                   | English |
+| TUXEDO MILE                 | English |
+| TWISTED PIRATES             | English |
+| TYCOON GATHERING            | English |
+| UNBREAKABLE KARATE          | English |
+| UNCUT SUICIDES              | English |
+| UNDEFEATED DALMATIONS       | English |
+| UNFAITHFUL KILL             | English |
+| UNFORGIVEN ZOOLANDER        | English |
+| UNITED PILOT                | English |
+| UNTOUCHABLES SUNRISE        | English |
+| UPRISING UPTOWN             | English |
+| UPTOWN YOUNG                | English |
+| USUAL UNTOUCHABLES          | English |
+| VACATION BOONDOCK           | English |
+| VALENTINE VANISHING         | English |
+| VALLEY PACKER               | English |
+| VAMPIRE WHALE               | English |
+| VANILLA DAY                 | English |
+| VANISHED GARDEN             | English |
+| VANISHING ROCKY             | English |
+| VARSITY TRIP                | English |
+| VELVET TERMINATOR           | English |
+| VERTIGO NORTHWEST           | English |
+| VICTORY ACADEMY             | English |
+| VIDEOTAPE ARSENIC           | English |
+| VIETNAM SMOOCHY             | English |
+| VILLAIN DESPERATE           | English |
+| VIRGIN DAISY                | English |
+| VIRGINIAN PLUTO             | English |
+| VIRTUAL SPOILERS            | English |
+| VISION TORQUE               | English |
+| VOICE PEACH                 | English |
+| VOLCANO TEXAS               | English |
+| VOLUME HOUSE                | English |
+| VOYAGE LEGALLY              | English |
+| WAGON JAWS                  | English |
+| WAIT CIDER                  | English |
+| WAKE JAWS                   | English |
+| WALLS ARTIST                | English |
+| WANDA CHAMBER               | English |
+| WAR NOTTING                 | English |
+| WARDROBE PHANTOM            | English |
+| WARLOCK WEREWOLF            | English |
+| WARS PLUTO                  | English |
+| WASH HEAVENLY               | English |
+| WASTELAND DIVINE            | English |
+| WATCH TRACY                 | English |
+| WATERFRONT DELIVERANCE      | English |
+| WATERSHIP FRONTIER          | English |
+| WEDDING APOLLO              | English |
+| WEEKEND PERSONAL            | English |
+| WEREWOLF LOLA               | English |
+| WEST LION                   | English |
+| WESTWARD SEABISCUIT         | English |
+| WHALE BIKINI                | English |
+| WHISPERER GIANT             | English |
+| WIFE TURN                   | English |
+| WILD APOLLO                 | English |
+| WILLOW TRACY                | English |
+| WIND PHANTOM                | English |
+| WINDOW SIDE                 | English |
+| WISDOM WORKER               | English |
+| WITCHES PANIC               | English |
+| WIZARD COLDBLOODED          | English |
+| WOLVES DESIRE               | English |
+| WOMEN DORADO                | English |
+| WON DARES                   | English |
+| WONDERFUL DROP              | English |
+| WONDERLAND CHRISTMAS        | English |
+| WONKA SEA                   | English |
+| WORDS HUNTER                | English |
+| WORKER TARZAN               | English |
+| WORKING MICROCOSMOS         | English |
+| WORLD LEATHERNECKS          | English |
+| WORST BANGER                | English |
+| WRATH MILE                  | English |
+| WRONG BEHAVIOR              | English |
+| WYOMING STORM               | English |
+| YENTL IDAHO                 | English |
+| YOUNG LANGUAGE              | English |
+| YOUTH KICK                  | English |
+| ZHIVAGO CORE                | English |
+| ZOOLANDER FICTION           | English |
+| ZORRO ARK                   | English |
++-----------------------------+---------+
+1000 rows in set (0,00 sec)
+```
+
+Encontrar todos los empleados y los almacenes que gestionan.
+
+```
+select e.nombre, a.id_almacen
+from empleado e
+join almacen a
+	on a.id_empleado_jefe = e.id_empleado;
++--------+------------+
+| nombre | id_almacen |
++--------+------------+
+| Jon    |          2 |
+| Ringo  |          1 |
++--------+------------+
+2 rows in set (0,00 sec)
+```
+
+Obtener los títulos de las películas que nunca han sido
+alquiladas.
+
+```
+select ft.title
+from pelicula p
+join film_text ft
+	on ft.film_id = p.id_pelicula
+left join inventario i 
+	on p.id_pelicula = i.id_pelicula
+where i.id_inventario is null;
++------------------------+
+| title                  |
++------------------------+
+| ALICE FANTASIA         |
+| APOLLO TEEN            |
+| ARGONAUTS TOWN         |
+| ARK RIDGEMONT          |
+| ARSENIC INDEPENDENCE   |
+| BOONDOCK BALLROOM      |
+| BUTCH PANTHER          |
+| CATCH AMISTAD          |
+| CHINATOWN GLADIATOR    |
+| CHOCOLATE DUCK         |
+| COMMANDMENTS EXPRESS   |
+| CROSSING DIVORCE       |
+| CROWDS TELEMARK        |
+| CRYSTAL BREAKING       |
+| DAZED PUNK             |
+| DELIVERANCE MULHOLLAND |
+| FIREHOUSE VIETNAM      |
+| FLOATS GARDEN          |
+| FRANKENSTEIN STRANGER  |
+| GLADIATOR WESTWARD     |
+| GUMP DATE              |
+| HATE HANDICAP          |
+| HOCUS FRIDA            |
+| KENTUCKIAN GIANT       |
+| KILL BROTHERHOOD       |
+| MUPPET MILE            |
+| ORDER BETRAYED         |
+| PEARL DESTINY          |
+| PERDITION FARGO        |
+| PSYCHO SHRUNK          |
+| RAIDERS ANTITRUST      |
+| RAINBOW SHOCK          |
+| ROOF CHAMPION          |
+| SISTER FREDDY          |
+| SKY MIRACLE            |
+| SUICIDES SILENCE       |
+| TADPOLE PARK           |
+| TREASURE COMMAND       |
+| VILLAIN DESPERATE      |
+| VOLUME HOUSE           |
+| WAKE JAWS              |
+| WALLS ARTIST           |
++------------------------+
+
+```
+
+Listar los empleados que trabajan en el mismo almacén que el
+empleado con id_empleado = 1.
+
+```
+select e.nombre
+from empleado e
+join almacen a
+	on e.id_almacen = a.id_almacen 
+where a.id_almacen = (
+	select e.id_almacen
+	from empleado e
+	where e.id_empleado = 1
+) ;
++--------+
+| nombre |
++--------+
+| Mike   |
+| Jon    |
+| Pepe   |
++--------+
+3 rows in set (0,00 sec)
+```
+
+Encontrar el nombre de las ciudades que no tienen ningún
+cliente registrado.
+
+```
+select c.nombre
+from ciudad c
+left join direccion d
+	on c.id_ciudad = d.id_ciudad
+left join cliente cl
+	on cl.id_direccion = d.id_direccion
+WHERE d.id_ciudad is null;
++----------------------------+
+| nombre                     |
++----------------------------+
+| A Corua (La Corua)         |
+| Abha                       |
+| Abu Dhabi                  |
+| Acua                       |
+| Adana                      |
+| Addis Abeba                |
+| Aden                       |
+| Adoni                      |
+| Ahmadnagar                 |
+| Akishima                   |
+| Akron                      |
+| al-Ayn                     |
+| al-Hawiya                  |
+| al-Manama                  |
+| al-Qadarif                 |
+| al-Qatif                   |
+| Allappuzha (Alleppey)      |
+| Allende                    |
+| Almirante Brown            |
+| Alvorada                   |
+| Ambattur                   |
+| Amersfoort                 |
+| Amroha                     |
+| Angra dos Reis             |
+| Anpolis                    |
+| Antofagasta                |
+| Aparecida de Goinia        |
+| Apeldoorn                  |
+| Araatuba                   |
+| Arecibo                    |
+| Arlington                  |
+| Ashdod                     |
+| Ashgabat                   |
+| Ashqelon                   |
+| Asuncin                    |
+| Atinsk                     |
+| Atlixco                    |
+| Augusta-Richmond County    |
+| Aurora                     |
+| Avellaneda                 |
+| Bag                        |
+| Baha Blanca                |
+| Baicheng                   |
+| Baiyin                     |
+| Baku                       |
+| Balaiha                    |
+| Balikesir                  |
+| Balurghat                  |
+| Bamenda                    |
+| Bandar Seri Begawan        |
+| Banjul                     |
+| Barcelona                  |
+| Basel                      |
+| Bat Yam                    |
+| Batman                     |
+| Batna                      |
+| Battambang                 |
+| Baybay                     |
+| Bayugan                    |
+| Bchar                      |
+| Beira                      |
+| Bellevue                   |
+| Belm                       |
+| Benguela                   |
+| Beni-Mellal                |
+| Benin City                 |
+| Bergamo                    |
+| Berhampore (Baharampur)    |
+| Bern                       |
+| Bhavnagar                  |
+| Bhilwara                   |
+| Bhimavaram                 |
+| Bhusawal                   |
+| Bijapur                    |
+| Bilbays                    |
+| Binzhou                    |
+| Birgunj                    |
+| Bislig                     |
+| Blumenau                   |
+| Boa Vista                  |
+| Boksburg                   |
+| Botosani                   |
+| Botshabelo                 |
+| Bradford                   |
+| Braslia                    |
+| Bratislava                 |
+| Brescia                    |
+| Brest                      |
+| Brindisi                   |
+| Brockton                   |
+| Bucuresti                  |
+| Buenaventura               |
+| Bydgoszcz                  |
+| Cabuyao                    |
+| Callao                     |
+| Cam Ranh                   |
+| Cape Coral                 |
+| Caracas                    |
+| Carmen                     |
+| Cavite                     |
+| Cayenne                    |
+| Celaya                     |
+| Chandrapur                 |
+| Changhwa                   |
+| Changzhou                  |
+| Chapra                     |
+| Charlotte Amalie           |
+| Chatsworth                 |
+| Cheju                      |
+| Chiayi                     |
+| Chungho                    |
+| Cianjur                    |
+| Ciomas                     |
+| Ciparay                    |
+| Ciudad del Este            |
+| Clarksville                |
+| Coacalco de Berriozbal     |
+| Coatzacoalcos              |
+| Compton                    |
+| Coquimbo                   |
+| Cuauhtmoc                  |
+| Cuautla                    |
+| Cuernavaca                 |
+| Cuman                      |
+| Czestochowa                |
+| Dadu                       |
+| Dallas                     |
+| Datong                     |
+| Daugavpils                 |
+| Daxian                     |
+| Dayton                     |
+| Deba Habe                  |
+| Denizli                    |
+| Dhaka                      |
+| Dhule (Dhulia)             |
+| Dongying                   |
+| Donostia-San Sebastin      |
+| Dos Quebradas              |
+| Duisburg                   |
+| Dundee                     |
+| Dzerzinsk                  |
+| Ede                        |
+| Effon-Alaiye               |
+| El Alto                    |
+| El Fuerte                  |
+| El Monte                   |
+| Emeishan                   |
+| Emmen                      |
+| Enshi                      |
+| Erlangen                   |
+| Escobar                    |
+| Eskisehir                  |
+| Etawah                     |
+| Ezeiza                     |
+| Ezhou                      |
+| Faaa                       |
+| Fengshan                   |
+| Firozabad                  |
+| Florencia                  |
+| Fontana                    |
+| Fukuyama                   |
+| Funafuti                   |
+| Fuyu                       |
+| Fuzhou                     |
+| Gandhinagar                |
+| Garden Grove               |
+| Garland                    |
+| Gatineau                   |
+| Gaziantep                  |
+| Gijn                       |
+| Gingoog                    |
+| Goinia                     |
+| Gorontalo                  |
+| Grand Prairie              |
+| Graz                       |
+| Greensboro                 |
+| Guadalajara                |
+| Guaruj                     |
+| guas Lindas de Gois        |
+| Gulbarga                   |
+| Hagonoy                    |
+| Haining                    |
+| Haiphong                   |
+| Haldia                     |
+| Halifax                    |
+| Halisahar                  |
+| Halle/Saale                |
+| Hami                       |
+| Hanoi                      |
+| Hidalgo                    |
+| Higashiosaka               |
+| Hino                       |
+| Hiroshima                  |
+| Hodeida                    |
+| Hohhot                     |
+| Hoshiarpur                 |
+| Hsichuh                    |
+| Huaian                     |
+| Hubli-Dharwad              |
+| Huejutla de Reyes          |
+| Huixquilucan               |
+| Hunuco                     |
+| Ibirit                     |
+| Idfu                       |
+| Ife                        |
+| Ikerre                     |
+| Iligan                     |
+| Ilorin                     |
+| Imus                       |
+| Inegl                      |
+| Ipoh                       |
+| Isesaki                    |
+| Ivanovo                    |
+| Iwaki                      |
+| Iwakuni                    |
+| Iwatsuki                   |
+| Izumisano                  |
+| Jaffna                     |
+| Jaipur                     |
+| Jakarta                    |
+| Jalib al-Shuyukh           |
+| Jamalpur                   |
+| Jaroslavl                  |
+| Jastrzebie-Zdrj            |
+| Jedda                      |
+| Jelets                     |
+| Jinchang                   |
+| Jining                     |
+| Jinzhou                    |
+| Jodhpur                    |
+| Johannesburg               |
+| Joliet                     |
+| Jos Azueta                 |
+| Juazeiro do Norte          |
+| Juiz de Fora               |
+| Junan                      |
+| Jurez                      |
+| Kabul                      |
+| Kakamigahara               |
+| Kaliningrad                |
+| Kalisz                     |
+| Kamakura                   |
+| Kamjanets-Podilskyi        |
+| Kamyin                     |
+| Kanazawa                   |
+| Kanchrapara                |
+| Kansas City                |
+| Karnal                     |
+| Katihar                    |
+| Kermanshah                 |
+| Kilis                      |
+| Kimchon                    |
+| Kingstown                  |
+| Kirovo-Tepetsk             |
+| Kisumu                     |
+| Kitwe                      |
+| Klerksdorp                 |
+| Kolpino                    |
+| Konotop                    |
+| Koriyama                   |
+| Korla                      |
+| Korolev                    |
+| Kowloon and New Kowloon    |
+| Ktahya                     |
+| Kuching                    |
+| Kumbakonam                 |
+| Kurgan                     |
+| Kursk                      |
+| Kuwana                     |
+| La Paz                     |
+| La Plata                   |
+| La Romana                  |
+| Laiwu                      |
+| Lancaster                  |
+| Laohekou                   |
+| Lapu-Lapu                  |
+| Lausanne                   |
+| Le Mans                    |
+| Lengshuijiang              |
+| Leshan                     |
+| Lhokseumawe                |
+| Liaocheng                  |
+| Lilongwe                   |
+| Lima                       |
+| Lincoln                    |
+| Linz                       |
+| Lipetsk                    |
+| Livorno                    |
+| Ljubertsy                  |
+| Loja                       |
+| London                     |
+| London                     |
+| Lublin                     |
+| Lubumbashi                 |
+| Luzinia                    |
+| Madiun                     |
+| Mahajanga                  |
+| Maikop                     |
+| Malm                       |
+| Manchester                 |
+| Mandaluyong                |
+| Mandi Bahauddin            |
+| Mannheim                   |
+| Maracabo                   |
+| Maring                     |
+| Matamoros                  |
+| Matsue                     |
+| Meixian                    |
+| Memphis                    |
+| Merlo                      |
+| Mexicali                   |
+| Miraj                      |
+| Mit Ghamr                  |
+| Miyakonojo                 |
+| Mogiljov                   |
+| Molodetno                  |
+| Monclova                   |
+| Monywa                     |
+| Moscow                     |
+| Mosul                      |
+| Mukateve                   |
+| Mwanza                     |
+| Mwene-Ditu                 |
+| Mysore                     |
+| Naala-Porto                |
+| Nabereznyje Telny          |
+| Nador                      |
+| Nagaon                     |
+| Nagareyama                 |
+| Najafabad                  |
+| Naju                       |
+| Nakhon Sawan               |
+| Nam Dinh                   |
+| Namibe                     |
+| NDjamna                    |
+| Newcastle                  |
+| Nezahualcyotl              |
+| Nha Trang                  |
+| Niznekamsk                 |
+| Novi Sad                   |
+| Novoterkassk               |
+| Nukualofa                  |
+| Nuuk                       |
+| Nyeri                      |
+| Ocumare del Tuy            |
+| Ogbomosho                  |
+| Okara                      |
+| Okayama                    |
+| Okinawa                    |
+| Olomouc                    |
+| Omdurman                   |
+| Omiya                      |
+| Ondo                       |
+| Onomichi                   |
+| Oshawa                     |
+| ostka                      |
+| Otsu                       |
+| Oulu                       |
+| Ourense (Orense)           |
+| Owo                        |
+| Oyo                        |
+| Ozamis                     |
+| Paarl                      |
+| Pachuca de Soto            |
+| Pak Kret                   |
+| Palghat (Palakkad)         |
+| Pangkal Pinang             |
+| Papeete                    |
+| Parbhani                   |
+| Pathankot                  |
+| Patiala                    |
+| Patras                     |
+| Pavlodar                   |
+| Pemalang                   |
+| Peoria                     |
+| Pereira                    |
+| Phnom Penh                 |
+| Pingxiang                  |
+| Pjatigorsk                 |
+| Plock                      |
+| Po                         |
+| Ponce                      |
+| Pontianak                  |
+| Poos de Caldas             |
+| Portoviejo                 |
+| Probolinggo                |
+| Pudukkottai                |
+| Pune                       |
+| Purnea (Purnia)            |
+| Purwakarta                 |
+| Pyongyang                  |
+| Qalyub                     |
+| Qinhuangdao                |
+| Qomsheh                    |
+| Quilmes                    |
+| Rae Bareli                 |
+| Rajkot                     |
+| Rampur                     |
+| Rancagua                   |
+| Ranchi                     |
+| Richmond Hill              |
+| Rio Claro                  |
+| Rizhao                     |
+| Roanoke                    |
+| Robamba                    |
+| Rockford                   |
+| Ruse                       |
+| Rustenburg                 |
+| s-Hertogenbosch            |
+| Saarbrcken                 |
+| Saint Louis                |
+| Saint-Denis                |
+| Salala                     |
+| Salamanca                  |
+| Salinas                    |
+| Salzburg                   |
+| Sambhal                    |
+| San Felipe de Puerto Plata |
+| San Felipe del Progreso    |
+| San Juan Bautista Tuxtepec |
+| San Lorenzo                |
+| San Miguel de Tucumn       |
+| Sanaa                      |
+| Santa Brbara dOeste        |
+| Santa F                    |
+| Santa Rosa                 |
+| Santiago de los Caballeros |
+| Santo Andr                 |
+| Sanya                      |
+| Satna                      |
+| Sawhaj                     |
+| Serpuhov                   |
+| Shahr-e Kord               |
+| Shanwei                    |
+| Shaoguan                   |
+| Sharja                     |
+| Shenzhen                   |
+| Shimoga                    |
+| Shivapuri                  |
+| Shubra al-Khayma           |
+| Siegen                     |
+| Siliguri (Shiliguri)       |
+| Simferopol                 |
+| Sincelejo                  |
+| Sirjan                     |
+| Sivas                      |
+| Skikda                     |
+| Smolensk                   |
+| So Bernardo do Campo       |
+| So Leopoldo                |
+| Sogamoso                   |
+| Sokoto                     |
+| Songkhla                   |
+| Sorocaba                   |
+| Soshanguve                 |
+| Sousse                     |
+| South Hill                 |
+| Southampton                |
+| Southport                  |
+| Springs                    |
+| Stara Zagora               |
+| Sterling Heights           |
+| Stockport                  |
+| Sucre                      |
+| Suihua                     |
+| Sullana                    |
+| Sultanbeyli                |
+| Sumqayit                   |
+| Sumy                       |
+| Sungai Petani              |
+| Sunnyvale                  |
+| Surakarta                  |
+| Syktyvkar                  |
+| Syrakusa                   |
+| Szkesfehrvr                |
+| Tabora                     |
+| Tabriz                     |
+| Tabuk                      |
+| Tafuna                     |
+| Taguig                     |
+| Taizz                      |
+| Talavera                   |
+| Tallahassee                |
+| Tama                       |
+| Tambaram                   |
+| Tanauan                    |
+| Tandil                     |
+| Tanshui                    |
+| Tanza                      |
+| Tarlac                     |
+| Tarsus                     |
+| Tartu                      |
+| Teboksary                  |
+| Tegal                      |
+| Tel Aviv-Jaffa             |
+| Tete                       |
+| Tianjin                    |
+| Tiefa                      |
+| Tieli                      |
+| Tokat                      |
+| Tonghae                    |
+| Tongliao                   |
+| Torren                     |
+| Touliu                     |
+| Toulon                     |
+| Trshavn                    |
+| Tsaotun                    |
+| Tsuyama                    |
+| Tuguegarao                 |
+| Tychy                      |
+| Udaipur                    |
+| Udine                      |
+| Ueda                       |
+| Uijongbu                   |
+| Uluberia                   |
+| Urawa                      |
+| Uruapan                    |
+| Usak                       |
+| Usolje-Sibirskoje          |
+| Uttarpara-Kotrung          |
+| Vaduz                      |
+| Valencia                   |
+| Valle de la Pascua         |
+| Valle de Santiago          |
+| Valparai                   |
+| Vancouver                  |
+| Varanasi (Benares)         |
+| Vicente Lpez               |
+| Vijayawada                 |
+| Vilnius                    |
+| Vinh                       |
+| Vitria de Santo Anto       |
+| Warren                     |
+| Weifang                    |
+| Witten                     |
+| Wroclaw                    |
+| Xiangfan                   |
+| Xiangtan                   |
+| Xintai                     |
+| Xinxiang                   |
+| Yangor                     |
+| Yantai                     |
+| Yaound                     |
+| Yerevan                    |
+| Yinchuan                   |
+| Yingkou                    |
+| York                       |
+| Yuncheng                   |
+| Yuzhou                     |
+| Zalantun                   |
+| Zanzibar                   |
+| Zaoyang                    |
+| Zapopan                    |
+| Zaria                      |
+| Zeleznogorsk               |
+| Zhezqazghan                |
+| Zhoushan                   |
+| Ziguinchor                 |
++----------------------------+
+558 rows in set (0,01 sec)
+
+```
+
