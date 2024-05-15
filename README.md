@@ -1,5 +1,7 @@
 # SAKILA_CAMPUS
 
+NICOLAS PEDRAZA MALDONADO, LUIS MIGUEL GAMBOA
+
 Obtener los nombres de todos los actores y las películas en las
 que han actuado.
 
