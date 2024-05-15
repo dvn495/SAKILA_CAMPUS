@@ -22,7 +22,15 @@ ALTER TABLE pelicula
 ADD film_id_pelicula SMALLINT;
 
 ALTER TABLE pelicula
-ADD 
+ADD CONSTRAINT fk_film_id_pelicula FOREIGN KEY (film_id_pelicula) REFERENCES film_text(film_id);
+
+UPDATE pelicula
+SET film_id_pelicula = (
+	select film_id
+	from film_text
+	where film_id = id_pelicula
+)
+WHERE film_id_pelicula IS NULL
 
 ```
 
