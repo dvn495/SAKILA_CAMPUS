@@ -2,6 +2,30 @@
 
 NICOLAS PEDRAZA MALDONADO, LUIS MIGUEL GAMBOA
 
+```
+DELIMITER //
+CREATE PROCEDURE modify_table ()
+BEGIN
+	INSERT INTO film_text(film_id, title, description)
+	SELECT id_pelicula, titulo, descripcion
+	from pelicula;
+END//
+DELIMITER ;
+
+ALTER TABLE pelicula
+drop column titulo;
+
+ALTER TABLE pelicula
+DROP COLUMN descripcion;
+
+ALTER TABLE pelicula
+ADD film_id_pelicula SMALLINT;
+
+ALTER TABLE pelicula
+ADD 
+
+```
+
 Obtener los nombres de todos los actores y las películas en las
 que han actuado.
 
